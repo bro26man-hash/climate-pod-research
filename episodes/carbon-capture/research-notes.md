@@ -1,66 +1,38 @@
-# 🌱 Carbon Capture (CDR) — Research Notes
+# 🌍 Carbon Capture & Removal — Research Notes
 
-**Source:** GitHub API-based project discovery + commit-history analysis
-**Branch:** `carbon-capture`
-**Scope:** Carbon Dioxide Removal — Direct Air Capture (DAC), sorbent materials, CDR databases & verification
+**Podcast theme:** Direct Air Capture (DAC) & Carbon Dioxide Removal (CDR)
+**Repository branch:** `carbon-capture`
+**Source:** GitHub API research — open-source project discovery + commit-history analysis
 
----
+## Episode Angle
+GitHub's "carbon capture" namespace is *loud but fragmented* — a wave of tokenization / defi projects wearing clean-carbon naming, alongside a much smaller cluster of genuine DAC materials science. Separating financial noise from real removal tooling is the central task for open-source CDR.
 
-## ✦ Project Discoveries
+## Project Discoveries
 
-| # | Project | Repo | Stars | Last Activity | Theme |
-|---|---------|------|------|---------------|-------|
-| 1 | **open-sustainable-technology** (umbrella directory) | [protontypes/open-sustainable-technology](https://github.com/protontypes/open-sustainable-technology) | 2,546 ⭐ | Sep 2026 | Best discovery-layer index of OSS climate tools |
-| 2 | **forest-risks** (forest carbon risk models) | [carbonplan/forest-risks](https://github.com/carbonplan/forest-risks) | 35 ⭐ | Jan 2024 | CDR verification — published, now dormant |
-| 3 | **cdr-database** (CDR project evaluation DB) | [carbonplan/cdr-database](https://github.com/carbonplan/cdr-database) | 29 ⭐ | Feb 2025 | CDR methodology / evaluation — light maintenance |
-| 4 | **ClimaLand.jl** (soil carbon module) | [CliMA/ClimaLand.jl](https://github.com/CliMA/ClimaLand.jl) | 71 ⭐ | Sep 2026 | Process-based land/soil carbon |
-| 5 | **DAC_peroxovanadates** (computational sorbents) | [tjz21/DAC_peroxovanadates](https://github.com/tjz21/DAC_peroxovanadates) | 2 ⭐ | Aug 2026 | DFT screening of DAC materials |
-| 6 | **DAC_peroxotitanates** (computational sorbents) | [tjz21/DAC_peroxotitanates](https://github.com/tjz21/DAC_peroxotitanates) | 2 ⭐ | Aug 2026 | DFT screening of DAC materials |
+| Project | ⭐ | Last updated | Classification |
+|---|---|---|---|
+| [ericrenone/ERIE-ATMO](https://github.com/ericrenone/ERIE-ATMO) | — | 2026-04-26 | Most technically substantive: Mauna Loa Keeling-curve / 430 ppm "Atmospheric Carbon Reckoning", plus a DAC "federation" (Climeworks / Carbfix) reference — data & observation oriented |
+| [bigg-kay/CarbonSink](https://github.com/bigg-kay/CarbonSink) | — | 2026-02-16 | "Direct air capture and carbon removal technology synthetic instrument" — simulation / synthetic-data angle |
+| [tjz21/DAC_peroxovanadates](https://github.com/tjz21/DAC_peroxovanadates) | 2 | 2026-08 | Computational materials science of peroxovanadate sorbents for DAC — open computational-chemistry wave |
+| [tjz21/DAC_peroxotitanates](https://github.com/tjz21/DAC_peroxotitanates) | 2 | 2026-08 | Companion computational study of peroxotitanate sorbents for DAC |
+| [o7-machinehum/electro-swing-dacc](https://github.com/o7-machinehum/electro-swing-dacc) | — | 2026-08 | Open DIY electro-swing DAC plans — hands-on / hacker DAC |
+| [terranexum/OpenCarbon](https://github.com/terranexum/OpenCarbon) | 2 | 2023-07 | Bursty system-level DAC carbon-management / planning tooling |
+| [api-evangelist/climeworks](https://github.com/api-evangelist/climeworks) | — | 2026-09-04 | Third-party API profile of Climeworks AG — real-world CDR company observability layer |
+| [api-evangelist/spiritus](https://github.com/api-evangelist/spiritus) | — | 2026-09-04 | Third-party API profile of Spiritus Technologies (low-cost DAC) — observability layer |
+| [api-evangelist/clairity](https://github.com/api-evangelist/clairity) | — | 2026-09-04 | Third-party API profile of Clairity Technology — observability layer |
 
-**Other finds:**
-- `o7-machinehum/electro-swing-dacc` — DIY electro-swing DAC plans (open hardware, Aug 2026)
-- `terranexum/OpenCarbon` — open carbon-management planning tool (Jul 2023)
-- `api-evangelist/clairity` / `spiritus` — climate-tech company profiles (company dirs, not code)
+> ⚠️ **Noise note:** Several top search hits sporting "CarbonCapture" / "CarbonVault" / "CarbonNeg" naming (aslembadru, drakemesh, somlettes) are **carbon-credit tokenization / synthetic-asset / defi** projects — not simulation or removal hardware. They dominate the search surface but live in a different domain.
 
----
+## Commit-Trend Summary (from recent commit histories)
+- The flagship **CliMA/ClimateMachine.jl** monolith (470★) received its last meaningful commit in 2021/2022 and its README now carries a **deprecation notice** — the broader CliMA team shipped a *modular package ecosystem* instead. Context: the largest climate-modeling effort moved away from monolithic CDR-ready models.
+- Two rhythms characterize genuine open DAC work:
+  1. **Atomic materials-science updates** — small, bursty commits around sorbent chemistry (vanadates, titanates), e.g. the tjz21 DAC studies (Aug 2026).
+  2. **Bursty system-planning commits** — OpenCarbon-style repositories.
+- **August 2026** saw a small surge of computational-DAC-materials repositories (peroxovanadates, peroxotitanates), suggesting an emerging open computational-chemistry wave for next-gen sorbents — worth tracking.
+- **api-evangelist's** Climeworks / Spiritus / Clairity profiles (all updated 2026-09-04) form an informal open *observation / accountability* layer around real-world CDR companies — a transparency story.
 
-## 📈 Commit Trend Summary
+## The Big Takeaway
+Open-source CDR is real but niche: genuine DAC simulation lives in scattered computational-materials repos and Keeling-curve / data tools (ERIE-ATMO), while the dominant "carbon capture" GitHub presence is defi / tokenization naming. The Aug 2026 computational-chemistry surge and the real-time CDR-company observability layer are the two open-source signals to follow.
 
-Carbon capture on GitHub shows **two sharply different modes**:
-
-1. **The CDR-verification/databases layer is in maintenance-to-dormant mode.**
-   - `carbonplan/forest-risks` — essentially complete: last commit Jan 2024 (pre-commit/grammar badges), i.e. >2 years quiescent. The science was published; the repo is now a citation artifact reshaping carbon-market regulation rather than receiving code.
-   - `carbonplan/cdr-database` — a small, self-contained burst in Feb 2025 (PRs #265/#266: switching analytics to Plausible, removing Google Analytics) then quiet. Effectively `~1-2` commits/month with a brief人居 migration spike. Active enough to stay alive, not enough to call "developing."
-
-2. **The DAC materials-science layer had a nascent August 2026 burst.**
-   - A pair of computational-chemistry repos (`tjz21/DAC_peroxovanadates`, `tjz21/DAC_peroxotitanates`, each 2★) received DFT-level updates in Aug 2026 — quantum-mechanical screening of peroxo-complex sorbents. This is "open computational chemistry for next-gen sorbents" in embryo: tiny, pre-print-adjacent, but directionally interesting.
-
-3. **Soil/land carbon** remains the most actively maintained process side (`ClimaLand.jl`, `v1.12.0`/`v1.12.1` Sep 2026).
-
-**Net read:** Open-source DAC is pinned to *materials discovery* (sorbent screening) and *CDR verification databases*; genuine system-engineering / scale-up commits are vanishingly rare. The August 2026 materials burst suggests a possible wave of open DFT sorbent work — worth tracking.
-
----
-
-## 💡 Talking Points
-
-1. **The $1000/ton question — can open source help?** The open DAC world is tiny and fragmented: a handful of DFT sonderium repos and two maintenance-mode CDR databases. Big engineering progress is almost entirely closed (Point Source Carbon, Climeworks, Heirloom) and IP-locked.
-2. **Two modes, one story.** Distinguish (a) the mature-but-dormant *verification* layer (CarbonPlan — science done, now policy) from (b) the infant *materials-discovery* layer (open DFT sorbents). These need different podcast framings.
-3. **The DIY / open-hardware signal.** `o7-machinehum/electro-swing-dacc` represents a grassroots "open DAC plans" impulse — low-cost, reproducible, but far from commercial scale. A vivid podcast contrast to industrial front-end loader.
-4. **Forest & soil carbon are the "easy" open wins.** `forest-risks` already influenced policy despite 35 stars; land/soil carbon (`ClimaLand.jl`) is the quietly productive process side.
-5. **Watch the Aug 2026 DAC materials cluster.** If peroxo-vanadate/titanate DFT screening grows beyond 2 repos, it could mark the start of open, computed sorbent discovery for DAC — a genuine open-source contribution to cost reduction.
-
----
-
-## 🔑 Key Terminology
-
-- **CDR (Carbon Dioxide Removal)** — umbrella for techniques removing CO₂ from the atmosphere.
-- **DAC (Direct Air Capture)** — engineered capture directly from ambient air; energy- and sorbent-intensive.
-- **Electro-swing DAC** — electrochemical regeneration of a sorbent, potentially simpler thermal cycle.
-- **DFT screening** — density-functional theory computation of sorbent binding energies, used to pre-select candidates.
-- **Peroxo-complex sorbents** — vanadium/titanium peroxide frameworks studied for CO₂ binding.
-- **BECCS / Enhanced Weathering** — other CDR families (biomass+storage; mineral dissolution); barely represented in open code.
-- **CDR verification** — measuring/monitoring stored carbon; CarbonPlan's principal contribution.
-
----
-
-*Commit data pulled from GitHub API: carbonplan/forest-risks (Jan 2024), carbonplan/cdr-database (Feb 2025), tjz21 DAC repos (Aug 2026), ClimaLand.jl (Sep 2026), protontypes/open-sustainable-technology (Sep 2026).*
+## Key Terminology
+DAC, direct air capture, carbon dioxide removal (CDR), electro-swing adsorption, sorbent, peroxovanadate, peroxotitanate, mineralization, negative emissions (NETs), Keeling curve, carbon accounting, Climeworks, Carbfix, defi / tokenization carbon credits.
