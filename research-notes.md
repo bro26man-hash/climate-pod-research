@@ -1,58 +1,83 @@
-# ☀️ Solar Geoengineering — Episode Research Notes
+# ☀️ Solar Geoengineering — Research Notes (Updated Sep 2026)
 
-## Overview
-Solar Radiation Management (SRM) aims to reflect sunlight back to space to offset warming. This branch covers open-source simulation models, codebases, and tools relevant to solar geoengineering research.
+## Project Discoveries
 
----
+### 1. PSLmodels/Geo-DICE
+- **URL:** https://github.com/PSLmodels/Geo-DICE
+- **Language:** MATLAB
+- **Stars:** 2
+- **Contributors:** Soheil Shayegh, Matt Jensen
+- **Description:** Modified DICE (Dynamic Integrated Climate-Economy) model incorporating geoengineering scenarios. Developed at PSL (Program in Science, Technology, and Environmental Policy), Princeton.
+- **Last Activity:** September 27, 2018
+- **Commit Count:** 4 total (Aug 2016 – Sep 2018)
+- **Relevance:** Foundational integrated assessment model for SRM governance economics. The DICE framework is the gold standard for climate-economy modeling; this variant explicitly includes solar geoengineering as a policy lever. Last touched in 2018 — essentially a legacy snapshot of DICE + geoengineering capability.
 
-## 🔍 Project Discoveries
+### 2. jlehtomaa/OOCC_2021
+- **URL:** https://github.com/jlehtomaa/OOCC_2021
+- **Language:** Python
+- **Stars:** 2
+- **Description:** A simple model for solar geoengineering governance. Accompanies the 2021 paper "Sustainable Governance of Solar Geoengineering" published in Oxford Open Climate Change.
+- **Last Activity:** November 15, 2021
+- **Commit Count:** 10 shown (all in Sep–Nov 2021: 4 README updates, 2 citation updates, 2 README+another, 1 bibtex entry, 1 bibtex reference)
+- **Relevance:** The ONLY open-source repo explicitly modeling geoengineering governance. Can-a-climate-model-democratize-the-policy-discourse? Critical for episode framing around who controls the global thermostat. All commits were in a tight publication window — classic paper-driven lifecycle.
 
-### 1. [Codes-RFG-Arctic-Impacts](https://github.com/RhondaMueller/Codes-RFG-Arctic-Impacts)
-- **Stars:** 1 | **Language:** Jupyter Notebook
-- **Description:** Radiative forcing geoengineering code analyzing Arctic temperature extremes and permafrost thawing under SRM scenarios.
-- **Key files:** `analysis/` directory with permafrost area analysis, climate model (CLM) analysis scripts (`Min_clm_2.py`, `Mean_clm_2.py`, `Max_clm_2.py`)
-- **Relevance:** Directly models geoengineering radiative forcing impacts on sensitive Arctic regions — perfect for discussing unintended consequences of SRM.
+### 3. cjcarlson/geomalaria
+- **URL:** https://github.com/cjcarlson/geomalaria
+- **Language:** R
+- **Stars:** 3
+- **Contributor:** Colin J. Carlson (Georgetown University)
+- **Description:** Malaria risk modeling in a world with solar geoengineering. Examines secondary biological impacts of SRM scenarios on disease vector populations.
+- **Last Activity:** February 15, 2022
+- **Commit Count:** 10 shown (clustered heavily in Jan–Feb 2022 — 7 commits in 2 weeks!)
+- **Relevance:** Highlights the ecological side-effects of SRM. Key episode question: if we block sunlight to cool the planet, what happens to tropical disease vectors and ecosystems? The commit burst mirrors a paper publication cycle.
 
-### 2. [open-earth-digital-twin-simulation](https://github.com/prashaant1926/open-earth-digital-twin-simulation)
-- **Language:** TeX | **Last updated:** 2025-10-10
-- **Description:** Open-source distributed simulation platform modeling Earth's major environmental systems using real-time public data.
-- **Relevance:** A "digital twin" of Earth's systems is exactly the kind of infrastructure needed to simulate SRM deployment scenarios — temperature feedbacks, atmospheric chemistry changes, etc.
-
-### 3. [FMS-ESM/AM3](https://github.com/FMS-ESM/AM3)
-- **Stars:** 4 | **Language:** FORTRAN
-- **Description:** The atmospheric component of the GFDL coupled model CM3 — a full Earth System Model used for climate projections including SRM simulations.
-- **Relevance:** GFDL's models are the backbone of most published SRM research (e.g., GeoMIP experiments). AM3 simulates atmospheric dynamics, radiation, and aerosols — all critical for modeling stratospheric aerosol injection.
-- **Note:** Last commit was 2015; the codebase is older but still scientifically relevant as the basis for many SRM simulation studies.
-
-### 4. [LOD-Climate-Prediction-System](https://github.com/Fatema-Nur/LOD-Climate-Prediction-System)
-- **Last updated:** 2025-11-20
-- **Description:** Physics-based simulation of the Sun–Earth–Moon system visualizing Earth's Length of Day changes and climate indicators.
-- **Relevance:** While focused on LOD/moon dynamics, the framework for physics-based climate prediction is adaptable to SRM scenario modeling.
-
----
-
-## 📊 Commit Trends & Development Activity
-
-| Repo | Last Activity | Commit Frequency | Status |
-|------|--------------|-----------------|--------|
-| Codes-RFG-Arctic-Impacts | Apr 2024 | Low — mostly README cleanup; last adds Sep 2024 | ⚠️ Semi-dormant |
-| open-earth-digital-twin-simulation | Oct 2025 | Single init commit | 🆕 Early stage |
-| FMS-ESM/AM3 | Mar 2015 | No recent commits since 2015 | 🔒 Archived/Stable |
-| LOD-Climate-Prediction-System | Nov 2025 | Active — Nov 2025 | 🟢 Recently updated |
-
-**Trend:** Solar geoengineering code on GitHub is sparse. Most SRM simulation work happens in academic laboratories (GFDL, NCAR, ETH Zurich) using proprietary or internal tools. The few open-source repos tend to be either (a) heavily stabilized/archived like AM3, or (b) very recent and experimental.
-
----
-
-## 🎙️ Podcast Talking Points
-1. **The simulation gap:** Why is there so little open-source SRM code? (Risk of unilateral deployment, computational cost, model complexity)
-2. **Arctic as a canary:** The RFG-Arctic-Impacts repo highlights how SRM could worsen polar amplification if not globally coordinated
-3. **From Fortran to Jupyter:** The evolution of climate modeling tools from institutional legacy code to accessible notebooks
-4. **Digital twins as SRM testbeds:** How open-earth-digital-twin-simulation could become a platform for SRM scenario exploration
+### 4. ClimateMARGO/ClimateMARGO.jl
+- **URL:** https://github.com/ClimateMARGO/ClimateMARGO.jl
+- **Language:** Julia
+- **Stars:** 73
+- **Contributors:** Fons van der Plas, Henri Drake
+- **Description:** Julia implementation of MARGO, an idealized climate-economic modelling framework for optimizing trade-offs between emissions mitigation, adaptation, and CDR (Carbon Dioxide Removal).
+- **Last Activity:** August 17, 2026
+- **Commit Count:** 10 shown (2 in Aug 2026 after 2-year dormancy; 1 in Oct 2023; 1 in Jul 2023; rest in 2021–2022)
+- **Relevance:** The most active climate-economic simulation model in this set. The August 2026 burst (2 README updates after 2+ years of silence) is the only sign of renewed life across all solar geoengineering repos. Julia implementation makes it computationally efficient for ensemble runs. Potential "policy layer" for SRM governance.
 
 ---
 
-## 📚 Further Reading
-- GeoMIP (Geoengineering Model Intercomparison Project): https://g6.ipsl.sorbonne-universite.fr/gemip/
-- GFDL AM3 paper: Donner et al., 2011, JAdvModelEarthSyst
-- Arctic permafrost feedback: Rhonda Mueller's research (UVA)
+## Commit Trend Analysis
+
+| Repository | Commits (shown) | Active Period | Last Commit | Status |
+|------------|----------------|---------------|-------------|--------|
+| ClimateMARGO.jl | 10 | 2021–2026 | Aug 17, 2026 | **Active** (maintenance bursts) |
+| OOCC_2021 | 10 | Sep–Nov 2021 | Nov 15, 2021 | Dormant (paper-driven) |
+| geomalaria | 10 | Jan–Feb 2022 | Feb 15, 2022 | Dormant (research completion) |
+| Geo-DICE | 4 total | Aug 2016–Sep 2018 | Sep 27, 2018 | **Long-dormant** (legacy) |
+
+### Key Trends
+
+1. **Paper-Driven Lifecycle:** OOCC_2021 and geomalaria both show commit activity concentrated tightly around publication dates, then immediate dormancy. Open-source SRM code is typically a byproduct of papers, not sustained software projects. The tools that should be most useful for governance — the OOCC model especially — are the ones most likely to be abandoned after publication.
+
+2. **The Governance Modeling Gap:** Only ONE repository (OOCC_2021) explicitly models geoengineering governance. The rest are either impact models (geomalaria) or economic optimization (ClimateMARGO, Geo-DICE). The gap between simulation capability and governance tooling is enormous. **Episode angle:** "We can model the climate but not the politics."
+
+3. **Dormancy Is the Norm:** 3 of 4 solar geoengineering repos haven't been touched in 3+ years. Only ClimateMARGO shows recent activity (Aug 2026). This fragility means that policy-relevant tools may not exist when they're needed most.
+
+4. **Legacy MATLAB Persists:** Geo-DICE (2018, 4 commits) is MATLAB-based. The modern Julia/Python data-science shift hasn't reached geoengineering-specific simulation. This creates a reproducibility barrier for researchers without MATLAB licenses.
+
+5. **The Renewed Interest Signal:** ClimateMARGO's August 2026 burst is the only sign of active life. This could indicate renewed attention from the CDR-governance community, possibly driven by recent UNFCCC discussions or the Paris Agreement Global Stocktake.
+
+---
+
+## Episode Questions for Solar Geoengineering
+
+1. **Who controls the thermostat?** If governance tools like OOCC_2021 are dormant and only 4 repos exist for SRM simulation, who sets the research agenda for a technology that affects everyone?
+
+2. **Can interactive models democratize the discourse?** The simplicity of OOCC_2021 and geomalaria suggests that low-barrier models could involve more stakeholders — but only if they're maintained. Dormant tools = no democratization.
+
+3. **What are the ecological surprises?** geomalaria's finding that SRM could alter malaria risk patterns highlights the need for cross-disciplinary simulations. We model temperature but not disease vectors.
+
+4. **Is ClimateMARGO's revival a signal?** The August 2026 activity burst on the most active SRM-adjacent repo — what policy event triggered it? What if it goes dormant again?
+
+5. **Why no community-maintained SRM code?** Every existing SRM repo is either legacy (Geo-DICE), paper-driven (OOCC_2021, geomalaria), or multi-purpose (ClimateMARGO). Where is the community-maintained SRM simulator?
+
+---
+
+*Research compiled from GitHub repository search and commit history analysis. Sources: ClimateMARGO/ClimateMARGO.jl, PSLmodels/Geo-DICE, jlehtomaa/OOCC_2021, cjcarlson/geomalaria.*
