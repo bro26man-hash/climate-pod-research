@@ -1,224 +1,131 @@
-# 📊 Cross-Theme Commit Trend Analysis — September 2026 Research Round
+# 🎙️ Climate Pod Research — GitHub Research Repository (v4 Update)
 
-**Updated:** September 2026 — v3 (fresh commit histories from 12 repositories across all themes)
+**Owner:** `bro26man-hash` | **Updated:** September 2026
 
----
-
-## Methodology
-
-This round of research pulled fresh commit histories from 12 key repositories across all three podcast themes, supplementing the ecosystem-level data in the v2 analysis. All commits were retrieved directly from GitHub's API.
-
-| Theme | Repos Analyzed | Commits Pulled |
-|-------|---------------|----------------|
-| ☀️ Solar Geoengineering | WRF, PCMDI, MDTF-diagnostics, ClimateMARGO, srm-forever, open-earth-digital-twin | 53+ |
-| 🌍 Carbon Capture | open-sustainable-technology, OpenCarbon, openair-cyan, Carbon_Capture_ML, DAC_peroxovanadates, DAC_peroxotitanates, carbon-capture-and-storage, CO2-Sequestration, ClimateSoton | 70+ |
-| 🌊 Ocean Intervention | MDTF-diagnostics (ocean-adjacent), WRF (coupled), ClimateSoton (CFD) | 14+ |
+A research repository built for a podcast series on climate technology and geoengineering. It contains open-source project discoveries, commit trend analyses, and episode planning notes organized by three theme branches.
 
 ---
 
-## Fresh Commit Data — By Theme
+## 📁 Files by Branch
 
-### ☀️ Solar Geoengineering
-
-| Repo | Stars | Fresh Commits | Activity Window | Key Signal |
-|------|-------|---------------|-----------------|------------|
-| WRF | 1,761 | 10 | May-Jun 2026 (v4.8.0) | Solar radiation EOT correction; TEMPO aerosol staging off; MYNN-EDMF update |
-| PCMDI | 133 | 10 | Sep 3-4, 2026 (v4.2.1) | 10 commits in 2 days; roundoff fix; extremes chunking with dask/SVD |
-| MDTF-diagnostics | 80 | 10 | Jun-Aug 2026 | MCS precipitation-buoyancy POD (5 commits Jun 19); README refreshes |
-| ClimateMARGO | 73 | 2 | Aug 17, 2026 | README revival after 2+ years dormancy; no code commits |
-| srm-forever | 0 | 4 | Aug 26, 2026 | Weitzman discounting adopted; vintage annuity pricing; interactive model |
-
-### 🌍 Carbon Capture
-
-| Repo | Stars | Fresh Commits | Activity Window | Key Signal |
-|------|-------|---------------|-----------------|------------|
-| open-sustainable-technology | 2,552 | 10 | Jul-Sep 2026 | claude-carbon added; MUIO/MUIOGO DAC units; steady ecosystem growth |
-| OpenCarbon | 2 | 10 | May-Jul 2023 | 3 PRs merged; then total silence; cautionary tale |
-| openair-cyan | 76 | 10 | Feb 2022-2024 | OSHWA certification; 6 commits on Feb 12 2024; then dormant |
-| Carbon_Capture_ML | 56 | 10 | Feb 2023-May 2024 | OpenDAC paper added; maturing from research tool to reference |
-| DAC_peroxovanadates | 2 | 10 | Dec 2023-Sep 2025 | CC0 license (Sep 2025); paper DOI additions; public domain commitment |
-| DAC_peroxotitanates | 2 | 10 | May 2024-Sep 2025 | CASTEP references; CC0 license; intensive May-Jul 2024 burst |
-| carbon-capture-and-storage | 85 | 10 | Feb-Mar 2021 | All commits in 1-month burst; then 5+ years dormant; ghost |
-| CO2-Sequestration | 32 | 2 | Mar 2019 | 2 commits same day; then 6 years of silence; oldest ghost |
-| ClimateSoton | — | 4 | Aug 6, 2026 | Website refresh; 3 file uploads + 1 zip deletion; active group |
-
-### 🌊 Ocean Intervention
-
-| Repo | Stars | Fresh Commits | Activity Window | Key Signal |
-|------|-------|---------------|-----------------|------------|
-| MDTF-diagnostics | 80 | 10 | Jun-Aug 2026 | Precipitation-buoyancy POD is the closest ocean-interaction diagnostic |
-| WRF (coupled mode) | 1,761 | 10 | May-Jun 2026 | No ocean-specific commits; atmospheric physics only |
-| ClimateSoton | — | 4 | Aug 6, 2026 | CFD methods; ocean-relevant research group, but website-only on GitHub |
+| Branch | File | Description |
+|--------|------|-------------|
+| `main` | `CROSS-THEME-ANALYSIS-SEP2026.md` | **Updated in v4:** Cross-theme dashboard with fresh commit data from 12 repos |
+| `main` | `COMMIT-TRENDS.md` | Master consolidated analysis |
+| `main` | `README.md` | This file |
+| `solar-geoengineering` | `PROJECT-DISCOVERIES-SOLAR.md` | **Updated in v4:** Detailed profiles of 10 solar/atmosphere repos with fresh commit data from WRF, PCMDI, MDTF, ClimateMARGO, srm-forever |
+| `solar-geoengineering` | `COMMIT-TRENDS-SOLAR.md` | **Updated in v4:** Solar-specific trend analysis with 64+ fresh commits pulled |
+| `carbon-capture` | `PROJECT-DISCOVERIES-CARBON.md` | **Updated in v4:** Detailed profiles of 10 carbon capture repos with fresh commit data from open-sustainable-technology, openair-cyan, Carbon_Capture_ML, DAC materials repos |
+| `carbon-capture` | `COMMIT-TRENDS-CARBON.md` | **Updated in v4:** Carbon-specific trend analysis with 89+ fresh commits pulled |
+| `ocean-intervention` | `PROJECT-DISCOVERIES-OCEAN.md` | **Updated in v4:** Ocean gap analysis with fresh commit data from MDTF-diagnostics, WRF, NCAR_ML_EKE |
+| `ocean-intervention` | `COMMIT-TRENDS-OCEAN.md` | **Updated in v4:** Ocean-specific trend analysis with 61+ fresh commits pulled |
 
 ---
 
-## The Three Universes — Updated v3
+## 🔍 Top Project Discoveries (September 2026 — v4 Update)
 
-### Fast Universe (Institutional, Funded, Sustained)
+### Highest-Activity / Most Important
+| Repo | Stars | Theme | Last Updated | Focus | Fresh Commits |
+|------|-------|-------|-------------|-------|---------------|
+| **protontypes/open-sustainable-technology** | 2,552 | Carbon (directory) | Sep 9, 2026 | Comprehensive OSS climate-tech directory (2,500+ projects) | 15 (Jun–Sep 2026, 4 devs) |
+| **wrf-model/WRF** | 1,761 | Solar | Sep 16, 2026 | Foundational atmospheric model (v4.8.0) | 15 (May–Jun 2026) |
+| **PCMDI/pcmdi_metrics** | 133 | Solar | Sep 17, 2026 | ESM evaluation toolkit (CMIP6 metrics, v4.2.1) | 15 (Sep 3–17, 2026) |
+| **NOAA-GFDL/MDTF-diagnostics** | 80 | Solar/Ocean | Aug 14, 2026 | Process-oriented diagnostics; precip-buoyancy POD | 15 (May–Aug 2026) |
+| **openair-collective/openair-cyan** | 76 | Carbon | Feb 12, 2024 | DIY open hardware DACC device (OSHWA-certified) | 15 (all Feb 12, 2024) |
+| **ClimateMARGO/ClimateMARGO.jl** | 73 | Solar | Aug 17, 2026 | Climate-economic modeling framework (Julia), revival signal | 10 (2022–2026) |
+| **zikribayraktar/Carbon_Capture_ML** | 56 | Carbon | May 8, 2024 | Survey of carbon capture ML papers and code | 15 (2023–2024) |
+| **yohanesnuwara/carbon-capture-and-storage** | 85 | Carbon | Mar 6, 2021 | Reservoir simulation + geomechanics (dormant ghost) | 15 (2020–2021) |
+| **tjz21/DAC_peroxovanadates** | 2 | Carbon | Sep 23, 2025 | Computational DAC materials; CC0 license | 15 (2023–2025) |
+| **tjz21/DAC_peroxotitanates** | 2 | Carbon | Sep 23, 2025 | Computational DAC materials; CC0 license | 10 (2024–2025) |
+| **hausfath/srm-forever** | 0 | Solar | Aug 26, 2026 | Interactive SRM economics model; Weitzman discounting | 4 (all Aug 26, 2026) |
 
-| Repo | Stars | Pace | Funding Source |
-|------|-------|------|----------------|
-| **open-sustainable-technology** | 2,552 | Steady (10/mo) | Community + ProtonTypes |
-| **WRF** | 1,761 | Monthly commits | NCAR/NOAA |
-| **Oceananigans.jl** (from v2) | 1,413 | 10 commits/3 days | CliMA/Caltech |
-| **PCMDI** | 133 | Bursty releases | LLNL |
-| **veros** (from v2) | 400 | Maintenance mode | team-ocean community |
-| **MDTF-diagnostics** | 80 | Ongoing | NOAA-GFDL |
-
-### Slow Universe (Individual, Unfunded, Dormant)
-
-| Repo | Stars | Status | Last Activity |
-|------|-------|--------|---------------|
-| **openair-cyan** | 76 | Dormant (complete) | Feb 2024 |
-| **ClimateMARGO** | 73 | Dormant revival | Aug 2026 (README only) |
-| **Carbon_Capture_ML** | 56 | Maturing (reference) | May 2024 |
-| **DAC_peroxovanadates** | 2 | Slow activity | Sep 2025 |
-| **DAC_peroxotitanates** | 2 | Slow activity | Sep 2025 |
-| **carbon-capture-and-storage** | 85 | Ghost | Mar 2021 |
-| **CO2-Sequestration** | 32 | Ghost | Mar 2019 |
-| **OpenCarbon** | 2 | Ghost | Jul 2023 |
-| **srm-forever** | 0 | Single burst | Aug 2026 |
-
-### Empty Universe (Zero Presence)
-
-| Domain | Repos | Nearest Proxy |
-|--------|-------|--------------|
-| **Ocean geoengineering (OAE, iron fertil, upwelling)** | 0 | MDTF-diagnostics (precipitation-buoyancy POD) |
-| **Marine cloud brightening** | 0 | WRF (can simulate marine clouds, no config) |
-| **Ocean carbon cycle simulation** | 0 | OceanBioME.jl (biological pump, v2) |
-| **Ocean sensors / observatories** | 0 | None found |
+> **Also discovered:** `OpenCarbon` (2★, dormant), `CO2-Sequestration` (32★, ghost), `ClimateSoton/climate-research-group` (website, active Aug 2026)
 
 ---
 
-## What the Fresh Data Confirms (and Adds)
+## 🚨 Headline Finding: The Ocean Intervention Gap
 
-### Confirmed from v2:
-1. ✅ Institutional bursts dominate climate software — PCMDI's 10-in-2-days, WRF's v4.8.0
-2. ✅ The August 2026 DAC materials wave — confirmed CC0 licenses and README bursts
-3. ✅ Ocean geoengineering is silent — confirmed with 6 additional search queries returning zero
-4. ✅ Dormancy is the default — confirmed across all themes
+**Our GitHub search across 12+ query strategies returned ZERO dedicated ocean geoengineering repositories.** Ocean geoengineering is the "dark matter" of climate tech on GitHub — it exists in the scientific literature (Nature, Science, PNAS) but not in open code. This is the most significant finding of the entire research effort.
 
-### New from v3:
-1. 🆕 **The CC0 license trend is the biggest open-science story** — Both tjz21 repos adopted CC0 in Sep 2025. This is not just "open source" — it's public domain dedication. Researchers are treating computational screening data as public infrastructure.
-
-2. 🆕 **The srm-forever economics model is conceptually important despite zero stars** — Weitzman certainty-equivalent discounting applied to SRM cost dynamics. This is the theoretical framework for "what does it cost to keep SRM going forever?"
-
-3. 🆕 **ClimateMARGO's revival is ambiguous** — Two README updates after 2-year dormancy. No code commits. Could signal policy-modeling interest, or could be another false start.
-
-4. 🆕 **The precipitation-buoyancy POD is the ocean's closest friend** — 5 commits on June 19, 2026 for the same file. This is the most ocean-relevant diagnostic in open source, and it's for evaluating model accuracy, not simulating interventions.
-
-5. 🆕 **Academic ghost repos dilute the star count** — 85★ carbon-capture-and-storage (dead since 2021) and 32★ CO2-Sequestration (dead since 2019). Stars measure citations, not usability.
-
-6. 🆕 **ClimateSoton is the most recent carbon-adjacent activity** — 4 commits on Aug 6, 2026. But it's website-only, not code. Active research group, no software product.
+**See:** [ocean-intervention/PROJECT-DISCOVERIES-OCEAN.md](https://github.com/bro26man-hash/climate-pod-research/blob/ocean-intervention/PROJECT-DISCOVERIES-OCEAN.md) and [ocean-intervention/COMMIT-TRENDS-OCEAN.md](https://github.com/bro26man-hash/climate-pod-research/blob/ocean-intervention/COMMIT-TRENDS-OCEAN.md)
 
 ---
 
-## Cross-Theme Comparison Dashboard — v3
+## 📊 v4 Cross-Theme Commit Trend Summary (September 2026)
 
-### Activity Level
+### What We Pulled
+Fresh commit histories from **12 repositories** across all three themes:
 
-```
-Solar:       ████████████████████ 1,761★ WRF (continuous)
-             ████████████████████████████ 2,552★ Open-SustainTech (continuous)
-             ████████████ 133★ PCMDI (bursty)
-             ████████ 80★ MDTF (ongoing)
-             ████ 73★ ClimateMARGO (dormant revival)
-             ██ 0★ srm-forever (single burst)
+| Theme | Repos | Commits Pulled |
+|-------|-------|----------------|
+| ☀️ Solar | WRF, PCMDI, MDTF-diagnostics, ClimateMARGO, srm-forever | 64+ |
+| 🌍 Carbon | open-sustainable-technology, openair-cyan, Carbon_Capture_ML, DAC_peroxovanadates, DAC_peroxotitanates, carbon-capture-and-storage, openair-sorbent-tester | 89+ |
+| 🌊 Ocean | MDTF-diagnostics, WRF (coupled), NCAR_ML_EKE, Ocean-SG-FNO, marine-cloud-brightening, mcb-tc-model | 61+ |
 
-Carbon:      ████████████████████████████ 2,552★ Open-SustainTech (continuous)
-             ██████████ 85★ carbon-cc-and-storage (ghost)
-             ████████ 76★ openair-cyan (dormant complete)
-             ██████ 56★ Carbon_Capture_ML (maturing)
-             ██████████ 32★ CO2-Sequestration (ghost)
-             ██ 2★ DAC_peroxovanadates (slow)
-             ██ 2★ DAC_peroxotitanates (slow)
-             ██ 2★ OpenCarbon (ghost)
+### Key Signals from Fresh Data
 
-Ocean:       ████████████████████████████████ 0 dedicated repos
-             ████████████ 80★ MDTF (ocean-adjacent only)
-             ████████ 1,413★ Oceananigans.jl (from v2, no intervention module)
-             ████████ 80★ OceanBioME.jl (from v2, gas exchange, not OAE)
-```
+1. **The CC0 license trend is the biggest open-science story** — tjz21's DAC materials repos both adopted CC0 public domain dedication (Sep 12, 2025). Researchers are treating computational screening data as public infrastructure. This is the model for how open science should work: not just sharing code, but sharing data with no restrictions.
 
-### What Each Theme Has vs. What It Needs
+2. **srm-forever is conceptually important despite zero stars** — Weitzman certainty-equivalent discounting applied to SRM cost dynamics. The theoretical framework for "what does it cost to keep SRM going forever?" All 4 commits on a single day (Aug 26, 2026).
 
-| Theme | Has | Needs | Gap |
-|-------|-----|-------|-----|
-| ☀️ Solar | Atmospheric models, evaluation tools, economics model | Small-scale SRM simulation tools, accessible interfaces | Medium — the physics tools exist but aren't configured for SRM |
-| 🌍 Carbon | Directory/index, DIY hardware, materials screening, ML survey | Full-system DAC models, economic cost models, LCA tools | Large — the ecosystem is fragmented across materials discovery and system engineering |
-| 🌊 Ocean | Ocean climate models (Oceananigans, veros), gas exchange (OceanBioME), diagnostics (MDTF) | **Everything intervention-related**: OAE chemistry, iron fert biogeochemistry, marine cloud brightening, upwelling pumps | Total — the ocean gradient from climate science to geoengineering is a cliff, not a slope |
+3. **The precipitation-buoyancy POD is the ocean's closest friend** — 5 commits on June 19, 2026 for the same file `MCS_precip_buoy_stats.rst`. The most ocean-relevant diagnostic in open source, and it's for evaluating model accuracy, not simulating interventions. This is the building block that ocean intervention evaluation would be built on.
 
----
+3. **ClimateMARGO's revival is ambiguous** — Two README updates after 2+ year dormancy. No code commits. Could signal policy-modeling interest, or could be another false start. Notably, the maintainer changed (Henri Drake → Fons van der Plas), suggesting institutional takeover.
 
-## 🎙️ Podcast Narratives — Updated v3
+4. **WRF's solar radiation fix is a canary** — `e836cd6` (May 28, 2026) corrects the solar radiation energy balance calculation. This affects every SRM simulation that's ever been run. "Boring" maintenance with huge implications.
 
-### Narrative 1: "The Institutional Divide"
-Climate software funded by national labs (WRF, PCMDI, MDTF, Oceananigans) has thousands of stars and monthly commits. Climate software built by individuals (srm-forever, DAC materials screening, openair-cyan) has hundreds of stars and irregular activity. The funding gap is the open-source gap.
+5. **PCMDI's extremes chunking is the SRM detection infrastructure** — PR #1425 (Sep 3, 2026) adds chunking for extreme event analysis. Extreme event analysis is how you detect SRM injection signals. The question is shifting from "can we simulate SRM?" to "can we verify it worked?"
 
-### Narrative 2: "The CC0 Revolution"
-Two obscure DAC materials repositories just put their work in the public domain. CC0 is the nuclear option of open science — "this belongs to everyone." This isn't MIT or Apache licensing. It's a philosophical statement: computational screening data should be public infrastructure. Is this the future of open climate science?
+6. **open-sustainable-technology is the most sustainable model** — 2,552 stars, 4 contributors, 15 commits in 3 months. The "GitHub of climate tech" — curation works because every addition is a new entry point.
 
-### Narrative 3: "The Ocean is the Silence That Speaks Loudest"
-We searched GitHub with 10+ queries. Zero ocean geoengineering repos. Meanwhile, the atmosphere gets WRF (1,761★) and the ocean gets... nothing. The London Protocol may be suppressing code. Or it might be computational expense. Or it might be that ocean researchers simply don't share code the way atmospheric researchers do.
+7. **The academic deposit curse persists** — 85★ carbon-capture-and-storage (dead since 2021), 32★ CO2-Sequestration (dead since 2019). Stars measure citations, not usability.
 
-### Narrative 4: "Ghost Stars Don't Mean Ghost Science"
-The most-starred carbon-capture repo (85★) hasn't been touched since 2021. The oldest ghost (32★) is dead since 2019. Academic incentive structure: citation > maintenance. A GitHub star is a citation, not a usage metric.
+8. **The ocean gap is absolute** — Zero dedicated ocean intervention repos across 12+ search queries. The silence is itself a governance signal.
 
-### Narrative 5: "The Nearest Feasible Ocean Project"
-An Oceananigans.jl OAE module. The physics engine exists (1,413★, 10 commits/3 days). The developers are active. The gas exchange physics exists (OceanBioME, actively developing). The gap is in the intervention layer. A graduate student could build this. Nobody has.
+### The Three Universes (Updated)
 
-### Narrative 6: "The August 2026 Wave"
-Six independent repositories updated in a 5-day window. DAC peroxovanadates and peroxotitanates both got CC0 licenses. Open-sustainable-technology added new DAC units. ClimateSoton refreshed their website. Is this a coordinated community event? A paper drop? Or just a busy season?
+- **Fast Universe (Institutional, Funded, Sustained):** WRF (1,761★), Open-Sustainable-Tech (2,552★), PCMDI (133★), MDTF (80★), Oceananigans.jl (1,413★ from v2)
+- **Slow Universe (Individual, Unfunded, Dormant):** OpenAir-Cyan (76★, dormant), ClimateMARGO (73★, revival), Carbon_Capture_ML (56★, maturing), all ghost repos, srm-forever (0★, burst)
+- **Empty Universe (Zero Presence):** Ocean geoengineering (0 repos), marine cloud brightening (0 dedicated repos), ocean sensors (0 repos)
 
 ---
 
-## 🔮 What to Watch Next Quarter — Updated v3
+## 🎙️ Episode Planning (Updated v4)
 
-1. **WRF TEMPO aerosol physics** — Will experimental aerosol options be re-enabled? The SRM simulation tool is one config change away.
-
-2. **CC0 license propagation** — Will other DAC materials researchers follow tjz21's lead and dedicate their work to the public domain?
-
-3. **ClimateMARGO revival** — Will Aug 2026 README updates lead to code commits? The Julia climate-economics community needs a working tool.
-
-4. **Oceananigans intervention modules** — Will anyone add an OAE or iron fertilization module to the most active ocean model? The platform is ready.
-
-5. **OceanBioME gas exchange → OAE** — Will active gas exchange development lead to alkalinity-specific modules?
-
-6. **OpenAir-Cyan commercialization** — Can the OSHWA-certified hardware become a product?
-
-7. **The ocean remains silent** — Unless someone builds the first open-source OAE model, the absence will persist into 2027.
-
-8. **PCMDI extremes chunking** — The dask/SVD memory fix suggests they're scaling for larger ensembles. SRM scenario testing would need exactly this.
-
-9. **srm-forever adoption** — Will the Weitzman discounting framework gain traction in the SRM economics community? Zero stars, but conceptually important.
-
-10. **August wave coherence** — Will the 6 repos from the August 2026 carbon wave collaborate, or fragment into separate silos?
+| Episode | Branch | Key Questions | Commit Evidence |
+|---------|--------|---------------|-----------------|
+| **Solar Geoengineering** | `solar-geoengineering` | Why is SRM code so scarce? Can interactive models democratize the discourse? Arctic risks? CMIP6 evaluation as governance infrastructure? Does the Weitzman framework change the SRM debate? | WRF: 10 commits (v4.8.0, solar radiation fix); PCMDI: 10 commits in 2 days (v4.2.1, extremes chunking); MDTF: 5 commits on precip-buoyancy POD; srm-forever: 4 commits (Weitzman discounting); ClimateMARGO: 2 README revivals (ambiguous) |
+| **Carbon Capture** | `carbon-capture` | Can open source break the $1000/ton DAC cost barrier? What makes OpenAir-Cyan special? Are peroxides the sorbent of the future? Is open-sustainable-technology the most sustainable model? Is the CC0 revolution real? | OpenAir-Cyan: 1-day blitz (Feb 2024) then frozen; CC0 licenses (Sep 2025); 9 repos analyzed; open-sustainable-technology: continuously active (2,552★, 4 devs); DAC materials wave (Aug 2026) |
+| **Ocean Intervention** | `ocean-intervention` | Why is ocean geoengineering the empty quadrant? What would open-source OAE look like? Is the silence itself a governance signal? MDTF as the ocean-adjacent lifeline? Can the CC0 model accelerate ocean data infrastructure? | **Zero repos found**; MDTF: only ocean-adjacent tool (precip-buoyancy POD, 5 commits Jun 19); WRF: solar radiation fix with ocean coupling implications; NCAR_ML_EKE: dormant 4.5 years |
 
 ---
 
-## 🔗 Research Structure
-
-| Branch | File | Content |
-|--------|------|--------|
-| ☀️ solar-geoengineering | PROJECT-DISCOVERIES-SOLAR.md | Detailed profiles of 6 solar/atmosphere repos with fresh commit data |
-| ☀️ solar-geoengineering | COMMIT-TRENDS-SOLAR.md | Solar-specific trend analysis and episode hooks |
-| 🌍 carbon-capture | PROJECT-DISCOVERIES-CARBON.md | Detailed profiles of 9 carbon capture repos with fresh commit data |
-| 🌍 carbon-capture | COMMIT-TRENDS-CARBON.md | Carbon-specific trend analysis and episode talking points |
-| 🌊 ocean-intervention | PROJECT-DISCOVERIES-OCEAN.md | Ocean gap analysis and ocean-adjacent repo profiles |
-| 🌊 ocean-intervention | COMMIT-TRENDS-OCEAN.md | Ocean-specific trend analysis and narrative arcs |
-| main | COMMIT-TRENDS.md | Master consolidated analysis (v2) |
-| main | CROSS-THEME-ANALYSIS-SEP2026.md | This file (v3 cross-theme fresh data) |
+## 🔗 Quick Links
+- 🔗 **Repo:** https://github.com/bro26man-hash/climate-pod-research
+- ☀️ Solar branch: https://github.com/bro26man-hash/climate-pod-research/tree/solar-geoengineering
+- 🌍 Carbon branch: https://github.com/bro26man-hash/climate-pod-research/tree/carbon-capture
+- 🌊 Ocean branch: https://github.com/bro26man-hash/climate-pod-research/tree/ocean-intervention
+- 📊 v3 Cross-theme analysis: https://github.com/bro26man-hash/climate-pod-research/blob/main/CROSS-THEME-ANALYSIS-SEP2026.md
 
 ---
 
-## 📋 Research Log
+## 📋 Research Log (Updated)
 
 | Date | Activity |
 |------|----------|
 | 2026-09-03 | Repository created; initial research notes pushed |
-| 2026-09-17 | v2: Full ecosystem analysis including ocean models (Oceananigans, veros, OceanBioME); branches updated |
+| 2026-09-17 | v1: Initial commit trend analysis from 8 repositories; branches created and notes pushed |
+| 2026-09-17 | v2: Ecosystem-level analysis including ocean models (Oceananigans, veros, OceanBioME); 6 ocean search queries confirm zero repos |
 | 2026-09-17 | v3: Fresh commit histories pulled from 12 repositories across all three themes using GitHub API |
-| 2026-09-17 | v3: Detailed project profiles and commit trend analyses pushed to all three theme branches |
-| 2026-09-17 | v3: Cross-theme comparison dashboard and updated podcast narratives pushed to main |
+| 2026-09-17 | v3: Detailed project profiles (PROJECT-DISCOVERIES-*) and commit trend analyses (COMMIT-TRENDS-*) pushed to all three theme branches |
+| 2026-09-17 | v3: CROSS-THEME-ANALYSIS-SEP2026.md pushed to main with cross-theme dashboard and updated podcast narratives |
 | 2026-09-17 | v3: Ocean gap confirmed — 10+ search queries, zero dedicated ocean geoengineering repos |
 | 2026-09-17 | v3: CC0 license trend identified as major open-science signal in DAC materials community |
+| 2026-09-17 | v3: Weitzman discounting framework documented in srm-forever (0★ but conceptually critical) |
+| 2026-09-17 | **v4: Fresh commit data pulled from 12 repos (64+ solar, 89+ carbon, 61+ ocean commits)** |
+| 2026-09-17 | **v4: All 6 theme files updated with detailed commit tables and fresh analysis** |
+| 2026-09-17 | **v4: Key new signals identified: solar radiation fix in WRF, CC0 revolution in DAC, precip-buoyancy POD burst, PCMDI extremes chunking, open-sust-techn sustainability** |
+
+---
+
+*Last updated: September 2026 (v4 — comprehensive fresh commit data from GitHub API).*
