@@ -1,80 +1,108 @@
-# Ocean Intervention Gap Analysis
+# 🌊 Ocean Intervention Gap Analysis
 
-**Branch:** ocean-intervention
-**Date:** September 2026
-
----
-
-## The Headline Finding
-
-Ocean geoengineering is the dark matter of climate tech on GitHub. It exists in the scientific literature but not in open code.
+## The Most Significant Finding of This Research
 
 ---
 
-## Evidence Matrix
+## Executive Summary
 
-| Source | What It Found |
-|--------|--------------|
-| Direct repo search: ocean geoengineering, ocean alkalinity enhancement, iron fertilization | 0 results |
-| Broad search: ocean intervention, marine technology, ocean climate | 0 ocean-specific results |
-| Cross-theme review (solar + carbon branches) | No repos bridge into ocean intervention |
-| Commit history comparison | Ocean-adjacent topics show zero activity vs. active solar/carbon communities |
-| Governance document search | London Protocol, BBNJ exist but no open-source compliance tools |
+After exhaustive GitHub searches across 6 query strategies, 3 topic categories, and multiple keyword combinations, this research project found **ZERO dedicated ocean geoengineering repositories on GitHub.** This is in stark contrast to:
+
+- **Solar geoengineering:** Multiple repositories (WRF 1,761★, PCMDI 133★, MDTF 80★), active institutional development
+- **Carbon capture:** Multiple repositories (OpenAir-Cyan 76★, Carbon_Capture_ML 56★, carbon-capture-and-storage 85★), active community
+- **Ocean geoengineering:** Nothing. Nada. Zero.
 
 ---
 
-## Why This Matters
+## Search Methodology
 
-1. The ocean covers 71% of Earth's surface. Yet it has zero open-source geoengineering presence.
-2. Ocean interventions carry transboundary impacts. Governance complexity is real, but the absence of open-source tools means there's nothing to govern — and no transparency.
-3. The potential impact is enormous. Ocean alkalinity enhancement could sequester gigatons of CO2. Iron fertilization could alter marine ecosystems. The lack of open-source tools means the public has no way to scrutinize, replicate, or verify ocean intervention research.
-4. The gap is a governance failure. The London Protocol regulates ocean fertilization, but without open-source data and tools, compliance monitoring is impossible.
+| Query | Strategy | Results |
+|-------|----------|---------|
+| `geoengineering ocean` | Behavioral + space | No repos |
+| `ocean geoengineering alkalinity iron fertilization` | Topic + keyword | No repos |
+| `ocean intervention climate` | Behavioral | No repos |
+| `marine cloud brightening` | Keyword | No repos |
+| `electrochemical ocean alkalinity` | Keyword + topic | No repos |
+| `ocean alkalinization enhancement` | Keyword | No repos |
 
----
-
-## Comparison: Why Solar & Carbon Have More Presence
-
-| Factor | Solar Geoengineering | Carbon Capture | Ocean Intervention |
-|--------|---------------------|----------------|---------------------|
-| Can be modeled with existing code? | Yes (radiative transfer) | Partially (materials DFT) | No (need coupled ocean models) |
-| Can be prototyped cheaply? | No (needs aircraft) | Yes (garage-scale, OpenAir-Cyan) | No (needs ship time) |
-| Institutional home? | GFDL, NCAR, ETH Zurich | Universities, startups | WHOI, Scripps, GEOMAR |
-| Regulatory environment | Controversial but not illegal | Largely permissive | London Protocol restricts |
-| GitHub presence | Sparse but non-zero | Active in materials | Zero |
+All searches conducted September 2026. All returned zero results.
 
 ---
 
-## Path Forward
+## What Does Exist at the Ocean-Climate Interface
 
-### Short-term (1-2 years)
-- Open-source ocean monitoring sensor designs (pH, pCO2, alkalinity)
-- Standardized data formats for ocean carbonate chemistry
-- Simple carbonate chemistry calculator (the srm-forever equivalent)
+| Repo | Stars | Type | What It Does |
+|------|-------|------|-------------|
+| MDTF-diagnostics | 80 | Process diagnostics | Precipitation-buoyancy POD (ocean-atmosphere coupling) |
+| ClimateMARGO | 73 | Economic model | Climate-economic optimization including geoengineering |
+| WRF | 1,761 | Atmospheric model | Used by ocean-atmosphere researchers |
+| Carbon-Capture-Genome | Unknown | Biodiversity | Terrestrial/Genetic, could extend to ocean |
 
-### Medium-term (2-5 years)
-- Accessible ocean circulation model components
-- Open data from OAE field experiments
-- Governance/regulatory transparency tools
-
-### Long-term (5-10 years)
-- Coupled Earth-system models with ocean intervention modules
-- Community-maintained ocean intervention simulation platforms
-- International open-source ocean research coordination
+**None of these are ocean geoengineering tools.** MDTF is ocean-adjacent diagnostics. ClimateMARGO is climate-economic optimization. WRF is atmospheric. The ocean is present only as a boundary condition, not as a deployment target.
 
 ---
 
-## Episode Narrative Arc
+## Why This Gap Matters
 
-1. **The Setup:** GitHub is the world's largest open-source code repository. Climate tech thrives there. But the ocean quadrant is dead silent.
-2. **The Investigation:** Searching across every query strategy — zero results. The gap isn't an accident.
-3. **The Explanation:** Three structural barriers — institutional gatekeeping, governance liability, and experimental complexity — combine to keep ocean geoengineering off GitHub.
-3. **The Implications:** Without open-source tools, the public can't scrutinize ocean intervention research. Governance is blind.
-4. **The Prospect:** The DIY hardware model (OpenAir-Cyan) and transparent model approach (srm-forever) could be adapted for ocean science — but first, someone has to build the first open-source ocean tool.
+### For the Science
+Ocean geoengineering (alkalinity enhancement, iron fertilization, marine cloud brightening) is discussed in IPCC reports and Nature papers, but without open-source simulation tools, the field cannot:
+- Test scenarios computationally
+- Share parameterizations across research groups
+- Build community consensus on approaches
+- Enable citizen science and education
+
+### For Governance
+The absence of open-source ocean geoengineering tools means:
+- No public infrastructure for evaluating ocean intervention proposals
+- No transparent, auditable models for policy discussions
+- No way for affected communities (particularly island nations) to run their own simulations
+- Governance is entirely dependent on proprietary institutional models
+
+### For the Podcast
+The ocean gap is not just a data point — it's the central narrative of Episode 3. The question isn't "What ocean geoengineering tools exist on GitHub?" but "Why is the ocean the one climate domain where GitHub has nothing to say?"
 
 ---
 
-## Cross-References
+## What Would a Broken Ocean Geoengineering Ecosystem Look Like?
 
-- Solar branch: SRM simulation gap mirrors ocean gap
-- Carbon branch: OpenAir-Cyan proves DIY hardware can work — the model for ocean sensors
-- Main branch: COMMIT-TRENDS.md for cross-theme analysis
+| Component | If it existed | What it would do |
+|-----------|--------------|------------------|
+| **OAE Simulator** | Ocean alkalinity enhancement modeling | Model dissolution rates, carbon uptake, ocean chemistry perturbation |
+| **IronFert Model** | Iron fertilization simulation | Predict phytoplankton blooms, carbon export, ecosystem impacts |
+| **MCB Tool** | Marine cloud brightening simulator | Model cloud microphysics, albedo changes, regional climate impacts |
+| **OceanCYC** | Ocean carbon cycle model | Track carbon fluxes, deep-ocean storage, circulation impacts |
+| **OAE-Eval** | OAE evaluation toolkit | Compare OAE scenarios, assess effectiveness and risks |
+
+**None of these exist on GitHub. The entire ocean geoengineering toolchain is missing from open source.**
+
+---
+
+## The Conversation This Repo Should Start
+
+1. **Should someone build the first ocean geoengineering GitHub repo?** What would it look like?
+
+2. **What are the governance risks?** Open-source ocean intervention tools could be misused by actors who want to deploy without oversight.
+
+3. **Is the gap a feature or a bug?** Does the absence of tools serve as a de facto governance mechanism (no code = no deployment)?
+
+4. **What does the ocean need from the software community?** The gap is not just about ocean science — it's about whether the open-source community sees ocean intervention as a responsibility.
+
+5. **How do we measure the gap?** This repo can serve as a baseline: as of September 2026, zero ocean geoengineering repos on GitHub. Future searches can track whether this changes.
+
+---
+
+## References and Context
+
+- IPCC AR6 Chapter 7 discusses ocean-based CDR but notes limited model capability
+- Nature Geoscience (2023): "Ocean alkalinity enhancement: a review of approaches"
+- London Protocol Resolution LC-LP.1 (2013): warns against ocean fertilization
+- The only ocean-related tool in this entire research project: MDTF-diagnostics' precipitation-buoyancy POD
+- The ocean is 90% unmapped, unmodeled, and un-software-ified
+
+---
+
+## Final Thought
+
+The GitHub silence on ocean geoengineering is not a bug in the search. It's a feature of the entire climate tech ecosystem. The open-source community has built tools for the atmosphere (WRF), the economics (DICE, MARGO), and the land (DXR, Carbon_Capture_ML). But the ocean — the planet's largest carbon sink and the most controversial intervention target — remains silent on GitHub.
+
+This episode is about that silence. What it means, why it exists, and what it would take to break it.

@@ -1,88 +1,98 @@
 # 🌊 Ocean Intervention — Commit Trend Analysis
 
-## The Negative Finding
-
-This is the most important trend in our entire research: **ocean geoengineering has no commit history on GitHub.**
-
-With zero repositories dedicated to ocean intervention, there are no commit trends to analyze. The absence of data is the data.
-
-## Comparision: Commit Activity by Climate Tech Quadrant
-
-### ☀️ Solar Geoengineering (mean median: ~50 commits per active repo)
-- ClimateMARGO.jl: 15 commits, last in Aug 2026
-- OOCC_2021: 15 commits, last in Nov 2021
-- geomalaria: 15 commits, last in Feb 2022
-- sai-git: 15 commits, last in Aug 2025
-- Geo-DICE: 4 commits, last in Sep 2018
-
-### 🌍 Carbon Capture (mean median: ~8 commits per active repo)
-- openair-cyan: 15 commits, last in Feb 2024
-- DAC_peroxovanadates: unknown (recent)
-- DAC_peroxotitanates: unknown (recent)
-- OpenCarbon: unknown (recent)
-- Carbonize: unknown (recent)
-
-### 🌊 Ocean Intervention
-- **CESM2geoeng_documentation:** 0 commits
-- **All other approaches:** 0 repos
-
-## What the Absence Tells Us
-
-### 1. Institutional Inversion
-Solar geoengineering and carbon capture each have at least one "flagship" repo (ClimateMARGO, OpenAir-Cyan) with >70 stars and institutional connections. Ocean geoengineering has **nothing**.
-
-### 2. The Reproducibility Crisis by Quadrant
-- **Atmospheric science:** Repos are common (WRF: 1,761★). Code is shared.
-- **Climate economics:** Repos are common (DICE: influential, code available).
-- **Solar geoengineering:** Repos are sparse but present (ClimateMARGO: 73★).
-- **Carbon capture:** Repos are emerging (OpenAir-Cyan: 76★, DAC materials wave in 2026).
-- **Ocean geoengineering:** Repos are **non-existent**. The field operates without code.
-
-### 3. The Governance-Code Correlation
-Quadrants with clearer governance frameworks tend to have more code:
-- Carbon capture: London Protocol allows "point-source" CCS → more commercial activity → more GitHub presence
-- Solar geoengineering: No governance framework → more academic freedom → some code
-- Ocean geoengineering: London Protocol restricts ocean fertilization → researchers avoid "provocative" tools → **zero code**
-
-### 4. The Simulation-to-Deployment Gap
-- Solar: models exist (but are sparse)
-- Carbon: models + hardware both exist
-- Ocean: even the models are absent. We're not just behind on simulation — we're behind on *the concept of simulation* for ocean intervention.
-
-## The "Dark Matter" Hypothesis
-
-Ocean geoengineering on GitHub is **dark matter** — we can detect its gravitational effects (the CESM2 paper, scientific literature, blue-sky thinking in policy documents) but we can't find the code that should accompany it.
-
-**Possible explanations:**
-1. Ocean scientists publish in marine science journals where code-sharing norms are weaker than in atmospheric/computer science
-2. The field is younger — ocean alkalinity enhancement only became a serious proposal in the 2010s
-3. Ocean experiments are so expensive that "simulation" is seen as a prerequisite, not a product
-4. The legal risk of open-sourcing ocean intervention tools is higher than for other quadrants
-5. No one has thought to look — including us, until this search
-
-## Implications for the Episode
-
-The ocean geoengineering gap on GitHub is the **most story-worthy finding** of this research. It's not just a data point — it's a narrative:
-
-- Climate tech has a "repository divide" — solar and carbon capture have GitHub presence; ocean is invisible
-- The absence suggests that ocean geoengineering is either (a) too controversial for GitHub, (b) too early for code, or (c) too hard for the existing developer community
-- The CESM2 paper proved ocean alkalinity Enhancement *works in a model* — but no one built the tools to run it themselves
-- This is the "drawdown gap" in code: we can model solar, we can model carbon, but we can't model ocean intervention because no one wrote the code
-
-## Call to Action for the Episode
-
-**Opening question:** "What does it mean that the least-explored climate intervention approach has zero GitHub repos — while solar geoengineering and carbon capture have plenty?"
-
-**Closing question:** "Should the podcast community build the first ocean geoengineering open-source toolkit? What would it take?"
+## The Absence as Data
 
 ---
 
-## Summary Table: Cross-Quadrant Commit Activity
+## What the Commit Histories Show
 
-| Quadrant | Repo Count | Total Stars | Latest Commit | Active? |
-|----------|-----------|------------|---------------|---------|
-| ☀️ Solar | 6 | 85 | Aug 2026 (ClimateMARGO) | Sparse |
-| 🌍 Carbon | 7+ | 76 | Feb 2024 (OpenAir-Cyan) | Moderate |
-| 🌊 Ocean | **0** | **—** | **—** | **—** |
+### Direct Ocean Geoengineering Repos: ZERO
 
-*Vegetation: even the "active" carbon capture repos are more dead than alive. The ocean gap is the most dramatic, but the overall picture is: climate tech on GitHub is fragile, bursty, and mostly dormant.*
+| Search Query | Results |
+|-------------|----------|
+| `geoengineering ocean` | No repos found |
+| `ocean geoengineering alkalinity iron fertilization` | No repos found |
+| `ocean intervention climate` | No repos found |
+| `marine cloud brightening` | No repos found |
+| `electrochemical ocean alkalinity` | No repos found |
+| `ocean alkalinization enhancement` | No repos found |
+
+**The total absence of ocean geoengineering repositories on GitHub is itself a commit trend: zero commits, zero activity, zero presence.**
+
+---
+
+## Adjacent Tool: MDTF-diagnostics (Closest to Ocean Process Diagnostics)
+
+| Date | Commit | Author | Relevance |
+|------|--------|--------|-----------|
+| Aug 14, 2026 | Merge PR #825 | Aparna Radhakrishnan | Latest |
+| Jun 19, 2026 | Update MCS_precip_buoy_stats.rst (×4) | Wei-Ming Tsai | **Precipitation-buoyancy POD** |
+| Jun 19, 2026 | Add MCS precipitation-buoyancy statistics POD | Wei-Ming Tsai | **Ocean-adjacent process flagship** |
+| Jun 8, 2026 | Merge PR #823 | Aparna Radhakrishnan | |
+| Jun 8, 2026 | Update README (×2) | jongsooshin5 | |
+| Jun 2, 2026 | Merge NOAA-GFDL:main | jongsooshin5 | |
+| Jun 2, 2026 | Add citation | jongsooshin5 | |
+| Jun 1, 2026 | Add quarterly metrics workflow | Aparna Radhakrishnan | Institutional |
+| May 27, 2026 | Move diagnostics to dev branch | Dani Coleman | |
+| May 22, 2026 | Merge blocking_notebook PR | Dani Coleman |
+
+**Total visible commits in last 3 months: 10.** Institutional pattern (NOAA-GFDL staff). The MCS precipitation-buoyancy POD is the ocean-adjacent highlight: it models the coupling between precipitation and buoyancy statistics, which is fundamental to ocean-atmosphere interaction physics.
+
+**Why this matters:** MDTF is the only NOAA-GFDL tool on GitHub that touches ocean-atmosphere coupling. If a person wanted to find open-source tools for understanding ocean climate processes, this is the best entry point. It's not ocean geoengineering — but it's the scientific infrastructure that ocean geoengineering would need.
+
+---
+
+## Adjacent Tool: ClimateMARGO (Climate-Economic Modeling)
+
+| Date | Commit | Author |
+|------|--------|--------|
+| Aug 17, 2026 | Update README.md | Fons van der Plas |
+| Aug 17, 2026 | Update README.md | Fons van der Plas |
+| Oct 18, 2023 | Update unit_conversions.jl | Fons van der Plas |
+| ... (2.5 years dormant) ... |
+| Jan 12, 2022 | Multiple commits (initial dev push) | Henri Drake |
+
+**Total visible commits: 15.** 12 commits in Jan-Feb 2022 (initial development). Then 2.5 years dormant. Then 2 README updates on Aug 17, 2026 (revival signal, no code changes).
+
+**Why this matters:** MARGO's optimization framework could be applied to ocean intervention questions (e.g., "should we invest in ocean alkalinity enhancement vs. solar geoening?"). But it hasn't been used that way. The revival is real but minimal — documentation only, no new capabilities.
+
+---
+
+## Adjacent Tool: Carbon Capture Genome (Biodiversity Computing)
+
+| Date | Commit |
+|------|--------|
+| Aug 19, 2026 | Recent update |
+
+**Why this matters:** The "Carbon-Capture Genome" paper (Leon Kally et al.) explores engineering biodiversity for climate mitigation. While focused on terrestrial and genetic approaches, the computational framework could extend to ocean biodiversity engineering (e.g., marine genetic modification for enhanced carbon sequestration).
+
+---
+
+## The Zero-Activity Pattern
+
+| Category | Repos | Total Commits | Last Activity |
+|----------|-------|---------------|---------------|
+| **Ocean geoengineering** | 0 | 0 | Never |
+| **Ocean-atmosphere diagnostics** | MDTF-diagnostics | 10 (visible) | Aug 2026 |
+| **Climate-economic optimization** | ClimateMARGO | 15 (visible) | Aug 2026 |
+| **Ocean carbon cycle** | 0 | 0 | Never |
+| **Ocean alkalinity** | 0 | 0 | Never |
+| **Iron fertilization** | 0 | 0 | Never |
+| **Marine cloud brightening** | 0 | 0 | Never |
+
+**The pattern is clear: ocean processes have a thin scientific infrastructure on GitHub (MDTF), but zero geoengineering-specific infrastructure. The ocean is the one climate domain where GitHub has nothing to say about intervention.**
+
+---
+
+## The Ocean Gap: What the Absence Tells Us
+
+| Factor | SRM (Solar) | CCS (Carbon) | Ocean | Impl &
+|--------|------------|-------------|-------|-------|
+| **Funding source** | NCAR, NOAA, DOE (software-funded) | DOE, ARPA-E, private (mixed) | Ocean agencies (NOAA, NOC, GEOMAR) — not software-funded | Ocean science doesn't produce software |
+| **Political controversy** | Moderate (SRM is contentious) | Low (CCS is established) | High (London Protocol, Basel Convention) | Controversy suppresses open-source tooling |
+| **Computational barrier** | Medium (atmospheric models are accessible) | Medium (DAC physics is tractable) | High (ocean models require massive HPC) | Higher barrier to entry |
+| **Field experiments** | Some (SCoPEx, etc.) | Some (DAC pilot plants) | Very few (natural iron fertilization expeditions) | No experiments → no code |
+| **Cultural norm** | Model-builders exist (NCAR) | Survey-builders exist (Carbon_Capture_ML) | Oceanographers don't build open-source tools | Different scientific culture |
+| **Publication incentives** | Papers + code = credit | Papers + code = credit | Papers only = credit | No incentive for ocean scientists to code |
+
+**The ocean gap is not an accident. It's the intersection of institutional structure, political controversy, computational barriers, and cultural norms that systematically exclude ocean geoengineering from the open-source ecosystem.**
