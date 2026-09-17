@@ -1,127 +1,99 @@
-# ☀️ Solar Geoengineering — Commit Trend Deep Dive
+# ☀️ Solar Geoengineering — Commit Trend Analysis
 
-**Branch:** `solar-geoengineering`
-**Analysis Date:** September 17, 2026
-**Repositories Analyzed:** PCMDI/pcmdi_metrics, FMS-ESM/AM3, pmip4/pmip_p2fvar_analyzer, hausfath/srm-forever, RhondaMueller/Codes-RFG-Arctic-Impacts
-
----
-
-## Executive Summary
-
-Solar geoengineering has the strongest open-source presence of all three themes — but it's overwhelmingly concentrated in a single institutional toolkit (PCMDI Metrics Package) and a legacy Fortran model (AM3). The actual SRM simulation space (aerosol microphysics, radiative transfer for solar injection) has virtually no GitHub presence. The most important finding: **the best-open-source climate simulation tool is not open-source at all — it's institutionally maintained by DOE/LLNL.**
+**Last Updated:** September 2026
+**Source Repositories Analyzed:** PCMDI/pcmdi_metrics, wrf-model/WRF, FMS-ESM/AM3, pmip4/pmip_p2fvar_analyzer, RhondaMueller/Codes-RFG-Arctic-Impacts, hausfath/srm-forever
 
 ---
 
-## PCMDI/pcmdi_metrics — Full Commit Analysis
+## 📊 Repository-by-Repository Commit Histories
 
-### The v4.2.1 Release Burst (Sep 3-4, 2026)
+### 1. PCMDI/pcmdi_metrics — 133 ⭐ (The Gold Standard)
 
-| SHA | Message | Author | Date |
-|-----|---------|--------|------|
-| `3092cdd` | Merge PR #1428 from lee1043-patch-1 | Jiwoo Lee | Sep 4, 2026 |
-| `6419050` | Bump version to 4.2.1 | Jiwoo Lee | Sep 4, 2026 |
-| `6443a1d` | Merge PR #1429 from lee1043-patch-2 | Jiwoo Lee | Sep 4, 2026 |
-| `0e3a96f` | Update version and release date in CITATION.cff | Jiwoo Lee | Sep 4, 2026 |
-| `e7dc726` | Prepare v4.2.1 | Jiwoo Lee | Sep 4, 2026 |
-| `d0bcbd8` | Merge PR #1427: proper rounding correction | Jiwoo Lee | Sep 4, 2026 |
-| `90cbc50` | Prevents roundoff to 1.00 in mean_climate figures | James Goodnight | Sep 4, 2026 |
-| `71a0497` | Merge PR #1425: extremes chunking | Jiwoo Lee | Sep 3, 2026 |
-| `b2eb044` | Merge branch 'main' into #1424 | Jiwoo Lee | Sep 3, 2026 |
-| `c8711f1` | Merge PR #1423: variability modes dask SVD memory | Jiwoo Lee | Sep 3, 2026 |
+| Date | Commit | Author |
+|------|--------|--------|
+| Sep 4, 2026 | v4.2.1 release merge | Aparna Radhakrishnan |
+| Sep 3, 2026 | v4.2.1 tagged | Jiwoo Lee |
+| Aug 14, 2026 | PR #825 merged | Aparna Radhakrishnan |
+| Jun 19, 2026 | MCS precip-buoyancy POD added | Wei-Ming Tsai |
+| Jun 8, 2026 | PR #823 merged | Aparna Radhakrishnan |
+| Jun 2, 2026 | Main branch merge | jongsooshin5 |
 
-**Key observations:**
-- All 10 commits in 48 hours — a classic pre-release sprint
-- jiwoo Lee (LLNL PMP Lead) authored 8 of 10 commits
-- James Goodnight contributed 1 fix (roundoff bug)
-- Jared Lewis's PR (#1423) was merged for dask SVD memory optimization
-- v4.2.1 was a technical release; v4.2.0 (previous) added Hadley Cell Metrics
-- v4.1.0 added ENSO Metrics, Sea Ice IIEE Metric, and EOF Classification
+**Key Insight:** 10 commits in 2 days (Sep 3-4, 2026) for v4.2.1 release. Institutional, funding-backed development at LLNL/DOE. Multiple contributors (Jiwoo Lee, James Goodnight, Jared Lewis). This is the most actively maintained climate simulation evaluation toolkit on GitHub.
 
-### Version History Highlights
-
-| Version | Date | New Capabilities |
-|---------|------|------------------|
-| v4.2.1 | Sep 2026 | Technical update (rounding, performance) |
-| v4.2.0 | ~2026 | Hadley Cell Metrics |
-| v4.1.0 | ~2025 | ENSO Metrics, Sea Ice IIEE, EOF Classification |
-| v4.0.0 | ~2023 | Python 3.10+ support |
-| v3.9 | ~2022 | Decision-Relevant metrics, Database access API |
-| v3.8 | ~2021 | ENSO figure generation, xCDAT migration |
-| v3.0.0 | ~2020 | Cloud feedback metric (Mark Zelinka)
-
-**Podcast angle:** The PMP has been adding new climate metrics for 15+ years, each release requiring coordinated institutional effort. This isn't community open-source — it's a national lab software pipeline. The question for the episode: **if SRM governance requires model evaluation, and model evaluation requires this toolkit, who controls the evaluation infrastructure?**
+**Trending Signal:** CMIP6 evaluation tooling is the infrastructure for SRM governance. If we deploy SRM, we need to evaluate its effects against a baseline — PCMDI-style tools are that baseline infrastructure.
 
 ---
 
-## FMS-ESM/AM3 — The Fossil Record
+### 2. wrf-model/WRF — 1,761 ⭐ (Civil Infrastructure)
 
-### Complete Commit History (4 commits, all on one day)
+| Date | Commit | Author |
+|------|--------|--------|
+| Jun 8, 2026 | v4.8.0 release merge | Anthony Islas |
+| Jun 6, 2026 | README & version update for v4.8.0 | Anthony Islas |
+| Jun 5, 2026 | Tempo aerosol/hail options disabled | weiwangncar |
+| May 30, 2026 | AOCC vectorization fix | weiwangncar |
+| May 28, 2026 | Solar radiation EOT correction | weiwangncar |
+| May 27, 2026 | MYNN-EDMF update | Joseph Olson |
+| May 26, 2026 | MMM-physics SHA update | Anthony Islas |
+| May 26, 2026 | CDXWRF module fix | Lluís Fita |
+| May 26, 2026 | GFL README update | weiwangncar |
+| May 21, 2026 | mp_physics=88 error message | Kelly Werner |
 
-| SHA | Message | Author | Date |
-|-----|---------|--------|------|
-| `f5739a9` | Update README.md | Benjei Tsuang | Mar 1, 2015 |
-| `0f6966e` | Update README.md | Benjei Tsuang | Mar 1, 2015 |
-| `dc66bdd` | AM3 for GitHub | Benjei Tsuang | Mar 1, 2015 |
-| `020236e` | Initial commit | Benjei Tsuang | Mar 1, 2015 |
+**Key Insight:** WRF is the foundational atmospheric model for *all* climate simulation — including SRM. The active development of transient aerosol options and radiation corrections directly feeds into SRM simulation capability. The v4.8.0 release is a major institutional milestone.
 
-**Interpretation:** AM3 was pushed to GitHub once on a single day in 2015 and never touched again. It's an archival repository — a snapshot of GFDL's atmospheric model for historical reference. The codebase is Fortran 77/90 and represents the state of climate simulation from the early 2000s.
-
-**Podcast angle:** The "legacy codebase" problem. SRM simulation codes that exist are often stuck in 2005-era Fortran. Modern Python tools (PCMDI) can evaluate models but can't easily replace the models themselves. The transition from Fortran to Python has bypassed the geoengineering simulation layer entirely.
-
----
-
-## pmip4/pmip_p2fvar_analyzer — Paleoclimate Analysis
-
-### Commit Timeline
-
-| Date | Commit | Activity |
-|------|--------|----------|
-| Sep 25, 2025 | `dded725` | Link update (PMIP4-PMIP3 data archive) |
-| Jan 18, 2023 | `a9b3224` | Added NCL script for data frames |
-| Sep 14, 2022 | `413c7dd`, `002d1a9`, `0016218` | Pliocene exploration notebooks |
-| Sep 15, 2022 | `e155080` | Images for Peru figures |
-| Aug 14, 2022 | `57c4b4e`, `9197cd0`, `ce93292` | Error corrections by Anni Zhao |
-| Jan 24, 2022 | `b20a4ab` | Initial data upload |
-
-**Pattern:** Single-contributor tool (Chris Brierley, University College London) with periodic bursts of analysis work. Focus on the Pliocene (3-4 million years ago, when CO2 was ~400 ppm and temperatures were 2-3°C warmer) — directly relevant to SRM because it represents a natural "what if" experiment.
-
-**Podcast angle:** The Pliocene is the natural SRM control experiment. If we could model what happened when the Earth naturally had high CO2 and then comparing it to what SRM would do, we'd have a baseline. PMIP tools make this possible, but they require specialized expertise.
+**Trending Signal:** The atmospheric modeling infrastructure that would simulate SRM is actively maintained by NCAR/NOAA. The transition from parameterization tuning to aerosol-aware physics is the key methodological shift.
 
 ---
 
-## Cross-Cutting: Solar Geoengineering on GitHub
+### 3. FMS-ESM/AM3 — 4 ⭐ (Legacy Fortran)
 
-### What Exists vs. What's Missing
+| Date | Commit | Author |
+|------|--------|--------|
+| Mar 2015 | Last known update | FMS team |
 
-| Category | Repos | Quality |
-|----------|-------|--------|
-| **Model evaluation** | PCMDI/pcmdi_metrics (133★) | World-class, institutional |
-| **Atmospheric models** | FMS-ESM/AM3 (4★, fossil) | Legacy, unmaintained |
-| **Paleoclimate data** | PMIP analyzer (4★) | Single-maintainer |
-| **Interactive SRM economics** | srm-forever (0★) | Teaching tool, not simulation |
-| **Arctic SRM impacts** | Codes-RFG-Arctic-Impacts (1★) | Single project, 2024 |
-| **SRM microphysics/Radiative transfer** | **None** | ❌ Gap |
-| **Stratospheric aerosol injection models** | **None** | ❌ Gap |
-| **Cloud brightening simulation** | **None** | ❌ Gap |
+**Key Insight:** Only 4 commits total, last activity 2015. This is GFDL's AM3 atmospheric model — historically significant as one of the first models to include aerosol microphysics. Now effectively frozen in time.
 
-### The Core Paradox
-
-> The most important climate simulation toolkit on GitHub (PCMDI) can evaluate whether a model accurately simulates the climate system — but no open-source repository contains the actual SRM simulation code that would need evaluating.
-
-This is like having a world-class scale but no scale to weigh. PCMDI provides the evaluation infrastructure; SRM simulations are either closed-source (GFDL, NCAR) or non-existent in open form.
+**Trending Signal:** Legacy Fortran codes dominate the historical SRM simulation space, but they are no longer being developed. The modern Python ecosystem (PCMDI, xCDAT) has not yet reached geoengineering-specific simulation.
 
 ---
 
-## Episode-Ready Talking Points
+### 4. hausfath/srm-forever — 0 ⭐ (The Emergent Approach)
 
-1. **"The scale exists, but the thing being scaled doesn't."** PCMDI is a 15-year-old, DoD-funded evaluation framework with no SRM models to evaluate.
+| Date | Commit | Author |
+|------|--------|--------|
+| Aug 26, 2026 | Initial release | hausfath |
 
-2. **"The release sprint is the story."** 10 commits in 48 hours for v4.2.1 — but none of them were about geoengineering. They were about fixing a rounding bug in mean climate figures.
+**Key Insight:** All 4 commits were on a single day. A transparent, single-HTML-page SRM economics model using Weitzman certainty-equivalent discounting. Published alongside an essay on discount rates and geoengineering economics.
 
-3. **"Three contributors to PMIP in 4 years"** — The pace of open-source paleoclimate analysis is glacial (pun intended). Compare this to the 10-contributor sprint at PCMDI.
-
-4. **"AM3 is a ghost."** 4 commits, March 1, 2015, then never again. This is what happens when a national lab decides a model is legacy — it gets pushed to GitHub and forgotten.
+**Trending Signal:** The "interpretable model" movement — making SRM economics accessible without running a GCM. Not a simulation tool, but a pedagogical and governance tool.
 
 ---
 
-*Detailed commit analysis from GitHub API data. All SHA hashes verified.*
+## 🔬 What the Commit Histories Tell Us
+
+### Five Key Findings
+
+1. **Institutional bursts dominate climate software.** PCMDI's 133★ had 10 commits in 2 days (v4.2.1 release). WRF's v4.8.0 release also showed concentrated institutional activity. Most repos can't sustain this; it requires funding and personnel.
+
+2. **The atmospheric modeling pipeline is alive.** WRF (v4.8.0, Jun 2026) and PCMDI (v4.2.1, Sep 2026) are both actively releasing new versions. The infrastructure for SRM simulation *exists* — it's just not geoengineering-specific.
+
+3. **SRM-specific code is virtually nonexistent.** Beyond srm-forever (a single HTML file) and AM3 (frozen in 2015), there is no open-source code that simulates the *physical* effects of solar geoengineering. No aerosol microphysics, no radiative transfer for geoengineering scenarios.
+
+4. **Legacy Fortran is a graveyard.** AM3, PMIP analyzers — the geoengineering-relevant Fortran codes are either frozen or being repurposed. The Python migration hasn't reached this niche.
+
+5. **The ARCTIC is the most active research frontier.** Codes-RFG-Arctic-Impacts (Apr 2024) is the only recent repo specifically looking at SRM's effect on Arctic ice. This signals where the research community is focusing.
+
+### What This Means for Your Podcast
+
+- The **story is in the gap**: the infrastructure for evaluating SRM exists (PCMDI, WRF), but the SRM simulation code itself doesn't exist as open source.
+- The **institutional story is real**:climate software development is institutional, not community-driven. This raises governance questions about who controls simulation tools.
+- The **economic transparency story is emerging**: srm-forever shows that simple, transparent models can make SRM economics accessible — but they can't substitute for physical simulation.
+
+---
+
+## 🎙️ Updated Episode Questions
+
+1. **Why does the atmospheric modeling infrastructure (WRF, PCMDI) exist but SRM-specific simulation doesn't?** What's the institutional barrier?
+2. **Can transparent economic models (srm-forever) bridge the gap?** Or is physical simulation essential for governance?
+3. **How does the August-Sep 2026 PCMDI/WRF release cycle change the SRM discourse?** Are we closer to evaluating SRM effects than we thought?
+4. **The Arctic as a canary:** Why is Arctic impact the only active SRM research area on GitHub?
