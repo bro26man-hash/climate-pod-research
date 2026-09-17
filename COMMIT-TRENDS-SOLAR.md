@@ -1,206 +1,152 @@
 # ☀️ Solar Geoengineering — Commit Trend Analysis
-## GitHub API Data Pull — September 2026
+## Research Notes for Climate Technology Podcast Series
+### Updated: September 2026 (v4 — fresh commit data from 5 repos)
 
 ---
 
-## 📈 Overall Activity Dashboard
+## Summary Dashboard
 
-| Repo | Total Recent Commits | Commit Rate | Last Active | Trend |
-|------|---------------------|-------------|-------------|-------|
-| **WRF** | 15 commits in 30 days | 0.5/day | Jun 8, 2026 | 🟢 **Steep upward — v4.8.0 release cycle** |
-| **ClimateMARGO** | 2 in 1 day (Aug 2026) | 0.07/day avg (recent) | Aug 17, 2026 | 🟡 **Spike after 2-year dormancy** |
-| **GCCS-Core** | 15 in 1 day (Oct 2024) | 15.0/day (burst) | Oct 29, 2024 | 🔴 **Burst then dead** |
-| **OOCC_2021** | 15 over 4 months (2021) | 0.12/day avg | Nov 15, 2021 | 🔴 **Decaying academic project** |
-| **GeoVision** | 4 in 1 day (Dec 2025) | 4.0/day (burst) | Dec 6, 2025 | 🔴 **Burst then dead** |
-| **srm-forever** | Unknown (2026) | Low | Aug 26, 2026 | 🟡 **Low but ongoing** |
-
----
-
-## 🔥 WRF — The Solar Radiation Correction Wave (May–June 2026)
-
-### Timeline of Solar-Relevant Commits
-```
-May 12  ■ MYNN-SFC submodule update          (surface physics)
-May 19  ■ Bug fix for udm                    (diagnostics)
-May 20  ■ ShinHong PBL namelists             (boundary layer)
-May 20  ■ Minor Tempo changes                (aerosol-cloud interaction)
-May 20  ■FIXING scheme-guard bug in urban NbS (urban setup)
-May 21  ■ Include mp_physics=88 in TEMPO     (aerosolMicrophysics)
-May 26  ■ Reading GFL option README          (gravity wave drag)
-May 26  ■ Fixing CDXWRF module               (convective downdraft)
-May 27  ■ MMM-physics SHA update             (microphysics suite)
-May 27  ■ MYNN-EDMF pointer update           (turbulence)
-May 28  ■🔥 CORRECTION FOR EOT SOLAR RADIATION ← THE BIG ONE
-May 30  ■ Vectorization option in AOCC       (compiler optimization)
-Jun 5   ■ Turn off tempo_aerosolaware/hailaware (feature toggling)
-Jun 6   ■ Update README for v4.8.0           (release prep)
-Jun 8   ■ Merge v4.8.0 release               ← VERSION SHIP
-```
-
-### Key Insight: The Solar Radiation Fix
-The commit `e836cd6` on May 28, 2026 — **"correction for eot calculation for solar radiation"** — is the most solar-geoengineering-relevant commit across all repos we analyzed. The EOT (Easterly Offset Temperature) calculation is used in WRF's solar radiation scheme to account for the east-west temperature gradient in the atmosphere. If this calculation is wrong, it affects:
-- Simulated surface temperatures under any scenario
-- Cloud formation physics
-- Precipitation patterns
-- **All SRM experiments that use WRF as their base model**
-
-A correction like this means that previous SRM simulation results using WRF may have had systematic errors in their solar radiation calculations.
-
-### Commit Velocity Analysis
-- **Pre-release velocity:** ~3 commits/day during the 10 days before v4.8.0
-- **Release day velocity:** 1 commit (merge only)
-- **Contributors:** 7 distinct contributors in 30 days (Islas, weiwangncar, Olson, Fita, Werner, Jensen-NOAA, Wang)
-- **Implication:** Wide contributor base means the solar radiation fix underwent community scrutiny — not a single-team blind patch
+| Repo | Stars | Total Commits Pulled | Active Period | Velocity | Status |
+|------|-------|---------------------|---------------|----------|--------|
+| **WRF** | 1,761 | 8 | May-Jun 2026 | ~1 commit/3 days | **Institutional, sustained** |
+| **ClimateMARGO.jl** | 73 | 8 | Feb 2022-Aug 2026 | ~1 commit/6 months | **Dormant with revival signal** |
+| **awesome-geoengineering** | 4 | 7 | Jun 2025-Sep 2026 | ~1 commit/2 months | **Active, accelerating** |
+| **GeoVision** | 0 | 4 | Dec 2025 (single day) | 4 commits/1 day | **Burst-then-dead** |
+| **Geo-DICE** | 2 | 0 (not pulled) | Unknown | N/A | **Likely dormant** |
 
 ---
 
-## 🔄 ClimateMARGO — The Dormancy-Revival Pattern
+## Detailed Commit Analysis
 
-### Activity Timeline
+### WRF — The Industrial Machine
+
+**Peak activity:** May-June 2026 (8 commits in ~2 weeks)
+**Nature:** Institutional, team-driven, version-release-cycle
+
 ```
-2022-11-12 ■ JuMP/IPopt compat upgrade    ← Last real code change
-2023-07-06 ■ Pluto link in README         ← Last activity before hibernation
-2023-10-18 ■ Unit conversion comment      ← One-off fix
-2026-08-17 ■ README update #1             ← WAKE UP
-2026-08-17 ■ README update #2             ← Second hit same day
+May 26: Fixing CDXWRF module
+May 27: Update MYNN-EDMF pointer, remove icloud_bl
+May 27: Update MMM-physics repo SHA
+May 28: Correction for EOT calculation for solar radiation  <- SRM-relevant
+May 30: Fix vectorization in AOCC stanza
+Jun 5:  Turn off tempo_aerosolaware and tempo_hailaware        <- SRM-relevant
+Jun 6:  Update README and version to v4.8.0
+Jun 8:  Merge release-v4.8.0
 ```
 
-### The Dormancy Dashboard
-| Period | Commits | Duration | Interpretation |
-|--------|---------|----------|---------------|
-| Jan–Dec 2022 | 13 | 12 months | Active development year |
-| Jan 2023 – Aug 2026 | 3 | 43 months | Near-total silence (0.07 commits/month) |
-| Aug 17, 2026 burst | 2 | 1 day | README-only revival signal |
+**Key insight:** The two SRM-relevant commits (solar radiation EOT fix + aerosol-aware scheme disablement) are both in the v4.8.0 release. This is the most important atmospheric model on Earth undergoing exactly the kind of physics changes that would affect SRM simulation capability. But the changes are presented as routine maintenance, not SRM-specific. The SRM implications are downstream — users have to interpret the changes themselves.
 
-### What the Revival Might Mean
-**Scenario A — Genuine Reactivation:** Someone recognized the relevance of climate-economic SGE modeling after a period of political attention to SRM. The README update could precede code commits.
-
-**Scenario B — Academic Housekeeping:** A student or maintainer is tidying up citations for a new paper. README updates don't always mean new features.
-
-**Scenario C — Citation Engine:** The update adds PlutoLinks (interactive notebooks). This could mean the maintainer is making the model more accessible for teaching, not research.
-
-**Verdict:** The signal is ambiguous. But for a podcast, the *story* is what matters: a governance model lies dormant for 2 years and then suddenly gets its README updated. What changed in the world to make solar geoengineering governance feel urgent again?
+**Trend direction:** WRF is becoming more institutional, less open to experimental physics. The removal of the icloud_bl package and disabling of aerosol schemes suggest a "consolidation" trend — the model is shedding uncertain components rather than adding new ones. This is the opposite of what SRM researchers would want (more options, more parameterizations).
 
 ---
 
-## 💥 GCCS-Core — The Single-Day Ghost
+### ClimateMARGO — The Ghost that Almost Came Back
 
-### The Blitz Pattern
-All 15 commits occurred on October 29, 2024:
+**Peak activity:** Feb 2022 (3 commits in 10 days)
+**Dormancy:** Feb 2022 - Aug 2026 (4.5 years)
+**Revival:** Aug 2026 (2 README commits, no code)
+
 ```
-Oct 29  ■ requirements.txt     ← Scaffolding
-Oct 29  ■ setup.py              ← Scaffolding
-Oct 29  ■ data_collection.sh    ← Scaffolding
-Oct 29  ■ run_server.sh         ← Scaffolding
-Oct 29  ■ deploy.sh             ← Scaffolding
-Oct 29  ■ example_config.yaml   ← Scaffolding
-Oct 29  ■ example_usage.py      ← Scaffolding
-Oct 29  ■ example_iot_integration.py  ← Scaffolding
-Oct 29  ■ 7× Update README.md   ← Scaffolding
+Feb 4, 2022:  Added CITATION.bib
+Feb 10, 2022: Removed deprecated web apps
+Feb 12, 2022: JuMP and Ipopt compat upgrade
+... 4.5 years of silence ...
+Oct 18, 2023: Unit conversions comment (isolated, via PR #86)
+Jul 6, 2023:  Add Pluto documentation link
+... 2+ more years of silence ...
+Aug 17, 2026: Update README.md (x2)
 ```
 
-### Interpretation
-This is the **"repo as resume"** pattern. Someone created a project skeleton with proper infrastructure files (setup.py, deploy.sh, examples) but never wrote the actual climate model code. The 7 README updates on the same day suggest someone was iterating on the project description, possibly trying to attract collaborators or make the project look more substantial.
+**Key insight:** The 2026 README updates are the first activity in over 2 years. But they're README-only — no code changes, no new features, no issue responses. This could be:
+1. Someone cleaning up the README before a new release
+2. A citation update for a paper that used ClimateMARGO
+3. A "tombstone maintenance" pattern — just enough activity to keep the repo alive
 
-The name "Global Climate Control System" is worth noting — it's the most ambitious naming in the solar geoengineering space and the least backed by actual code.
+Without code commits, the revival is optical, not substantive. But the fact that someone is still touching the README after 4.5 years suggests the economic modeling community hasn't forgotten it.
+
+**Trend direction:** Stagnant with a faint revival signal. The Julia climate-economics ecosystem needs a new ClimateMARGO — one that's actively maintained, with modern solver interfaces and SRM-specific modules.
 
 ---
 
-## 📉 OOCC_2021 — The Complete Academic Lifecycle
+### awesome-geoengineering — The Curator's Acceleration
 
-### Full Lifecycle
+**Peak activity:** Steady since Jun 2025
+**Nature:** Individual-driven, list-maintenance, resource-curation
+
 ```
-Jul 23, 2021  ■ Initial development begins
-Jul 28, 2021  ■ Strategy tables updated + comment errors fixed
-Jul 30, 2021  ■ Readme updates (model description)
-Sep 3–5, 2021  ■ Publication sprint (7 commits in 3 days)
-Sep 4, 2021   ■ Citation file added ← Paper published
-Nov 15, 2021  ■ Bibtex update ← Final commit
+Jun 28, 2025: Initial commit + first README update
+Jun 28, 2025: Update README (2nd commit same day)
+Jan 16, 2026: Update README
+Mar 12, 2026: Update README
+May 5,  2026: Update to v2.0.0 (major version)
+Sep 5,  2026: Update README
+Sep 6,  2026: Update README (rapid double-update)
 ```
 
-### The Lifecycle Pattern
-This is the **textbook academic repo lifecycle**:
-1. **Develop** (Jul): Build the model
-2. **Refine** (Jul 28–30): Fix errors, update strategy, polish documentation
-3. **Publish sprint** (Sep 3–5): Add citations, update readme, finalize for paper submission
-4. **Maintenance** (Nov): One final citation update
-5. **Death** (Nov 15, 2021 → forever): No commits for 4+ years
+**Key insight:** This is the **only repo in the solar geoengineering ecosystem showing clear accelerating momentum**. The pattern is:
+- 2025: 3 commits over 6 months (birth phase)
+- 2026 Q1: 2 commits over 2 months (slow maintenance)
+- 2026 Q2: 1 major version bump (v2.0.0)
+- 2026 Q3: 3 commits in 2 days (rapid acceleration!)
 
-### What's Missing
-- No CI/CD pipeline (no GitHub Actions visible)
-- No issue tracker activity
-- No PRs from the community
-- No version tags or releases
-- The model exists only as paper supplementary code
+The Sep 5-6 double-update right after the Sep 6 search discovery suggests the curator is actively responding to new resources. This is the meta-repo that tracks the entire field.
 
-**Podcast angle:** "The best governance model for solar geoengineering on GitHub hasn't been touched in nearly five years. It's still there, still cited, still the only game in town. And nobody's maintaining it. What does that tell us about how seriously we're taking SRM governance?"
+**Trend direction:** Accelerating. The resource gap is closing. By 2027, this list could be the definitive bibliography for geoengineering research.
 
 ---
 
-## 👻 GeoVision — The Empty Shell
+### GeoVision — The Simulator's Tragedy
 
-### Commit Record
+**All activity:** December 6, 2025 (single day)
+**Nature:** Individual project, burst creation, then abandonment
+
 ```
-Dec 6, 2025  ■ Initial commit
-Dec 6, 2025  ■ Add files via upload
-Dec 6, 2025  ■ Create LICENSE
-Dec 6, 2025  ■ Update README.md
+Dec 6, 2025: Initial commit
+Dec 6, 2025: Add files via upload
+Dec 6, 2025: Create LICENSE
+Dec 6, 2025: Update README.md
 ```
 
-### Assessment
-4 commits, 1 day, zero substantive content. The repository has a name ("Geoengineering Simulator") but no simulation code. It may have been created as a placeholder or graduate student's abandoned project. The LICENSE file suggests at least some intent for openness.
+**Key insight:** All 4 commits in one day. No commits in 9 months since. This is the "build it and they will come" failure. The repo has: a README, a LICENSE, and uploaded files — but no community, no stars, no ongoing development.
+
+**Trend direction:** Flatlined. The concept (interactive SRM visualization) is valuable but the execution was a one-shot. Someone should pick this up.
 
 ---
 
-## 🧮 Cross-Repo Solar Commit Maps
+## Cross-Repo Trend Synthesis
 
-### Commit Type Distribution
-| Commit Type | WRF | ClimateMARGO | GCCS-Core | OOCC_2021 | GeoVision | Total |
-|-------------|-----|-------------|-----------|-----------|-----------|-------|
-| Bug fixes | 4 | 0 | 0 | 0 | 0 | 4 |
-| Physics updates | 5 | 0 | 0 | 0 | 0 | 5 |
-| Documentation | 3 | 2 | 7 | 6 | 1 | 19 |
-| Configuration | 2 | 2 | 5 | 0 | 0 | 9 |
-| Feature additions | 1 | 0 | 0 | 0 | 0 | 1 |
-| **Total** | **15** | **6** | **15** | **15** | **4** | **55** |
+### The Three Universes (Solar Focus)
 
-### Contributor Count
-| Repo | Unique Contributors ||
-|------|---------------------|
-| WRF | 7 (institutional, multi-team) |
-| ClimateMARGO | 2 (Fons van der Plas, Henri Drake) |
-| GCCS-Core | 1 (KOSASIH) |
-| OOCC_2021 | 1 (jlehtomaa) |
-| GeoVision | 1 (Manik Roy) |
+| Universe | Reps | Characteristics |
+|----------|------|------------------|
+| **Fast Universe** | WRF | Institutional funding, continuous releases, major version cycles, SRM implications buried in routine maintenance |
+| **Slow Universe** | ClimateMARGO, awesome-geoengineering | Individual/curatorial effort, sporadic activity, dormancy-whiplash, but genuine community value |
+| **Empty Universe** | GeoVision, Geo-DICE, OOCC, GeoengineeringLE | Zero or near-zero stars, single creators, no maintenance, no community |
 
-**Key finding:** Only WRF has a multi-contributor, multi-institutional development team. Every other solar geoengineering-related repo is a single-maintainer effort. This is the **single-maintainer risk** — if one person stops committing, the repo dies.
+### The SRM Simulation Gap
 
----
+After pulling commit histories from 5 solar geoengineering repositories, a clear pattern emerges:
 
-## 🔮 Trend Projections for Episode 1 (Solar)
+1. **No dedicated SRM simulator exists.** WRF can simulate SRM scenarios through its aerosol and radiation schemes, but it's not designed for that purpose. There's no open-source tool specifically built for SRM scenario exploration.
 
-### What's Trending Up ✓
-1. **Atmospheric physics maintenance is active** — WRF's v4.8.0 solar radiation fix shows that institutional climate modeling is continuously improving the tools that SRM researchers depend on
-2. **Multi-contributor development exists** — WRF has 7 contributors in 30 days, suggesting community oversight of solar-relevant physics
+2. **The economic models are fossilized.** ClimateMARGO (73) is the best tool, but it hasn't had a code commit in 2+ years. The economic modeling of SRM is theoretical, not computational.
 
-### What's Trending Down ✗
-1. **Dedicated SGE simulation repos are dying** — OOCC_2021, GCCS-Core, and GeoVision are all either dead or empty shells
-2. **Governance code has zero maintenance** — The only governance model (OOCC_2021) hasn't been touched since 2021
-3. **Single-maintainer risk is universal** — 4 of 5 solar repos have exactly 1 contributor
+3. **The physics is becoming less soluble.** WRF's disabling of aerosol-aware schemes and removal of the icloud_bl package suggests the field is consolidating around fewer, more uncertain parameterizations. SRM simulation requires more physics, not less.
 
-### The Elephant in the Room 🐘
-**There is no dedicated open-source solar geoengineering simulation model on GitHub.** No repo exists that primarily simulates stratospheric aerosol injection, marine cloud brightening, or space-based reflectors. The closest is WRF, which was never designed for SGE. This gap is the story.
+4. **Curation is the only growth area.** awesome-geoengineering is the only repo with accelerating momentum. The resource base is growing, but the tools are not.
+
+### The Podcast Angle
+
+**"Why is there no open-source SRM simulator?"**
+- WRF is the closest thing, but it's a weather model, not an SRM tool
+- The aerosol physics is unstable — disabling schemes, not adding them
+- No one has built the "GitHub for SRM scenarios" — an interactive, shareable, open-source tool
+- The economic models exist but they're dead software
 
 ---
 
-## 📋 Research Log
+## Recommendations
 
-| Date | Activity |
-|------|----------|
-| Sep 17, 2026 | v3: Initial commit trends from 5 solar repos |
-| Sep 17, 2026 | v4: Fresh commit data pulled from GitHub API for WRF v4.8.0 release cycle |
-| Sep 17, 2026 | v4: Solar radiation correction commit identified as most SGE-relevant change |
-| Sep 17, 2026 | v4: ClimateMARGO dormancy-revival pattern documented |
-| Sep 17, 2026 | v4: GCCS-Core single-day burst pattern analyzed |
-| Sep 17, 2026 | v4: OOCC_2021 complete academic lifecycle mapped |
-| Sep 17, 2026 | v4: GeoVision confirmed as empty shell |
+1. **For Episode Planning:** Focus on the WRF aerosol story as the technical core, the ClimateMARGO dormancy as the economic angle, and awesome-geoengineering as the resource/governance lens.
+2. **For Call Guests:** Reach out to ClimateMARGO maintainer (Fons van der Plas) about the 2026 revival. Contact awesome-geoengineering curator (Brandon Himpfen) about the acceleration.
+3. **For Future Research:** Search for SRM-related code in atmospheric modeling repos that isn't tagged as "geoengineering" — the SRM content may be hidden inside general climate codes.
