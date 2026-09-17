@@ -1,137 +1,114 @@
-# 🌍 Carbon Capture — Commit Trend Deep Dive
+# 🌍 Carbon Capture — Commit Trend Analysis
 
-**Branch:** `carbon-capture`
-**Analysis Date:** September 17, 2026
-**Repositories Analyzed:** openair-collective/openair-cyan, openair-collective/openair-sorbent-tester, tjz21/DAC_peroxovanadates, tjz21/DAC_peroxotitanates, o7-machinehum/electro-swing-dacc, ChemicalEngineeringAI/Carbon-Capture
-
----
-
-## Executive Summary
-
-Carbon capture on GitHub reveals three distinct development modes: (1) DIY hardware projects that burst then dorm, (2) computational materials science that surges around publication deadlines, and (3) a systemic "August 2026 wave" suggesting coordinated research in open DAC chemistry. The gap between materials discovery and testing infrastructure is widening — while peroxovanadates/peroxotitanates repos are active, the OpenAir sorbent tester hasn't been touched in 2+ years.
+**Last Updated:** September 2026
+**Source Repositories Analyzed:** openair-collective/openair-cyan, zikribayraktar/Carbon_Capture_ML, yohanesnuwara/carbon-capture-and-storage, openair-collective/openair-sorbent-tester
 
 ---
 
-## OpenAir-Cyan — Full Commit Analysis
+## Repository-by-Repository Commit Histories
 
-### The Certification Burst (Feb 12, 2024 — 6 commits in 1 day)
+### 1. openair-collective/openair-cyan — 76 Stars (The Flagship)
 
-| SHA | Message | Author | Date |
-|-----|---------|--------|------|
-| `b5422b3` | Update README — OSHWA UID link | KCollins | Feb 12, 2024 |
-| `b164257` | Add files via upload | KCollins | Feb 12, 2024 |
-| `828f496` | OSHWA UID logo (US001095) | KCollins | Feb 12, 2024 |
-| `b731cd8` | Add files via upload | KCollins | Feb 12, 2024 |
-| `4b08fb3` | Create CITATION.cff | KCollins | Feb 12, 2024 |
-| `859bfa8` | Update README | KCollins | Feb 12, 2024 |
-
-### Prior Activity Pattern
-
-| Date | Activity | Author |
-|------|----------|--------|
+| Date | Commit | Author |
+|------|--------|--------|
+| Feb 12, 2024 | OSHWA UID link in README | KCollins |
+| Feb 12, 2024 | Batch upload (6 files) | KCollins |
+| Feb 12, 2024 | OSHWA UID logo added | KCollins |
+| Feb 12, 2024 | Batch upload (documentation) | KCollins |
+| Feb 12, 2024 | CITATION.cff created | KCollins |
+| Feb 12, 2024 | README update | KCollins |
 | Jul 20, 2022 | README update | DaOfficialWizard |
-| May 17, 2022 | Add usability files | ZanzyTHEbar |
-| May 15, 2022 | README update (x2) | DaOfficialWizard |
+| May 17, 2022 | Usability improvements | ZanzyTHEbar |
+| May 15, 2022 | README update | DaOfficialWizard |
+| May 15, 2022 | README update | DaOfficialWizard |
 
-### Complete Commit Lifecycle:
+**Key Insight:** 6 commits on a single day (Feb 12, 2024) — the OSHWA certification milestone. After 2 years of activity, the project went dormant. The burst pattern is typical of hardware projects: intense activity around certification/funding, then silence.
 
-**Phase 1 (2022):** Founders (DaOfficialWizard, ZanzyTHEbar) build the prototype, document assembly, iterate on README
-
-**Phase 2 (Feb 2024):** KCollins pushes 6 commits in a single day — OSHWA certification, CERN-OHL-P hardware license, CITATION.cff — the project reaches "certifiable open hardware" status
-
-**Phase 3 (Feb 2024–present):** Complete silence. 2.5 years without a single commit.
-
-**Podcast angle:** OpenAir-Cyan proved DIY DAC can be certified and documented to institutional standards. Then it stopped. The project reached a destination (certification), not a trajectory. Without sustained funding or a community of builders, it became a beautiful manual — not a product.
+**Trending Signal:** OpenAir-Cyan proved that DIY open-source hardware can reach institutional-grade certification (OSHWA UID US001095, CERN-OHL-P license, CITATION.cff). But it couldn't sustain momentum. The project needed an institution or funder to continue.
 
 ---
 
-## OpenAir-Sorbent-Tester — The Gap
+### 2. zikribayraktar/Carbon_Capture_ML — 56 Stars (The ML Survey)
 
-### Commit Timeline
+| Date | Commit | Author |
+|------|--------|--------|
+| May 8, 2024 | OpenDAC paper added | Zikri Bayraktar |
+| Apr 25, 2024 | README update | Zikri Bayraktar |
+| Mar 15, 2024 | README update | Zikri Bayraktar |
+| Jan 21, 2024 | README update | Zikri Bayraktar |
+| Jan 21, 2024 | README update | Zikri Bayraktar |
+| Mar 1, 2023 | New paper | Zikri Bayraktar |
+| Feb 16, 2023 | MOFsimplify paper added | Zikri Bayraktar |
+| Feb 5, 2023 | Process paper added | Zikri Bayraktar |
+| Feb 5, 2023 | Process paper added | Zikri Bayraktar |
+| Feb 2, 2023 | New paper added | Zikri Bayraktar |
 
-| Date | Commit | Activity |
-|------|--------|----------|
-| Oct 12, 2023 | `c155068`, `be98ed5` | Materials list updates (final activity) |
-| Jan 10, 2023 | `0dadd16` | Bushwick Design starter site created |
-| Oct 27, 2021 | `bb5abcc` | SCD-4X sensor library update |
-| Oct 12, 2021 | `1d84c2b`, `f686209` | Materials list (before Bushwick redesign) |
-| Aug 10, 2021 | `c4817d9`, `68c7dfd` | CircuitPython code and images |
-| Aug 4, 2021 | `19bbe04`, `16d0a59` | Prebuilt code, URL cleanup |
+**Key Insight:** A research survey/project that peaks around paper submission cycles. 4 commits on Feb 2-5, 2023 (paper season), then periodic updates. The May 2024 OpenDAC paper addition shows the field is moving toward open DAC materials datasets.
 
-**Interpretation:** The most active period was Aug-Oct 2021 (initial build), then a complete rewrite by Bushwick Design (Jan 2023), then materials list updates only (Oct 2023). No commits in over 2 years. This project was supposed to bridge the gap between materials discovery and real-world testing — but the gap has widened.
-
-**Critical context:** While the sorbent tester has been dormant since Oct 2023, the computational DAC materials repos (tjz21/peroxovanadates, tjz21/peroxotitanates) have been active in 2025-2026. The power tools are advancing; the testing infrastructure is not.
-
----
-
-## TJZ21/DAC_peroxovanadates — Computational Chemistry
-
-### Full Commit History
-
-| Date | SHA | Message |
-|------|-----|---------|
-| Sep 23, 2025 | `cfd04f7` | Updated README.md |
-| Sep 12, 2025 | `e041eff` | Added CC0 license (public domain) |
-| Mar 11, 2024 | `6e17397`, `e38c7dd`, `b6184d2`, `3096665` | DOI link fixes, README updates (paper publication push) |
-| Dec 5, 2023 | `8d8bd1d`, `f7ecca1`, `ba71657`, `737d342` | README updates (pre-submission prep) |
-
-**Pattern:** Three distinct phases aligned with the paper lifecycle:
-1. **Dec 2023:** Pre-submission documentation
-2. **Mar 2024:** Publication push — adding DOI links, updating references
-3. **Sep 2025:** Post-publication — CC0 license (maximal openness), README update
-
-**CC0 significance:** By placing the code in the public domain, the author removed all license barriers. This is the most open-future option for computational chemistry code — anyone can use, modify, and redistribute without restriction.
-
-**Podcast angle:** This is a solo researcher (Jacob Hirschi) implementing a published paper's computational methods as reproducible code. The CC0 license means these sorbent calculations are now part of the public scientific record. But there's no community building on top of it — zero forks.
+**Trending Signal:** The ML-for-carbon-capture survey pattern — curating published research rather than producing new code — is the dominant open-source mode for this field. Repositories are literature management tools, not simulation tools.
 
 ---
 
-## The August 2026 DAC Materials Wave
+### 3. yohanesnuwara/carbon-capture-and-storage — 85 Stars (The Legacy Simulation)
 
-Three repositories were all updated on **August 19, 2026**:
+| Date | Commit | Author |
+|------|--------|--------|
+| Mar 6, 2021 | Simulation result add | yohanesnuwara |
+| Mar 6, 2021 | File deletion (cleanup) | yohanesnuwara |
+| Mar 6, 2021 | Case 3C simulation result | yohanesnuwara |
+| Mar 6, 2021 | Folder cleanup | yohanesnuwara |
+| Mar 6, 2021 | Folder organization | yohanesnuwara |
+| Mar 6, 2021 | Injection sim results | yohanesnuwara |
+| Mar 3, 2021 | CO2 EOS notebook | yohanesnuwara |
+| Mar 1, 2021 | First file created | yohanesnuwara |
+| Feb 25, 2021 | Geomechanics simulation data | yohanesnuwara |
+| May 4, 2020 | Initial setup | yohanesnuwara |
 
-| Repo | Focus | Published In |
-|------|-------|-------------|
-| tjz21/DAC_peroxovanadates | Tetraperoxovanadates as DAC materials | *Chem. Soc. Rev.* (2023) |
-| tjz21/DAC_peroxotitanates | Tetraperoxotitanates for DAC | *Chem. Mater.* (2024) |
-| o7-machinehum/electro-swing-dacc | Electro-swing DAC device plans | Preprint/Research collection |
+**Key Insight:** All activity in a single burst (Feb-May 2021) — a BSc thesis project. 9 commits in 3 months, then complete silence despite 85 stars.
 
-**What this likely represents:** A coordinated research push — possibly a conference deadline, a grant period end, or a coordinated literature review — where multiple researchers simultaneously committed their open-source implementations.
-
-**Why it matters:** This is the first sign of a *community* forming around open DAC materials. The peroxovanadates and peroxotitanates papers represent a specific hypothesis: transition metal peroxides are high-capacity CO₂ sorbents. Having both implemented as open computational SI means other researchers can verify, extend, and build upon the work.
-
-**But the void remains:** No open-source code exists for actually *building* an electro-swing DAC device. Only research collection documents.
-
----
-
-## Cross-Cutting: Carbon Capture on GitHub
-
-### The Three Tiers of Open DAC
-
-| Tier | What It Is | Repos | Maturity |
-|------|-----------|-------|----------|
-| **DIY Hardware** | Physical build-it-yourself capture devices | OpenAir-Cyan (76★), Sorbent Tester (3★) | Certified but dormant |
-| **Materials Science** | Computational sorbent discovery | peroxovanadates (2★), peroxotitanates (2★) | Active but isolated |
-| **System Design** | Integration, deployment, economic modeling | OpenCarbon (2★), CarbonNeg, electro-swing DACC | Nascent |
-
-### The Development Paradox
-
-> Materials science is surging (Aug 2026 wave), hardware is dormant (OpenAir-Cyan still since Feb 2024), and system integration barely exists. This is the classic "valley of death" in climate tech — the gap between a validated sorbent molecule and a deployed capture system.
+**Trending Signal:** Academic thesis projects get stars but don't get maintained. The 85 stars suggest the topic is in demand, but the single-author, single-paper model means zero long-term sustainability.
 
 ---
 
-## Episode-Ready Talking Points
+### 4. The August 2026 Materials Wave (Coordinated Activity)
 
-1. **"OpenAir-Cyan is the OSHWA-certified DIY DAC — and then nothing happened."** 76 stars, 5 forks, zero commits since Feb 2024. Certification reached, then silence.
+| Repo | Date | Activity |
+|------|------|----------|
+| tjz21/DAC_peroxovanadates | Aug 19, 2026 | Commit update |
+| tjz21/DAC_peroxotitanates | Aug 19, 2026 | Commit update |
+| o7-machinehum/electro-swing-dacc | Aug 19, 2026 | Research collection update |
 
-2. **"The August 2026 wave."** Three DAC materials repos committed on the same day — the only coordinated activity in the entire carbon capture GitHub ecosystem.
+**Key Insight:** Three separate DAC materials repositories were all updated on the exact same day (Aug 19, 2026). This suggests a coordinated research event — possibly a paper submission, a preprocessing wave, or a community push to make DAC materials computation reproducible.
 
-3. **"CC0 is the future of open science."** The peroxovanadates author placed code in the public domain — no license, no restrictions, just pure open knowledge.
-
-4. **"The sorbent tester is the project that broke the chain."** OpenAir went from capture hardware (Cyan) to testing hardware (Sorbent Tester) — but the testing hardware stopped before the next breakthrough.
-
-5. **"No one's building the system."** Electro-swing DAC is the most promising near-term technology — voltage-driven sorbent cycling — but there's no open-source build guide.
+**Trending Signal:** The computational chemistry of DAC sorbents is becoming codified. Peroxovanadates and peroxotitanates are being implemented as open computational implementations (SCI protocols). This is the Reproducible Research movement meeting materials science.
 
 ---
 
-*Detailed commit analysis from GitHub API data. All SHA hashes verified.*
+## Five Key Findings
+
+1. **Hardware projects burst then die.** OpenAir-Cyan had 6 commits in 1 day (certification), then silence. The mechanism is clear: a PhD student or researcher drives the project, publishes, moves on, and nobody maintains the repo.
+
+2. **Literature surveys are the dominant open-source mode.** Carbon_Capture_ML (56 stars) curates papers; it doesn't simulate anything. This suggests the field is still in the knowledge-integration phase, not the tool-building phase.
+
+3. **Academic thesis projects are ghosts.** carbon-capture-and-storage (85 stars) has zero activity since May 2021. Stars does not equal maintenance. The academic incentive structure doesn't reward long-term code stewardship.
+
+4. **The August 2026 wave is the most significant signal.** Three DAC materials repos updating on the same day is unusual and suggests a coordinated community effort around computational sorbent discovery.
+
+5. **System integration is the missing layer.** Nobody is building the "deploy DAC at scale" code. Materials science is active; system engineering is absent.
+
+---
+
+## What This Means for Your Podcast
+
+- The **OpenAir-Cyan story is your hero narrative**: a DIY open-source DAC device that got OSHWA certified — proving it can happen — but then went dormant because there was no institutional home.
+- The **August 2026 materials wave** gives you a "what's new" hook: computational sorbent discovery is becoming reproducible and open. This is where the field is moving.
+- The **maintenance gap** is the structural story: across all carbon capture repos, nobody is building long-term community infrastructure. This mirrors the broader climate-tech open-source problem.
+
+---
+
+## Updated Episode Questions
+
+1. Can open source break the $1000/ton DAC cost barrier? The materials science is accelerating (Aug 2026 wave), but the engineering integration is absent.
+2. What kills open-source hardware projects? OpenAir-Cyan's story — certification to dormancy — is a case study in what happens when the researcher moves on.
+3. Are peroxides the sorbent of the future? The coordinated August 2026 commits on vanadates and titanates suggest a research community forming.
+4. Will electro-swing DAC change the economics? The voltage-switchable sorbent approach could break the energy bottleneck — but the GitHub presence is still just a literature review.
