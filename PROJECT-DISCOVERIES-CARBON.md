@@ -1,168 +1,146 @@
-# 🌍 Carbon Capture — Project Discovery Catalog
-
-**Last Updated:** September 2026 (v4 — fresh commit histories from 15 repositories including differentiable-flowsheets)
-**Research Method:** GitHub repository search ("carbon capture", "DAC", "direct air capture", "CCS", "carbon capture ML", "differentiable simulation") + cross-reference with "open-sustainable-technology" directory
-
----
-
-## Tier 1: Major Projects (50+ Stars, Active or Landmark Activity)
-
-### Open Sustainable Technology — 2,552 Stars (ProtonTypes)
-- **URL:** https://github.com/protontypes/open-sustainable-technology
-- **Language:** Multi-language directory
-- **Focus:** Comprehensive directory of 2,500+ open-source climate tech projects
-- **Latest:** Sep 9, 2026 (MUIO and MUIOGO DAC hardware control units added)
-- **Carbon Relevance:** Tracks the entire carbon capture ecosystem. New entries added regularly (MUIO, claude-carbon, PowerIO — Aug-Sep 2026).
-- **Why It Matters:** The ecosystem infrastructure. This is the "github.com/awesome-climate-tech" that makes everything else discoverable.
-- **v4 Update:** The "claude-carbon" entry (Aug 23, 2026) signals that AI-assisted carbon capture is now a recognized category in the directory.
-
-### OpenAir-Cyan — 76 Stars (OpenAir Collective)
-- **URL:** https://github.com/openair-collective/openair-cyan
-- **Language:** HTML/CSS (hardware documentation)
-- **Focus:** DIY small-scale direct air capture device. OSHWA-certified (UID US001095). CERN-OHL-P licensed.
-- **Latest:** Feb 12, 2024 (OSHWA certification milestone) — dormant since
-- **Why It Matters:** The only open-source DAC hardware project that reached institutional certification. Proved it can be done. Also failed to sustain momentum.
-
-### Carbon_Capture_ML — 56 Stars (Zikri Bayraktar)
-- **URL:** https://github.com/zikribayraktar/Carbon_Capture_ML
-- **Language:** Python (survey/data)
-- **Focus:** Survey of all published carbon capture ML papers, data, code, and supplemental materials
-- **Latest:** May 8, 2024 (OpenDAC paper added) — periodic updates
-- **Why It Matters:** The dominant open-source mode for carbon capture is literature curation, not code production. This repo IS the field's knowledge base.
-
-### carbon-capture-and-storage — 85 Stars (yohanesnuwara)
-- **URL:** https://github.com/yohanesnuwara/carbon-capture-and-storage
-- **Language:** Lasso (reservoir simulation)
-- **Focus:** Integration of reservoir simulation, rock physics, seismic modeling, and geomechanics for CCS monitoring
-- **Latest:** Mar 6, 2021 (BSc thesis complete) — dormant for 5+ years
-- **Why It Matters:** The ghost project. 85 stars, zero maintenance. Proves that academic incentive structures don't reward long-term code stewardship.
-
-### differentiable-flowsheets — 13 Stars (John Kitchin)
-- **URL:** https://github.com/jkitchin/differentiable-flowsheets
-- **Language:** Python (JAX-based)
-- **Focus:** Differentiable chemical process simulation and optimization for capture/separation systems
-- **Latest:** Sep 17, 2026 (10 commits in 5 days — most active carbon capture repo in the analysis)
-- **v4 Discovery:** THIS IS THE MOST SIGNIFICANT NEW FINDING. Claude (Anthropic's AI) is authoring production code commits — "Drop the legacy loading correction," "Fix Kremser two-inlet boundary condition." This is AI-augmented scientific computing in active use.
-- **Why It Matters:** This is the "deploy at scale" layer that's been missing. Differentiable simulation means you can compute gradients of the entire separation process, enabling gradient-based optimization. The JAX backend means GPU acceleration. And AI is writing the code.
+# 🌍 Carbon Capture — Project Discoveries
+## Research Notes for Climate Technology Podcast Series
+### Updated: September 2026 (v4 — fresh commit data)
 
 ---
 
-## Tier 2: Emerging Projects (10-50 Stars)
+## Overview
 
-### CO2-Soft-Sensor-for-a-Carbon-Capture-Pilot-Plant — 16 Stars (tonyzyl)
-- **URL:** https://github.com/tonyzyl/CO2-Soft-sensor-for-a-carbon-capture-pilot-plant
-- **Language:** Jupyter Notebook
-- **Focus:** Hybrid mechanistic and data-driven (DAE-LSTM) model for CO2 concentration estimation in DAC plants
-- **Latest:** Aug 18, 2026 (August 2026 wave)
-- **Why It Matters:** The closest thing to "deploy at scale" code. A soft-sensor is a practical engineering tool for plant control — more immediately useful than materials discovery.
-
-### Differentiable-Flowsheets — 13 Stars (John Kitchin)
-- **URL:** https://github.com/jkitchin/differentiable-flowsheets
-- **Language:** Python/JAX
-- **Focus:** Differentiable process simulation for chemical separation (REE extraction, CO2 capture)
-- **Latest:** Sep 17, 2026 (active Claude-assisted development)
-- **Why It Matters:** Bridges the gap between materials science and system engineering. AI- augmented optimization of separation processes. REE extraction crossover suggests mineral separation applications.
+Carbon capture is the most hardware-rich area of open-source climate tech on GitHub. Unlike solar geoengineering (where the code is atmospheric models), carbon capture has **open hardware designs, machine learning surveys, materials screening tools, and life-cycle decision frameworks**. The ecosystem spans from DIY desktop DAC devices to industrial-scale simulation.
 
 ---
 
-## Tier 3: CC0 Pioneer Projects (2 Stars Each)
+## Tier 1: High-Impact, Community-Building
 
-### tjz21/DAC_peroxovanadates — 2 Stars (Jacob Hirschi)
-- **URL:** https://github.com/tjz21/DAC_peroxovanadates
-- **Language:** Python (computational screening)
-- **Focus:** DFT computational screening of peroxovanadate sorbents for DAC
-- **Latest:** Sep 23, 2025 (CC0 license added Sep 12, 2025!) — periodic README updates
-- **Why It Matters:** The CC0 license adoption is the most significant single-commit signal in carbon capture open source. This is public domain dedication — not MIT, not Apache — CC0. Making computational screening data public infrastructure.
+### 1. OpenAir-Cyan (DIY Direct Air Capture)
+- **Repo:** [openair-collective/openair-cyan](https://github.com/openair-collective/openair-cyan)
+- **Stars:** 76 | **Language:** Not specified (hardware docs) | **License:** OSHWA (Open Source Hardware)
+- **Last commit:** February 12, 2024 (OSHWA certification push)
+- **Focus:** DIY small-scale open hardware direct air capture device. The **only** open-source DAC hardware project with significant community traction.
 
-### tjz21/DAC_peroxotitanates — 2 Stars (Jacob Hirschi)
-- **URL:** https://github.com/tjz21/DAC_peroxotitanates
-- **Language:** Python (computational screening)
-- **Focus:** DFT computational screening of peroxotitanate sorbents for DAC
-- **Latest:** Sep 23, 2025 (CC0 license added Sep 12, 2025!) — CASTEP references added Jul 2024
-- **Why It Matters:** Twin of the peroxovanadates repo. Same author, same CC0 adoption. The Jul 2024 burst added CASTEP reference files, output files, and reactant files — the complete computational screening workflow designed for machine-parsable metadata.
+**Recent Commit Signals (8 commits pulled):**
+| Date | Commit | Significance |
+|------|--------|-------------|
+| Feb 12, 2024 | Update README — added OSHWA UID link | **OSHWA certification — open hardware legitimacy** |
+| Feb 12, 2024 | Add files via upload (×2) | Documentation and design files uploaded |
+| Feb 12, 2024 | Added OSHWA UID logo (US001095) | **Official open hardware certification** |
+| Feb 12, 2024 | Create CITATION.cff | Citation metadata — first open-hardware DAC repo with formal citation |
+| Feb 12, 2024 | Update README.md | Comprehensive documentation update |
+| Jul 20, 2022 | Update README.md | Pre-certification maintenance |
+| May 17, 2022 | Add files to improve usability | Usability improvements beforeigrief freeze |
 
----
-
-## Tier 4: The August/September 2026 Coordination Wave
-
-### What Happened
-
-Multiple independent repositories across different research approaches were updated in coordinated time windows:
-
-| Repo | Date | Activity | Focus | Significance |
-|------|------|----------|-------|-------------|
-| jkitchin/differentiable-flowsheets | Sep 13-17, 2026 | 10 commits | Differentiable process simulation | **Most active carbon repo; Claude writing code** |
-| tjz21/DAC_peroxovanadates | Sep 12, 2025 | CC0 license | Public domain DAC materials | **Biggest open-science signal** |
-| tjz21/DAC_peroxotitanates | Sep 12, 2025 | CC0 license | Public domain DAC materials | **Twin of peroxovanadates** |
-| protontypes/open-sustainable-technology | Aug 23, 2026 | claude-carbon added | AI for carbon capture directory entry | **AI recognized as category** |
-| protontypes/open-sustainable-technology | Aug 18, 2026 | MUIO/MUIOGO added | DAC hardware control units | **Hardware ecosystem growing** |
-| protontypes/open-sustainable-technology | Jul 2, 2026 | PowerIO added | Power IO for sustainable tech | **Infrastructure expansion** |
-
-### Possible Explanations
-
-1. **AI-augmented simulation wave (Sep 2026):** The differentiable-flowsheets commits with Claude-authored code suggest AI-assisted process simulation is becoming mainstream in climate tech.
-
-2. **Shared paper or preprint (Sep 2025):** Both tjz21 repos adopted CC0 on the same day (Sep 12, 2025), suggesting a shared reference frame — possibly a paper or community norm.
-
-3. **Coordinated community challenge (Aug 2026):** Multiple entries added to the open-sustainable-technology directory in a 5-day window.
-
-4. **Breakthrough event:** A discovery that triggered parallel independent implementation.
-
-### Why It Matters
-
-The September 2026 AI-augmented simulation wave is the most significant new signal in this update. Claude-authored commits in differentiable-flowsheets aren't noise — they're fixes to boundary conditions and loading corrections in production code. AI is moving from code review to code writing in climate tech.
-
-The September 2025 CC0 adoption across both tjz21 repos is the biggest structural signal. Public domain dedication enables AI training data. If AI models are trained on CC0-licensed DAC materials data, the license choice becomes foundational infrastructure.
+**🎙️ Episode Hook:** OpenAir-Cyan is the single most important carbon capture repo on GitHub. It's the only DIY DAC device with OSHWA certification (US001095) — meaning it passed rigorous review for being truly open-source hardware. The Feb 12, 2024 commit day — 6 commits in one day — is a blitz of certification-focused activity. After that: silence. The device is built, documented, certified, and then... frozen. Why did development stop after the OSHWA push?
 
 ---
 
-## The Discovery Gap: What's NOT on GitHub (Updated)
+### 2. Open-Sustainable-Technology (Ecosystem Directory)
+- **Repo:** [protontypes/open-sustainable-technology](https://github.com/protontypes/open-sustainable-technology)
+- **Stars:** 2,552 | **Language:** Multiple | **License:** Varies
+- **Last commit:** September 9, 2026
+- **Focus:** Comprehensive OSS climate-tech directory spanning 2,500+ projects. The single largest catalog of climate open-source on GitHub.
 
-| Missing Category | Why It's Missing | Nearest Existing Tool |
-|-----------------|------------------|----------------------|
-| DAC system integration code | Materials science is active; system engineering is absent | differentiable-flowsheets (JAX-based, but focused on REE extraction, not DAC-specific) |
-| DAC economic modeling | No open-source cost analysis for full DAC systems | None |
-| Commercial DAC plant monitoring | Operators don't share control systems open-source | CO2-Soft-Sensor (lab-scale, not commercial) |
-| Long-term sorbent degradation data | Industry keeps this proprietary; academic projects don't have the data | None |
-| AI-augmented DAC design | AI writing climate tech code is very new (Sep 2026) | differentiable-flowsheets (Claude-authored commits) |
-| Public-domain DAC materials data | CC0 is rare; most repos use MIT/Apache/no license | tjz21/DAC_peroxovanadates + DAC_peroxotitanates (CC0, Sep 2025) |
+**Recent Activity:** Continuously maintained with 2,552 stars — the gravitational center of the climate-tech open-source ecosystem. Carbon capture repos link to this directory as their entry point.
 
 ---
 
-## 🎙️ Episode Hooks (Updated)
+### 3. Carbon_Capture_ML (ML Survey)
+- **Repo:** [zikribayraktar/Carbon_Capture_ML](https://github.com/zikribayraktar/Carbon_Capture_ML)
+- **Stars:** 56 | **Language:** Jupyter Notebook | **License:** Not specified
+- **Last commit:** May 8, 2024
+- **Focus:** Survey of machine learning papers and code for carbon capture. Curated collection of LCAs, ML models, and datasets.
 
-1. **AI is writing climate tech code.** differentiable-flowsheets has Claude-authored commits fixing production code. This is not a literature survey — it's live engineering with AI. The implications for accelerating DAC system design are profound.
-
-2. **The CC0-to-AI pipeline.** tjz21's public domain dedication (Sep 2025) enables AI training data. If AI models are trained on CC0-licensed DAC materials data, the public-domain commitment becomes the foundation of the entire AI-mentioned materials discovery pipeline.
-
-3. **OpenAir-Cyan proved it can be done — and then stopped.** The OSHWA certification was the milestone. But 2.5 years of silence is the open-hardware limbo problem.
-
-4. **The August/September 2026 wave is the coordination signal.** Not just 6 repos, but now AI-augmented simulation joining the party. The CC0 materials data (Sep 2025) may become the training infrastructure for AI-driven DAC design.
-
-5. **The field is in knowledge-integration mode.** The dominant repo (Carbon_Capture_ML, 56 stars) curates papers. But differentiable-flowsheets is producing new code with AI assistance. The field may be transitioning from knowledge-integration to AI-augmented design.
-
-6. **The ghost project haunts us.** carbon-capture-and-storage (85 stars, dormant since 2021) is the prototype of the "stars without sustainability" problem.
-
-7. **The soft-sensor and differentiable-flowsheets are the two deployable layers.** Soft-sensors for plant control (tonyzyl, 16★) and differentiable simulation for process optimization (kitchin, 13★) bridge the gap between materials discovery and deployment.
-
-8. **The MUIO/MUIOGO hardware control units are the physical layer.** These DAC control units added to the open-sustainable-technology directory (Sep 2026) represent the hardware-software interface that's been missing. You need control hardware to run a DAC system, and now open-source designs exist.
+**Recent Activity:** Last commit May 2024. The repo is maturing — not growing, but not dying. 56 stars for a survey repo is strong engagement.
 
 ---
 
-## Updated Episode Questions (v4)
+## Tier 2: Specialized Tools
 
-1. Can open source break the $1000/ton DAC cost barrier? The materials science is accelerating, AI-augmented simulation is here (differentiable-flowsheets, Claude writing code), but the engineering integration is absent.
+### 4. CarbonLens
+- **Repo:** [Thanapat18/CarbonLens](https://github.com/Thanapat18/CarbonLens)
+- **Stars:** Not specified | **Language:** Python | **License:** Not specified
+- **Last commit:** June 20, 2026
+- **Focus:** Life-cycle decision-support tool for climate-positive carbon capture. Helps practitioners choose the most effective capture pathway.
 
-2. What happens when AI writes the code? differentiable-flowsheets has Claude-authored commits fixing production code. Climate tech is the canary in the AI-coordinated-engineering coal mine.
+**Recent Activity:** Active maintenance with June 2026 update. The LCA angle is systematically important — not "can we capture CO2?" but "should we capture CO2, or would that investment be better spent elsewhere?"
 
-3. Is CC0 the future of open climate science? tjz21's public domain dedication (Sep 2025) enables AI training data. If the AI materials discovery pipeline depends on CC0 data, the license choice becomes infrastructure.
+---
 
-4. Will differentiable simulation replace bench-scale experimentation? JAX-based differentiable flowsheets compute gradients of chemical separation processes, enabling gradient-based optimization. This is the computational equivalent of "test 10,000 configurations in silico before building one."
+### 5. OpenCarbon
+- **Repo:** [terranexum/OpenCarbon](https://github.com/terranexum/OpenCarbon)
+- **Stars:** 2 | **Language:** Not specified | **License:** Not specified
+- **Last commit:** August 19, 2026
+- **Focus:** Carbon management technologies and plans to advance DAC research, ensuring it uses clean energy and has low cost. Very recent activity but tiny community.
 
-5. What kills open-source hardware projects? OpenAir-Cyan's story — certification to dormancy — is a case study in what happens when the researcher moves on.
+**Recent Activity:** Updated August 2026. The "clean energy for DAC" framing is the newest narrative in carbon capture — moving beyond "can we capture" to "does our capture actually help."
 
-6. Are peroxides the sorbent of the future? The CC0 commitment (Sep 2025) suggests the researcher views them as public infrastructure, not intellectual property.
+---
 
-7. Is the soft-sensor + differentiable-flowsheets combination the real deployable? Soft-sensors for plant control and differentiable simulation for process optimization together bridge the full gap from materials science to deployment.
+### 6. ClimateSoton Climate Research Group
+- **Repo:** [ClimateSoton/climate-research-group](https://github.com/ClimateSoton/climate-research-group)
+- **Stars:** Not specified | **Language:** HTML (website) | **License:** Not specified
+- **Last commit:** August 2026
+- **Focus:** University of Southampton climate research group website. Active in CFD (computational fluid dynamics) for climate applications.
 
-8. Is MUIO/MUIOGO the hardware-software interface? Open-source DAC control units added to the directory (Sep 2026) represent the physical layer that's been missing. You need hardware to run a DAC system, and now open designs exist.
+**Recent Activity:** Updated August 2026. Not carbon-capture-specific, but relevant for CFD simulation of capture processes.
+
+---
+
+## Tier 3: Dormant / Historical (Ghost Repos)
+
+### 7. carbon-capture-and-storage
+- **Repo:** [yohanesnuwara/carbon-capture-and-storage](https://github.com/yohanesnuwara/carbon-capture-and-storage)
+- **Stars:** 85 | **Language:** Not specified | **License:** Not specified
+- **Last commit:** March 6, 2021
+- **Focus:** Reservoir simulation + geomechanics for carbon capture and storage. drew 85 stars but abandoned since 2021.
+
+**Ghost Status:** **Dormant ghost** — high star count from citations, zero recent activity. The 85 stars are academic citations, not community engagement.
+
+---
+
+### 8. CO2-Sequestration
+- **Repo:** [NHERI/CO2-Sequestration](https://github.com/NHERI/CO2-Sequestration)
+- **Stars:** 32 | **Language:** Not specified | **License:** Not specified
+- **Last commit:** 2019
+- **Focus:** Geomechanical simulation of CO2 sequestration in deep saline formations.
+
+**Ghost Status:** **Dormant ghost** — academic simulation tool frozen since 2019. 32 stars from the geoscience community.
+
+---
+
+### 9. DAC Peroxovanadates & Peroxotitanates
+- **Repos:** [tjz21/DAC_peroxovanadates](https://github.com/tjz21/DAC_peroxovanadates), [tjz21/DAC_peroxotitanates](https://github.com/tjz21/DAC_peroxotitanates)
+- **Stars:** 2 each | **Language:** Python | **License:** **CC0 (Public Domain)**
+- **Last commit:** September 23, 2025
+- **Focus:** Computational screening of DAC sorbent materials (peroxovanadate and peroxotitanate compounds). Both repos adopted CC0 public domain dedication.
+
+**🎙️ Episode Hook:** **The CC0 Revolution.** Both of tjz21's DAC materials repos adopted CC0 (public domain) in September 2025. This is the biggest open-science signal in the carbon capture GitHub ecosystem. Researchers are treating computational screening data as public infrastructure — not as lab property. The peroxides may be the next-generation sorbent family, and the data is free for anyone to use. This is a radical departure from traditional academic publishing.
+
+---
+
+## Cross-Theme Patterns
+
+| Pattern | Evidence |
+|---------|----------|
+| **OSHWA certification is the quality standard** | OpenAir-Cyan is the only carbon capture repo with hardware certification |
+| **The epicentre of carbon capture activity is the directory, not the devices** | open-sustainable-technology (2,552★) > openair-cyan (76★) by 33x |
+| **CC0 is revolutionizing materials data sharing** | tjz21's two DAC repos both adopted CC0 (Sep 2025) |
+| **Ghost repos dilute the star count** | 85★ carbon-capture-and-storage (dead since 2021), 32★ CO2-Sequestration (dead since 2019) |
+| **LCA thinking is the newest narrative** | CarbonLens: "should we capture?" vs "can we capture?" |
+| **Clean-energy-for-DAC is framing 2.0** | OpenCarbon: DAC must use clean energy and be low-cost |
+| **All hardware projects freeze after certification/documentation** | OpenAir-Cyan: 6 commits in one day (Feb 2024), then silence |
+
+---
+
+## Episode Notes — Carbon Capture Branch
+
+### Key Narrative Arcs
+1. **"The Only Desktop DAC You Can Build"** — OpenAir-Cyan is the only open-source hardware DAC device. OSHWA-certified. 76 stars. Then frozen. Why did the community stop building after certification?
+2. **"The CC0 Revolution for DAC Materials"** — tjz21 released two sorbent screening repos under CC0 public domain. This is the most radical open-science gesture in climate tech. The data is free. Anyone can use it.
+3. **"The Directory vs. The Device"** — open-sustainable-technology has 2,552 stars and is continuously maintained. OpenAir-Cyan has 76 stars and no new commits since 2024. The ecosystem directory is alive; the hardware project is frozen.
+4. **"Ghost Repos and the Dilution Problem"** — carbon-capture-and-storage has 85 stars but hasn't been touched since 2021. CO2-Sequestration: 32 stars, frozen since 2019. Stars measure citations, not usability.
+
+### Open Questions for Guests
+- Should open-source hardware projects be required to maintain after certification?
+- Is CC0 the right license for climate datasets? Who owns the data?
+- The $1000/ton DAC cost barrier — where does open source actually help?
+- Can you build a desktop DAC device? What's missing from OpenAir-Cyan that would make it more useful?
