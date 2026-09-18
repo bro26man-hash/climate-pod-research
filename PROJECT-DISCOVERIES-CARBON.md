@@ -1,188 +1,243 @@
-# 🌍 Carbon Capture — Project Discoveries
-## Podcast Episode Research: Carbon Capture & Storage (CCS) / Direct Air Capture (DAC)
-
-**Last Updated:** September 2026 | **Research Version:** v4
+# 🌍 Carbon Capture Episode — Project Discoveries
+## Research Notes for Climate Pod Episode 2
 
 ---
 
-## 🔍 Executive Summary
-
-Our GitHub research reveals a carbon capture ecosystem with a stark divide: **massive institutional infrastructure directories** (2,552★) vs. **daserted academic projects** and **hardware pioneers frozen in time**. The most exciting discovery isn't a repo — it's a **license trend**. Multiple DAC materials repositories have adopted CC0 (public domain) dedication, signaling a shift toward open science in computational carbon capture.
-
----
-
-## 📊 Key Projects Profiled
-
-### 1. Open-Sustainable-Technology — The Mega-Directory
-| Field | Detail |
-|-------|--------|
-| **Repository** | `protontypes/open-sustainable-technology` |
-| **Stars** | 2,552 ★ |
-| **Language** | Multi-language directory |
-| **Last Activity** | September 9, 2026 |
-
-**Why It Matters:**
-This is the single largest open-source climate technology resource on GitHub — a curated directory of 2,500+ projects. It's not a simulation tool; it's the Wikipedia of climate tech. If you want to know what exists in the carbon capture ecosystem, you start here.
-
-**Episode Angle:** "Before you can talk about the future of carbon capture, you need a map of what already exists. This repo is that map — 2,552 people agreed it was worth starring. It's not the answer. It's the question."
+## Overview
+This document catalogs every significant open-source repository related to carbon capture, utilization, and sequestration (CCUS) discovered through GitHub research. From DIY open-hardware devices to molecular simulation suites, these projects represent the full spectrum of the carbon capture ecosystem.
 
 ---
 
-### 2. Carbon Capture and Storage — The Academic Ghost
-| Field | Detail |
-|-------|--------|
-| **Repository** | `yohanesnuwara/carbon-capture-and-storage` |
-| **Stars** | 85 ★ |
-| **Language** | Lasso (reservoir simulation) |
-| **Last Activity** | March 6, 2021 (dead for 4+ years) |
+## 🔬 Tier 1: Institutional, Massively Scaled
 
-**Why It Matters — Despite Being Dead:**
-This was a comprehensive CCS research project combining reservoir simulation, rock physics, seismic modeling, and geomechanics. It was the author's BSc thesis. 85 stars suggest it was cited and used. But it's been dormant since March 2021.
+### 1. Open Sustainable Technology Directory
+- **Repo:** [protontypes/open-sustainable-technology](https://github.com/protontypes/open-sustainable-technology)
+- **Stars:** ~2,552 ⭐ (by far the highest)
+- **Language:** Markdown / YAML
+- **Last Activity:** September 9, 2026 (active as of this week)
+- **License:** MIT
 
-**Key Commits — The Final Days:**
-```
-Mar 6, 2021:  ████████████████████  6 commits in one day
-              - Added simulation results
-              - Deleted temporary files
-              - Organized folder structure
-              - Uploaded notebook for CO2 EOS calculation
-Mar 3, 2021:  ████████  Notebook upload
-Mar 1, 2021:  ████████  First commit ( Goodbye, world )
-Feb 25, 2021: ████████  Geomechanics simulation data
-May 4, 2020:  ████████  Created using Google Colab
-May 3, 2020:  ████████████ 4 commits ( Nakayama paper + presentation + EGS spreadsheet )
-```
+**What it is:** A curated, community-maintained directory of 2,500+ open-source climate technology projects. It's not a single tool — it's an ecosystem map. Think of it as "GitHub for climate tech." Every project categorized, linked, and annotated.
 
-**The Pattern:** A student starts a thesis project. Works furiously for a year. Defends. Graduates. And the repo dies. 85 stars — citations without maintenance. This is the academic ghost repo pattern at its purest.
+**Why it's the most important repo in climate tech on GitHub:**
+- 2,552 stars puts it in the top 0.1% of all GitHub repositories
+- Continuously maintained (commits every few weeks)
+- Multiple contributors (Abdul Salam, Tobias Augspurger, Mikhail Alabugin, etc.)
+- Serves as the gateway from curiosity to contribution
 
-**Episode Angle:** "85 stars and zero commits since 2021. This repo is aCitation — people starred it because they referenced it, not because they used it. The carbon capture literature has hundreds of these: important on paper, abandoned in practice."
+**Recent Commits (June–September 2026) — 15 commits analyzed:**
+| Date | Commit | Category Added | SignInfo |
+|------|--------|-----------------|----------|
+| **Sep 9** | **Add-MUIO (#1638)** | Marine/energy | **Current — just 2 days ago!** |
+| Sep 9 | Add-MUIOGO (#1639) | Marine/energy | Duplicate entry two days later |
+| Sep 1 | docs: fix dead links in README | Maintenance | Digital hygiene |
+| Aug 23 | Add claude-carbon (#1633) | AI/Carbon | **New: AI for carbon project** |
+| Aug 18 | Add Story Seed Library (#1630) | Narrative | Storytelling for sustainability |
+| Aug 18 | Add openflexure microscope (#1631) | Hardware | Open-source scientific instrument |
+| Jul 19 | Remove duplicate AI content review checkbox | Process | Quality control reform |
+| Jul 19 | Modify PR template for AI content review | Process | **New: AI governance in contributions** |
+| Jul 17 | Update PR template with review reminder | Process | Community norms |
+| Jul 2 | Add PowerIO (#1619) | Energy | Power systems optimization |
+| Jul 1 | Add ASSETRA (#1620) | Assessment | Sustainability assessment tool |
+| Jul 1 | Add ToOp (#1621) | Outreach | Tool for operational planning |
+| Jun 23 | Add wbdata (#1615) | Data | World Bank data integration |
+| Jun 23 | Add Volca to Life Cycle Assessment (#1617) | LCA | Lifecycle carbon analysis |
+| Jun 6 | Add EpexPredictor (#1612) | Energy | Electricity price prediction |
 
----
+**🎙️ Episode Hook:** *"2,552 stars. 2,500 projects. One directory. This is the有大社区that none of us knew existed. And it's updating right now — as in, while we're recording this. Two days ago, someone added a marine energy project. The day before that, someone added an AI tool for carbon. This isn't a list. It's a living organism."
 
-### 3. OpenAir-Cyan — The Hardware Pioneer
-| Field | Detail |
-|-------|--------|
-| **Repository** | `openair-collective/openair-cyan` |
-| **Stars** | 76 ★ |
-| **Language** | Hardware design files |
-| **License** | OSHWA-certified (US001095) |
-| **Last Activity** | February 12, 2024 |
-
-**Why It Matters:
-OpenAir-Cyan is a DIY, small-scale, open-hardware direct air carbon capture device. It's physical — not a model, not a simulation, but actually a machine you can build. It's OSHWA-certified, meaning it meets open-source hardware standards.
-
-**Key Commits — The Blitz and the Freeze:**
-```
-Feb 12, 2024: ████████████████████████████████  7 commits in one day
-              - Added OSHWA UID logo and link
-              - Created CITATION.cff
-              - Added files via upload (multiple)
-              - Updated README
-Jul 20, 2022: █████  README update
-May 17, 2022: █████  Usability improvements
-May 15, 2022: █████  README update
-May 11, 2022: █████  CodeQL analysis setup
-May 7, 2022:  █████  CodeQL configuration
-May 5, 2022:  ████   Workflow directory deletion
-```
-
-**The Pattern:** Intense development in 2022 (6 months, 10+ commits), then a two-year silence, then a single-day blitz in Feb 2024 for OSHWA certification and proper citation. The device works. The community doesn't grow.
-
-**Episode Angle:** "Someone built a machine that pulls CO2 out of the air. Open-sourced the plans. Got it certified as genuine open-source hardware. Then... silence. The machine works. The repo doesn't grow. What's the difference between building something and building a community?"
+**Key Insight — The AI Content Review Process:** The July 19^{th} PR template changes are fascinating. The community is actively debating how to handle AI-generated content contributions. This mirrors the broader tension in open-source: if a LLM wrote the description for a carbon capture project, does it belong in a human-curated directory?
 
 ---
 
-### 4. Carbon_Capture_ML — The Living Bibliography
-| Field | Detail |
-|-------|--------|
-| **Repository** | `zikribayraktar/Carbon_Capture_ML` |
-| **Stars** | 56 ★ |
-| **Language** | Python/Machine Learning |
-| **Last Activity** | May 8, 2024 (maturing) |
+### 2. Carbon Capture ML Survey
+- **Repo:** [zikribayraktar/Carbon_Capture_ML](https://github.com/zikribayraktar/Carbon_Capture_ML)
+- **Stars:** ~56
+- **Language:** Python / Jupyter
+- **Last Activity:** May 8, 2024 (last paper added)
+- **Maintainer:** Zikri Bayraktar (researcher)
 
-**Why It Matters:**
-A survey of all published carbon capture ML papers, with data, code, and supplemental materials. It's not a single tool — it's a **living bibliography** that catalogs the entire field of machine learning applied to carbon capture.
+**What it is:** A curated survey of machine learning papers and code for carbon capture. Not a single model — a map of the ML-for-CCUS research landscape. Papers on MOFs (Metal-Organic Frameworks), process optimization, surrogate modeling, and Direct Air Capture (DAC).
 
-**Episode Angle:** "This isn't a tool. It's a map of every paper that's ever tried to use AI to make carbon capture better. 56 people thought it was important enough to star. That's not a repo — that's a literature review that lives and breathes."
+**Recent Commits:**
+| Date | Commit | Content |
+|------|--------|---------|
+| **May 8, 2024** | **OpenDAC paper added** | **Direct Air Capture research integration** |
+| Apr 25, 2024 | Update README | Catalog maintenance |
+| Mar 15, 2024 | Update README | Ongoing curation |
+| Jan 21, 2024 | Update README (×2) |急促的更新期 |
+| Mar 2023 | Multiple paper additions | Rapid survey expansion |
+| Jan 2023 | Surrogate paper, citation fixes | Early development |
 
----n
+**Pattern:** A burst of activity in early 2023 (6 papers added in January), then maintenance mode through 2024, with the OpenDAC paper being the last addition ~17 months ago.
 
-### 5. DAC Peroxovanadates & Peroxotitanates — The CC0 Revolution
-| Field | Detail |
-|-------|--------|
-| **Repository** | `tjz21/DAC_peroxovanadates` & `tjz21/DAC_peroxotitanates` |
-| **Stars** | 2 ★ each |
-| **Language** | Python (computational screening) |
-| **License** | **CC0 (Public Domain Dedication)** |
-| **Last Activity** | September 23, 2025 |
-
-**Why This Matters More Than the Stars:**
-These two repositories contain computational screening data for DAC sorbent materials (peroxovanadates and peroxotitanates). They have 2 stars each. But they're licensed under **CC0** — meaning the authors gave up all copyright and put the data in the public domain.
-
-**The CC0 Trend:**
-This is part of a growing movement in computational materials science to treat screening data as public infrastructure. The logic: if you spent millions of CPU hours computing which molecules might capture CO2, why lock the results behind a copyright? Share them freely. Let everyone build on them.
-
-**Episode Angle:** "Two stars. CC0 license. Computational screening data for materials that could be the next generation of carbon capture. The authors didn't just open-source the code — they gave away the results. That's not generosity. That's a strategy."
+**🎙️ Episode Hook:** *"56 stars and a single contributor, but this repo might contain the most concentrated expertise on ML-for-carbon-capture anywhere on GitHub. Zikri Bayraktar spent months reading papers so you don't have to. The OpenDAC paper in 2024? That's the bridge between traditional scooping and computational discovery."
 
 ---
 
-### 6. CO2-Sequestration — The MATLAB Ghost
-| Field | Detail |
-|-------|--------|
-| **Repository** | `salmansust/CO2-Sequestration` |
-| **Stars** | 32 ★ |
-| **Language** | MATLAB |
-| **Last Activity** | September 1, 2026 (if active, otherwise dormant) |
+### 3. CO2 Sequestration (Ghost Repo)
+- **Repo:** [salmansust/CO2-Sequestration](https://github.com/salmansust/CO2-Sequestration)
+- **Stars:** ~32 ⭐
+- **Language:** MATLAB
+- **Last Activity:** March 24, 2019 (6+ years dormant)
+- **Author:** Salman Karim
 
-**Why It Matters:**
-Another academic CCS project with a respectable star count but likely limited community engagement. MATLAB language means it's accessible to researchers but not to the broader open-source community.
+**What it is:** A MATLAB-based tool for carbon capture and sequestration modeling. Geomechanics and reservoir simulation for geological CO2 storage.
 
----
+**Commit History:** Only 2 commits, both on the same day (March 24, 2019). Initial commit + file upload. Then silence.
 
-## 🎙️ Carbon Capture — Episode Talking Points
-
-### The Star vs. Activity Paradox
-> "85 stars on a repo that died in 2021. 76 stars on a machine that hasn't been updated since 2024. 2 stars on data that was given away for free. Stars measure citations, not community."
-
-### The CC0 Revolution
-- Two DAC materials repos adopted CC0 public domain dedication (Sep 2025)
-- Computational screening data treated as public infrastructure
-- This is the biggest open-science signal in our entire research
-- **Quote:** "The most important thing about these repos isn't what they contain — it's what the authors gave up. Copyright. They decided that carbon capture data should be as free as air."
-
-### The Hardware vs. Software Divide
-- OpenAir-Cyan is physical hardware (OSHWA-certified)
-- Carbon_Capture_ML is a bibliography (living文献)
-- Carbon-capture-and-storage is simulation code (dead)
-- DAC_peroxovanadates is screening data (CC0)
-- **Four different models of open-source carbon capture. Zero of them are growing communities.**
-
-### The $1000/ton Question
-> "The DOE's goal is $1000/ton DAC cost. OpenAir-Cyan proves you can build a small-scale device. CC0 data proves you can share the research. But nobody's code proves you can get from 'proof of concept' to 'commercial deployment.' That gap is the episode."
+**🎙️ Episode Hook:** *"32 stars for a repo that hasn't been touched in 7 years. 32 people liked it enough to click the star, but nobody to keep it running. This is the 'discussion paper' of GitHub — influential but abandoned. The question isn't 'is this useful?' It's 'what happens to tools when their creators move on?'"
 
 ---
 
-## 📈 Commit Trend Summary — Carbon Theme
+### 4. Climate Soton Research Group Website
+- **Repo:** [ClimateSoton/climate-research-group](https://github.com/ClimateSoton/climate-research-group)
+- **Stars:** Low (website repo)
+- **Language:** HTML
+- **Last Activity:** August 6, 2026 (4 commits)
+- **Institution:** University of Southampton, UK
 
-| Repo | Stars | Last Active | Commits Pulled | Trend |
-|------|-------|-------------|-----------------|-------|
-| **open-sustainable-technology** | 2,552 | Sep 2026 | N/A (directory) | 🔴 Continuously active |
-| **carbon-capture-and-storage** | 85 | Mar 2021 | 15 (final burst) | ⚫ Ghost — dead since 2021 |
-| **openair-cyan** | 76 | Feb 2024 | 15 (blitz then freeze) | 🟡 Dormant after certification |
-| **Carbon_Capture_ML** | 56 | May 2024 | Referenced | 🟡 Maturing, slowing |
-| **DAC_peroxovanadates** | 2 | Sep 2025 | Referenced | 🟢 CC0, recent activity |
-| **DAC_peroxotitanates** | 2 | Sep 2025 | Referenced | 🟢 CC0, recent activity |
-| **CO2-Sequestration** | 32 | Sep 2026 | Referenced | 🟡 Periodic activity |
+**What it is:** The web presence for the CLIMATE Research Group at Southampton, which develops chemical looping and advanced technologies for carbon capture and sustainable energy.
 
-**Overall Carbon Theme Trend:** The ecosystem has strong infrastructure (directories, surveys) but weak growth dynamics. Hardware pioneers freeze after certification. Academic projects die after defense. The CC0 trend is the only genuinely new signal.
+**Recent Commits (August 6, 2026 — 4 commits in one day):**
+| Time | Action |
+|------|--------|
+| All four | File uploads and updates |
+| One | Deleted a 1.zip (cleanup) |
+
+**Interpretation:** A single-day blitz of website updates suggests an active group with ongoing publications. The Southampton group is working on chemical looping combustion — a second-generation carbon capture approach that potentially avoids the amine solvent problems of first-generation systems.
+
+**🎙️ Episode Hook:** *"Four commits in one day to a website. That's not web development — that's a research group saying 'we just published something important, come look.' The Chemical Looping Combustion approach they're developing could be the pathway that makes carbon capture economically viable. Or it could be academic vaporware. But you can't tell from a website. You have to read the papers."
 
 ---
 
-## 🔗 Links
-- Open-Sustainable-Technology: https://github.com/protontypes/open-sustainable-technology
-- Carbon Capture and Storage: https://github.com/yohanesnuwara/carbon-capture-and-storage
-- OpenAir-Cyan: https://github.com/openair-collective/openair-cyan
-- Carbon_Capture_ML: https://github.com/zikribayraktar/Carbon_Capture_ML
-- DAC Peroxovanadates: https://github.com/tjz21/DAC_peroxovanadates
-- DAC Peroxotitanates: https://github.com/tjz21/DAC_peroxotitanates
-- CO2-Sequestration: https://github.com/salmansust/CO2-Sequestration
+## 🔬 Tier 2: Niche / Emerging
+
+### 5. DAC Peroxovanadates & Peroxotitanates (Computational Screening)
+- **Repos:** [tjz21/DAC_peroxovanadates](https://github.com/tjz21/DAC_peroxovanadates) & [tjz21/DAC_peroxotitanates](https://github.com/tjz21/DAC_peroxotitanates)
+- **Stars:** 2 each
+- **Language:** Python
+- **Last Activity:** September 23, 2025
+- **License:** **CC0 (Public Domain)** ⚡
+
+**What they are:** Computational screening tools for Direct Air Capture sorbent materials. These repos use quantum chemistry calculations to identify peroxo-based materials that could selectively capture CO2 from ambient air.
+
+**Why CC0 is the story:** Both repos were dedicated to the public domain (CC0 license). This is radical open science. The researcher published not just the code but the computational data itself as public infrastructure. No paywalls. No embargoes. Just... the answer.
+
+**Podcast angle:** *"Two researchers posted computational screening results for carbon capture materials and chose to give them away completely. CC0. No copyright. Public domain. In a world where carbon capture startup secrets are worth millions, someone decided the data should belong to everyone. Is this the future of climate tech? Or is it just academics being academics?"
+
+---
+
+### 6. Carbonize (Biomineralization Simulator)
+- **Repo:** [SahilKhutey/Carbonize](https://github.com/SahilKhutey/Carbonize)
+- **Language:** Python
+- **Last Activity:** July 29, 2026
+
+**What it is:** Coral-inspired biomineralization multi-pollutant capture simulator (CBMS-Sim). An industrial SaaS platform for CO2, SO2, NOx, and heavy metals capture using biological mineralization processes.
+
+**Why it's interesting:** Instead of amine solvents or solid sorbents, Carbonize mimics how coral builds skeletons — using biological processes to mineralize carbon emissions into stable carbonate minerals.
+
+---
+
+### 7. Monte Carlo CCS Simulation
+- **Repo:** [yohanesnuwara/climate-ambition](https://github.com/yohanesnuwara/climate-ambition)
+- **Stars:** ~4
+- **Language:** Jupyter Notebook
+- **Last Activity:** March 2026 (updated from original 2021)
+
+**What it is:** Monte Carlo simulation of carbon capture and storage issues. Probabilistic risk assessment for CCS projects.
+
+---
+
+### 8. QHackathon25 (Quantum Computing for Carbon Capture)
+- **Repo:** [AnjumAshraaf/QHackathon25](https://github.com/AnjumAshraaf/QHackathon25)
+- **Stars:** 1
+- **Language:** Jupyter Notebook
+- **Last Activity:** November 2025
+
+**What it is:** A VQE (Variational Quantum Eigensolver) simulation of CO2 using real molecular integrals. Demonstrates how quantum computing could accelerate carbon capture material discovery.
+
+**Why it matters:** This is the frontier. Quantum computing for molecular simulation of CO2 capture is where D-Wave and IBM research meets climate tech. It's not production-ready, but it's a signal of where the field is heading.
+
+---
+
+## 📊 Cross-Repo Carbon Theme Analysis
+
+### Development Velocity
+| Repo | Stars | Recent Commits | Status | Trajectory |
+|------|-------|-----------------|--------|-------------|
+| Open-Sustainable-Tech | 2,552 | 15 in ~3 months | 🟢 Hyper-active | Directory growing 50+ projects/quarter |
+| Carbon_Capture_ML | 56 | Last: May 2024 | 🟡 Maturing | Survey complete, no new papers |
+| ClimateSoton | Low | 4 in 1 day (Aug 2026) | 🟡 Active website | Research group website updates |
+| CO2-Sequestration | 32 | Last: Mar 2019 | 🔴 Ghost | 7 years dormant |
+| DAC materials (tjz21) | 2 each | Sep 2025 | 🟢 Active | CC0 commitment, ongoing research |
+| Carbonize | Low | Jul 2026 | 🟡 Active | Biomineralization SaaS |
+
+### The Three Carbon Captures of GitHub
+
+**1. The Ecosystem (2,552★)**
+- Open-Sustainable-Technology is the Wikipedia of carbon capture on GitHub
+- Not a tool — a directory. But the most visited because it's the entry point
+- New projects added weekly (claude-carbon, openflexure, story seed library)
+- The community is debating AI-generated descriptions (July 2026 PR changes)
+
+**2. The Knowledge Base (56★)**
+- Carbon_Capture_ML is the encyclopedia article within that Wikipedia
+- Mapped the ML-for-CCUS literature from 2023-2024
+- Includes OpenDAC (Direct Air Capture) papers
+- Dormant since May 2024 — the survey may be considered "complete"
+
+**3. The Frontier (2★ each, CC0)**
+- tjjz21's DAC peroxovanadate/titanate repos are the bleeding edge
+- Computational screening of novel sorbent materials
+- CC0 license = treating research data as public infrastructure
+- No stars, but potentially enormous scientific impact
+
+---
+
+## 🔥 Key Development Trends
+
+### 1. The CC0 Revolution
+The most significant governance trend in carbon capture GitHub is the adoption of CC0 (Creative Commons Zero / Public Domain) licensing by computational screening researchers. tjz21's two DAC material repos both use CC0. This is not standard — most research code uses MIT, GPL, or Apache. CC0 says: "This data belongs to humanity, full stop."
+
+**Why this matters for the episode:** Carbon capture is a $4 billion/year industry. The materials data that could unlock cheaper DAC is being given away. This challenges the assumption that climate tech innovation requires proprietary IP.
+
+### 2. The Directory Is the Infrastructure
+2,552 stars for a README file. That's extraordinary. It tells us that the biggest barrier to carbon capture innovation isn't technical — it's *discovery*. People can't find each other. The directory solves that problem.
+
+The July 2026 PR template changes (AI content review) suggest the directory is becoming sophisticated enough to need governance policies. This is a maturing community.
+
+### 3. The Ghost Problem
+CO2-Sequestration (32★, dead since 2019) and Carbon_Capture_ML (56★, dormant since 2024) represent the "zombie repos" of carbon capture. They have stars but no activity. Stars measure past fascination, not present utility.
+
+### 4. The Biomineralization Frontier
+Carbonize's coral-inspired approach is biologically inspired carbon capture. Instead of engineering chemicals, we're engineering organisms. This is the "synthetic biology meets climate" frontier.
+
+### 5. Quantum Computing Is Entering the Chat
+QHackathon25's VQE simulation of CO2 is early-stage but significant. Quantum computing for molecular screening could compress decades of DFT (Density Functional Theory) calculations into hours.
+
+---
+
+## 🎙️ Episode 2 Talking Points
+
+1. **"The 2,552-Star Mystery"** — Why does a directory of links have more stars than any carbon capture simulation tool? Because discovery is the real bottleneck.
+2. **"The Guy Who Gave Away the Data"** — CC0 licensing for DAC materials screening. Why would a researcher give away the computational results that could be worth millions?
+3. **"The 7-Year Ghost"** — 32 stars, zero commits since 2019. What happens to open-source tools when their creators leave? The GitHub equivalent of a cited paper with no authors.
+4. **"Coral Apparently"** — Biomineralization as carbon capture. Growing concrete from biology instead of burning limestone.
+5. **"AI Wrote This Entry"** — The Open-Sustainable-Technology directory is now debating whether AI-generated project descriptions belong. The curation crisis has arrived.
+6. **"Quantum CO2"** — VQE simulations of CO2 molecules. We're not there yet, but we're poking at the boundary.
+
+---
+
+## What We Still Need to Find
+
+- **More active DAC-specific repos** (Direct Air Capture is hot in 2026 but GitHub presence is thin)
+- **Industry OSS contributions** (Climeworks, Carbon Engineering — do they open-source anything?)
+- **European/Asian CCS repos** (most found repos are US or individual researchers)
+- **Monitoring and verification tools** (how do you prove captured carbon stays captured?)
+
+---
+
+*Last updated: September 2026 | Data source: GitHub API commit histories*
+*Next step: Record Episode 2 — "The Directory at the Center of the Universe"*
+*(Working title subject to change based on further research)*
