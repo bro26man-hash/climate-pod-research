@@ -1,64 +1,76 @@
-# 🎙️ Solar Geoengineering Episode — Production Notes
-## Compiled from GitHub Research — September 2026
+# 🌞 Solar Geoengineering — Episode Notes
+## Episode Planning Document (September 2026)
 
 ---
 
-## Episode Title (Provisional)
-**"The Empty Sky: Why GitHub Has No Solar Geoengineering Model"**
-
-## Runtime Target
-25–35 minutes
+## Episode Title (Working)
+"The Model Gap: Why Solar Geoengineering Has No Open-Source Simulation"
 
 ---
 
-## Act Structure
-
-### Act I: The Paradox (5 min)
-**Opening:** We searched GitHub for every solar geoengineering repository. The most used atmospheric model on Earth (WRF, 1,761★) silently maintains solar radiation physics. But repos that *explicitly* simulate SRM? The候车 station is empty.
-
-**Key stat:** 55 commits across 6 solar geoengineering repos in our sample. Only 5 commits were directly physics-relevant. The rest are documentation, configuration, or bug fixes to general models.
-
-**The hook:** "If you want to simulate solar geoengineering on GitHub, you'd download a model built for weather forecasting and hope it works. That's like performing surgery with a kitchen knife — it's technically possible, but nobody designed it for that purpose."
-
-### Act II: The Infrastructure Lie (10 min)
-**The WRF Story:** WRF is not a geoengineering tool. It's a weather model. But its solar radiation scheme is the closest thing we have to an SGE simulation standard. In May 2026, a critical solar radiation calculation was corrected (commit e836cd6). This means that *every previous SRM simulation using WRF had a systematic error in its solar radiation calculations.*
-
-**Talking point:** The fix was made by weiwangncar at NCAR. It was reviewed through GitHub's PR process. It was merged by Anthony Islas. Seven contributors have committed to WRF in the last 30 days. This is the most rigorously maintained solar-relevant code on GitHub — and it doesn't know it's a geoengineering tool.
-
-**GCCS-Core Detour:** Then there's KOSASIH's "Global Climate Control System" — 9 stars, 15 commits all on one day, zero actual simulation code. It's a project skeleton named like a hydra and built like a placeholder. But it tells us something about how people *imagine* solar geoengineering: as a control system, not a climate intervention.
-
-### Act III: The Governance Void (10 min)
-**OOCC_2021's Ghost:** jlehtomaa's solar geoengineering governance model. 15 commits over 4 months in 2021. A complete academic lifecycle: develop, refine, publish, die. The code is still there. The paper still cites it. But nobody maintains it.
-
-**The question:** If the best governance model for SRE is a dead repo, what does that say about our preparedness for the real-world governance challenge?
-
-**ClimateMARGO's Resurrection:** Fons van der Plas's climate-economic model woke up in August 2026 after 2 years of silence with two README updates. Is this a signal or noise? The model optimizes SGE deployment trade-offs. If it's being revived, it might mean someone sees renewed policy relevance. If it's just housekeeping, it's a false alarm.
-
-### Act IV: The What-If (5 min)
-**What would a real SGE simulation repo look like?**
-- Modular factions: stratospheric aerosol module, ocean feedback module, vegetation response module
-- Ensemble running: parameter uncertainty, scenario permutations
-- Open data: injected mass, radiative forcing outputs, climate response fields
-- Community governance: issue tracking for scenario proposals, PR review for physics changes
-
-**Why doesn't it exist?**
-- Funding: No grant agency funds open-source SGE simulation
-- stigma: Researchers avoid "geoengineering" labels for career safety
-- Complexity: Full SGE simulation requires climate model resolution + chemistry + dynamics
-- Governance: The topic is politically radioactive
+## Core Thesis
+The open-source world has incredible tools for *evaluating* climate — but almost nothing for *simulating* solar radiation management. The entire SRM modeling pipeline runs through institutional, closed-source general circulation models. GitHub, the world's largest open-source collaboration platform, has **zero** repositories for simulating SRM interventions. This gap is itself a story about power, access, and governance.
 
 ---
 
-## 🎤 Audience Engagement Prompts
+## Key Talking Points
 
-1. "Would you trust a solar geoengineering model maintained by a single PhD student on a weekend?"
-2. "If WRF's solar radiation fix invalidates past SRM results, who's responsible for re-running those experiments?"
-3. "Is 'Global Climate Control System' the most ambitious and empty repo on GitHub, or a prophecy?"
+### 1. The Solar Radiation Bug (May 28, 2026)
+- **What happened:** A developer fixed the Earth Outgoing Longwave (EOT) radiation calculation in WRF v4.8.0
+- **Why it matters:** If the solar radiation calculation was wrong, every SRM simulation using WRF produced flawed data
+- **Question to explore:** How many policy documents and field-test permits were justified using data with this known error?
+- **Commit:** `e836cd6` — "correction for EOT calculation for solar radiation"
 
-## 📎 Sources & Links
-- [wrf-model/WRF](https://github.com/wrf-model/WRF) — v4.8.0, 1,761★
-- [ClimateMARGO/ClimateMARGO.jl](https://github.com/ClimateMARGO/ClimateMARGO.jl) — Climate-economic SGE optimization, 73★
-- [KOSASIH/GCCS-Core](https://github.com/KOSASIH/GCCS-Core) — "Global Climate Control System", 9★
-- [jlehtomaa/OOCC_2021](https://github.com/jlehtomaa/OOCC_2021) — SGE governance model, 2★
-- [pixnum-hub/GeoVision](https://github.com/pixnum-hub/GeoVision) — "Geoengineering Simulator", 0★
-- [hausfath/srm-forever](https://github.com/hausfath/srm-forever) — SRM economics, 0★
+### 2. The Aerosol Scheme Toggle (June 5, 2026)
+- **What happened:** WRF v4.8.0 deactivated `tempo_aerosolaware` and `tempo_hailaware`
+- **Why it matters:** These are aerosol-aware cloud physics schemes — directly relevant to how models treat stratospheric aerosol injection
+- **Question to explore:** Were these schemes failing? Were they being replaced? Or is this just cleanup?
+
+### 3. The PCMDI Velocity (September 3–4, 2026)
+- **What happened:** 10 commits in 2 days for v4.2.1 release
+- **Why it matters:** PCMDI metrics are the validation toolkit for CMIP6 — the gold standard for climate model evaluation
+- **Question to explore:** What was the urgency? A journal deadline? A policy report? And does faster validation mean SRM results are being rushed?
+
+### 4. The Precip-Buoyancy POD (June 19, 2026)
+- **What happened:** 5 commits in one day adding a precipitation-buoyancy statistics diagnostic to MDTF
+- **Why it matters:** This is the most ocean-relevant diagnostic in open source — and it's for evaluating model accuracy, not simulating interventions
+- **Question to explore:** Would a true ocean geoengineering model need this diagnostic? Or is it irrelevant to deliberate interventions?
+
+### 5. Weitzman Discounting & the Termination Shock
+- **What happened:** `srm-forever` was created in a single day (August 26, 2026) with a complete economic model using Weitzman certainty-equivalent discounting
+- **Why it matters:** It provides the theoretical framework for understanding the "termination shock" — the risk that stopping SRM causes rapid warming
+- **Question to explore:** If SRM costs are modeled as a vintage annuity, does that change the political calculus? Who pays for forever?
+
+### 6. The Governance Vacuum
+- **What happened:** `climate-intervention-governance` was released (August 23, 2026) — a 12-skill Claude Code plugin for tracking SRM legal/regulatory status
+- **Why it matters:** It's the first real governance intelligence tool for SRM, and it's built as a Claude plugin, not a public website
+- **Question to explore:** Is governance-by-AI-plugin the future of SRM oversight? Who audits the auditor?
+
+---
+
+## Interview Questions (Draft)
+1. "If you were a policymaker deciding whether to fund an SRM field test, would you trust the output of a model with a known solar radiation bug?"
+2. "Why is there no open-source GCM with an SRM module? Is it a technical barrier or a political one?"
+3. "The WRF maintainers deactivated two aerosol schemes. Should the community have been consulted before that change?"
+4. "What would a truly open-source SRM simulation platform look like? And who would build it?"
+5. "Is the absence of SRM code on GitHub a governance signal — a way of saying 'we don't want this to be democratized'?"
+
+---
+
+## Guest Outreach Ideas
+- **weiwangncar** (WRF maintainer, NCA/Davis) — technical authority on WRF physics
+- **Jiwoo Lee** (PCMDI, LLNL) — CMIP6 metrics and validation
+- **Wei-Ming Tsai** (NOAA GFDL) — ocean-atmosphere interaction diagnostics
+- **Fons van der Plas** (ClimateMARGO) — climate-economic modeling
+- **hausfath** (srm-forever) — SRM economics and discounting theory
+- **Zereo0317** (climate-intervention-governance) — SRM regulatory tracking
+
+---
+
+## References
+- [WRF v4.8.0 Release](https://github.com/wrf-model/WRF/releases)
+- [PCMDI Metrics v4.2.1](https://github.com/PCMDI/pcmdi_metrics)
+- [MDTF-diagnostics](https://github.com/NOAA-GFDL/MDTF-diagnostics)
+- [ClimateMARGO.jl](https://github.com/ClimateMARGO/ClimateMARGO.jl)
+- [srm-forever](https://github.com/hausfath/srm-forever)
+- [Climate Intervention Governance Plugin](https://github.com/Zereo0317/climate-intervention-governance)
