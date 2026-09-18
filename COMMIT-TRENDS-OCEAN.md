@@ -1,185 +1,109 @@
 # 🌊 Ocean Intervention — Commit Trend Analysis
-## GitHub API Data Pull — September 2026
+
+> Updated: September 2026 | 10+ search queries, 14+ ocean-adjacent commits analyzed
 
 ---
 
-## 📈 Overall Activity Dashboard
+## Executive Summary
 
-| Repo | Stars | Recent Commits | Commit Rate | Last Active | Trend |
-|------|-------|----------------|-------------|-------------|-------|
-| **aiida-icon** | 3 | 15 in 7 months | 2.1/month | Jan 27, 2026 | 🟢 **Active institutional development** |
-| **NCAR_ML_EKE** | 20 | 10 in 15 months | 0.67/month | Mar 30, 2022 | 🔴 **Dormant since paper publication** |
-| **Oceananigans.jl** | 1,413 | (from v2) | High | Active | 🟢 **Active community-driven ocean physics** |
-| **veros** | 187 | (not pulled) | Medium | Active | 🟢 **Active ocean circulation model** |
-| **Total dedicated OGE repos** | **0** | **—** | — | **—** | **⬛ THE GAP** |
+Ocean intervention is the **empty quadrant** of climate tech on GitHub. Across 10+ search queries and systematic review of ocean-adjacent repositories, we found **zero dedicated ocean geoengineering code repositories**. The ocean's voice in the open-source climate tech ecosystem is indirect — transmitted through evaluation diagnostics (MDTF), atmospheric models (WRF), and pure ocean dynamics code (Oceananigans.jl). None of these simulate interventions.
 
 ---
 
-## 🌊 aiida-icon — The Highest-Quality Ocean-Adjacent Commits
+## Trend 1: The Precipitation-Buoyancy POD — The Ocean's Only Voice
 
-### Recent Timeline (Jul 2025 – Jan 2026)
-```
-Jul 8, 2025   ■ Fix CI security with zizmor (#35)
-Jul 17, 2025  ■ Pin env deps (#36)
-Jul 17, 2025  ■ Re-enable ICON tests after aiida-core 2.7.1 fix (#39)
-Jul 23, 2025  ■ Add CSCS CI test (#42)
-Jul 25, 2025  ■ Fix docs deploy (#46)
-Jul 29, 2025  ■ Simplify wrapper script usage (#45)
-Jul 30, 2025  ■ Replace src conftest with loading aiida fixtures (#47)
-Aug 7, 2025   ■ Improve ALPS specific setup (#48)
-Aug 7, 2025   ■ Fix warning block on index page (#49)
-Aug 20, 2025  ■ Add setup_env input to IconCalculation spec (#41)
-Aug 20, 2025  ■ Output streams as dynamic node outputs (#38)
-Aug 25, 2025  ■ Allow multi-model runs (#50)
-Dec 18, 2025  ■ Add arbitrary remote file system links to inputs (#54)
-Jan 26, 2026  ■ Remove single model assumption from restart file I/O (#61)
-Jan 27, 2026  ■ add extpar_file and ifs2icon inputs (#60)
-```
-
-### The Quality Signal
-This is the most professionally maintained ocean-*related* climate repo we found:
-- **14 contributors** (Haeuselmann, Geiger, Goscinski, plus others via PRs)
-- **Institutional backing** (CSCS — Swiss National Supercomputing Centre)
-- **15 numbered PRs** in 7 months (&gt; 2 PRs/month)
-- **Code quality focus:** CI security (zizmor), type safety (extpar_file), documentation fixes
-- **Multi-model support** — the Aug 2025 upgrade from single-model to multi-model runs is architecturally significant
-
-### What's Missing — The Intervention Layer
-Despite excellent maintenance, aiida-icon has ZERO ocean intervention capabilities:
-- No albedo modification module
-- No OAE (Ocean Alkalinity Enhancement) chemistry solver
-- No iron fertilization biogeochemistry
-- No MCB (Marine Cloud Brightening) parameterization
-- No ocean ecosystem response modeling
-
-It makes it *easier to run existing climate models*. It doesn't make it *possible to simulate ocean interventions*. That gap — between infrastructure capability and intervention application — is the story.
-
-**Podcast framing:** "The Swiss National Supercomputing Centre just shipped a major update that lets you run multiple climate models simultaneously on their HPC systems. 14 contributors. Rigorous CI security. World-class infrastructure. And none of it can simulate what it would actually do to the ocean if we tried to geoengineer it."
+### Why This Single Diagnostic Matters More Than Any Ocean Repo
+- **5 commits on June 19, 2026** — the most intense single-day development in the entire ocean theme
+- **What it does:** Evaluates whether climate models correctly simulate the coupling between ocean buoyancy (temperature/saltiness stratification) and precipitation patterns
+- **Why it's the ocean's voice:** Ocean interventions (OAE, iron fertilization, MCB) would disrupt the air-sea exchange of heat, salt, and CO2. The precip-buoyancy POD is how you'd detect whether those disruptions are modeled correctly. It provides the **evaluation framework** that ocean intervention models need before they can be trusted.
+- **Who maintains it:** NOAA-GFDL (Geophysical Fluid Dynamics Laboratory) — the same lab that produced the hurricane model and is a cornerstone of US climate modeling infrastructure
+- **Institutional signal:** 5 commits in one day means someone at GFDL prioritized this tool. It's not a side project; it's a flagship diagnostic.
+- **🎙️ Podcast insight:** The most ocean-relevant code in the entire GitHub climate tech ecosystem is an evaluation tool, not a simulation tool. We evaluate the ocean more than we intervene in it.
 
 ---
 
-## 💀 NCAR_ML_EKE — The Academic Lifecycle Complete
+## Trend 2: The Atmospheric Gateway (WRF's Ocean Connection)
 
-### Full Timeline
-```
-2021-04-13  ■ Launch day (7 commits on one day)
-2021-04-13  ■ Add MOM6 submodule ← Ocean model integrated
-2021-04-13  ■ Add git submodule
-2021-04-13  ■ 3x README updates
-2021-07-23  ■ Edit README (Sam Partee)
-2022-02-08  ■ Update MOM6 submodule (version bump)
-2022-02-09  ■ Update README for compiling MOM6
-2022-03-14  ■ Update MOM6 instructions
-2022-03-28  ■ Refactor driver for colocated option
-2022-03-30  ■ Fix notebook typos ← LAST COMMIT (4+ years ago)
-```
-
-### The Complete Academic Arc
-1. **Creation (Apr 2021):** 7 commits in one day — same day as arigos posit founding the lab and getting the MOM6 submodule
-2. **Development (Jul 2021):** One README edit 3 months later
-3. **Paper prep (Feb–Mar 2022):** 5 commits over 2 months — MOM6 version bump, compilation instructions, driver refactoring, notebook fixes
-4. **Publication (2022):** Paper published (Nature: "Using Machine Learning at Scale in HPC Simulations with SmartSim: An Application to Ocean Climate Modeling")
-5. **Death (Mar 2022 → forever):** No commits in 4+ years
-
-### The MOM6 Connection
-MOM6 (Modular Ocean Model) is the ocean component of several major climate models including GFDL's ESM. NCAR_ML_EKE integrated MOM6 into a machine-learning workflow. This means researchers can run ML surrogates of an ocean General Circulation Model (GCM) on HPC systems.
-
-**But:** It doesn't simulate any intervention. No iron fertilization. No OAE. No MCB. Just faster ocean modeling.
-
-**Podcast framing:** "A perfect academic paper. 20 stars. MOM6 integrated with ML. A beautiful demonstration of HPC + AI for ocean modeling. And then… silence. The paper got published. The citations accumulated. The code went dormant. Is this what happens to all the ocean geoengineering tools we never built?"
+### How Ocean Signals Enter the Code World Through WRF
+- **10 recent commits** including v4.8.0 release and solar radiation fixes
+- **Ocean connection:** WRF's air-sea flux parameterizations control how energy and moisture exchange between ocean and atmosphere. Any ocean intervention would alter these fluxes (e.g., OAE changes ocean CO2 uptake, MCB changes solar heating of the ocean surface).
+- **Why it matters:** WRF is the "gene" through which ocean intervention signals propagate into the climate modeling ecosystem. You can't simulate an ocean intervention without modeling its effect on air-sea fluxes.
+- **🎙️ Podcast insight:** The ocean doesn't have its own repo. It speaks through WRF. The atmospheric model is the ocean's proxy in the code world.
 
 ---
 
-## 🔬 Ocean Physics Models: Existing Capability vs. Intervention vacuum
+## Trend 3: The Pure Ocean Universe (Oceananigans.jl)
 
-| Capability | Ocean Model | Has Intervention? |
-|-----------|-------------|------------------|
-| Ocean circulation | MOM6, NEMO, Veros | ❌ |
-| Sea ice dynamics | CICE, LIM | ❌ |
-| Marine biogeochemistry | PISCES, PARACE \|, OceanBioME | ❌ |
-| Wave dynamics | WAVEWATCH III | ❌ |
-| Coastal engineering | Delft3D, MIKE | ❌ |
-| GPU acceleration | Oceananigans.jl | ❌ |
-| ML surrogates | NCAR_ML_EKE | ❌ |
-| Workflow automation | aiida-icon | ❌ |
-| **Any intervention layer** | **None** | **⬛ ZERO** |
-
-**The pattern is absolute:** Every layer of ocean modeling exists in open source. Physics, biogeochemistry, ice, waves, coastal, GPU, ML, workflow. But not one layer adds geoengineering capability. The ocean models can simulate what the ocean does. They can't simulate what we'd do to the ocean.
+### Beautiful Code, No Intervention
+- **1,413 stars** (from v2 analysis) — the most popular pure ocean simulation code on GitHub
+- **What it does:** Models ocean turbulence, internal waves, mixing, and stratification using Julia. State-of-the-art computational fluid dynamics for the ocean.
+- **What it doesn't do:** Simulate any geoengineering intervention. No OAE module. No iron fertilization. No MCB. No restoration.
+- **Why it matters:** Oceananigans provides the **pristine ocean baseline**. Before you can simulate what happens when you add alkalinity to the sea, you need a model of the sea itself. Oceananigans is that model.
+- **🎙️ Podcast insight:** Oceananigans is the ocean's self-portrait. It shows the ocean as it is, not as we might change it. The gap between "model the ocean" and "simulate intervening in the ocean" is the governance gap.
 
 ---
 
-## 📊 Cross-Theme Comparison: Where Ocean Stands
+## Trend 4: The Marine Renewable Energy Contrast
 
-### Commit Activity per Theme
-| Theme | Active Repos | Total Recent Commits | Avg Commits/Repo | Multi-Contributor Repos |
-|-------|-------------|---------------------|-------------------|------------------------|
-| ☀️ Solar | 6 | 55 | 9.2 | 1 (WRF) |
-| 🌍 Carbon | 10+ | 60+ | 6.0 | 1 (open-sustainable-tech) |
-| 🌊 Ocean | 5 | 25+ | 5.0 | 1 (aiida-icon) |
-
-### The Contributors Theme
-| Theme | Single-Contributor Repos | Institutional Repos | Avg Contributors |
-|-------|-------------------------|--------------------|-------------------|
-| ☀️ Solar | 3 of 6 (50%) | 1 (WRF) | 1.8 |
-| 🌍 Carbon | 6 of 10 (60%) | 1 (open-sustainable-tech) | 1.5 |
-| 🌊 Ocean | 2 of 5 (40%) | 1 (aiida-icon) | 1.6 |
-
-**Earth's surface is 71% ocean. GitHub's geoengineering ecosystem has fewer active ocean intervention repos than solar radiation papers published in 2024 alone.**
+### Marine Energy Has Tools. Marine Geoengineering Has Nothing.
+- **MHKiT-Python:** A proper tooling ecosystem for marine energy (tidal, wave) has data processing, QC, and resource assessment tools
+- **Oceananigans:** A sophisticated ocean dynamics simulation framework
+- **Ocean geoengineering:** Zero repos
+- **The contrast:** Marine *energy* (harvesting the ocean) has a full software stack. Marine *intervention* (manipulating the ocean) has nothing. The difference is intention: energy extraction is acceptable; environmental manipulation is not.
+- **🎙️ Podcast insight:** The contrast between MHKiT's tooling and the ocean geoengineering void is the governance story in a single comparison. We code for what we harvest. We don't code for what we manipulate.
 
 ---
 
-## 🧮 The Ocean Gap Theories — Commit Evidence
+## The Ocean Gap: A Quantitative Summary
 
-### Theory 1: The Governance Chill
-**Evidence:** Zero commits to any ocean intervention code anywhere on GitHub.
-**Mechanism:** International law (London Protocol, CBD) has created a governance gray zone. Researchers can code solar physics (WRF) without legal risk. They cannot code ocean iron fertilization without potential violation of international maritime law.
-
-### Theory 2: The Cost Barrier
-**Evidence:** Ocean intervention requires physical platforms (research vessels, ocean barges). No "laptop-scale" ocean intervention exists.
-**Mechanism:** Solar geoengineering can be modeled with a laptop (WRF is free). Carbon capture can be prototyped with 3D printers (openair-cyan). Ocean intervention requires a ship. The hardware barrier keeps away individual contributors.
-
-### Theory 3: The Complexity Penalty
-**Evidence:** Even the best ocean models (Oceananigans.jl at 1,413★) have zero intervention modules..
-**Mechanism:** Ocean biogeochemistry is harder than atmospheric physics. OAE requires carbonate chemistry modules + ocean circulation + ecosystem response. The coding barrier is higher, and few researchers have the cross-disciplinary skills.
-
-### Theory 4: The Academic Incentive Problem
-**Evidence:** NCAR_ML_EKE and most ocean-adjacent repos follow the "publish then die" pattern.
-**Mechanism:** Building intervention tools doesn't generate papers. Running an experiment with existing tools generates papers. The incentive structure favors using tools over building them.
-
-### Theory 5: The "Playing God" Stigma
-**Evidence:** Ocean geoengineering is the most ecosystem-scale intervention option. Iron fertilization literally introduces a limiting nutrient to a vast ecosystem.
-**Mechanism:** Cultural resistance to "fixing the ocean" is higher than for "fixing the atmosphere." The ocean is wild, chaotic, and sacred in ways the atmosphere is not. Building code that simulates ocean intervention might feel like consent to actually do it.
+| Search Strategy | Queries | Dedicated Repos Found |
+|----------------|---------|----------------------|
+| Direct geoengineering terms | 3 ("ocean geoengineering", "marine geoengineering simulation", "ocean intervention climate model") | 0 |
+| Specific OAE-only | 3 ("ocean alkalinity enhancement", "ocean liming", "seaweed farming climate") | 0 |
+| Iron fertilization & blue carbon | 2 ("ocean iron fertilization", "blue carbon restoration") | 0 |
+| Marine cloud brightening | 1 ("marine cloud brightening") | 0 |
+| Ocean carbon removal (ocean-specific) | 1 ("ocean carbon removal open source") | 0 |
+| **Total** | **10+** | **0** |
 
 ---
 
-## 🔮 Trend Projections for Episode 2 (Ocean)
+## The Deep Ocean vs. The Shallow Ocean
 
-### What's Trending Up ✓
-1. **Ocean physics modeling is thriving** (Oceananigans, veros, MOM6, NEMO) — the computational tools are mature
-2. **Workflow automation for climate models is improving** (aiida-icon, 15 commits in 7 months)
-3. **HPC integration with ocean models is advancing** (NCAR_ML_EKE's ML surrogates)
+Our search reveals a stratification pattern that mirrors the ocean itself:
 
-### What's Trending Down ✗
-1. **Zero intervention-specific code** — not a single commit to any ocean geoengineering module
-2. **Ocean-adjacent repos go dormant after publication** — NCAR_ML_EKE pattern is the norm, not the exception
-3. **No community coordination** — unlike the carbon capture ecosystem (which has directories and registries), ocean modeling is siloed by institutional fiefdoms
-
-### The Signal in the Silence 📡
-**The ocean gap is not a data gap — it's a political gap.** The science of ocean alkalinity enhancement is mature enough for field experiments (Keller et al. 2023). The modeling tools exist to simulate the effects. The computing power exists to run the simulations. But there is zero open-source code that would let a researcher design, test, or refine an ocean geoengineering intervention.
-
-This is the most consequential "nothing" we found on GitHub. The absence of code is a direct reflection of the absence of governance. You can't build the tool until you've decided it's permitted to build.
+| Depth | GitHub Equivalent | What's There |
+|-------|------------------|-------------|
+| **Surface (Sunlit)** | Atmospheric models (WRF), Evaluation tools (PCMDI, MDTF) | Well-lit, well-funded, lots of code |
+| **Mesopelagic (Twilight)** | Ocean dynamics (Oceananigans), Marine energy (MHKiT) | Interesting but not intervention-focused |
+| **Bathypelagic (Midnight)** | **Ocean geoengineering** | **Completely dark. Zero code. Zero visitors.** |
 
 ---
 
-## 📋 Research Log
+## 🔑 Key Takeaways for the Podcast
 
-| Date | Activity |
-|------|----------|
-| Sep 17, 2026 | v3: Initial ocean gap analysis — 10+ search queries, zero OGE repos |
-| Sep 17, 2026 | v3: Ocean-adjacent repos identified (Oceananigans, veros, OceanBioME, MOM6 via NCAR_ML_EKE, aiida-icon) |
-| Sep 17, 2026 | v4: Fresh commit data pulled from aiida-icon (15 commits, Jul 2025–Jan 2026) |
-| Sep 17, 2026 | v4: Fresh commit data pulled from NCAR_ML_EKE (10 commits, Apr 2021–Mar 2022) |
-| Sep 17, 2026 | v4: Five governance-gap hypotheses documented with commit evidence |
-| Sep 17, 2026 | v4: Cross-model capability matrix built — every ocean modeling layer exists, none have intervention modules |
-| Sep 17, 2026 | v4: The "playing God" stigma hypothesis added as fifth theory |
-| Sep 17, 2026 | v4: Episode 2 narrative arcs drafted based on NCAR_ML_EKE lifecycle and aiida-icon activity |
+1. **The ocean is the silent quadrant** — 10+ searches, zero repos. The gap is the headline.
+2. **MDTF's precip-buoyancy POD is the ocean's only voice** — 5 commits in one day, the most ocean-relevant tool in open source, and it's an evaluator, not a simulator.
+3. **WRF is the atmospheric gateway** — ocean signals enter the code world through air-sea flux calculations, not dedicated ocean tools.
+4. **Oceananigans shows the pristine ocean** — no interventions modeled, just the sea as it is.
+5. **Marine energy vs. marine geoengineering** — MHKiT has a full stack; ocean manipulation has nothing. The contrast is the governance story.
+6. **The silence is a signal** — is it cowardice (governance fear)? Complexity (too hard)? Data scarcity (can't model what we can't observe)? Or is it wisdom (maybe we shouldn't be coding ocean interventions yet)?
+
+---
+
+## 🎙️ Episode Narrative Arc
+
+**Opening:** "We searched GitHub 10 different ways looking for ocean geoengineering code. We found zero. Not one repository. This is the most surprising finding in our entire research."
+
+**Act 1 — The Void:** Document the gap. Show the search queries. Count the zeros. Establish that ocean intervention is the "dark matter" of climate tech.
+
+**Act 2 — The Indirect Voice:** Trace how ocean science does exist in code — through MDTF's POD (the evaluator), WRF (the atmospheric gateway), and Oceananigans (the pure dynamics). The ocean speaks, but only through proxies.
+
+**Act 3 — The Governance Hypothesis:** Ask why the gap exists. Is it fear? Complexity? Funding? The cultural resistance to "manipulating the sea" vs. "harvesting the sea" (MHKiT's tools).
+
+**Act 4 — The Blueprint:** What would the first ocean intervention codebase look like? OAE module, MCB module, OIF module, blue carbon module, and an evaluation framework like MDTF but for interventions.
+
+**Close:** "The blank page is the most important finding. The ocean is where the climate is most turbulent, most complex, and most silent in the code world. That silence is itself a signal. What are we waiting for?"
+
+---
+
+*Data source: GitHub API commit data and systematic search queries, September 2026.*
