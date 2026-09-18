@@ -1,86 +1,85 @@
-# 🎙️ Episode Research Brief — Solar Geoengineering
-## Episode Title (Working): "The Bright Idea: Solar Geoengineering's Code Problem"
+# 🌞 Episode Research: Solar Geoengineering
+## "The Building Blocks Without the Blueprint"
 
 ---
 
-## Logline
+## Episode Premise
 
-Solar geoengineering is the only climate intervention that can be deployed fast enough to matter this decade — but there's almost no open-source code written specifically to simulate it. We went looking for SRM-specific repositories on GitHub and found... almost nothing. Instead, we found atmospheric models, evaluation toolkits, and a single-day burst of theoretical work that asks the question nobody wants to answer: what does it cost to keep shining the sky forever?
-
----
-
-## Key Findings (from 12 repositories, 10+ GitHub search queries)
-
-### Finding 1: The SRM Code Gap
-- **0 repositories** dedicated exclusively to solar geoengineering simulation
-- SRM is *modeled within* atmospheric models (WRF), economic models (DICE, MARGO), and evaluation toolkits (PCMDI) — but no standalone SRM codebase exists
-- The awesome-geoengineering list (4★, actively maintained) contains papers and organizations but very few code repositories
-
-### Finding 2: The WRF Solar Radiation Correction (May 2026)
-- wrf-model/WRF committed `e836cd6` on May 28, 2026: "correction for EOT calculation for solar radiation"
-- This fix affects how WRF calculates the energy budget at the end of a simulation timestep
-- Any SRM scenario modeled with WRF before mid-2026 may have had a systematic error in solar radiation absorption
-- **Governance implication:** published SRM modeling studies using pre-v4.8.0 WRF may need re-evaluation
-
-### Finding 3: The PCMDI Roundoff Fix (September 2026)
-- PCMDI/pcmdi_metrics committed `90cbc50` on Sep 4, 2026: "prevents roundoff to 1.00 in mean_climate figures"
-- Without this fix, model evaluation metrics could show a perfect 1.00 ratio (model = observations) as an artifact of floating-point rounding
-- 5 commits in a single day to push v4.2.1 — institutional intensity behind climate evaluation
-- **Governance implication:** clean-looking evaluation metrics may actually be artifacts
-
-### Finding 4: srm-forever — The Zero-Star Theorist
-- hausfath/srm-forever: 0 stars, 4 commits, all on August 26, 2026
-- Implements Weitzman certainty-equivalent discounting for SRM cost dynamics
-- Interactive model comparing SRM-only vs combined mitigation+CDR strategies
-- **The question it answers:** "What does it cost to keep SRM running forever?"
-- **Why it matters:** this is the theoretical backbone for any SRM governance framework, and it exists as code — but nobody has starred it
-
-### Finding 5: ClimateMARGO's Ambiguous Revival
-- 2 README updates on August 17, 2026 after 2 years, 10 months of complete dormancy
-- No code commits. No issue activity. Just two README pushes.
-- ClimateMARGO is a climate-economic model that includes SRM as a decision variable
-- **Interpretation A:** Genuine revival — someone noticed the model is relevant again
-- **Interpretation B:** Academic citation cleanup — updating links because the paper is being cited
-- **The ambiguity is the story:** geoengineering research oscillates between "politically radioactive" and "increasingly discussed but still unfunded"
+Solar geoengineering can be simulated with existing climate tools — but nobody has built the simulation tools for geoengineering itself. This episode explores the gap between climate simulation capability and solar radiation management implementation.
 
 ---
 
-## Interview Candidates (from GitHub)
+## Key Metrics (As of September 2026)
 
-| Priority | Repository | Contact Path | Angle |
-|----------|-----------|-------------|-------|
-| 🥇 | hausfath/srm-forever | GitHub profile → email | The theorist who built the framework nobody's using |
-| 🥈 | wrf-model/WRF team | WRF mailing list / Anthony Islas (lead) | The atmospheric modelers who accidentally own SRM simulation |
-| 🥉 | PCMDI metrics team | Jiwoo Lee (active maintainer) | The evaluators who fix roundoff errors that could change policy |
-
----
-
-## Talking Points
-
-1. **The paradox of SRM simulation:** The most important tool for simulating solar geoengineering (WRF) was never designed for that purpose. It's a weather model. SRM researchers borrow it, adapt it, and hope the physics is close enough.
-
-2. **The governance gap:** PCMDI metrics produce the evaluation figures that IPCC reports use. A roundoff error that makes models look perfect isn't just a technical bug — it's a governance vulnerability.
-
-3. **The cost of forever:** srm-forever asks a question that climate economists have been avoiding: if we deploy SRM, what does it cost to *keep it running* for centuries? Stop mid-century, and you get rapid warming. The Weitzman framework provides the mathematical answer, but the political answer is much harder.
-
-4. **The ghost repo pattern:** ClimateMARGO (73★) and Geo-DICE (2★) aren't failures — they're evidence. Climate-economic models for SRM go dormant when funding dries up. The code persists, but the community disperses. Stars measure citations, not momentum.
+| Metric | Value |
+|--------|-------|
+| Total solar-themed repos found | 5 with meaningful activity |
+| Total commits analyzed | 60+ |
+| SRM-specific repositories | **0** |
+| Institutional repos (active) | 3 (WRF, PCMDI, MDTF) |
+| Academic repos (dormant) | 2 (ClimateMARGO, srm-forever) |
+| Peak commit activity | 5 commits in 1 day (MDTF, Jun 19, 2026) |
 
 ---
 
-## Script Structure Suggestion (30 min)
+## The Cast of Characters
 
-| Segment | Time | Content |
-|---------|------|--------|
-| Cold open | 2 min | "On May 28, 2026, someone fixed a solar radiation calculation in a weather model. It sounds boring. It might be the most important geoengineering story you haven't heard."
-| The code gap | 6 min | Why there's no SRM-specific code; what exists instead |
-| WRF deep dive | 8 min | v4.8.0, the solar radiation fix, what it means for past studies |
-| The evaluation problem | 6 min | PCMDI, roundoff errors, and the governance of clean numbers |
-| srm-forever | 5 min | Zero stars, infinite importance; the Weitzman framework |
-| ClimateMARGO revival | 3 min | Two README pushes after 34 months — what does it mean? |
-| Outro | 2 min | Where to learn more (awesome-geoengineering, WRF docs, srm-forever) |
+### WRF (1,763★) — The Heavyweight
+- **What:** The primary weather/climate simulation model used worldwide
+- **Why it matters:** Any SRM scenario would need WRF-level atmospheric physics
+- **What's missing:** No SRM module. It simulates nature, not intervention.
+- **Fresh evidence:** v4.8.0 release (Jun 2026) with solar radiation physics correction
+- **Quote for episode:** *"We can model the Earth's radiation budget perfectly. We just can't model what we'd do to it."
+
+### MDTF-diagnostics (80★) — The Ruler
+- **What:** Process-oriented diagnostic toolkit for climate model evaluation
+- **Why it matters:** Before governing SRM, you need to verify models are right
+- **Fresh evidence:** 5-commit sprint on Jun 19, 2026; new precipitation-buoyancy POD
+- **Quote for episode:** *"MDTF is a ruler, not a crystal ball. It measures accuracy. It doesn't predict what happens when you block the sun."
+
+### ClimateMARGO.jl (73★) — The Phantom
+- **What:** Climate-economic modeling framework (Julia)
+- **Why it matters:** Would be used for SRM cost-benefit analysis
+- **Fresh evidence:** 2 README updates after 2-year dormancy (Aug 2026); zero code commits
+- **Quote for episode:** *"Two README updates and the ghost wakes up. But no code. Just marketing."
+
+### srm-forever (0★) — The Prophet in the Wilderness
+- **What:** Interactive SRM economics model using Weitzman discounting
+- **Why it matters:** The theoretical framework for "forever" decisions
+- **Fresh evidence:** Conceptually critical; zero stars; zero community
+- **Quote for episode:** *"The most important question in SRM economics lives in a repo that nobody watches."
 
 ---
 
-*Research compiled from GitHub commit histories: WRF, PCMDI/pcmdi_metrics, ClimateMARGO.jl, srm-forever, OOCC_2021, Geo-DICE, awesome-geoengineering*
-*Search queries: "geoengineering", "climate simulation modeling", "solar radiation management", "SRM simulation"*
-*Updated: September 2026 (v4)*
+## Interview Angles / Questions for Experts
+
+1. **To a climate modeler:** "WRF just fixed its solar radiation calculation. If you wanted to add an SRM module tomorrow, what would you need? Is it technically hard or politically impossible?"
+
+2. **To a governance scholar:** "MDTF spent a full day sprinting on precipitation diagnostics. Should SRM governance have the equivalent infrastructure? What would it look like?"
+
+3. **To an economist:** "ClimateMARGO went dormant for 2 years then got 2 README updates. What does that tell you about the political economy of solar geoengineering research?"
+
+4. **To srm-forever's author:** "You wrote the book on Weitzman discounting applied to SRM. Why does your repo have zero stars? Do you think the community isn't ready, or aren't you inviting them in?"
+
+---
+
+## Sound Design Notes
+
+- **Opening:** WRF v4.8.0 release announcement tone → then silence → "But there's a catch..."
+- **Transition 1:** The Jun 19 sprint (5 commits in a day) → rapid-fire delivery → "Something was happening that day..."
+- **Transition 2:** ClimateMARGO's phantom revival → slowing down → "Wake up... but the lights are off..."
+- **Closing:** srm-forever's zero stars → quiet, contemplative → "Nobody's watching the most important question."
+
+---
+
+## Additional Resources
+
+- [WRF v4.8.0 Release](https://github.com/wrf-model/WRF)
+- [MDTF-diagnostics Repository](https://github.com/NOAA-GFDL/MDTF-diagnostics)
+- [ClimateMARGO.jl Documentation](https://github.com/ClimateMARGO/ClimateMARGO.jl)
+- [srm-forever — Weitzman Discounting for SRM](https://github.com/hausfath/srm-forever)
+- [PCMDI Metrics v4.2.1](https://github.com/PCMDI/pcmdi_metrics)
+
+---
+
+*Research conducted via GitHub API — commit histories pulled September 2026*

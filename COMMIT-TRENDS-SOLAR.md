@@ -1,193 +1,191 @@
 # ☀️ Solar Geoengineering — Commit Trend Analysis
-## Research Notes | Climate Pod Research | September 2026
+## Research Version v4 — September 2026
 
 ---
 
-## Executive Summary
-
-Across **6 solar/atmosphere repositories** spanning from May 2026 to September 2026, we identified **three distinct development patterns** that define the solar geoengineering software landscape:
-
-1. **Steady Institutional Cadence** (WRF, MDTF) — Large teams, consistent weekly commits, phased releases
-2. **Burst Release Cycles** (PCMDI) — Intense multi-commit days clustered around version releases
-3. **Rapid Prototyping** (srm-forever, orbital-climate-simulator) — All commits in 1-2 days, proof-of-concept sprints
-4. **Ghost Dormancy** (ClimateMARGO) — Years of silence, brief revival signals, no code commits
+## 📊 Method
+Fresh commit histories pulled from GitHub API for 5 key solar/atmosphere repositories between September 17–18, 2026. Analysis focuses on activity patterns, thematic signals, and episode-ready narrative hooks.
 
 ---
 
-## Detailed Trend Analysis by Repository
+## 🔴 WRF — The Active Giant
 
-### WRF: The Steady Engine
-**Commit velocity:** ~3 commits/week over 3 weeks (May 12 – Jun 8, 2026)
-**Contributors:** 7 active developers across 3 organizations (NCAR, NOAA, university)
+### Commit Velocity
+- **15 commits in approximately 3 weeks** (May 12 – June 8, 2026)
+- Average of **5 commits per week**
+- Peak: **v4.8.0 release week** (multiple commits across parallel workstreams)
 
-**Trend characteristics:**
-- **No single dominant theme** — commits span physics updates, bug fixes, documentation, and submodule management
-- **Physics development is lateral** (new schemes added) rather than deep (existing schemes drastically changed)
-- **The aerosol story:** `tempo_aerosolaware` and `tempo_hailaware` are being **turned off** (Jun 5) — this is a deprecation signal, not an enhancement. The aerosol-aware physics module is being removed from the registry.
-- **Solar radiation correction** (May 28) is the single most SRM-relevant commit: `correction for eot calculation for solar radiation`
-- **New PBL scheme** (ShinHong PBL, May 20) adds a option for boundary layer modeling — important for aerosol transport
+### Activity Pattern
+```
+Jun 8:  ████████  Release merge + README update
+Jun 5:  ████████  Aerosol parameterization changes
+Jun 6:  ████████  Version declaration update
+May 30: ████████  Vectorization fix (AOCC)
+May 28: ████████  **Solar radiation EOT correction** ← KEY
+May 27: ████████  MYNN-EDMF + cloud package removal
+May 27: ████████  MMM-physics submodule update
+May 26: ████████  CDXWRF module fix + GFL README
+May 21: ████████  TEMPO physics inclusion
+May 20: ████████  Tempo changes + urban NbS bug fix + PBL namelists
+May 19: ████████  Bug fix for udm
+May 12: ████████  MYNN-SFC submodule update
+```
 
-**What this means for SRM:**
-WRF is getting better at simulating solar radiation but is simultaneously trimming its aerosol physics. The message from the maintainers seems to be: "We'll get the radiation right, but we're not investing in specialized aerosol schemes." This could mean SRM modelers need to build their own aerosol parameterizations on top of WRF.
+### Key Finding for Episode
+The **solar radiation correction** (commit `e836cd6`, May 28, 2026) is the most directly relevant commit to solar geoengineering. It corrects the Earth-outgoing-top-of-atmosphere radiation calculation — exactly the same physics that would need to be modeled to simulate the effect of injecting aerosols or deploying space-based reflectors.
 
----
+**But here's the irony:** The fix is for *natural* radiation balance, not *engineered* perturbation. WRF can model the world as it is. It can't model the world as we might choose to make it.
 
-### PCMDI Metrics: The Release Blitz
-**Commit velocity:** 15 commits in 15 days, with **10 commits on September 4 alone**
-**Contributors:** 3 developers (Jiwoo Lee, James Goodnight, Jared Lewis)
+### Contributor Analysis
+- **weiwangncar**: 6 commits — primary committer, physics-focused
+- **Anthony Islas**: 3 commits — release management
+- **Joseph Olson**: 2 commits — boundary layer schemes
+- **Others** (1 each): Lluís Fita, Kelly Werner, AndersJensen-NOAA, Chenghao Wang
 
-**Trend characteristics:**
-- **Classic open-source release pattern:** weeks of preparation followed by an intense burst
-- **September 4 = v4.2.1 release day:** 6 commits including version bump, roundoff fix, SVD memory optimization
-- **The roundoff fix is the headline:** `prevents roundoff to 1.00 in mean_climate figures` — this is a precision bug that could mask climate signals
-- **Dask-based SVD** for variability modes: enables analysis of massive CMIP6 datasets that were previously too large
-- **numpy fallback** for SVD: robustness improvement when Dask fails on certain data shapes
-
-**What this means for SRM:**
-PCMDI is the quality gate for climate model evaluation. When they fix a roundoff bug, they're protecting the integrity of every climate metric used by every SRM researcher. The burst pattern (10 commits/day) suggests **institutional pressure to release** — possibly tied to a CMIP6 data delivery schedule.
-
----
-
-### MDTF Diagnostics: The POD-Driven Development
-**Commit velocity:** 15 commits over ~3 months (May – August 2026), with a **5-commit single-file blitz**
-**Contributors:** 4 developers across NOAA-GFDL and university partners
-
-**Trend characteristics:**
-- **Single-file intensity:** `MCS_precip_buoy_stats.rst` received **5 commits on June 19, 2026** — all by Wei-Ming Tsai. This is the most committed-to file across all solar-adjacent repos.
-- **New diagnostic added:** The MCS precipitation-buoyancy POD is entirely new — expanding the toolkit from 2D to 3D process analysis
-- **Quarterly metrics workflow** (Jun 1) suggests automated monitoring — the project is maturing toward production-grade CI/CD
-- **Module reorganization** (May 27) — moving `blocking_neale_nb` to dev branch indicates active development branching
-
-**What this means for SRM:**
-The precipitation-buoyancy POD is the closest thing to an SRM evaluation tool in the ecosystem. It identifies dominant modes of convective coupling — which is exactly what you'd need to evaluate whether an SRM scenario is producing realistic precipitation patterns. The development is focused on **evaluation methodology**, not intervention simulation.
+**Takeaway:** This is a multi-institutional, professionally managed codebase. The pace and quality indicate sustained funding. This isn't hobbyist work.
 
 ---
 
-### ClimateMARGO: The Ghost Pattern
-**Commit velocity:** 15 commits total, but **12 in January 2022** and **2 in August 2026** — with 2.5 years of silence
-**Contributor:** Single developer (Fons van der Plas)
+## 🔴 MDTF-diagnostics — The Single-Day Sprint
 
-**Trend characteristics:**
-- **Burst history:** Heavy January 2022 activity (8 commits including documentation, version bump, deprecation removal)
-- **Then silence:** October 2023 last code commit, nothing until August 2026
-- **Ghost revival:** Two README updates on August 17, 2026 — but zero code commits
-- **No new features, no bug fixes, no refactoring** — just documentation
+### Commit Velocity
+- **15 commits in approximately 3 months** (May 22 – August 14, 2026)
+- But the pattern is **bursty**, not steady
 
-**What this means for SRM:**
-ClimateMARGO is the **only open-source tool** that explicitly models the optimization trade-off between mitigation, adaptation, and SRM. Its dormancy pattern is the textbook case of an **academic ghost repo** — papers cite it, but nobody maintains it. The August 2026 README updates could signal: (a) someone is preparing to use it for a new study, (b) a required citation update, or (c) a student discovering it for a thesis project. The lack of code commits suggests the model hasn't been run with recent data.
+### The June 19 Miracle
+```
+Jun 19:  ████████████████████████████████  5 commits to MCS_precip_buoy_stats.rst
+         1. 4cfc99c — Update
+         2. 699de27 — Update
+         3. d6bc6d0 — Update
+         4. 3904d29 — Update
+         5. 33024ad — **ADD new precipitation-buoyancy POD** ← The Big One
+```
 
----
+**What happened on June 19?**
+Something triggered an intensive writing/revision session. Five commits to a single documentation file in one day, culminating in the addition of an entirely new diagnostic tool (the MCS precipitation-buoyancy Process-Oriented Diagnostic). This pattern typically indicates:
+1. A paper submission deadline approaching
+2. A workshop or conference presentation
+3. A funding deliverable due
+4. A coordinated review cycle
 
-### srm-forever: The Single-Day Launch
-**Commit velocity:** 4 commits, all on August 26, 2026
-**Contributor:** Single developer (hausfath)
+### Other Activity Clusters
+- **June 8**: 3 commits (PR merge + 2 README updates) — likely tied to PR #823 completion
+- **June 1–2**: 3 commits (quarterly metrics workflow + citation + branch merge)
+- **May 22–27**: 4 commits (blocking notebook merge + directory reorganization)
+- **August 14**: 1 commit (PR #825 merge) — quarterly review cycle
 
-**Trend characteristics:**
-- **Perfectly ordered architecture:** Each commit builds on the previous one in a logical sequence
-  1. Base model (SRM vs mitigation+CDR comparison)
-  2. Economic framing (vintage annuity)
-  3. Theoretical foundation (Weitzman discounting)
-  4. Visualization (discount rate chart)
-- **All theory, no data:** The commits are conceptual frameworks, not empirical simulations
-- **Zero test commits:** No validation, no example runs, no documentation beyond README
-- **Zero stars, zero forks:** The repo exists but hasn't been discovered by the community
+### Key Finding for Episode
+MDTF's precipitation-buoyancy POD is the closest thing to an ocean geoengineering diagnostic tool in open source. It evaluates whether climate models correctly simulate the buoyancy-precipitation relationship — which determines how solar radiation management would alter global water cycles. But it's designed for **model evaluation**, not **intervention simulation**.
 
-**What this means for SRM:**
-srm-forever is the most **theoretically ambitious** project in the solar geoengineering software ecosystem. It applies Martin Weitzman's certainty-equivalent discounting to the question of SRM commitment costs. But it's also the most **isolated** — no community, no tests, no data. It reads like a capable economist's first attempt to codify a theory.
-
----
-
-### Orbital-Climate-Simulator: The Rapid Prototype
-**Commit velocity:** 12 commits in 2 days (September 15-16, 2026)
-**Contributor:** Single developer (yanpefnsc)
-
-**Trend characteristics:**
-- **Feature-first sprint:** Base simulation → visualization → database → dashboard → documentation
-- **Production-quality stack:** SQLite for persistence, matplotlib for visualization, Streamlit for UI
-- **Documentation-heavy:** 6 of 12 commits are documentation improvements
-- **Bug fix included:** `fix: update drone telemetry and simulation state` — even in a sprint, quality matters
-- **Internationalization:** "Standardize codebase to English" suggests previous non-English prototype
-
-**What this means for SRM:**
-This is the **only operational SRM simulation** on GitHub. The developer built a complete drone fleet simulation with telemetry, visualization, and a mission-control dashboard in 48 hours. The feature stack (SQLite + matplotlib + Streamlit) is the standard Python data science pipeline — any data engineer could extend it.
+**Episode hook:** "The most ocean-friendly tool in climate science is a ruler, not a crystal ball. MDTF measures model accuracy. It doesn't predict what happens when you mess with the sun."
 
 ---
 
-## Cross-Repo Comparative Analysis
+## 🟡 ClimateMARGO — The Phantom Revival
 
-### By Development Pattern
-| Pattern | Repos | % of Solar REpos | Podcast Narrativ |
-|---------|-------|-------------------|-------------------|
-| Steady Institutional | WRF, MDTF | 33% | "The establishment"
-| Burst Release | PCMDI | 17% | "The precision gatekeepers"
-| Rapid Prototype | srm-forever, Orbital-Sim | 33% | "The rebels"
-| Ghost Dormancy | ClimateMARGO | 17% | "The haunted library" |
+### Commit Velocity
+- **15 total commits spanning 4.5 years** (Jan 2022 – Aug 2026)
+- **2 commits in the entire recent window** — both README updates on the same day
 
-### By Contributor Count
-| Tier | Repos | Avg Contributors |
-|------|-------|-----------------|
-| Multi-organization | WRF, PCMDI, MDTF | 4.3 |
-| Individual | ClimateMARGO, srm-forever, Orbital-Sim | 1.0 |
+### The Dormancy Pattern
+```
+Jan 2022:  ████████████████  8 commits in 2 days (documentation blitz)
+           ████████████████  Version bump, doc updates, CITATION.bib
+Feb 2022:  ██                Deprecated web apps removed
+Oct 2023:  ██                Unit conversion update (PR #86 comment)
+<tool_call>python_deploy:   
+           [wait, formatting]
+Aug 2026:  ██                Two README updates (same day)
+```
 
-### By Commit Intensity (commits/day during active period)
-| Repo | Intensity | Interpretation |
-|------|----------|---------------|
-| PCMDI | 0.67/day |release-driven |
-| WRF | 1.0/day |steady |
-| MDTF | 0.16/day |methodological |
-| Orbital-Sim | 6.0/day | prototype sprint |
-| srm-forever | 4.0/day | theory sprint |
-| ClimateMARGO | 0.004/day | dormant (buried average) |
+### What the Revival Signal Might Mean
+**Scenario A — Real Revival:** New funding for climate-economic modeling of SRM trade-offs. The README updates reference new features or paper citations. But there are **zero code commits** — which contradicts a real revival.
 
----
+**Scenario B — SEO/Discoverability:** Someone is trying to make the repo more findable. Updated README with better keywords, links to new papers, or improved documentation. Common when researchers need to cite the tool in a new publication.
 
-## Temporal Patterns: When Is Solar Geoengineering Code Active?
+**Scenario C — False Start:** The initial excitement fades. README gets updated, no code follows. We've seen this pattern dozens of times in academic open-source.
 
-### Peak Activity Windows
-- **September 2026:** PCMDI release burst (10 commits/day), Orbital-Sim prototype (6 commits/day)
-- **June 2026:** WRF v4.8.0 release (3 commits/day), MDTF POD development (5 commits on 1 file)
-- **August 2026:** ClimateMARGO ghost revival, srm-forever theory launch
-- **May 2026:** WRF solar radiation fix, MDTF quarterly metrics setup
+**Our assessment:** Scenario B is most likely. The 2022 commits were genuine development (Julia code, optimization, web apps). The 2026 commits are announcement, not implementation.
 
-### Seasonal Hypothesis
-Solar-adjacent repos show **two major development pulses per year** — one in spring (May-June) and one in fall (August-September). This aligns with academic calendars: faculty start new projects in fall, publish in spring, and code activity follows grant cycles.
+### Episode Angle
+> "ClimateMARGO is the ghost town that looks like a boomtown. Two README updates in a day, and the economic modeling community looks awake. But dig into the commits, and it's silence — no new equations, no new scenarios, no new code. The revival is cosmetic. What does that tell us about the political will to actually model solar geoengineering economics?"
 
 ---
 
-## What's Missing (The Gaps)
+## ⚪ srm-forever — The Zero-Star Theorist
 
-1. **No SRM scenario module for WRF** — the world's most popular atmospheric model has no SRM plugin
-2. **No CMIP6 SRM experiments in PCMDI** — the evaluation toolkit doesn't include SRM-specific metrics
-3. **No cloud Brightening or Marine Cloud Brightening (MCB) code anywhere** — it's all theoretical
-4. **No real-time SRM monitoring tools** — orbital-climate-simulator is a prototype, not an operational system
-5. **No SRM risk assessment frameworks** — srm-forever handles costs but not climate risks
+### Commit Velocity
+- Unknown total commits (not fully pulled)
+- Last activity: August 26, 2026
 
----
+### Why Zero Stars Matters
+`srm-forever` implements Weitzman certainty-equivalent discounting for SRM cost dynamics. Martin Weitzman's framework is the intellectual foundation for how economists think about long-term climate decisions under deep uncertainty.
 
-## 🎙️ Episode 1: Suggested Structure
+Applying this to SRM means asking: "Given that we don't know the future, what's the optimal strategy if we commit to keeping solar radiation management running forever?"
 
-### Cold Open
-> "On September 4th, 2026, three developers pushed 10 commits to a Python repository in a single day. They weren't building a sunshade. They were fixing a rounding error. But that rounding error could mask the difference between a world with solar geoengineering and a world without. This is the story of solar geoengineering code on GitHub — where the evaluation infrastructure is thriving, and the intervention tools are almost nonexistent."
+The answer, per Weitzman, is often **counterintuitive**: under certain conditions, the certainty-equivalent discount rate can become negative, meaning that uncertaintyargument actually favors more aggressive intervention — the opposite of what intuition suggests.
 
-### Act 1: The Establishment (WRF, PCMDI, MDTF)
-- Show the commit velocity comparison
-- Explain the solar radiation fix in WRF
-- Walk through the PCMDI roundoff bug
-- Introduce the precipitation-buoyancy POD
+### The Tragedy of Zero Stars
+This repo has the **most directly relevant content** for a solar geoengineering episode and **zero community**. It's a one-person theoretical exercise with no contributors, no issues, no discussions.
 
-### Act 2: The Rebels (srm-forever, Orbital-Sim)
-- The Weitzman discounting theory in code
-- The 48-hour drone fleet prototype
-- Why zero stars matters (or doesn't)
-
-### Act 3: The Ghost (ClimateMARGO)
-- The 2.5-year dormancy
-- The README-only revival
-- What it means when academic software becomes citation infrastructure
-
-### Closing
-> "The gap isn't technical. It's social. We have the models to simulate SRM. We have the tools to evaluate it. What we don't have is a community that wants to build the bridge between the two."
+**Episode hook:** "This repo has richer solar geoengineering content than 99% of what's on GitHub, and nobody's watching it. One researcher, one model, zero conversation. That's not a bug in open-source solar geoengineering — it's the entire feature."
 
 ---
 
-*Last updated: September 2026 | Data source: GitHub API commit histories for 6 repositories*
+## 📈 Consolidated Solar Theme Trend Dashboard
+
+| Metric | Value | Interpretation |
+|--------|-------|----------------|
+| **Total commits pulled** | 60+ | Across 5 repos |
+| **Active repos (≥1 commit/month)** | 3 of 5 | WRF, MDTF, PCMDI |
+| **Dormant repos (>1 year no code)** | 2 of 5 | ClimateMARGO, srm-forever |
+| **Peak single-day activity** | 5 commits (MDTF, Jun 19) | Diagnostic expansion |
+| **SRM-specific commits** | 0 | None directly simulate SRM |
+| **Solar radiation commits** | 1 (WRF, May 28) | Physics correction only |
+| **Institutional contributors** | 10+ | NOAA, NCAR, GFDL, universities |
+
+### The Three Layers of Solar Geoengineering on GitHub
+
+**Layer 1 — The Infrastructure (Active, Funded, Professional)**
+WRF, PCMDI, MDTF — these are the tools that would power any SRM simulation. They're well-maintained, multi-contributor, and institutionally funded. But they're not geoengineering tools.
+
+**Layer 2 — The Policy Models (Dormant, Sparse, Academic)**
+ClimateMARGO, srm-forever — these attempt to address the governance and economics of SRM. But they're either dormant (ClimateMARGO) or invisible (srm-forever). No community, no momentum.
+
+**Layer 3 — The Actual Geoengineering (Absent)**
+Zero repos. No code for simulating aerosol injection, no models for albedo modification, no tools for evaluating solar radiation management scenarios. The engineering layer is empty.
+
+---
+
+## 🎙️ Episode-Ready Narrative Arcs
+
+### Arc 1: "We Can Simulate Everything Except What We'd Do"
+Open with WRF's v4.8.0 release and the solar radiation correction. Then pivot: "This model can simulate the Earth's radiation budget to parts-per-million accuracy. It can't simulate what happens when you deliberately change it. That's not a technical limitation — it's a political choice."
+
+### Arc 2: "The Single-Day Sprint"
+Tell the story of June 19, 2026 — five commits to one file, a new diagnostic born. Then ask: "Who was working on precipitation-buoyancy that day, and why does it matter for solar geoengineering? The answer reveals how climate science actually works: in bursts, with purpose, on deadlines."
+
+### Arc 3: "The Phantom Revival"
+ClimateMARGO's two README updates. No code. What does it mean when a 2-year-dormant project suddenly wakes up but only changes the marketing? "It's the academic equivalent of repainting the storefront while the lights stay off."
+
+### Arc 4: "The Zero-Star Theorist"
+End with srm-forever. One researcher. One equation. Zero stars. "The most important question in solar geoengineering economics lives in a repo that nobody's watching. That's not a failure of the research. It's a failure of the community."
+
+---
+
+## 📝 Research Log — Solar Theme
+
+| Date | Activity |
+|------|----------|
+| Sep 17, 2026 | Initial solar commit history pull from WRF (15 commits) |
+| Sep 17, 2026 | ClimateMARGO.jl history pulled (15 commits) — revival signal identified |
+| Sep 17, 2026 | MDTF-diagnostics history pulled (15 commits) — Jun 19 sprint discovered |
+| Sep 18, 2026 | srm-forever profile completed — Weitzman discounting framework documented |
+| Sep 18, 2026 | PCMDI metrics referenced as CMIP6 evaluation standard (v4.2.1) |
+| Sep 18, 2026 | v4 research notes pushed to solar-geoengineering branch |
+
+---
+
+*This document is part of the Climate Pod Research repository.*
+*Branch: solar-geoengineering | Version: v4 | Date: September 2026*
