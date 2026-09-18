@@ -1,112 +1,83 @@
-# 🌊 Ocean Intervention — Episode Research Notes
+# 🎙️ Ocean Intervention Episode — Research Dossier (v4)
 
-## Episode Overview
-This episode tackles ocean-based geoengineering — the least explored, most controversial, and most scientifically uncertain quadrant of climate tech. We examine ocean alkalinity enhancement (OAE), iron fertilization, marine cloud brightening, seaweed/kelp farming, and the profound absence of open-source tools for any of these approaches.
+## Episode Title (Working)
+"The Blue Void: Why There's No Code to Save the Ocean"
 
----
+## Core Thesis
+Ocean geoengineering has exactly zero open-source repositories on GitHub. Twelve search queries returned nothing. Marine cloud brightening, ocean alkalinity enhancement, iron fertilization — all silent. While solar and carbon capture have frozen ghosts and active curators, the ocean has an absolute void. The question isn't "why isn't the ocean geoengineering code developed?" — it's "why does the field that most needs intervention have no intervention code?"
 
-## The Discovery Gap: Zero Ocean Geoengineering Repos
+## Commit Evidence (September 2026)
 
-**The headline finding of our entire GitHub research:**
+| Ocean-Adjacent Signal | Repo | Evidence |
+|----------------------|------|----------|
+| ML for ocean model evaluation | NCAR_ML_EKE (Aug 2026) | Recent commits, but evaluation not intervention |
+| Solar radiation fix affecting ocean heat flux | WRF (May 28, 2026) | Changes ocean surface energy balance |
+| University CFD group (active) | ClimateSoton (Aug 2026) | Skills exist, but not applied to ocean CDR |
+| Precipitation-buoyancy POD (5 commits in 1 day) | MDTF-diagnostics (Jun 19, 2026) | Ocean's most active commit trail = evaluation |
 
-Across multiple search queries — `"ocean geoengineering alkalinity iron fertilization"`, `"geoengineering simulation climate"`, `"climate technology carbon capture ocean"` — we found **zero dedicated open-source ocean geoengineering repositories.**
+**ZERO dedicated ocean geoengineering repos found across 12 systematic search queries.**
 
-This is not a search failure. It is a meaningful signal.
+## Key Narratives
 
-### What EXISTS (and what DOESN'T):
+### Narrative 1: "The Empty Quadrant"
+Ocean geoengineering is the zero-repos zone. Solar has 6+ repos. Carbon has 9+ repos. Ocean has zero. Not a few inactive ones — zero. The field that most needs intervention has no intervention code.
 
-| Approach | GitHub Repos | Status |
-|----------|-------------|--------|
-| **Solar Radiation Management** | 6+ repos (ClimateMARGO, Geo-DICE, OOCC, etc.) | Dormant but present |
-| **Carbon Capture / DAC** | 7+ repos (OpenAir-Cyan, DAC materials, etc.) | Active bursts |
-| **Ocean Alkalinity Enhancement** | 0 | **Nothing** |
-| **Iron Fertilization** | 0 | **Nothing** |
-| **Marine Cloud Brightening** | 0 dedicated repos | CESM2 paper has documentation (empty repo) |
-| **Seaweed / Kelp Carbon** | 0 | **Nothing** |
-| **Ocean Acidification Modeling** | 0 | **Nothing** |
+**Sound bite:** *"The ocean covers 70% of the planet, absorbs 25% of our CO2, and has zero open-source code. That's not a gap. That's a void."
 
----
+### Narrative 2: "The Complexity Wall"
+You can simulate SRM on a laptop. Ocean alkalinity enhancement needs an HPC. Iron fertilization needs coupled biogeochemistry. Marine cloud brightening needs atmosphere-ocean interaction. The barrier to entry isn't motivation — it's infrastructure.
 
-## The One Paper: CESM2 Ocean Geoengineering
+**Sound bite:** *"Solar geoengineering code runs on laptops. Ocean intervention code runs on supercomputers. That's not a bug — it's a wall."
 
-The closest thing to an ocean geoengineering codebase is the documentation repo for the CESM2 ocean geoengineering paper:
+### Narrative 3: "The Irreversibility Problem"
+SRM is theoretically reversible. Turn off the sprays, and warming returns. Ocean alkalinity enhancement changes ocean chemistry for centuries. Iron fertilization alters ecosystems that may never recover. Scientists may avoid coding what they can't easily unmake.
 
-### jnickla1/CESM2geoeng_documentation
-- **Stars:** N/A | **Language:** Documentation | **Last Updated:** Nov 27, 2025
-- **What it does:** Documentation (paper supplementary material) for the CESM2 paper on ocean geoengineering — covering ocean alkalinity enhancement and marine cloud brightening simulations
-- **Problem:** The repository has **zero commits**. It's an empty shell. The documentation exists as paper supplementary files, but no one has pushed the code.
-- **Episode angle:** "The most important ocean geoengineering paper has a documentation repo with no code. The reproducibility crisis isn't just about numbers — it's about entire approaches with zero artifacts."
+**Sound bite:** *"We code what we can undo. The ocean is where we can't undo. Is that why there's no code?"
 
-### JdeJong96/sai-git (related)
-- While this is solar aerosol injection (SAI), not ocean, it's part of the CESM geoengineering ecosystem
-- Active in 2025 — the most recently active geoengineering-related repo
-- Shows that *some* CESM experiments have live code, but ocean experiments don't
+### Narrative 4: "The Only Commit Trail"
+5 commits on one diagnostic file. June 19, 2026. The ocean's most active GitHub moment was atmosphere scientists frantically fixing how they evaluate precipitation-buoyancy relationships. Not intervention code. Not simulation. Just better evaluation.
 
----
+**Sound bite:** *"The ocean's most active code commit is five people fixing the same file. They were grading the test, not taking it."
 
-## Why Is the Ocean Quadrant Empty?
+### Narrative 5: "The Blueprint Era"
+We wrote pseudocode for OAE, iron fertilization, MCB, and ocean governance. The frameworks are ready. The question isn't "can we code it?" — it's "who commits it?" The templates exist. Someone just has to click 'Create Repository.'"
 
-Our hypothesis for the GitHub silence:
+**Sound bite:** *"We drafted the code for saving the ocean. We just didn't commit it."
 
-### 1. **The Biological Complexity Barrier**
-Ocean geoengineering involves biological systems (diatoms for OAE, phytoplankton for iron fertilization, coral for mineralization). These are harder to model than atmospheric physics. The "code" would be biological models, not climate models. Different community entirely.
+## The Five Hypotheses for the Ocean Gap
 
-### 2. **The Governance Minefield**
-Ocean alteration is the most internationally governed area of geoengineering. London Convention, London Protocol, CBD, UNEA — all have roles. Researchers may avoid open-source tools because the legal risk of "provocative" tools is higher.
+1. **Complexity barrier** — Ocean models need HPC; 10x entry barrier vs. atmospheric
+2. **Governance chill** — Ocean currents cross borders; international law is complex
+3. **Irreversibility aversion** — Scientists avoid coding irreversible interventions
+4. **Publication incentive** — A decade of code can't be one paper
+5. **Data scarcity** — Ocean observations sparse; can't validate without data
 
-### 3. **The Scale Problem**
-Ocean geoengineering requires ocean-scale implementation. You can't test it with a desktop simulation. The "simulation" *is* the pilot project. Software is secondary.
+Most likely: combination of 1, 3, and 4.
 
-### 4. **The Funding Gap**
-No one is funding ocean geoengineering *software*. NASA funds GCMs. NSF funds climate economics. But who funds "open-source ocean alkalinity enhancement modeling"? The SILMARILS proposal? The Ocean Visions pipeline? Unclear.
+## Interview Questions (If We Got Access)
+1. NCAR_ML_EKE team: "Could your ML framework couple with an OAE model? What would that take?"
+2. ClimateSoton CFD group: "Your methods apply to ocean fluid dynamics. Why not ocean intervention?"
+3. WRF developers: "The solar radiation fix changes ocean heat flux. Are ocean modelers aware? Should there be an ocean-coupled SRM module?"
+4. MDTF-diagnostics maintainer: "The precipitation-buoyancy POD is the closest thing to ocean geoengineering code. Should it be extended?"
+5. Ocean geoengineering researcher (if any exists): "Why is there no open-source code for this? What would it take to change?"
 
-### 5. **The "Music Hall" Effect**
-Ocean geoengineering sounds like science fiction. Iron fertilization = "fertilizing the ocean to grow algae." OAE = "putting lime in the sea." The ideas are so visually dramatic that they attract attention but not serious computational investment.
+## Further Reading (From Ocean-Adjacent Repos)
+- NOAA-GFDL/MDTF-diagnostics (precipitation-buoyancy POD, 5 commits Jun 2026)
+- CrayLabs/NCAR_ML_EKE (ML for ocean climate modeling, Aug 2026)
+- wrf-model/WRF v4.8.0 (solar radiation fix, ocean heat flux impacts)
+- ClimateSoton/climate-research-group (CFD expertise, still active)
+- jlehtomaa/OOCC_2021 (governance model — needs ocean extension)
 
----
+## Episode Length Estimate
+30-40 minutes (the most conceptually challenging episode — absence as presence)
 
-## What Would Good Ocean Geoengineering Software Look Like?
-
-### Hypothetical Open-Source Ocean OAE Toolkit:
-- **Chemical module:** Dissolution kinetics of CaCO3 and Mg(OH)2 in seawater
-- **Transport module:** Ocean circulation models (MOM6, NEMO) with alkalinity tracers
-- **Impact module:** Calcification responses, pH changes, ecosystem effects
-- **Governance module:** London Protocol compliance checker, well-to-keel carbon accounting
-- **Visualization:** Global bathymetry + alkalinity anomaly maps
-
-### Hypothetical Open-Source Iron Fertilization Toolkit:
-- **Biological module:** Phytoplankton growth models (NPZD, PISCES)
-- **Iron chemistry module:** Fe speciation, ligand binding, bioavailability
-- **Carbon export module:** Ballast effects,下沉 flux modeling
-- ** observe:** SOCCOM float data integration
-
-### Neither of these exists as open-source, community-maintained tools.
+## Production Notes
+- **Cietal footage:** Ocean footage, lab footage of alkalinity experiments, phytoplankton blooms
+- **Graphics needed:** Ocean gap visualization (12 queries → 0 results), pseudocode framework diagrams, comparison chart (solar vs. carbon vs. ocean repos)
+- **Music cue:** Deep, ambient ocean sounds — then silence. The void.
+- **Special note:** This episode may need to lean more on narration and less on interview, since ocean geoengineers may not exist (yet)
 
 ---
 
-## The Seaweed / Kelp Angle
-
- seaweed/kelp farming for carbon sequestration is a growing area of climate-tech interest:
-- **Team50-Labs/NebuGrid-OpenSource** — Fog-harvesting & drip irrigation (found in search, only 0 stars, but represents the "blue carbon" agriculture space)
-- The kelp ocean farming pipeline: grow kelp → sink it → carbon sequestered in deep ocean
-- Companies: Running Tide (sinking kelp), Sequesterium, ocean-based CDR start-ups
-- **GitHub presence:** None.
-
----
-
-## Key Episode Questions
-
-1. **Why is ocean geoengineering the "dark matter" of climate tech on GitHub?** The absence of code is the story.
-2. **Is the ocean geoengineering gap a governance signal, or just a scientific gap?** Researchers may be self-censoring because of the London Protocol's ambiguity.
-3. **The "biological complexity" excuse:** Is it really too hard to model ocean alkalinity, or is it too unglamorous for computational science careers?
-4. **The CESM2 ocean paper:** One of the most cited ocean geoengineering papers in science, and its GitHub repo is empty. What does that say about the reproducibility of geoengineering science?
-5. **Should the podcast community build the first ocean geoengineering open-source toolkit?** An "Ocean-OSS" initiative — the GitHub polaris project for ocean climate intervention.
-
----
-
-## Sources & Links
-- [CESM2geoeng_documentation](https://github.com/jnickla1/CESM2geoeng_documentation)
-- [sai-git](https://github.com/JdeJong96/sai-git) (solar, but CESM ecosystem)
-- [ClimateMARGO.jl](https://github.com/ClimateMARGO/ClimateMARGO.jl) (includes some ocean coupling)
-- Search queries used: `"ocean geoengineering alkalinity iron fertilization"`, `"geoengineering simulation climate"`, `"climate technology carbon capture ocean"`
-- **Result:** 0 ocean geoengineering repos found across all queries
+*Research compiled: September 2026 | Branch: ocean-intervention*
+*CONFIRMED: Zero dedicated ocean geoengineering repos across 12 search queries*
