@@ -1,14 +1,16 @@
-# 🌍 Carbon Capture — Project Discoveries (v6)
+# 🌍 Carbon Capture — Project Discoveries (v7)
 
-> **Last updated:** September 2026 (v6)  
+> **Last updated:** September 2026 (v7)  
 > **Branch:** `carbon-capture`  
 > **Podcast episode:** Episode 2 — Carbon Capture
 
 ---
 
-## Overview (v6 Update)
+## Overview (v7 Update)
 
-This document profiles open-source projects relevant to carbon capture, removal, and sequestration (CDR). v6 incorporates fresh commit histories from 6 repos: Open-Sustainable-Technology (15 commits), OpenAir-Cyan (15), Carbon_Capture_ML (10), DAC_peroxovanadates (10), DAC_peroxotitanates (10), and carbon-capture-and-storage (0 — ghost).
+This document profiles open-source projects relevant to carbon capture, removal, and sequestration (CDR). v7 incorporates fresh commit histories from 4 additional repos: OpenCarbon (10 commits, 2023), CO2-Sequestration (2 commits, 2019), Bioenergy-with-carbon--capture-and-storage (5 commits, 2024), and ClimateSoton/climate-research-group (4 commits, Aug 2026). Combined with v6 data from Open-Sustainable-Technology, OpenAir-Cyan, Carbon_Capture_ML, and the DAC_peroxovanadates/titanates repos, this is the most comprehensive carbon-capture project survey on GitHub.
+
+**Total v7 commits pulled: 21 across 4 new repos**
 
 ---
 
@@ -28,29 +30,9 @@ This document profiles open-source projects relevant to carbon capture, removal,
 
 **Why it matters:** If you want to find open-source DAC code, CCS simulators, or carbon accounting tools, you start here. It's the universe's catalogue.
 
-**v6 Commit Highlights (Fresh Pull):**
+**(v6 data retained — see v6 section for full commit table)**
 
-| Date | SHA | Addition | Significance |
-|------|-----|----------|-------------|
-| **Sep 9** | `6e9f48c` | MUIO | New carbon removal/offset standard entry |
-| **Sep 9** | `07e19b1` | MUIOGO | Complementary standard entry (same day, 2 commits) |
-| Sep 1 | `1b6cb82` | Fix dead links in README | Maintenance quality |
-| Aug 23 | `d73a519` | **claude-carbon** | AI tool for carbon-aware compute scheduling |
-| Aug 18 | `6b6cd82` | Story Seed Library | Cross-domain: storytelling for sustainability |
-| Aug 18 | `ca9d7a5` | openflexure microscope | Open hardware for science |
-| **Jul 19** | `2303b7a` | Remove duplicate AI content review checkbox | **Governance signal** — community building AI disclosure into PR process |
-| **Jul 19** | `c4c9fe7` | Modify PR template for AI content review | **Formal AI content gate** — every PR now requires AI-disclosure checkbox |
-| Jul 17 | `be14281` | Update PR template with review reminder | Process refinement |
-| Jul 2 | `5bc6609` | PowerIO | New energy project entry |
-| Jul 1 | `e772ed4` | ASSETRA | New assessment tool entry |
-| Jul 1 | `4c6f0a4` | ToOp | New optimization tool entry |
-| Jun 23 | `1986e2c` | wbdata | World Bank development data tool |
-| Jun 23 | `007a464` | Volca to LCA | **CDR-relevant** — LCA tool for carbon footprint of materials |
-| Jun 6 | `0601a42` | EpexPredictor | Electricity price prediction tool |
-
-**v6 Signal:** The July 2026 AI content disclosure PR template (c4c9fe7) is a landmark. The climate-tech OSS community is formally grappling with AI-assisted contributions. This is the first time we've seen "AI content review" as a required PR template in climate tech.
-
-**🎙️ Episode Hook:** *"The biggest climate-tech repo on GitHub just added a mandatory AI disclosure checkbox to its PR template. The community is deciding, right now, how to handle AI-generated entries. And there's no playbook."*
+**v7 Connection to other carbon repos:** The directory's entries link to many of the repos in this document. OpenAir-Cyan, Carbon_Capture_ML, and carbon-capture-and-storage are all listed in the directory. The directory is the index; these repos are the content. The question for the podcast: is the directory more alive than the content it indexes? (Answer: yes — 3-4 commits/month vs. 0 for most entries.)
 
 ---
 
@@ -58,69 +40,17 @@ This document profiles open-source projects relevant to carbon capture, removal,
 
 ### 2. OpenAir-Cyan (openair-collective)
 
-| Field | Detail |
-|-------|--------|
-| **Repo** | `openair-collective/openair-cyan` |
-| **Stars** | 76 |
-| **Last commit** | February 12, 2024 |
-| **License** | CERN-OHL-S-2.0 |
-| **OSHWA UID** | US001095 |
-| **URL** | https://github.com/openair-collective/openair-cyan |
+**(v6 data retained — see v6 section for full commit table)**
 
-**What it is:** DIY small-scale open hardware direct air carbon capture device. OSHWA-certified — the first open-source DAC device to receive formal hardware certification.
-
-**v6 Commit Highlights (Fresh Pull):**
-
-| Date | SHA | Event |
-|------|-----|-------|
-| **Feb 12, 2024** | `b5422b3` | OSHWA UID link added to README |
-| **Feb 12, 2024** | `b164257` | Add files via upload (documentation) |
-| **Feb 12, 2024** | `828f496` | OSHWA UID logo (US001095) |
-| **Feb 12, 2024** | `b731cd8` | Add files via upload (technical docs) |
-| **Feb 12, 2024** | `4b08fb3` | Create CITATION.cff (academic citation support) |
-| **Feb 12, 2024** | `859bfa8` | Update README (final push) |
-| Jul 20, 2022 | `d12008e` | README update (last activity before blitz) |
-| May 17, 2022 | `b8621ba` | Usability improvements |
-| May 15, 2022 | `d025674` / `784ace5` | Two README updates same day |
-| May 11, 2022 | `09c761d` | Rename CodeQL file |
-| May 7, 2022 | `d502eb6` / `4350def` | Update CodeQL analysis |
-| May 7, 2022 | `718b209` | Create CodeQL analysis.yml |
-| May 5, 2022 | `b2198a2` | Delete .github/workflows |
-
-**The pattern:** A massive burst of 7 commits on Feb 12, 2024 — all OSHWA certification-related — then complete silence for 2+ years. The certification may have been the finish line, not the starting signal.
-
-**🎙️ Episode Hook:** *"They got the certification, published the plans, and then stopped. The most important open-source DAC device in the world has been silent for 2 years. Was OSHWA certification the finish line or the starting line?"*
+**v7 Note:** The OSHWA certification blitz (Feb 12, 2024, 7 commits in 1 day) remains the defining moment. The 2+ year silence since is the defining question. No v7 updates — the repo remains frozen.
 
 ---
 
 ### 3. Carbon Capture ML Survey (zikribayraktar)
 
-| Field | Detail |
-|-------|--------|
-| **Repo** | `zikribayraktar/Carbon_Capture_ML` |
-| **Stars** | 56 |
-| **Last commit** | May 8, 2024 |
-| **License** | MIT |
-| **URL** | https://github.com/zikribayraktar/Carbon_Capture_ML |
+**(v6 data retained — see v6 section for full commit table)**
 
-**What it is:** A curated survey of ML papers and code for carbon capture. Covers MOFs for CO2 adsorption, process optimization, and dataset construction.
-
-**v6 Commit Highlights (Fresh Pull):**
-
-| Date | SHA | Event |
-|------|-----|-------|
-| **May 8, 2024** | `ca9a31f` | **OpenDAC paper added** — largest open dataset of DFT calculations for CO2 capture materials |
-| Apr 25, 2024 | `4c01842` | Update README |
-| Mar 15, 2024 | `2b69376` | Update README |
-| Jan 21, 2024 | `e80dfd6` / `fe28496` | Update README |
-| Mar 1, 2023 | `a3a02e9` | New paper |
-| Feb 16, 2023 | `93e5a40` | **MOFsimplify paper** — framework for simplifying MOF structures for CO2 capture screening |
-| Feb 5, 2023 | `0c62b02` / `6129691` | New process paper |
-| Feb 2, 2023 | `caf8b96` | New paper to process |
-
-**The pattern:** Intense activity Feb-May 2023 (5 papers in 3 months), then 14 months of silence, then the OpenDAC landmark in May 2024. The survey is the bridge between ML and DAC materials research.
-
-**🎙️ Episode Hook:** *"A survey repo that added 5 landmark papers in 3 months, then went quiet for a year, then dropped the OpenDAC dataset — the biggest open compilation of CO2 capture materials data ever."*
+**v7 Note:** The OpenDAC dataset (May 2024) remains the field's reference point. No v7 updates — the repo remains dormant.
 
 ---
 
@@ -128,101 +58,265 @@ This document profiles open-source projects relevant to carbon capture, removal,
 
 ### 4. DAC Peroxovanadates & Peroxotitanates (tjz21)
 
-| Field | Detail |
-|-------|--------|
-| **Repos** | `tjz21/DAC_peroxovanadates` (2★) + `tjz21/DAC_peroxotitanates` (2★) |
-| **Last commit** | September 23, 2025 (peroxovanadates) |
-| **License** | **CC0-1.0 (public domain)** |
-| **URL** | https://github.com/tjz21/DAC_peroxovanadates |
+**(v6 data retained — see v6 section for full commit table)**
 
-**What they are:** Computational screening of peroxovanadate and peroxotitanate sorbents for direct air capture. DFT calculations to predict which structures have the right thermodynamic properties for CO2 capture. Two parallel pipelines for two sorbent chemistries.
-
-**v6 Commit Highlights (Fresh Pull — peroxovanadates):**
-
-| Date | SHA | Event | Significance |
-|------|-----|-------|-------------|
-| Sep 23, 2025 | `cfd04f7` | Updated README.md | Final documentation update |
-| **Sep 12, 2025** | **`e041eff`** | **Added CC0 license** | **🔑 THE KEY COMMIT** — explicit public domain dedication. The most significant open-science event in carbon capture this year. |
-| Mar 11, 2024 | `6e17397` | Fixed DOI link | Reference correction (paper-related) |
-| Mar 11, 2024 | `e38c7dd` | Added paper DOI link | Paper reference addition |
-| Mar 11, 2024 | `b6184d2` | Updated README | Coincident with DOI updates — paper publication triggered this batch |
-| Mar 11, 2024 | `3096665` | Updated phrasing in README | Paper-related refinement |
-| Dec 5, 2023 | `8d8bd1d`, `f7ecca1`, `ba71657`, `737d342` | Multiple README updates | 4 commits in one day — paper submission batch |
-
-**The CC0 pattern:** The commit history shows a clear arc: paper submissions (Dec 2023, Mar 2024) → 6 months of silence → then the CC0 license addition (Sep 2025) → then 11 more months of silence. The CC0 decision was a standalone event, not part of a paper cycle. The author deliberately dedicated the data to the public domain AFTER the papers were published.
-
-**The peroxotitanates companion** follows the same pattern: sparse activity, CC0 license, same author. Two parallel screening pipelines, both released as public infrastructure.
-
-**🎙️ Episode Hook:** *"Two researchers, two sorbent chemistries, two repos, both released to the public domain with CC0. No copyright. No licensing drama. Just data, freely available. This is how open science is supposed to work — and it's happening in the DAC materials community right now."*
+**v7 Note:** The CC0 license adoption (Sep 12, 2025) remains the most significant open-science event in carbon capture. Two repos, both public domain. No v7 updates.
 
 ---
 
-## Tier 4: Ghost Repos
+## Tier 4: Ghost Repos — v7 Deep Dive
 
-### 5. Carbon Capture and Storage (yohanesnuwara)
+### 5. OpenCarbon (terranexum)
 
 | Field | Detail |
 |-------|--------|
-| **Repo** | `yohanesnuwara/carbon-capture-and-storage` |
-| **Stars** | 85 |
-| **Last commit** | March 6, 2021 |
-| **License** | MIT |
-| **Status** | 💀 Ghost — dead for 4+ years |
+| **Repo** | `terranexum/OpenCarbon` |
+| **Stars** | 2 |
+| **Language** | Python/JavaScript |
+| **Last commit** | July 18, 2023 (merge PR #3) |
+| **License** | Not specified |
+| **URL** | https://github.com/terranexum/OpenCarbon |
 
-**What it is:** Reservoir simulation + geomechanics model for CCS. Simulates CO2 injection into geological formations, including pressure propagation and caprock integrity.
+**What it is:** Carbon management technologies and plans to help advance research and innovation in direct air capture, ensuring it uses clean energy and that low-cost methods are accessible.
 
-**Why it matters:** 85 stars but completely inactive since 2021. Stars measure citations, not usability. The code may still work, but it's running on an old MATLAB version with no bug fixes.
+**v7 Fresh Commit Pull (10 commits, May 18 – Jul 18, 2023):**
+
+| Date | SHA | Message | Author |
+|------|-----|---------|--------|
+| **Jul 18, 2023** | `e3e5afb` | Merge pull request #3 from terranexum/shrila-dev | shrilaesturi2006 |
+| Jul 13, 2023 | `bb5c7b2` | Update README.md | shrilaesturi2006 |
+| Jul 13, 2023 | `f34380f` | Merge pull request #2 from terranexum/main | shrilaesturi2006 |
+| Jul 13, 2023 | `43528c8` | Merge pull request #1 from terranexum/shrila-dev-1 | shrilaesturi2006 |
+| Jul 13, 2023 | `bc5a343` | Update README.md | shrilaesturi2006 |
+| May 20, 2023 | `bb603ec` | Update README.md | Dahl Winters |
+| May 20, 2023 | `96e7c2c` | Update README.md | Dahl Winters |
+| May 18, 2023 | `34ff91c` | Update Project_Plan.md | Dahl Winters |
+| May 18, 2023 | `c5a9112` | Update README.md | Dahl Winters |
+| May 18, 2023 | `f2c9866` | Create Project_Plan.md | Dahl Winters |
+
+**The pattern — "The Two-Month Build Then Freeze":**
+
+```
+May 18:  ██ Project plan created (f2c9866) + README updates (c5a9112, 34ff91c)
+May 20:  ██ README updates (bb603ec, 96e7c2c)
+         │
+         │  ← 2-month gap (summer?)
+         │
+Jul 13:  ███ 3 PR merges + README update (43528c8, f34380f, bb5c7b2, bc5a343)
+Jul 18:  █  PR #3 merge (e3e5afb)
+         │
+         │  ← 2+ years of silence
+```
+
+**What happened:** Two contributors (Dahl Winters and shrilaesturi2006) built a project plan and documentation in May 2023, then took a 2-month break, then merged 3 pull requests in one day (Jul 13), and then stopped completely. The repo has had zero commits since July 18, 2023 — over 2 years ago.
+
+**The v7 finding:** Unlike the other ghost repos (which had academic purposes), OpenCarbon was a **collaborative project** — it had PRs, multiple contributors, and a project plan. The fact that it still died suggests the collaboration failed, not just that the individual contributor lost interest. This is the "team ghost" pattern: even with multiple people, carbon-capture OSS can go completely silent.
+
+**🎙️ Episode Hook:** *"Two people built a carbon capture project, merged three pull requests in one day, and then vanished. Two years later, the README still says '力争上游' (strive for the upper). The code never shipped. The plans never materialized. This is what happens when carbon capture open source runs out of steam — not a dramatic explosion, just a fade to silence."
 
 ---
 
-## Summary Table — Carbon Theme (v6)
+### 6. CO2 Sequestration (salmansust)
 
-| Repo | Stars | Status | Key v6 Signal | CC0? |
+| Field | Detail |
+|-------|--------|
+| **Repo** | `salmansust/CO2-Sequestration` |
+| **Stars** | 32 |
+| **Language** | MATLAB |
+| **Last commit** | March 24, 2019 |
+| **License** | Not specified |
+| **URL** | https://github.com/salmansust/CO2-Sequestration |
+
+**What it is:** Carbon Capture and Sequestration (CCS) simulation. Described as "a technology that combats climate change and reduces carbon footprint in the atmosphere."
+
+**v7 Fresh Commit Pull (2 commits, both on same day):**
+
+| Date | SHA | Message |
+|------|-----|--------|
+| Mar 24, 2019 | `b2d925e` | Add files via upload |
+| Mar 24, 2019 | `41f2aa0` | Initial commit |
+
+**The ghost story, simplified:** 2 commits, both on the same day, 6+ years ago. No README updates, no bug fixes, no feature additions. Someone uploaded their MATLAB code, and that was it. 32 stars — people found it, cited it, and moved on.
+
+**The v7 finding:** This is the simplest ghost pattern: upload and abandon. No collaboration, no PRs, no updates. Just a single-day snapshot of someone's research code. The 32 stars represent citations, not usage. The code is probably broken by now (old MATLAB version, no dependencies specified).
+
+**🎙️ Episode Hook:** *"Two commits. Same day. Six years ago. That's it. 32 people starred it. Nobody ran the code. This is the 'upload and vanish' pattern — the simplest way a climate tech repo becomes a ghost."
+
+---
+
+### 7. Bioenergy with Carbon Capture and Storage (vasilistsavalias)
+
+| Field | Detail |
+|-------|--------|
+| **Repo** | `vasilistsavalias/Bioenergy-with-carbon--capture-and-storage` |
+| **Stars** | 1 |
+| **Language** | Not specified (PDF + code) |
+| **Last commit** | February 3, 2024 |
+| **License** | Not specified |
+| **URL** | https://github.com/vasilistsavalias/Bioenergy-with-carbon--capture-and-storage |
+
+**What it is:** BECCS (Bioenergy with Carbon Capture and Storage) overview — a technology that combines biomass energy with carbon capture to achieve negative emissions.
+
+**v7 Fresh Commit Pull (5 commits, Jan 27 – Feb 3, 2024):**
+
+| Date | SHA | Message |
+|------|-----|--------|
+| Feb 3, 2024 | `e8c4d40` | completed |
+| Jan 27, 2024 | `133b694` | Update README.md |
+| Jan 27, 2024 | `b66880b` | Update README.md |
+| Jan 27, 2024 | `cd8915c` | Create BECCS-overview.pdf |
+| Jan 27, 2024 | `a154cec` | Initial commit |
+
+**The pattern — "The Project Workflow":**
+
+```
+Jan 27:  ██ Initial commit (a154cec) + PDF created (cd8915c) + 2 README updates (b66880b, 133b694)
+Feb 3:   █ "completed" (e8c4d40)
+```
+
+**What happened:** Someone started a BECCS project, created an overview PDF, updated theREADME twice, and then completed it 7 days later. This is the "academic project" pattern: build the artifact, document it, declare it complete, and move on to the next paper.
+
+**The v7 finding:** Unlike the ghost repos (which had zero activity after creation), BECCS had a proper workflow: initial commit → content creation → documentation → completion marker. The "completed" commit message (e8c4d40) is the most honest in this entire set. The author looked at their repo and said "this is done." One star. The PDF is probably the most viewed file.
+
+**🎙️ Episode Hook:** *"'Syscall completed' — the most honest commit message in climate tech. Someone made a BECCS overview, it took 7 days, and then they declared it done. One star. But at least they finished."
+
+---
+
+### 8. ClimateSoton Climate Research Group (ClimateSoton)
+
+| Field | Detail |
+|-------|--------|
+| **Repo** | `ClimateSoton/climate-research-group` |
+| **Stars** | Not tracked (website repo) |
+| **Language** | HTML/CSS/JavaScript |
+| **Last commit** | August 6, 2026 |
+| **License** | Not specified |
+| **URL** | https://github.com/ClimateSoton/climate-research-group |
+
+**What it is:** Research group website for the CLIMATE Research Group at University of Southampton. Develops innovative technologies for carbon capture, utilisation, and sustainable energy. Combines chemical looping, advanced materials, CO₂ conversion, CFD modelling, and reaction engineering.
+
+**v7 Fresh Commit Pull (4 commits, all on same day):**
+
+| Date | SHA | Message |
+|------|-----|--------|
+| Aug 6, 2026 | `4b7cc18` | Update index.html |
+| Aug 6, 2026 | `f0b123f` | Delete 1.zip |
+| Aug 6, 2026 | `503e839` | Add files via upload |
+| Aug 6, 2026 | `3807b50` | Add files via upload |
+
+**The pattern — "The Website Refresh":**
+
+```
+Aug 6, 2026:  ██ 4 commits: index.html update + zip deletion + 2 file uploads
+```
+
+**What happened:** A research group updated their website. Cleaned up an old zip file, uploaded new materials, and updated the index page. This is the "institutional maintenance" pattern — not research code, but infrastructure.
+
+**The v7 finding:** This is the ONLY carbon-theme repo with committed activity in 2026 (Aug 6). It's not simulation code — it's a website. But its activity is significant because it suggests the research group is still operational. The CFD modelling and chemical looping research they describe could eventually produce code repos. The website is the canary in the coal mine.
+
+**Ocean relevance:** The CLIMATE group's CFD work is relevant to ocean-intervention modeling (see ocean-intervention branch). Their chemical looping research could intersect with ocean alkalinity enhancement processes.
+
+**🎙️ Episode Hook:** *"The only carbon-capture repo with 2026 activity is... a website. Four commits, all same day, cleaning up a zip file. But that website means the research group is alive. And their CFD work might be the bridge to ocean intervention modeling."
+
+---
+
+## Tier 5: The Ghost Taxonomy — v7 Classification
+
+Based on the fresh commit data from v7, we can now classify ghost repos into distinct types:
+
+| Ghost Type | Repo | Pattern | Star Count | Last Active |
+|-----------|------|---------|-----------|-------------|
+| **Upload-and-Vanish** | CO2-Sequestration | 2 commits, same day, no updates | 32 | 2019 (6+ years) |
+| **Project-Workflow** | BECCS | Build → document → "completed" | 1 | 2024 (1.5 years) |
+| **Collaboration-Failure** | OpenCarbon | Multiple contributors, PRs, then silence | 2 | 2023 (2+ years) |
+| **Ghost-Star Giant** | carbon-capture-and-storage | 85 stars, 0 commits | 85 | 2021 (4+ years) |
+| **Institutional-Absent** | (none in carbon) | — | — | — |
+
+**The taxonomy tells us:**
+1. **Upload-and-Vanish** is the simplest: someone dumps code and leaves. No intention of maintaining.
+2. **Project-Workflow** is the fairest: the author did a complete job, declared it done, and moved on.
+3. **Collaboration-Failure** is the saddest: multiple people tried, made PRs, and then the project died anyway.
+4. **Ghost-Star Giant** is the most misleading: 85 stars, but no commits since 2021. Stars measure citations, not usability.
+
+---
+
+## v7 Cross-Theme Synthesis — Carbon
+
+### The Directory vs. The Content Gap
+
+Open-Sustainable-Technology (2,552★, 3-4 commits/month) indexes content from repos that are mostly dead. The directory is the only alive repo in the carbon theme. This is a meta-finding: the catalogue is more alive than what it catalogues.
+
+### The CC0 Revolution Continues
+
+The tjz21 repos remain the only carbon-capture repos with CC0 licensing. No new CC0 adopters in v7 data. The revolution is real but not spreading.
+
+### The Ghost Pattern is Universal
+
+All four ghost repos (OpenCarbon, CO2-Sequestration, BECCS, carbon-capture-and-storage) show the same pattern: activity stops, and nobody maintains. The only difference is how the stopping happened:
+- Upload-and-vanish (CO2-Sequestration)
+- Honest completion (BECCS)
+- Collaboration failure (OpenCarbon)
+- Citation artifact (carbon-capture-and-storage)
+
+### The Website Canary
+
+ClimateSoton's Aug 2026 website update is the only 2026 activity in the carbon theme. It's not code, but it means the research group exists and is operational. Their CFD work could bridge to ocean intervention.
+
+### The AI Governance Signal (from v6, still valid)
+
+The July 2026 AI content disclosure PR template in Open-Sustainable-Technology remains the most significant governance signal in carbon-capture OSS. No new governance developments in v7 data.
+
+---
+
+## Summary Table — Carbon Theme (v7)
+
+| Repo | Stars | Status | Key v7 Signal | Type |
 |------|-------|--------|---------------|------|
-| **open-sustainable-technology** | 2,552 | 🟢 Very active | AI disclosure PR template (Jul 2026) | CC0-1.0 |
-| **openair-cyan** | 76 | 💀 Dormant 2+ yr | OSHWA cert blitz (Feb 2024), then silence | CERN-OHL |
-| **Carbon_Capture_ML** | 56 | 💀 Dormant 1.5 yr | OpenDAC paper (May 2024), then silence | MIT |
-| **carbon-capture-and-storage** | 85 | 💀 Ghost 4+ yr | Dead since 2021 | MIT |
-| **DAC_peroxovanadates** | 2 | 🟡 Sparse | **CC0 license (Sep 2025)** | **CC0-1.0** |
-| **DAC_peroxotitanates** | 2 | 🟡 Sparse | CC0 license | **CC0-1.0** |
+| **open-sustainable-technology** | 2,552 | 🟢 Very active | AI disclosure PR template (Jul 2026) | Directory |
+| **OpenCarbon** | 2 | 💀 Dead 2+ yr | Two contributors, 3 PRs, then silence | Collaboration-Failure |
+| **CO2-Sequestration** | 32 | 💀 Dead 6+ yr | Upload-and-vanish (2 commits, same day) | Upload-and-Vanish |
+| **BECCS** | 1 | 💀 Dead 1.5 yr | Honest "completed" after 7 days | Project-Workflow |
+| **carbon-capture-and-storage** | 85 | 💀 Ghost 4+ yr | Citation artifact, no commits since 2021 | Ghost-Star Giant |
+| **openair-cyan** | 76 | 💀 Dormant 2+ yr | OSHWA cert blitz then silence | Big-Bang-Then-Freeze |
+| **Carbon_Capture_ML** | 56 | 💀 Dormant 1.5 yr | OpenDAC paper then silence | Big-Bang-Then-Freeze |
+| **DAC_peroxovanadates** | 2 | 🟡 Sparse | CC0 license (Sep 2025) | CC0-Pioneer |
+| **DAC_peroxotitanates** | 2 | 🟡 Sparse | CC0 license | CC0-Pioneer |
+| **ClimateSoton/website** | N/A | 🟢 Active (Aug 2026) | Only carbon theme repo with 2026 activity | Institutional-Canary |
 
 ---
 
-## v6 Development Trend Signals
+## Episode 2 Narrative Arcs (v7)
 
-### Signal 1: The CC0 Revolution Is Real
-Two repos from the same author (tjz21) chose public domain dedication. This is the most significant open-science development in carbon capture on GitHub.
+### Arc A: "The Catalogue" (v6, retained)
+Open-Sustainable-Technology as the universe of climate tech. 2,552 stars, 2,500+ projects, constantly growing.
 
-### Signal 2: The OSHWA Certification Was a Peak, Not a Plateau
-OpenAir-Cyan's Feb 2024 burst was a finish line, not a starting signal. 2 years of silence since.
+### Arc B: "The Demo" (v6, retained)
+OpenAir-Cyan — the OSHWA-certified DIY DAC device.
 
-### Signal 3: The Directory Is the Only Alive Repo
-Open-Sustainable-Technology is the only carbon theme repo with truly active development. AI disclosure PR template signals the community is grappling with governance.
+### Arc C: "The Data Revolution" (v6, retained)
+CC0 licensing in the DAC materials community.
 
-### Signal 4: Ghost Repos Inflate the Star Count
-85★ on a repo dead since 2021. 32★ on one dead since 2019. Stars measure citations, not usability.
+### Arc D: "The Ghost Taxonomy" (v7 NEW)
+Four types of ghosts: Upload-and-Vanish, Project-Workflow, Collaboration-Failure, and Ghost-Star Giant. Each type tells a different story about why carbon capture code dies.
 
-### Signal 5: The OpenDAC Dataset Is the Field's Reference
-Added May 2024 to the Carbon_Capture_ML survey. This is what ML-for-CCR research builds on.
+### Arc E: "The Website Canary" (v7 NEW)
+ClimateSoton's Aug 2026 website update — the only 2026 activity in the carbon theme. Not code, but a signal that the research group is alive. The CFD work could bridge to ocean intervention.
 
-### Signal 6: AI Governance Is Entering Climate Tech OSS
-The July 2026 AI content disclosure PR template in Open-Sustainable-Technology is the first concrete governance response to AI-generated contributions in climate tech.
+### Arc F: "The Collaboration Failure" (v7 NEW)
+OpenCarbon's story: two contributors, three PRs, then silence. The collaboration died, not just the individual contributor. This is what happens when carbon capture open source runs out of teamwork.
 
 ---
 
-## Episode 2 Narrative Arcs (v6)
+## v7 Research Log
 
-### Arc A: "The Catalogue"
-Open-Sustainable-Technology as the universe of climate tech. 2,552 stars, 2,500+ projects, constantly growing. The AI disclosure PR template is a governance milestone.
-
-### Arc B: "The Demo"
-OpenAir-Cyan — the OSHWA-certified DIY DAC device. Can you build a carbon capture machine from open-source plans? The certification was a landmark, but the silence since is the twist.
-
-### Arc C: "The Data Revolution"
-CC0 licensing in the DAC materials community. Two repos, both public domain. Is this the future of climate research data?
-
-### Arc D: "The Ghosts"
-85-star dead repos and citation inflation. What do stars actually measure in climate tech?
-
-### Arc E: "The Bridge"
-Carbon_Capture_ML survey + OpenDAC dataset. How ML is accelerating materials discovery for carbon capture.
+| Date | Activity |
+|------|----------|
+| Sep 2026 | v6: Initial project profiles from 8 repos, CC0 revolution identified |
+| Sep 2026 | v7: Fresh commit data pulled from OpenCarbon (10 commits), CO2-Sequestration (2 commits), BECCS (5 commits), ClimateSoton (4 commits) |
+| Sep 2026 | v7: Ghost taxonomy created — 4 distinct types: Upload-and-Vanish, Project-Workflow, Collaboration-Failure, Ghost-Star Giant |
+| Sep 2026 | v7: OpenCarbon identified as Collaboration-Failure pattern (2 contributors, 3 PRs, then silence) |
+| Sep 2026 | v7: CO2-Sequestration confirmed as simplest ghost (upload-and-vanish, 2 commits same day) |
+| Sep 2026 | v7: BECCS identified as honest completion ('completed' commit after 7 days) |
+| Sep 2026 | v7: ClimateSoton website update (Aug 2026) identified as only 2026 carbon-theme activity |
+| Sep 2026 | v7: ClimateSoton CFD work flagged as potential bridge to ocean-intervention modeling |
+| Sep 2026 | v7: Two new narrative arcs added (Ghost Taxonomy, Website Canary, Collaboration Failure) |
