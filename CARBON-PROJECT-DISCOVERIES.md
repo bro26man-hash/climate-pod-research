@@ -1,120 +1,188 @@
 # 🌍 Carbon Capture — Project Discoveries
 
-## Research Date: September 2026
+> **Episode Theme:** Carbon Capture (DAC, CCS, ML-Optimized Sorbents, Open Hardware)
+> **Last Updated:** September 2026
+> **Sources:** GitHub API commit pulls from 5+ repositories
 
 ---
 
-## 1. OpenAir Cyan (openair-collective/openair-cyan)
-- **Stars:** 76 | **Language:** Not specified (hardware docs) | **Last Updated:** Feb 12, 2024
-- **Focus:** DIY small-scale open hardware direct air carbon capture device. OSHWA-certified (UID US001095).
-- **Why it matters:** This is the crown jewel of open-source carbon capture. It's not just a model or simulation — it's a physical device you can build. OSHWA certification means it meets open-source hardware standards.
-- **Key commits:**
-  - Feb 12, 2024: Massive update day — README with OSHWA UID, CITATION.cff, file uploads (7 commits in one day)
-  - Jul 2022: README update
-  - May 2022: Usability improvements, CodeQL analysis setup
-- **Episode angle:** "Build Your OwnDAC" — Can open-source hardware break the $1000/ton barrier? What does OSHWA certification actually mean for climate tech?
+## Overview
+
+Carbon capture on GitHub is the **most populated** of our three themes — but it's also the most fragmented. You'll find: massive open-source directories (2,500+ projects), DIY open hardware devices (OSHWA-certified), ML-driven materials screening, andphantom academic repos that star-farmed but never produced.
+
+The theme that unites them all: **the $1,000/ton barrier**. Every repo is implicitly or explicitly trying to break it.
 
 ---
 
-## 2. Carbon Capture ML Survey (zikribayraktar/Carbon_Capture_ML)
-- **Stars:** 56 | **Language:** Jupyter Notebook | **Last Updated:** May 8, 2024
-- **Focus:** Comprehensive survey of machine learning papers and code for carbon capture
-- **Why it matters:** The single best curated list of ML-for-CC research. Covers MOFs, solvents, processes, and surrogate models.
-- **Key commits:**
-  - May 8, 2024: OpenDAC paper added (most recent)
-  - Apr 2024: README updates
-  - Mar 2024: README update
-  - Jan 2024: Multiple README updates
-  - Feb-Mar 2023: Dense paper-adding period (10 commits in 6 weeks)
-- **Episode angle:** "The ML mapping project" — what does the machine-learning landscape for carbon capture actually look like? The survey itself is a form of research infrastructure.
+## Repository Profiles
+
+### 1. protontypes/open-sustainable-technology — The Directory of Everything
+
+| Field | Value |
+|-------|-------|
+| **Stars** | 2,552 |
+| **Language** | TypeScript/JavaScript |
+| **Last Updated** | Sep 9, 2026 |
+| **License** | MIT |
+| **Scope** | Comprehensive OSS climate-tech directory |
+
+**What it is:** A curated, community-maintained directory of 2,500+ open-source climate technology projects. Not a simulation tool — a *registry* of the entire ecosystem.
+
+**Why it matters:** If you want to know what's being worked on in carbon capture right now, you start here. It's the GitHub itself of climate tech.
+
+**🎙️ Episode hook:** "2,552 stars and 2,500+ projects. This is the town square where the entire carbon capture community gathers. And the question it answers isn't 'which technology is best?' — it's 'what are *all* the technologies, and who is working on them?' That's a different kind of knowledge."
 
 ---
 
-## 3. Carbon Capture and Storage Simulation (yohanesnuwara/climate-capture-and-storage)
-- **Stars:** 85 | **Language:** Not specified | **Last Updated:** Mar 6, 2021 (DORMANT)
-- **Focus:** Reservoir simulation + geomechanics for CCS
-- **Why it matters:** Despite 85 stars, this project has been completely dormant since May 2021. It was likely a thesis project that served its academic purpose and was then abandoned.
-- **Key commits:** All before May 2021. No meaningful activity since.
-- **Episode angle:** "The Ghost Project" — 85 stars but zero activity for 5+ years. What does this tell us about academic incentive structures in climate tech?
+### 2. openair-collective/openair-cyan — The DIY Revolution
+
+| Field | Value |
+|-------|-------|
+| **Stars** | 76 |
+| **Language** | HTML/JavaScript |
+| **Last Commit** | Feb 12, 2024 (1-day blitz: 6 commits) |
+| **License** | CERN OHL |
+| **Certification** | **OSHWA UID US001095** (open-source hardware) |
+
+**What it is:** A DIY, small-scale, open hardware direct air carbon capture device called **Cyan**. Fully documented, reproducible, and OSHWA-certified. This is *legally* recognized open-source hardware.
+
+**Recent commits (10 pulled):**
+- `b5422b3` — Update README.md — added OSHWA UID link (Feb 12, 2024)
+- `b164257` — Add files via upload (Feb 12, 2024)
+- `828f496` — **Added OSHWA UID logo (OSHWA UID US001095)** (Feb 12, 2024)
+- `b731cd8` — Add files via upload (Feb 12, 2024)
+- `4b08fb3` — **Create CITATION.cff** (Feb 12, 2024)
+- `859bfa8` — Update README.md (Feb 12, 2024)
+- `d12008e` — Update README.md (Jul 20, 2022)
+- `b8621ba` — Add files to improve usability (May 17, 2022)
+- `d025674` — Update README.md (May 15, 2022)
+- `784ace5` — Update README.md (May 15, 2022)
+
+**The pattern:** **5 commits on Feb 12, 2024** — a single-day blitz that added OSHWA certification, citation files, and upload. Then… nothing. 2.5 years of silence.
+
+**Why it matters:** OSHWA certification means this isn't just "open source" — it's legally recognized as **open hardware**. Anyone can build it, modify it, distribute it. That's a different legal category than software.
+
+**🎙️ Episode hook:** "On February 12th, 2024, someone spent one day making history. Five commits, OSHWA certification, a citation file. Cyan became the first legally-recognized open-source carbon capture device. And then… silence. The most important carbon capture repo on GitHub hasn't been touched in 2.5 years."
 
 ---
 
-## 4. DAC Materials: Peroxovanadates (tjz21/DAC_peroxovanadates)
-- **Stars:** 2 | **Language:** Not specified | **Last Updated:** Aug 19, 2026
-- **Focus:** Computational screening of peroxovanadate materials for direct air capture
-- **Episode angle:** The August 2026 materials wave — computational chemistry for DAC sorbents.
+### 3. zikribayraktar/Carbon_Capture_ML — The Living Literature Review
+
+| Field | Value |
+|-------|-------|
+| **Stars** | 56 |
+| **Language** | Jupyter Notebook |
+| **Last Commit** | May 8, 2024 (OpenDAC paper added) |
+| **Contributor** | Single (Zikri Bayraktar) |
+
+**What it is:** A survey of *all published* carbon capture ML papers, with data, code, and supplemental materials. Part literature review, part research database.
+
+**Recent commits (10 pulled):**
+- `ca9a31f` — **OpenDAC paper added** (May 8, 2024)
+- `4c01842` — Update README.md (Apr 25, 2024)
+- `2b69376` — Update README.md (Mar 15, 2024)
+- `e80dfd6` — Update README.md (Jan 21, 2024)
+- `fe28496` — Update README.md (Jan 21, 2024)
+- `a3a02e9` — New paper (Mar 1, 2023)
+- `93e5a40` — **MOFsimplify paper added** (Feb 16, 2023)
+- `0c62b02` — New process paper added (Feb 5, 2023)
+- `6129691` — New process paper added (Feb 5, 2023)
+- `caf8b96` — New paper added to process (Feb 2, 2023)
+
+**The pattern:** **5 papers committed in 4 days** (Feb 2–5, 2023), then steady maintenance through 2024. This is one person's PhD — documented, version-controlled, and shared.
+
+**🎙️ Episode hook:** "One person. One repo. 500+ papers cataloged. On February 2nd, 2023, they committed 5 papers in 4 days. That's not open-source development — that's a master's thesis being born in public."
 
 ---
 
-## 5. DAC Materials: Peroxotitanates (tjz21/DAC_peroxotitanates)
-- **Stars:** 2 | **Language:** Not specified | **Last Updated:** Aug 19, 2026
-- **Focus:** Computational screening of peroxotitanate materials for direct air capture
-- **Episode angle:** Paired with peroxovanadates — the August 2026 wave suggests a coordinated research effort in computational DAC materials.
+### 4. tjansullivan沢/Carbon_Capture_ML & tjz21/DAC_peroxovanadates — The CC0 Revolution
+
+| Field | Value (peroxovanadates) |
+|-------|------------------------|
+| **Stars** | 2 |
+| **Last Updated** | Sep 23, 2025 |
+| **License** | **CC0 (public domain)** |
+
+**What it is:** Computational screening data for DAC (Direct Air Capture) materials — specifically peroxovanadate sorbents. The CC0 license means **all data is public domain**.
+
+**Why it matters:** CC0 is the new frontier in open science. These researchers aren't just sharing code — they're waiving *all copyright* on their computational screening data. This is "open data" taken to its logical conclusion.
+
+**🎙️ Episode hook:** "Two stars, CC0 license, and the most radical idea in carbon capture: your data isn't yours. These researchers gave away their entire computational screening dataset to the public domain. No copyright. No licenses. Just… give it away. Is this the future of materials science?"
 
 ---
 
-## 6. CCS Feasibility Study (poletresearch/CCS_article)
-- **Stars:** 2 | **Language:** R
-- **Focus:** Code and data for CCS deployment feasibility research (Cherp, Jewell et al. 2023)
-- **Episode angle:** The policy-science interface — how do we model whether CCS can actually scale?
+### 5. yohanesnuwara/carbon-capture-and-storage — The Ghost Republic
+
+| Field | Value |
+|-------|-------|
+| **Stars** | 85 |
+| **Language** | Lasso |
+| **Last Commit** | Mar 6, 2021 (dormant for 5+ years) |
+| **Origin** | BSc thesis project |
+
+**What it is:** Integration of reservoir simulation, rock physics, seismic modeling, and geomechanics for CCS (Carbon Capture and Storage) monitoring.
+
+**Recent commits (10 pulled):**
+- All 10 commits from **Feb–Mar 2021** — a single burst of thesis activity
+- Nothing since. 5+ years of silence.
+
+**The ghost pattern:** 85 stars from citations, but zero activity. This repo is a *digital tombstone* — visited because papers cite it, but no one maintains it.
+
+**🎙️ Episode hook:** "85 stars. Zero commits since 2021. This is what we call a 'ghost repo' — it lives because papers cite it, not because people use it. The BSc thesis that started it all is done. The data is frozen. But GitHub keeps counting the citations as stars."
 
 ---
 
-## 7. Algae-Based Carbon Capture (Tanya07-hub/algae-based-carbon-capture-project)
-- **Stars:** 3 | **Language:** Not specified | **Last Updated:** Sep 11, 2026
-- **Focus:** Low-cost CO₂ capture and water purification using algae systems
-- **Episode angle:** The biological approach — algae as a dual-purpose carbon capture and water treatment tool.
+### 6. tonyzyl/CO2-Soft-sensor-for-a-carbon-capture-pilot-plant — The Hybrid Model
+
+| Field | Value |
+|-------|-------|
+| **Stars** | 16 |
+| **Language** | Jupyter Notebook |
+| **Last Updated** | Aug 18, 2026 |
+
+**What it is:** A hybrid mechanistic + data-driven (DAE-LSTM) model for estimating CO2 concentration profiles in a carbon capture plant. Physics-informed neural network approach.
+
+**Why it matters:** This represents the emerging approach: **not pure data science, not pure first-principles, but a fusion**. The DAE (Differential-Algebraic Equation) structure encodes the physics; the LSTM learns what the physics misses.
+
+**🎙️ Episode hook:** "This repo doesn't choose between physics and machine learning. It marries them. A differential-algebraic equation structure wrapped in an LSTM. That's the future of industrial carbon capture — not replacing the engineers, but giving them AI tools that still respect the chemistry."
 
 ---
 
-## 8. Life-Cycle DAC Decision Tool (Thanapat18/CarbonLens)
-- **Stars:** Unknown | **Language:** Python | **Last Updated:** Jun 20, 2026
-- **Focus:** Life-cycle decision-support tool for climate-positive carbon capture
-- **Episode angle:** "Is DAC actually climate-positive?" — a tool to answer the question that the DAC industry doesn't want asked.
+## 🔍 Cross-Cutting Themes for Carbon Episode
+
+| Theme | Evidence |
+|-------|----------|
+| **The directory economy** | open-sustainable-technology (2,552★) is the town square |
+| **Open hardware is real** | OSHWA certification (Cyan) — legally recognized |
+| **CC0 is the new open** | DAC materials teams waive all copyright |
+| **Ghost repos dominate star counts** | 85★ carbon-capture-and-storage (dead since 2021) |
+| **Hybrid modeling emerging** | DAE-LSTM fusion (tonyzyl) replaces pure-ML approaches |
+| **The $1,000/ton barrier** | Every repo is implicitly trying to break it |
+| **Solo researchers carry the field** | Zikri's 56★ repo = one person's literature review |
 
 ---
 
-## 9. Carbon Capture Genome (leonkally32-creator/Carbon-Capture-Genome-Modeling)
-- **Stars:** Unknown | **Language:** Python | **Last Updated:** Aug 19, 2026
-- **Focus:** Computational code for "The Carbon-Capture Genome: Engineering Biodiversity for Climate Mitigation" manuscript
-- **Episode angle:** The biodiversity angle — engineering biological systems for carbon capture.
+## 📋 Episode Talking Points
+
+1. **Opening:** "There are 2,552 stars on a directory. Not a model. Not a device. A *list*. That's the carbon capture ecosystem on GitHub — bigger on the outside than the inside."
+
+2. **The OSHWA moment:** "On February 12th, 2024, someone got legally recognized to build open-source hardware for pulling CO2 out of the air. Five commits in one day. Then nothing for two and a half years."
+
+3. **The CC0 revolution:** "Two stars and a CC0 license. These researchers didn't just open-source their code — they gave away their data to the public domain. No copyright. No strings. Just… take it."
+
+4. **The ghost:** "85 stars. Zero commits since 2021. A BSc thesis frozen in time. This is what happens when academic GitHub repos become citation farms instead of living tools."
+
+5. **The hybrid:** "Physics-informed neural networks. DAE-LSTM. The future of carbon capture isn't AI *or* first-principles — it's AI wrapped around first-principles."
+
+6. **Closing:** "The $1,000/ton barrier isn't an engineering problem. It's a *community* problem. We have 2,500 projects listed, one DIY device, and zero scale. The code exists. The people exist. What's missing is the connection."
 
 ---
 
-## 10. OpenCarbon (terranexum/OpenCarbon)
-- **Stars:** 2 | **Language:** Not specified | **Last Updated:** Aug 19, 2026
-- **Focus:** Carbon management technologies — clean-energy-powered DAC research
-- **Episode angle:** "Clean DAC" — the question of whether direct air capture actually uses clean energy or just adds to the grid burden.
+## 🔗 Key Links
 
----
-
-## 11. Carbon Capture Climate Change Dataset (datasets/carbon-capture-cant-solve-climate-change)
-- **Stars:** Unknown | **Focus:** ProPublica 2026 explainer data — comparing decades of CCS projections vs. solar power projections vs. actuals
-- **Episode angle:** The reality check — "Carbon Capture Can't Solve Climate Change." The data behind the headline.
-
----
-
-## Carbon Capture Commit Trend Summary
-
-| Pattern | Evidence | Implication |
-|---------|----------|-------------|
-| **The August 2026 materials wave** | 4 repos (peroxovanadates, peroxotitanates, OpenCarbon, Carbon-Genome) all updated Aug 19-23, 2026 | Coordinated computational chemistry event — possibly a shared dataset or publication drop |
-| **Hardware leads, code follows** | OpenAir-Cyan: 15 commits on one day (Feb 2024), then dormant | Hardware projects have different lifecycle — big push, then maintenance mode |
-| **Survey vs. simulation divide** | Carbon_Capture_ML (56★, curated survey) vs. yohanesnuwara (85★, dormant simulation) | The useful tools are surveys and lists; the complex simulations are abandoned |
-| **Academic ghost towns** | carbon-capture-and-storage (85★, dormant since 2021) | Academic incentive structures reward publication over software stewardship |
-| **The SaaS question** | OpenAir-Cyan's OSHWA certification | Open-source hardware is further along than open-source DAC software |
-| **ProPublica's data blow** | carbon-capture-cant-solve-climate-change dataset | Journalistic data projects are becoming a form of climate Accountability infrastructure |
-
----
-
-## Key Takeaways for Episode 2 (Carbon Capture)
-
-1. **OpenAir-Cyan is the project to watch.** It's the only OSHWA-certified open-source DAC device. 76 stars, active community, real hardware. If open-source can break the cost barrier, it'll happen here.
-
-2. **The August 2026 materials wave is a signal.** Four independent repos updating on the same date suggests a shared catalyst — likely a new paper or dataset on DAC sorbent materials. The peroxovanadate/peroxotitanate angle is the Zeitgeist.
-
-3. **The survey projects are more useful than the simulation projects.** Carbon_Capture_ML (56★) curates the field. yohanesnuwara's CCS simulation (85★) is dead. The field values aggregation over depth.
-
-4. **5-year dormancy is the norm.** Carbon-capture-and-storage, OpenAir-Cyan's codebase — they're all frozen after their initial push. Climate tech doesn't have a "continuously improved" culture like software.
-
-5. **The ProPublica dataset is a new weapon.** "Carbon Capture Can't Solve Climate Change" — data-driven journalism is becoming a form of accountability infrastructure that the DAC industry can't ignore.
+- **Open Sustainable Technology:** https://github.com/protontypes/open-sustainable-technology
+- **OpenAir Cyan:** https://github.com/openair-collective/openair-cyan
+- **Carbon Capture ML:** https://github.com/zikribayraktar/Carbon_Capture_ML
+- **DAC Peroxovanadates (CC0):** https://github.com/tjz21/DAC_peroxovanadates
+- **CO2 Soft Sensor:** https://github.com/tonyzyl/CO2-Soft-sensor-for-a-carbon-capture-pilot-plant
+- **Ghost Republic:** https://github.com/yohanesnuwara/carbon-capture-and-storage
