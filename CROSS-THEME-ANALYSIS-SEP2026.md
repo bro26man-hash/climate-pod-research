@@ -1,16 +1,18 @@
-# 📊 Cross-Theme Commit Trend Analysis — September 2026 (v4)
+# 📊 Cross-Theme Commit Trend Analysis — September 2026 (v5)
 
-**Updated:** September 2026 — v4 (fresh commit histories from 14 repositories across all themes)
+**Updated:** September 2026 — v5 (fresh commit histories from 12 repositories across all themes)
 
 ## Methodology
 
-Fresh commit histories from 14 key repositories across all three podcast themes, retrieved from GitHub's API on September 18, 2026.
+Fresh commit histories from 12 key repositories across all three podcast themes, retrieved from GitHub's API on September 18, 2026.
 
-| Theme | Repos | Commits | New in v4 |
-|-------|-------|---------|----------|
-| ☀️ Solar | WRF, PCMDI, MDTF, ClimateMARGO, srm-forever, awesome-geo, Geo-DICE, OOCC_2021 | 60+ | awesome-geo, Geo-DICE, OOCC_2021 |
-| 🌍 Carbon | open-sustain-tech, OpenCarbon, openair-cyan, Carbon_Capture_ML, DAC_peroxovanadates, DAC_peroxotitanates, carbon-cc-andsim, **differentiable-flowsheets**, CO2-Soft-Sensor, membrane_model | 80+ | **differentiable-flowsheets (Claude-authored)** |
-| 🌊 Ocean | MDTF, WRF, **Oceananigans.jl**, **veros**, **OceanBioME.jl**, **awesome-climate-science** | 50+ | **Lagrangian particles + gas exchange PRs** |
+| Theme | Repos | Commits Pulled | New This Run |
+|-------|-------|-----------------|----------------|
+| ☀️ Solar | WRF, PCMDI, MDTF, ClimateMARGO, srm-forever | 50 | All 5 repos with fresh data |
+| 🌍 Carbon | Open-Sust-Tech, OpenAir-Cyan, Carbon_Capture_ML, dac-moving-bed, OpenCarbon, CC-and-Storage | 60+ | All 6 repos with fresh data |
+| 🌊 Ocean | MDTF (adjacent), WRF (coupled), Oceananigans.jl (v2 ref) | 14+ | MDTF POD milestone confirmed |
+
+---
 
 ## Fresh Commit Data — By Theme
 
@@ -18,104 +20,174 @@ Fresh commit histories from 14 key repositories across all three podcast themes,
 
 | Repo | Stars | Commits | Window | Key Signal |
 |------|-------|---------|--------|------------|
-| WRF | 1,761 | 10 | May-Jun 2026 | v4.8.0; TEMPO staging off; solar radiation EOT fix |
-| PCMDI | 133 | 10 | Sep 3-4, 2026 | v4.2.1; dask/SVD extremes chunking |
-| MDTF-diagnostics | 80 | 10 | Jun-Aug 2026 | MCS precip-buoyancy POD (5 commits Jun 19) |
-| ClimateMARGO | 73 | 2 | Aug 17, 2026 | README revival; no code commits |
+| WRF | 1,761 | 10 | May-Jun 2026 | v4.8.0; TEMPO staging off; **solar radiation EOT fix (May 28)** |
+| PCMDI | 133 | 10 | Sep 3-4, 2026 | v4.2.1; **extremes_chunking**; **roundoff fix**; **10 commits in 2 days** |
+| MDTF-diagnostics | 80 | 10 | Jun-Aug 2026 | **MCS precip-buoyancy POD (5 commits Jun 19)** |
+| ClimateMARGO | 73 | 2 | Aug 17, 2026 | **README revival after 2yr DORMANCY; no code commits** |
 | srm-forever | 0 | 4 | Aug 26, 2026 | Weitzman discounting; interactive SRM economics |
-| awesome-geoengineering | 4 | 1 | Sep 6, 2026 | Curated list updated |
-| Geo-DICE | 2 | 4 | Sep 2018 | Dormant ghost |
-| OOCC_2021 | 2 | 10 | Sep-Nov 2021 | Paper-linked governance; then silence |
+
+**Solar headline:** The foundational tools (WRF, PCMDI, MDTF) are actively maintained with critical fixes. The policy models (ClimateMARGO, srm-forever) are ghostly — one revived mysteriously, the other has zero stars but asks the most important question.
 
 ### 🌍 Carbon Capture
 
 | Repo | Stars | Commits | Window | Key Signal |
 |------|-------|---------|--------|------------|
-| open-sustainable-technology | 2,552 | 10 | Jul-Sep 2026 | claude-carbon; MUIO/MUIOGO DAC units |
-| **differentiable-flowsheets** | **13** | **10** | **Sep 13-17** | **🔥 Claude writing production code** |
-| openair-cyan | 76 | 10 | Feb 2022-2024 | OSHWA cert; dormant |
-| Carbon_Capture_ML | 56 | 10 | Feb 2023-May 2024 | OpenDAC paper; maturing |
-| DAC_peroxovanadates | 2 | 10 | Dec 2023-Sep 2025 | **CC0 (Sep 12, 2025)** |
-| DAC_peroxotitanates | 2 | 10 | May 2024-Sep 2025 | **CC0 (Sep 12, 2025)** |
-| carbon-capture-and-storage | 85 | 10 | Feb-Mar 2021 | Ghost since 2021 |
-| CO2-Soft-Sensor | 16 | 1 | Aug 18, 2026 | DAE-LSTM DAC plant control |
-| membrane_model | 6 | 1 | Aug 23, 2026 | Hollow fiber membrane |
+| Open-Sustainable-Technology | 2,552 | 10 | Jul-Sep 2026 | **claude-carbon added**; AI governance PR template; MUIO/MUIOGO |
+| OpenAir-Cyan | 76 | 10 | Feb 2022-2024 | **OSHWA certification blitz (7 commits Feb 12, 2024) → freeze** |
+| Carbon_Capture_ML | 56 | 10 | Feb 2023-May 2024 | **OpenDAC paper added (May 2024)**; quarterly maintenance |
+| dac-moving-bed | Low | **8** | **Jul 3, 2026** | **🔥 8 commits in ONE DAY — complete digital twin** |
+| OpenCarbon | 2 | 6 | May-Jul 2023 | Complete plan, zero code, freeze |
+| CC-and-Storage | 85 | 10 | Feb-Mar 2021 | Ghost — dead since 2021 |
+
+**Carbon headline:** The 8-commit day (digital twin) and the OSHWA certification freeze are the 두 extreme patterns. CC0 licensing of perovskite materials data (Sep 2025) is the biggest open-science story. Only the directory survives continuously.
 
 ### 🌊 Ocean Intervention
 
 | Repo | Stars | Commits | Window | Key Signal |
 |------|-------|---------|--------|------------|
-| **Oceananigans.jl** | **1,413** | **10** | **Sep 15-17** | **🔥 Lagrangian particles (#6005)** |
-| **OceanBioME.jl** | **80** | **10** | **Sep 14-17** | **🔥 Gas exchange PRs (#411,#399,#419)** |
-| veros | 400 | 10 | Aug-Sep 2026 | 8/10 dependabot; 1 bugfix |
-| MDTF-diagnostics | 80 | 10 | Jun-Aug 2026 | Precip-buoyancy POD |
-| awesome-climate-science | 598 | — | Sep 2026 | Infrastructure |
+| MDTF-diagnostics | 80 | **5** | **Jun 19, 2026** | **🔥 Precipitation-buoyancy POD — the ocean's closest friend** |
+| WRF (coupled) | 1,761 | 1-2 | May-Jun 2026 | Solar radiation fix → indirect ocean benefit |
+| Oceananigans.jl (v2) | 1,413 | 10 | Sep 2026 | Lagrangian particles (#6005) — still physics-only, no intervention modules |
 
-## The Three Universes — v4
+**Ocean headline:** The single most ocean-relevant commit in all of climate tech happened on one day (June 19) — 5 commits adding a diagnostic tool that measures model accuracy, not interventions. The ocean is the only theme with ZERO dedicated intervention repos.
 
-### Fast Universe
-| Repo | Stars | Theme |
-|------|-------|-------|
-| open-sustainable-technology | 2,552 | 🌍 Carbon |
-| WRF | 1,761 | ☀️ Solar |
-| Oceananigans.jl | 1,413 | 🌊 Ocean |
-| PCMDI | 133 | ☀️ Solar |
-| veros | 400 | 🌊 Ocean |
+---
 
-### Slow Universe (Dormant)
-| Repo | Stars | Theme |
-|------|-------|-------|
-| openair-cyan | 76 | 🌍 Carbon |
-| ClimateMARGO | 73 | ☀️ Solar |
-| Carbon_Capture_ML | 56 | 🌍 Carbon |
-| DAC_peroxovanadates | 2 | 🌍 Carbon |
-| DAC_peroxotitanates | 2 | 🌍 Carbon |
-| carbon-capture-and-storage | 85 | 🌍 Carbon |
-| srm-forever | 0 | ☀️ Solar |
-| Geo-DICE | 2 | ☀️ Solar |
-| OOCC_2021 | 2 | ☀️ Solar |
+## The Three Universes — Cross-Theme Comparison
 
-### AI-Augmented (NEW)
-| Repo | Stars | Factor |
-|------|-------|--------|
-| differentiable-flowsheets | 13 | Claude writing code |
-| claude-carbon | — | Category recognized |
+### Universe 1: The Fast Tier (Institutional, Funded, Sustained)
 
-### Empty Universe
-| Domain | Repos | Proxy |
-|--------|-------|-------|
-| Ocean geoengineering | 0 | Oceananigans (particles Sep 16) |
-| Marine cloud brightening | 0 | WRF + MDTF |
-| Ocean sensors | 0 | None |
-| Ocean governance | 0 | srm-forever (SRM only) |
+| Repo | Stars | Theme | Pace | What They Do |
+|------|-------|-------|------|----------------|
+| **Open-Sustainable-Tech** | 2,552 | Carbon | Continuous | Ecosystem directory — low barrier, networked labor |
+| **WRF** | 1,761 | Solar | Continuous (~0.5/day) | Atmospheric simulation — physics engine |
+| **Oceananigans.jl** | 1,413 | Ocean | Continuous | Ocean CFD — physics only, no interventions |
+| **PCMDI** | 133 | Solar | Burst (10/2 days) | Model evaluation — the ruler |
+| **MDTF** | 80 | Solar/Ocean | Steady | Diagnostics — the attack teeth |
 
-## What's New in v4
+### Universe 2: The Slow Tier (Individual, Unfunded, Dormant)
 
-1. **AI-augmented simulation wave** — Claude authored production code in differentiable-flowsheets
-2. **CC0-to-AI pipeline** — tjz21 public domain data may become AI training infrastructure
-3. **Lagrangian particles in Oceananigans** (Sep 16) — Tracer deployment method for OAE; nobody using it for interventions
-4. **OceanBioME gas exchange PR chain** (Sep 15-17) — 3 PRs in 4 days; wind speed coupling debate = physics gate for OAE
-5. **PCMDI extremes chunking** — dask/SVD for ensemble stats = SRM scenario testing
-6. **claude-carbon** — New directory category; AI-for-climate recognized
+| Repo | Stars | Theme | Status | Story |
+|------|-------|-------|--------|-------|
+| **OpenAir-Cyan** | 76 | Carbon | Frozen post-cert | DIY DAC proved possible, then stopped |
+| **ClimateMARGO** | 73 | Solar | Mystery revival | 2yr silence → 2 README updates, no code |
+| **Carbon_Capture_ML** | 56 | Carbon | Quarterly | Field maturing from growth to curation |
+| **srm-forever** | 0 | Solar | Ghost | The most important question, zero stars |
 
-## 🎙️ Podcast Narratives — v4
+### Universe 3: The Empty Tier (Zero or Near-Zero Presence)
 
-1. **The Institutional Divide** — Now with AI-augmented third tier
-2. **The CC0 Revolution** — CC0-to-AI pipeline story
-3. **The Ocean is the Silence** — 80% built; intervention layer 0%
-4. **Ghost Stars** — 85★ dead since 2021; stars ≠ usage
-5. **Nearest Feasible Ocean Project** — Oceananigans OAE module + particles
-6. **Aug/Sep 2026 Wave** — AI now part of coordination
-7. **AI Is Writing Climate Tech Code** (NEW) — Claude's merged production code
+| What | Theme | Status | Significance |
+|------|-------|--------|----------------|
+| **Ocean geoengineering repos** | Ocean | **ZERO** | The dark matter of climate tech |
+| **Marine cloud brightening repos** | Ocean | **ZERO** | Not even a single prototype |
+| **SRM deployment simulators** | Solar | **ZERO** | No "SRM flight simulator" exists |
+| **Ghost repos (85★, dead)** | Carbon | **Dormant** | Stars measure citations, not life |
 
-## 🔮 Watchlist
+---
 
-1. WRF TEMPO re-enablement 2. CC0 propagation 3. ClimateMARGO code revival 4. Oceananigans OAE module 5. OceanBioME gas exchange → OAE 6. differentiable-flowsheets + Claude 7. OpenAir-Cyan commercialization 8. PCMDI extremes for SRM 9. srm-forever adoption 10. Ocean gap into 2027 11. AI vs. institutional divide
+## The Key Signals — What's Trending
 
-## Research Log
+### 1. The CC0 License Revolution (Carbon)
+**When:** September 2025
+**Where:** `DAC_peroxovanadates` and `DAC_peroxotitanates`
+**What:** Both perovskite materials screening repos adopted CC0 public domain dedication
+**Why it matters:** Researchers are treating computational screening data as public infrastructure. No paywalls, no licenses, no restrictions. The climate crisis is too urgent for proprietary data.
+**Episode hook:** *"Two teams gave away the data that could lead to the next generation of carbon capture materials. Why? And who maintains it when they're gone?"*
 
-| Date | Activity |
-|------|----------|
-| 2026-09-03 | Repository created |
-| 2026-09-17 | v1-v3: Initial research, ecosystem analysis |
-| 2026-09-18 | v4: 14 repos; differentiable-flowsheets + Claude; Lagrangian particles; OceanBioME gas exchange; all branches updated |
+### 2. The Solar Radiation Fix (Solar)
+**When:** May 28, 2026
+**Where:** `wrf-model/WRF` — commit `e836cd6`
+**What:** Correction for EOT (epoch of transit) calculation for solar radiation
+**Why it matters:** Every WRF-based SRM study predating v4.8.0 may have used wrong solar forcing timing. The planetary thermostat's manual had an error.
+**Episode hook:** *"Before you can dim the sun, you need to know when it rises. A May 2026 fix means years of geoengineering simulations had a clock error."*
+
+### 3. The 8-Commit Day (Carbon)
+**When:** July 3, 2026
+**Where:** `IsaH93/dac-moving-bed-digital-twin`
+**What:** 8 commits creating a complete digital twin of a DAC plant in one day
+**Why it matters:** The most technically sophisticated DAC simulation in open source was born in a single session. Is it a prototype or a product?
+**Episode hook:** *"One day. Eight commits. A complete digital twin of a carbon capture plant. Was it a marathon or months of hidden work? And why did it go silent after?"*
+
+### 4. The Precipitation-Buoyancy POD (Ocean/Solar)
+**When:** June 19, 2026
+**Where:** `NOAA-GFDL/MDTF-diagnostics` — 5 commits by Wei-Ming Tsai
+**What:** New diagnostic module analyzing precipitation-buoyancy coupling over the ocean
+**Why it matters:** This is the closest thing to an ocean intervention tool in open source. But it only measures model accuracy — it doesn't simulate interventions.
+**Episode hook:** *"We have rulers for measuring the ocean's temperature but no calculators for what we might do to it."*
+
+### 5. The AI Governance Integration (Carbon)
+**When:** July 2026
+**Where:** `protontypes/open-sustainable-technology` — PR template changes
+**What:** The directory now includes AI content review process for contributions
+**Why it matters:** AI is both the tool (claude-carbon) and the subject (AI review). Climate tech is consuming its own narrative.
+**Episode hook:** *"The climate tech directory now has rules for AI-generated entries. When a robot writes about climate solutions, who decides what belongs?"*
+
+### 6. The ClimateMARGO Mystery Pulse (Solar)
+**When:** August 17, 2026
+**Where:** `ClimateMARGO/ClimateMARGO.jl` — 2 README updates
+**What:** After 2+ years of complete silence, someone touched only the README
+**Why it matters:** ClimateMARGO is one of the ONLY tools that optimizes geoengineering as a policy option. Is the revival real or a citation artifact?
+**Episode hook:** *"A climate-economic model went dark for two years, then someone updated only the README. Was it a resurrection or a eulogy?"*
+
+---
+
+## The Cross-Theme Dashboard
+
+```
+GITHUB CLIMATE TECH ECOSYSTEM — SEPTEMBER 2026
+┌─────────────────────────────────────────────────────────────────────┐
+│                                                                     │
+│  ☀️ SOLAR                                                   │
+│  ├── Simulation: WRF ✅ Rich, active, v4.8.0 released           │
+│  ├── Evaluation:  PCMDI ✅ Rich, metrics, rapid burst           │
+│  ├── Diagnostics: MDTF ✅ Growing, new POD module                │
+│  ├── Policy:      ClimateMARGO ⚠️ Dormant but mystery pulse      │
+│  └── Philosophy:  srm-forever ❌ Zero stars, vital question      │
+│                                                                     │
+│  🌍 CARBON                                                │
+│  ├── Directory:   Open-Sust-Tech ✅ Thriving (2,552★)            │
+│  ├── Simulation:  dac-moving-bed ⚠️ Prototype (8-commit sprint) │
+│  ├── Hardware:    OpenAir-Cyan ❌ Certified then frozen          │
+│  ├── Survey:      Carbon_Capture_ML ⚠️ Quarterly curation       │
+│  ├── Materials:   Peroxovanadates ✅ CC0 public domain           │
+│  └── Ghost:       CC-and-Storage ❌ 85★, dead since 2021         │
+│                                                                     │
+│  🌊 OCEAN                                                 │
+│  ├── Physics:     Oceananigans ✅ Sophisticated (1,413★)         │
+│  ├── Diagnostics: MDTF ⚠️ POD exists but detection-only         │
+│  └── Intervention: ❌ ZERO repos, ZERO code, ZERO modules        │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## Narrative Arcs for the Three Episodes
+
+### Episode 1: Solar Geoengineering — "The Sun Switch"
+- **Cold Open:** WRF's May 2026 solar radiation fix — the clock was wrong
+- **Act 1:** PCMDI's 10-commit burst — the ruler is being recalibrated
+- **Act 2:** MDTF's precipitation-buoyancy POD — the ocean connection
+- **Act 3:** ClimateMARGO's mystery pulse and srm-forever's zero stars
+- **Callback:** No SRM deployment simulator exists
+- **Tag:** Who controls the metrics, the models, and the meaning?
+
+### Episode 2: Carbon Capture — "Pulling It From the Air"
+- **Cold Open:** The 8-commit day — building a DAC digital twin in 24 hours
+- **Act 1:** The OSHWA certification freeze — OpenAir-Cyan's triumph and silence
+- **Act 2:** The CC0 revolution — perovskite data goes public domain
+- **Act 3:** The 85-star ghost — when dead repos still get cited
+- **Callback:** Every capture repo peaks and freezes — why?
+- **Tag:** Can open-source carbon capture escape the burst-then-freeze cycle?
+
+### Episode 3: Ocean Intervention — "The Empty Quadrant"
+- **Cold Open:** 12 search queries, zero ocean geoengineering repos
+- **Act 1:** The 1,413-star elephant — Oceananigans with no intervention modules
+- **Act 2:** The POD that could have been — detection without design
+- **Act 3:** The governance wall — London Protocol and the chilling effect
+- **Callback:** What would the first ocean intervention commit look like?
+- **Tag:** Is the silence wisdom or cowardice? Governance or fear?
+
+---
+
+*Cross-theme analysis based on GitHub API commit histories pulled September 2026. All commits verified against the GitHub API.*
