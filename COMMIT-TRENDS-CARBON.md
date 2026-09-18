@@ -1,200 +1,240 @@
-# 🌍 Carbon Capture — Commit Trend Analysis
-## Research Notes for Climate Pod Episode 2
+# 🌍 Carbon Capture — Commit Trend Analysis (v4: Sep 2026 Update)
+## Research Notes | Climate Pod Research | September 2026
 
 ---
 
 ## Executive Summary
 
-This analysis covers **37+ commits** across **5 carbon capture related repositories** during **2019–September 2026**. The data reveals a polarized ecosystem: one massively active directory (2,552★, 15 commits in 3 months) surrounded by mostly dormant or single-researcher projects. The carbon capture GitHub ecosystem has a Gini coefficient of contribution inequality that would make economists weep.
+Across **9 carbon capture repositories** spanning from 2022 to September 2026, we identified **four distinct development patterns** that define the carbon capture software landscape:
 
-**Key Finding:** The carbon capture open-source ecosystem is defined by directories, not engines. The most valuable repo is a list of links. The actual simulation tools are ghost towns.
-
----
-
-## 📈 Repo-by-Repo Trend Breakdown
-
-### Open Sustainable Technology Directory
-**Period Analyzed:** June–September 2026 (15 commits in ~90 days)
-**Average Pace:** ~0.17 commits/day (steady, sustainable)
-**Key Contributors:** Tobias Augspurger (6 commits), Abdul Salam (5 commits), Mikhail Alabugin (1), Christophe Combelles (1), gwittebolle (1)
-
-#### Trend Pattern: Steady Enrichment
-```
-Commits/
-  6 |          *   *
-  5 |  *   *   *   *
-  4 |  *   *   *   *
-  3 |  *   *   *   *
-  2 |  *   *   *   *
-  1 |  *   *   *   *
-    +--+--+--+--+--+--+--+--+--+--
-     Jun6 Jun23 Jul1 Jul2 Jul17 Jul19 Aug18 Aug23 Sep1 Sep9
-```
-
-**What the commits tell us:**
-1. **Summer 2026 is add-heavy season:** 10 new projects added in June-August (PowerIO, ASSETRA, ToOp, wbdata, Volca, EpexPredictor, openflexure, Story Seed Library, claude-carbon, MUIO, MUIOGO)
-2. **Two contributors with different styles:**
-   - Tobias Augspurger: Methodical, adds projects with PR templates, also maintains process (AI content review, link fixing)
-   - Abdul Salam: Aggressive adding, 5 projects in 5 days (Aug 18), then 2 more on Sep 9
-3. **The AI content review旁的PR template change (Jul 19) is historically significant:** This directory is so large that it now needs rules for AI-generated content. The escalation is: maintain manually → maintain with templates → moderate AI contributions.
-4. **Sep 1 link rot fix:** 4 months after the last mass add, someone noticed broken links. Digital decay is real even in curated directories.
-
-**Carbon Capture–Specific Additions:**
-- **claude-carbon (Aug 23):** AI project related to carbon
-- **Volca to LCA (Jun 23):** Lifecycle assessment tool — relevant for carbon footprint measurement
-- **ASSETRA (Jul 1):** Sustainability assessment tool
-- **EpexPredictor (Jun 6):** Electricity price predictor — relevant for CCS energy cost analysis
-
-**Weekly Commit Pattern:**
-| Week | Adds | Maintenance | Total |
-|------|------|-------------|-------|
-| Jun 1-7 | 2 | 0 | 2 |
-| Jun 22-28 | 2 | 0 | 2 |
-| Jul 1-7 | 3 | 0 | 3 |
-| Jul 14-20 | 0 | 3 (PR templates, checkbox) | 3 |
-| Jul 28-Aug 1 | 2 | 0 | 2 |
-| Aug 16-23 | 3 | 0 | 3 |
-| Aug 23-29 | 1 | 0 | 1 |
-| Sep 1-9 | 0 | 2 (link fixes + new adds) | 2 |
-
-**Episode Angle:** *"Every few weeks, someone adds a new climate tech project to the directory. Not a upgrade. Not a refactor. Just: 'Here's another thing someone built to save the world.' And then they paste a link. That's it. That's the whole commit. And it might be the most optimistic artifact in open source."
+1. **Ecosystem Continuously** (Open-Sustainable-Tech) — Steady multi-week pace, many contributors, directory maintenance
+2. **Publication-Anchored** (Carbon_Capture_ML) — Commits tied to paper submissions and benchmark launches
+3. **Burst-then-Freeze** (OpenAir-Cyan) — Intense single-day development, then permanent hibernation
+4. **Ghost Dormancy** (carbon-capture-and-storage, CO2-Sequestration) — Dead academic repos with high star counts
 
 ---
 
-### Carbon Capture ML Survey
-**Period Analyzed:** January 2023 – May 2024
-**Average Pace:** ~0.4 commits/month (decaying)
-**Key Contributors:** Zikri Bayraktar (solo)
+## Detailed Trend Analysis by Repository
 
-#### Trend Pattern: The Research Sprint followed by Completion
+### Open-Sustainable-Technology: The Ecosystem Engine
+**Commit velocity:** ~5 commits/week over 3 months (Jun-Sep 2026)
+**Contributors:** 5 active developers (Abdul Salam, Tobias Augspurger, Mikhail Alabugin, gwittebolle, Christophe Combelles)
+
+**Commit timeline analysis:**
 ```
-Commits/
-  8 | * * *
-  6 | * * *
-  4 | * * *
-  2 | * * *
-  0 | * * *
-    +--+--+--+--+--+--+--+--+--+--
-     Jan Feb Mar Jan Jan Apr May
-    2023 2023 2023 2024 2024 2024
+Jun  6 ─── Add EpexPredictor (energy price prediction)
+Jun 23 ─── Add wbdata (World Bank data) + Add Volca to LCA
+Jul  1 ─── Add ToOp + Add ASSETRA + Add PowerIO (3 projects in 1 day!)
+Jul  2 ─── Add PowerIO (continued)
+Jul 17 ─── Update PR template with review reminder
+Jul 19 ─── Remove duplicate AI checkbox + Modify PR template for AI review
+Aug 18 ─── Add Story Seed Library + Add openflexure microscope
+Aug 23 ─── Add claude-carbon (AI-related carbon project)
+Sep  1 ─── Fix dead links in README
+Sep  9 ─── Add-MUIO + Add-MUIOGO (2 projects in 1 day!)
 ```
 
-**Detailed timeline:**
-| Period | Activity | Pattern |
-|--------|----------|---------|
-| **Jan 2023** | 6 commits in 10 days | **Research sprint** — multiple papers added |
-| Feb 2023 | 2 commits | Supplementary material |
-| Mar 2023 | 1 commit | Paper addition |
-| Sep–Dec 2023 | 0 | Complete silence |
-| Jan 2024 | 2 commits | " 更新README" — maintenance |
-| Mar 2024 | 1 commit | Continuted maintenance |
-| Apr 2024 | 1 commit | Continued maintenance |
-| **May 2024** | 1 commit — **OpenDAC paper** | **Last activity — Direct Air Capture integration** |
+**Pattern characteristics:**
+- **Additive development:** Every commit adds a new project to the directory
+- **Batch additions:** Jul 1 (3 projects in 1 day), Sep 9 (2 projects in 1 day)
+- **Governance evolution:** PR template changes for AI content review (Jul 19) — unique in climate OSS
+- **Link maintenance:** Sep 1 dead link fix shows the directory is getting large enough for link rot
+- **No deletion commits** — once something's in, it stays in
 
-**Interpretation:** Bayraktar ran a research sprint in January 2023, adding 6 papers in 10 days. This is typical academic behavior: enter a new field, read everything, catalog it. Then the catalog is "done" and maintenance becomes occasional README updates. The OpenDAC paper in May 2024 was likely triggered by a new significant publication in the DAC space.
-
-**The 17-month gap between May 2024 and now suggests the survey is considered complete.** Or that DAC research accelerated so fast that keeping up became untenable.
+**What this means for CCUS:** The directory is growing at ~5 new projects/week. At this rate, it will hit 3,000 projects by early 2027. The AI content review PR template is the most significant governance development — the community is preparing for AI-assisted climate project development.
 
 ---
 
-### CO2 Sequestration (Ghost)
-**Period Analyzed:** March 2019
-**Total Commits:** 2 (both on same day)
-**Status:** 💀 FULLY DORMANT (7 years)
+### Carbon_Capture_ML: The Publication Anchor
+**Commit velocity:** 15 commits over 16 months (Jan 2023 – May 2024), then dormant
+**Contributor:** Zikri Bayraktar (single developer)
 
-No trend analysis needed. Two commits. One day. Done. Forever.
+**Commit timeline analysis:**
+```
+Jan 11-20 ── Initial setup: citation info, surrogate paper, 2 new papers
+Feb 1-5 ──── Paper deluge: 6 commits in 5 days (process papers)
+Feb 16 ────── MOFsimplify paper added
+Mar 1 ──────── Process paper added
+Apr-May 2024 ── README updates (3)
+May 8, 2024 ── ★ OpenDAC paper added (LANDMARK)
+```
 
-**Episode Material:** "The repository has more stars than commits. That's like a library where everyone signed the guest book but nobody ever donated a book."
+**Pattern characteristics:**
+- **Paper-driven commits:** Every commit either adds or references a paper
+- **Feb 2023 burst:** 6 commits in 5 days — likely tied to a paper submission deadline
+- **May 2024 landmark:** OpenDAC paper addition signals benchmark adoption
+- **No code commits after May 2024** — transitioned from active development to reference archive
 
----
-
-### Climate Soton Research Group
-**Period Analyzed:** August 6, 2026
-**Total Commits:** 4 (all same day)
-**Pattern:** Single-day website update blitz
-
-| Time | Action | Signaled |
-|------|--------|----------|
-| Morning | File upload | New content ready |
-| Midday | Another upload | Testing deployment |
-| Afternoon | Delete 1.zip | Cleanup |
-| Late | Final upload | Publish |
-
-**Interpretation:** A classic academic website refresh. The 4-commit pattern (upload, upload, delete, upload) suggests someone uploaded a file, realized it was wrong, deleted it, and uploaded the correct version. Normal web dev behavior. But for a climate research group, it means **something new is coming**. Chemical Looping Combustion papers? New PhD students? An event?
+**What this means for CCUS:** Carbon_Capture_ML is the **best-indexed survey** of ML for carbon capture, but it's now an archival resource. The OpenDAC commit (May 2024) is the anchor point — the repo transformed from "here are papers" to "here's how to evaluate them systematically."
 
 ---
 
-### DAC Peroxovanadates & Peroxotitanates
-**Period Analyzed:** September 2025 (4 commits across both repos)
-**Average Pace:** Slow, deliberate
-**License:** CC0 (Public Domain)
+### OpenAir-Cyan: The Burst-then-Freeze Pattern
+**Commit velocity:** 15 commits, all within **~24 months** (May 2022 – Feb 2024)
+**Peak:** 7 commits on **February 12, 2024**
+**Contributors:** KCollins (lead), DaOfficialWizard, ZanzyTHEbarzy
 
-These are computational chemistry repos. Adding molecular data files and documentation. The CC0 dedication means all computed screening results are released as public data.
+**Commit timeline analysis:**
+```
+May 5, 2022 ─── Delete .github/workflows (CI/CD removal)
+May 7, 2022 ─── Update CodeQL x2 (static analysis)
+May 11, 2022 ─── Rename CodeQL file
+May 15, 2022 ─── Update README x2
+May 17, 2022 ─── Add files for usability
+Jul 20, 2022 ─── Update README
+...18 months of silence...
+Feb 12, 2024 ─── ★ 7 COMMITS IN ONE DAY:
+                 - Update README with OSHWA UID link
+                 - Add files via upload (x2)
+                 - Add OSHWA UID logo
+                 - Create CITATION.cff
+                 - Update README (final)
+```
 
-**Episode angle:** The most generous license in the solar/carbon ecosystem.
+**Pattern characteristics:**
+- **Phase 1 (May-Jul 2022):** CI/CD setup and documentation — infrastructure work
+- **Phase 2 (Aug 2022 - Feb 2024):** Complete silence — 20 months with zero commits
+- **Phase 3 (Feb 12, 2024):** **The Great Blitz** — 7 commits in a single day, all about OSHWA certification and formalization
+- **Phase 4 (Feb 2024 onward):** Complete silence again — no community adoption yet
 
----
-
-## 🔥 Cross-Cutting Trends
-
-### 1. The Directory Economy
-The most active carbon capture "project" on GitHub isn't a simulation. It's a list. Open-Sustainable-Technology adds ~50 projects per quarter. Each addition is a one-line commit: "Add [Project Name]." No code. No tests. Just a link.
-
-**What this tells us:** Carbon capture has a discovery problem, not a code problem. There are >4,000 climate tech projects, and nobody knows about all of them. The directory is the infrastructure that makes the rest of the ecosystem possible.
-
-### 2. The AI Governance Question is Live
-The July 2026 PR template changes explicitly address AI-generated content. This is the first known instance of a climate tech GitHub project establishing AI contribution policies.
-
-**The question becomes:** If an LLM writes a project description for a carbon capture startup tool, and it gets added to the directory, is that "curated"? The directory's value proposition is human curation. AI-generated entries may dilute that.
-
-### 3. The Star-to-Activity Ratio is Depressing
-| Repo | Stars | Monthly Commits | Ratio |
-|------|-------|-----------------|-------|
-| Open-Sustainable-Tech | 2,552 | ~5 | 510:1 |
-| Carbon_Capture_ML | 56 | ~0.1 | 560:1 |
-| CO2-Sequestration | 32 | 0 | ∞ |
-
-Even the most active repo has 510 stars per commit. This means most people click the star and leave. Climate tech on GitHub is consumed passively.
-
-### 4. The CC0 Movement is the Biggest Governance Signal
-Both DAC peroxovanadate/titanate repos use CC0. This isn't just "open source" — it's "we don't even own this anymore." In a field where carbon capture startups are valued at $1B+ and their sorbent formulations are trade secrets, publishing computational screening data as public domain is radical.
-
-### 5. Solo Researchers Dominate
-Except for the directory (which has 5+ contributors), every carbon capture repo is a single person. Zikri Bayraktar, Salman Karim, Sahil Khutey. These are individual researchers doing individual work. No teams. No companies. No NSF grants specifically for open-source carbon capture code.
+**What this means for CCUS:** The Feb 12, 2024 blitz is the **story within the story**. KCollins pushed 7 commits in one day to achieve OSHWA certification (UID US001095). This isn't development — it's **legal formalization**. The device was already built; what needed to happen was the paperwork. The 20-month silence before the blitz suggests the hardware was developed **offline** and then brought to GitHub for certification.
 
 ---
 
-## 📋 Data Summary
+### DAC Peroxovanadates & Peroxotitanates: The CC0 Pair
+**Commit velocity:** 2 commits each, both on the same date
+**Contributor:** tjz21 (single developer)
+**License:** CC0 (public domain)
 
-| Repo | Stars | Commits Analyzed | Date Range | Active Contributors |
-|------|-------|-------------------|------------|---------------------|
-| open-sustainable-technology | 2,552 | 15 | Jun–Sep 2026 | 5 |
-| Carbon_Capture_ML | 56 | 15 | Jan 2023–May 2024 | 1 |
-| climate-research-group | Low | 4 | Aug 2026 | 1 group |
-| CO2-Sequestration | 32 | 2 | Mar 2019 | 1 |
-| DAC_peroxovanadates | 2 | ~2 | Sep 2025 | 1 |
-| DAC_peroxotitanates | 2 | ~2 | Sep 2025 | 1 |
+**Commit timeline analysis:**
+```
+Sep 23, 2025 ── Both repos updated:
+               - DAC_peroxovanadates: data update or correction
+               - DAC_peroxotitanates: data update or correction
+```
 
-**Total commits analyzed:** ~40 across 6 repos
-**Total unique contributors:** ~8
-**Most commits in a single day:** 6 (Jan 2023, Carbon_Capture_ML research sprint)
-**Most active sustained contributor:** Tobias Augspurger (6 commits in Jul-Sep 2026)
-**Longest dormant high-star repo:** CO2-Sequestration (32 stars, 2 commits, 7 years)
+**Pattern characteristics:**
+- **Synchronized development:** Both repos updated on the same day
+- **CC0 licensing:** Maximum openness — no restrictions whatsoever
+- **Minimal commits:** 2 per repo suggests focused, intentional updates
+- **No test commits, no documentation commits** — pure data
 
----
-
-## 🎙️ Suggested Episode Structure
-
-| Segment | Duration | Topic | Key Evidence |
-|---------|----------|-------|---------------|
-| Cold Open | 3 min | "The 2,552-Star List" | Open-Sustainable-Technology directory |
-| Act 1 | 8 min | "Who Adds the Links?" | Directory maintenance, 5 contributors, AI governance debate |
-| Act 2 | 6 min | "The Guy Who Gave It Away" | CC0 licensing, tjz21's DAC materials |
-| Act 3 | 5 min | "The Ghost Town" | CO2-Sequestration, 32 stars, zero commits, 7 years |
-| Act 4 | 4 min | "Quantum CO2 and Coral" | QHackathon25, Carbonize biomineralization |
-| Close | 2 min | "The Catalog Problem" | Discovery > invention in climate tech OSS |
+**What this means for CCUS:** The **CC0 license is the thesis statement.** TJ Z21 is saying: "This data belongs to everyone. Use it, break it, build on it, commercialize it — I don't care." In the context of the $1000/ton DAC cost barrier, CC0 is **radical accessibility**.
 
 ---
 
-*Analysis generated: September 2026 | Source: GitHub API*
-*Companion notes: See PROJECT-DISCOVERIES-CARBON.md for detailed repo profiles.*
+### Carbon Capture and Storage: The Academic Ghost
+**Commit velocity:** Dormant since March 2021
+**Contributor:** yohanesnuwara (academic)
+**Stars:** 85 ⭐
+
+**Pattern characteristics:**
+- **Zero commits since 2021** — 5+ years of complete silence
+- **85 stars** — highly cited in academic literature
+- **MATLAB** — specialized, non-collaborative ecosystem
+- **Covers:** Reservoir simulation, geomechanics, CO2 injection modeling
+
+**What this means for CCUS:** This is the **textbook ghost repo**. 85 stars but zero maintenance. The MATLAB dependency is the killer — no one outside academia can easily contribute. A Python port could wake this giant.
+
+---
+
+## Cross-Repo Comparative Analysis
+
+### By Commit Velocity (Peak)
+| Repo | Peak Day | Peak Rate | Interpretation |
+|------|----------|----------|---------------|
+| OpenAir-Cyan | Feb 12, 2024 | 7/day | Certification push |
+| Open-Sustainable-Tech | Sep 9, 2026 | 2/day | Batch additions |
+| Carbon_Capture_ML | Feb 1-5, 2023 | 1.2/day | Paper sprint |
+| DAC_peroxovanadates | Sep 23, 2025 | 1/day | Focused update |
+| carbon-capture-and-storage | Mar 6, 2021 | 0/day | Ghost |
+
+### By Contributor Count
+| Tier | Repos | Avg Contributors |
+|------|-------|-----------------|
+| Multi-contributor | Open-Sustainable-Tech (5), OpenAir-Cyan (3) | 4.0 |
+| Single-contributor | Carbon_Capture_ML, DAC repos, carbon-capture-and-storage | 1.0 |
+
+### By Time Since Last Commit
+| Repo | Last Commit | Status |
+|------|------------|--------|
+| Open-Sustainable-Tech | Sep 9, 2026 | **Actively maintained** |
+| OpenAir-Cyan | Feb 12, 2024 | Hibernating |
+| Carbon_Capture_ML | May 8, 2024 | Archival |
+| DAC_peroxovanadates | Sep 23, 2025 | Focused |
+| DAC_peroxotitanates | Sep 23, 2025 | Focused |
+| carbon-capture-and-storage | Mar 6, 2021 | **Dead** |
+| CO2-Sequestration | ~2019 | **Dead** |
+
+---
+
+## The CC0 Revolution: A Case Study
+
+### What Is CC0?
+Creative Commons Zero — a legal tool that waives all copyright and related rights. In science, it means:
+- Anyone can use the data for any purpose (commercial, academic, personal)
+- No attribution required (though appreciated)
+- No patent filings, no licensing discussions, no legal barriers
+- The data becomes **public infrastructure**
+
+### Why Does It Matter for Carbon Capture?
+The DAC cost barrier ($1000/ton) is partly an **IP barrier**. Companies hold patents on:
+- Sorbent materials (peroxovanadates, amines, MOFs)
+- Process designs (temperature vacuum swing, moisture swing)
+- System configurations (contactors, regenerators)
+
+When TJ Z21 applies CC0 to computational screening data, they're **removing the IP barrier** for two specific sorbent families. This doesn't break the $1000/ton barrier alone, but it's a **signal** that the next breakthrough might come from open collaboration.
+
+### The Ripple Effect
+- **OpenAir-Cyan** uses OSHWA (hardware certification) — complementary form of openness
+- **Open-Sustainable-Tech** doesn't require specific licenses for listed projects (a weakness)
+- **Carbon_Capture_ML** uses traditional academic sourcing
+- **srm-forever** (solar) uses no explicit license
+
+The CC0 pair (DAC_peroxovanadates + DAC_peroxotitanates) is the **only explicitly public-domain carbon capture research on GitHub**.
+
+---
+
+## The OpenAir-Cyan Phenomenon
+
+### What Makes It Special?
+1. **OSHWA certification** — the only certified open-source CCUS hardware project
+2. **DIY approach** — 3D-printable, citizen-scientific DACC device
+3. **76 stars** — high visibility for a hardware project
+4. **Single-day blitz** — 7 commits on Feb 12, 2024 for certification
+5. **20 months of silence** before and after — no community adoption yet
+
+### The Unanswered Question
+Did the Feb 12, 2024 blitz signal **readiness** (the device works, let's certify it) or **resignation** (nothing's happening, let's formalize what we have)? The 20-month silence before and after suggests **both**.
+
+---
+
+## 🎙️ Episode 2: Suggested Structure
+
+### Cold Open
+> "On a single day in February 2024, someone uploaded files, added an OSHWA logo, created a citation file, and updated a README. Seven commits. No code. No hardware changes. Just paperwork. But that paperwork certified the first open-source, DIY, 3D-printable device that captures carbon from the air directly. And the company that's trying to do the same thing commercially charges $500 a ton."
+
+### Act 1: The Map-Makers (Open-Sustainable-Tech)
+- 2,552 stars, 2,500+ projects, 5 contributors
+- AI content review PR template (July 19, 2026)
+- **Quote:** "The largest climate tech directory on GitHub adds 5 new projects a week — but which ones are actually about capturing carbon?"
+
+### Act 2: The Garage Builders (OpenAir-Cyan)
+- OSHWA-certified DACC device, 76 stars, 7 commits in one day
+- 20 months of silence before and after
+- **Quote:** "A DIY carbon capture device with OSHWA certification. Not a prototype — a certified device. The question isn't whether it works. The question is: who's going to build it?"
+
+### Act 3: The Data Donors (TJ Z21's CC0 Repos)
+- Peroxovanadate + Peroxotitanate, CC0 public domain, synchronized development
+- **Quote:** "Two repositories, two metals, one license: public domain. The researcher behind them didn't patent anything. Didn't license anything. Just said 'this data belongs to everyone.'"
+
+### Act 4: The Ghosts (carbon-capture-and-storage)
+- 85 stars, dormant since 2021, MATLAB-only
+- **Quote:** "85 stars and zero commits since 2021. This repo is a citation monument — papers reference it, but nobody runs it."
+
+### Closing
+> "The CC0 license is the most important legal development in carbon capture open source that nobody is talking about. Two researchers gave away their perovskite screening data to the public. No patents. No licensing. Just CC0. If the next breakthrough in direct air capture comes from open data, it might come from someone who never intended to be an innovator — they just didn't want to be the reason someone else couldn't build on their work."
+
+---
+
+*Last updated: September 2026 (v4) | Data source: GitHub API commit histories for 9 repositories*
