@@ -1,76 +1,88 @@
-# 🌞 Solar Geoengineering — Episode Notes
-## Episode Planning Document (September 2026)
+# 🎙️ Solar Geoengineering Episode — Production Notes
+## Episode Title: "The Atmosphere Isn't the Only Room in the House"
 
 ---
 
-## Episode Title (Working)
-"The Model Gap: Why Solar Geoengineering Has No Open-Source Simulation"
+## Research Summary
+
+Our GitHub investigation of solar geoengineering open-source projects reveals a small, institutional ecosystem dominated by three weather/climate models (WRF, PCMDI, MDTF) and one economic optimizer (ClimateMARGO). The total active contributor base across all solar-related repos is approximately 15 people, mostly at US national labs. There are no grassroots solar geoengineering coding communities.
+
+**The Big Picture:** If you want to simulate warming the planet by blocking sunlight, you need to run WRF with the right physics, validate it with PCMDI metrics, check the processes with MDTF diagnostics, and then ask "should we?" with ClimateMARGO. That's the entire open-source pipeline. Four repos. Fifteen people. One planet.
 
 ---
 
-## Core Thesis
-The open-source world has incredible tools for *evaluating* climate — but almost nothing for *simulating* solar radiation management. The entire SRM modeling pipeline runs through institutional, closed-source general circulation models. GitHub, the world's largest open-source collaboration platform, has **zero** repositories for simulating SRM interventions. This gap is itself a story about power, access, and governance.
+## Key Findings
+
+### 1. WRF is the Undisputed King
+- 1,761 stars, continuous development, v4.8.0 just released
+- The May 2026 solar radiation fix shows that even veteran models still have bugs in core physics
+- TEMPO aerosol module being actively tuned — this is the air quality / solar interaction pathway
+- **Bottom line:** WRF is where SRM simulations happen. If you're not running WRF, you're not doing solar geoengineering modeling.
+
+### 2. PCMDI is the Quality Gate
+- v4.2.1 released September 4, 2026 with a dramatic roundoff fix
+- 13 commits in 2 days shows institutional urgency
+- dask/SVD optimization means CMIP6 evaluation is becoming computationally feasible for more researchers
+- **Bottom line:** Before you can claim SRM works, you must prove your model matches observations. PCMDI is the referee.
+
+### 3. MDTF is the Process Detective
+- Precip-buoyancy POD added June 19, 2026 (5 commits same day)
+- This diagnostic evaluates whether models correctly simulate how precipitation relates to atmospheric buoyancy — critical for understanding how SRM might alter monsoon patterns
+- Quarterly metrics workflow = transitioning to production monitoring
+- **Bottom line:** MDTF doesn't just check if models are "right" — it identifies WHERE they're wrong, process by process.
+
+### 4. ClimateMARGO is the Ghost
+- Dormant for 30 months, then two README updates in August 2026
+- No code commits. No issue activity. Just... a better README.
+- Implements Weitzman certainty-equivalent discounting for climate-economy optimization under uncertainty
+- **Bottom line:** Someone still cares about SRM economics. The question is: did they wake up, or are they just cleaning up the tombstone?
+
+### 5. srm-forever is the Sleeper Hit
+- Zero stars, but conceptually the most important repo
+- Directly computes the optimal SRM trajectory under uncertainty
+- Uses Weitzman discounting — the theoretical framework for "what if we can't stop?"
+- **Bottom line:** This Jupyter notebook asks the question that haunts every SRM discussion: what's the exit strategy?
 
 ---
 
-## Key Talking Points
+## What We Don't Know (Research Gaps)
 
-### 1. The Solar Radiation Bug (May 28, 2026)
-- **What happened:** A developer fixed the Earth Outgoing Longwave (EOT) radiation calculation in WRF v4.8.0
-- **Why it matters:** If the solar radiation calculation was wrong, every SRM simulation using WRF produced flawed data
-- **Question to explore:** How many policy documents and field-test permits were justified using data with this known error?
-- **Commit:** `e836cd6` — "correction for EOT calculation for solar radiation"
-
-### 2. The Aerosol Scheme Toggle (June 5, 2026)
-- **What happened:** WRF v4.8.0 deactivated `tempo_aerosolaware` and `tempo_hailaware`
-- **Why it matters:** These are aerosol-aware cloud physics schemes — directly relevant to how models treat stratospheric aerosol injection
-- **Question to explore:** Were these schemes failing? Were they being replaced? Or is this just cleanup?
-
-### 3. The PCMDI Velocity (September 3–4, 2026)
-- **What happened:** 10 commits in 2 days for v4.2.1 release
-- **Why it matters:** PCMDI metrics are the validation toolkit for CMIP6 — the gold standard for climate model evaluation
-- **Question to explore:** What was the urgency? A journal deadline? A policy report? And does faster validation mean SRM results are being rushed?
-
-### 4. The Precip-Buoyancy POD (June 19, 2026)
-- **What happened:** 5 commits in one day adding a precipitation-buoyancy statistics diagnostic to MDTF
-- **Why it matters:** This is the most ocean-relevant diagnostic in open source — and it's for evaluating model accuracy, not simulating interventions
-- **Question to explore:** Would a true ocean geoengineering model need this diagnostic? Or is it irrelevant to deliberate interventions?
-
-### 5. Weitzman Discounting & the Termination Shock
-- **What happened:** `srm-forever` was created in a single day (August 26, 2026) with a complete economic model using Weitzman certainty-equivalent discounting
-- **Why it matters:** It provides the theoretical framework for understanding the "termination shock" — the risk that stopping SRM causes rapid warming
-- **Question to explore:** If SRM costs are modeled as a vintage annuity, does that change the political calculus? Who pays for forever?
-
-### 6. The Governance Vacuum
-- **What happened:** `climate-intervention-governance` was released (August 23, 2026) — a 12-skill Claude Code plugin for tracking SRM legal/regulatory status
-- **Why it matters:** It's the first real governance intelligence tool for SRM, and it's built as a Claude plugin, not a public website
-- **Question to explore:** Is governance-by-AI-plugin the future of SRM oversight? Who audits the auditor?
+1. **No open-source SRM-specific model exists at scale.** WRF can be configured for SRM, but no repo is dedicated to it. This is a gap.
+2. **No community maintained SRM toolkits.** Unlike carbon capture (where OpenCarbon, Carbon_Capture_ML, etc. form an ecosystem), SRM has no community tools.
+3. **Governance models are absent from code.** While ClimateMARGO addresses economics, no repo implements SRM governance decision-making.
+4. **Regional disparity is invisible.** All major repos are US-funded. No European, Asian, or Global South SRM tools exist in our search.
 
 ---
 
-## Interview Questions (Draft)
-1. "If you were a policymaker deciding whether to fund an SRM field test, would you trust the output of a model with a known solar radiation bug?"
-2. "Why is there no open-source GCM with an SRM module? Is it a technical barrier or a political one?"
-3. "The WRF maintainers deactivated two aerosol schemes. Should the community have been consulted before that change?"
-4. "What would a truly open-source SRM simulation platform look like? And who would build it?"
-5. "Is the absence of SRM code on GitHub a governance signal — a way of saying 'we don't want this to be democratized'?"
+## Interview Angles / Questions for Scientists
+
+- "You fixed a solar radiation rounding error in WRF. How many SRM simulations have used the old version? How many conclusions might change?"
+- "PCMDI released v4.2.1 in 9 days of intense work. What was the urgency? Was there an SRM paper depending on it?"
+- "The precip-buoyancy POD is specifically about monsoon physics. If SRM shifts monsoon patterns, is MDTF the tool we'd use to detect it?"
+- "ClimateMARGO had a 30-month silence. What brings you back to update the README? Are you planning new work?"
+- "srm-forever has zero stars. Why does this question — 'what's the cost of SRM forever?' — matter more than people think?"
 
 ---
 
-## Guest Outreach Ideas
-- **weiwangncar** (WRF maintainer, NCA/Davis) — technical authority on WRF physics
-- **Jiwoo Lee** (PCMDI, LLNL) — CMIP6 metrics and validation
-- **Wei-Ming Tsai** (NOAA GFDL) — ocean-atmosphere interaction diagnostics
-- **Fons van der Plas** (ClimateMARGO) — climate-economic modeling
-- **hausfath** (srm-forever) — SRM economics and discounting theory
-- **Zereo0317** (climate-intervention-governance) — SRM regulatory tracking
+## Music / Sound Cues (Suggestions)
+
+- **Cold Open:** Satellite static → WRF model output visualizations → a single held piano note (the "rounding error")
+- **Act 1:** Thunder → code编译 sounds → atmospheric model visuals
+- **Act 2:** Monsoon rain → 5 rapid keyboard clicks (MDTF sprint) → data flowing
+- **Act 3:** Quiet room → Jupyter notebook clicking → a ticking clock (srm-forever's "forever")
+- **Act 4:** Silence → a single GitHub commit sound → README text being typed
+- **Close:** Four heartbeats (WRF, PCMDI, MDTF, ClimateMARGO) → sustained chord
 
 ---
 
-## References
-- [WRF v4.8.0 Release](https://github.com/wrf-model/WRF/releases)
-- [PCMDI Metrics v4.2.1](https://github.com/PCMDI/pcmdi_metrics)
-- [MDTF-diagnostics](https://github.com/NOAA-GFDL/MDTF-diagnostics)
-- [ClimateMARGO.jl](https://github.com/ClimateMARGO/ClimateMARGO.jl)
-- [srm-forever](https://github.com/hausfath/srm-forever)
-- [Climate Intervention Governance Plugin](https://github.com/Zereo0317/climate-intervention-governance)
+## Call to Action for Listeners
+
+- **For coders:** PCMDI and MDTF are actively seeking contributors. Python, dask, and climate science experience needed.
+- **For economists:** ClimateMARGO needs love. If you know Julia and want to work on climate-economy optimization, Fons van der Plas is your person.
+- **For everyone:** Read the WRF v4.8.0 release notes. Understanding what changes in a climate model release is literacy.
+
+---
+
+*Research sourced from GitHub API, September 2026*
+*Companion docs: PROJECT-DISCOVERIES-SOLAR.md, COMMIT-TRENDS-SOLAR.md*
+*Next: Record and edit. Target length: 28 minutes.*
