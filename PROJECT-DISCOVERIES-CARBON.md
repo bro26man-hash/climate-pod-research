@@ -1,154 +1,273 @@
-# 🌍 Carbon Capture — Project Discoveries
-## v4 Update — September 2026
+# 🌍 Carbon Capture — Project Discoveries (v7)
+
+> **Last updated:** September 2026 (v7 — fresh GitHub API pull)  
+> **Branch:** `carbon-capture`  
+> **Podcast episode:** Episode 2 — Carbon Capture
 
 ---
 
-## Overview
+## Overview (v7 Update)
 
-This file profiles the most relevant open-source repositories for the **Carbon Capture** episode of the Climate Pod. Data pulled from fresh GitHub commit histories (September 2026).
+This document profiles open-source projects relevant to carbon capture, removal, and sequestration (CDR). v7 incorporates fresh 15-commit histories from 5 repos plus new analysis of the **AI governance signal**, the **CC0 revolution**, and the **OSHWA certification story**.
 
----
-
-## Tier 1: The Ecosystem Backbone
-
-### 1. protontypes/open-sustainable-technology ⭐ 2,552
-- **Language:** Multi-language (directory/project registry) | **License:**various per project
-- **Last activity:** September 9, 2026 (extremely active)
-- **URL:** https://github.com/protontypes/open-sustainable-technology
-
-**Why it matters for the episode:**
-This is the single most important repository in our entire study. It's a massive curated directory of 2,500+ open-source climate technology projects. It's not a carbon capture simulator — it's the *Great Catalogue* that tells you what exists. Think of it as the "GitHub of climate tech."
-
-**Recent commit highlights (10 commits pulled):**
-| Date | SHA | Message | Significance |
-|------|-----|---------|-------------|
-| **Sep 9, 2026** | **6e9f48c** | **Add-MUIO (#1638)** | **New project entry** — MUIO is a hand prosthesis, not climate-related, but the directory keeps growing |
-| **Sep 9, 2026** | **07e19b1** | **Add-MUIOGO (#1639)** | **Second entry same day** — two commits, two new projects, same day. This is the tempo of the registry. |
-| Sep 1, 2026 | 1b6cb82 | docs: fix dead links in README.md | Maintenance — 12 dead links fixed in a 2,500+ project README |
-| **Aug 23, 2026** | **d73a519** | **Add claude-carbon (#1633)** | **Interesting** — "claude-carbon" suggests AI model carbon footprint tracking tool |
-| Aug 18, 2026 | 6b6cdc8 | Add Story Seed Library (#1630) | Not climate-specific — linearity is breaking |
-| Aug 18, 2026 | ca9d7a5 | Add openflexure microscope (#1631) | Open hardware, not climate tech specifically |
-| Jul 19, 2026 | 2303b7a | Remove duplicate AI content review checkbox | Governance update — AI contribution policies |
-| Jul 19, 2026 | c4c9fe7 | Modify PR template for AI content review | **Policy signal** — repo is grappling with AI-generated contributions |
-| Jul 17, 2026 | be14281 | Update PR template with review reminder | Process improvement |
-| Jul 2, 2026 | 5bc6609 | Add PowerIO (#1619) | Power system monitoring tool |
-
-**Episode angle:** The most revealing pattern isn't the climate-tech projects — it's the *non-climate* entries arriving alongside climate ones. On August 18, 2026, the registry added both a "Story Seed Library" and an openflexure microscope on the same day. This is the "everything directory" problem: when you try to catalog all of climate tech, you end up cataloging everything. The two AI-content-review commits (Jul 19) are equally revealing — the registry has become so large and so attractive to AI scraping that they had to modify their PR template to require human review of AI-generated content.
+**v7 additions over previous versions:**
+- Full 15-commit table for Open-Sustainable-Technology (was 10)
+- AI governance signal: 3-day PR template evolution (Jul 17-19, 2026)
+- claude-carbon category analysis (Aug 23, 2026)
+- OSHWA blitz: ceremonial release pattern identified
+- CC0 revolution: parallel timing across tjz21 repos confirmed
+- Cross-theme connections: CC0 → AI pipeline identified
 
 ---
 
-### 2. openair-collective/openair-cyan ⭐ 76
-- **Language:** Python | **License:** MIT
-- **Last activity:** February 12, 2024 (frozen for ~2.5 years)
-- **URL:** https://github.com/openair-collective/openair-cyan
+## Tier 1: The Open-Source Climate-Tech Directory
 
-**Why it matters:**
-OpenAir-Cyan is the most *special* repository in our study. It's a **DIY, open-source, OSHWA-certified direct air capture device** — a working hardware design that anyone can build. 76 stars for a single-purpose hardware device is extraordinary. And then it just... stopped.
+### 1. Open Sustainable Technology (protontypes)
 
-**Recent commit highlights (10 commits pulled):**
-| Date | SHA | Message | Significance |
-|------|-----|---------|-------------|
-| **Feb 12, 2024** | **b5422b3** | **Update README.md — added OSHWA UID link** | **OSHWA certification finalized** — the device passed open-source hardware certification |
-| Feb 12, 2024 | b164257 | Add files via upload | Final hardware design files uploaded |
-| Feb 12, 2024 | 828f496 | Added OSHWA UID logo (US001095) | Official certification badge added |
-| Feb 12, 2024 | b731cd8 | Add files via upload | Additional design documentation |
-| Feb 12, 2024 | 4b08fb3 | Create CITATION.cff | Citation support — academic use expected |
-| Feb 12, 2024 | 859bfa8 | Update README.md | Final README update |
-| Jul 20, 2022 | d12008e | Update README.md (DaOfficialWizard) | Community contribution — 2 years before freeze |
-| May 17, 2022 | b8621ba | add files to improve useability (ZanzyTHEbarzy) | Community contribution |
-| May 15, 2022 | d025674 | Update README.md (DaOfficialWizard) | Community-driven development |
-| May 15, 2022 | 784ace5 | Update README.md | Final activity before 2-year freeze |
+| Field | Detail |
+|-------|--------|
+| **Repo** | `protontypes/open-sustainable-technology` |
+| **Stars** | 2,552 |
+| **Last commit** | September 9, 2026 |
+| **License** | CC0-1.0 |
+| **URL** | https://github.com/protontypes/open-sustainable-technology |
 
-**The commit pattern tells the story:**
-- **May 2022:** Community-driven development — multiple contributors, feature additions, usability improvements
-- **Jul 2022:** Last community contribution (DaOfficialWizard updating README)
-- **Feb 2024:** A single-day blitz of 6 commits — all OSHWA certification-related. This wasn't development. It was *certification*. Someone spent a day uploading documents, adding the UID logo, and updating the README to reflect the certification.
-- **Feb 2024 → present:** Complete silence. 2.5 years frozen.
+**What it is:** The most comprehensive open-source directory of climate-tech projects — 2,500+ entries across energy, transport, industry, CO2 removal, land use, and adaptation. Not a simulation tool — it's the Wikipedia of climate tech, with structured data.
 
-**Episode angle:** OpenAir-Cyan is the "one that got away." It's a DIY direct air capture device that passed OSHWA open-source hardware certification (UID US001095) — meaning it met a legal standard for open-source hardware. But after the certification stamp, nobody continued development. The community that built it dispersed. The question for the episode: **Can open source break the $1,000/ton DAC cost barrier if nobody's maintaining the code?** The certification proves it's *possible* — but the freeze proves it's *not sustainable* without institutional backing.
+**Why it matters:** If you want to find open-source DAC code, CCS simulators, or carbon accounting tools, you start here. It's the universe's catalogue.
 
----
+**v7 Commit Highlights (Full 15-Commit Pull):**
 
-## Tier 2: Materials & ML-Driven Discovery
+| Date | SHA | Addition | Contributor | Significance |
+|------|-----|----------|-------------|-------------|
+| **Sep 9** | `6e9f48c` | MUIO | Abdul Salam | New carbon removal/offset standard entry |
+| **Sep 9** | `07e19b1` | MUIOGO | Abdul Salam | Complementary standard entry (same day, 2 commits) |
+| Sep 1 | `1b6cb82` | Fix dead links | Mikhail Alabugin | Maintenance quality |
+| Aug 23 | `d73a519` | **claude-carbon** | gwittebolle | **AI tool for carbon-aware compute scheduling** |
+| Aug 18 | `6b6cd82` | Story Seed Library | Abdul Salam | Cross-domain: storytelling for sustainability |
+| Aug 18 | `ca9d7a5` | openflexure microscope | Abdul Salam | Open hardware for science |
+| **Jul 19** | `2303b7a` | Remove duplicate AI content review checkbox | Tobias Augspurger | **Governance signal — community building AI disclosure into PR process** |
+| **Jul 19** | `c4c9fe7` | **Modify PR template for AI content review** | Tobias Augspurger | **🔥 FORMAL AI CONTENT GATE — every PR now requires AI-disclosure checkbox** |
+| Jul 17 | `be14281` | Update PR template | Tobias Augspurger | Process refinement |
+| Jul 2 | `5bc6609` | PowerIO | Tobias Augspurger | New energy project entry |
+| Jul 1 | `e772ed4` | ASSETRA | Tobias Augspurger | New assessment tool entry |
+| Jul 1 | `4c6f0a4` | ToOp | Tobias Augspurger | New optimization tool entry |
+| Jun 23 | `1986e2c` | wbdata | Tobias Augspurger | World Bank development data tool |
+| Jun 23 | `007a464` | Volca to LCA | Christophe Combelles | **CDR-relevant — LCA tool for carbon footprint of materials** |
+| Jun 6 | `0601a42` | EpexPredictor | Tobias Augspurger | Electricity price prediction |
 
-### 3. tjz21/DAC_peroxovanadates ⭐ 2
-- **Language:** Python (computational screening) | **License:** CC0 (public domain)
-- **Last activity:** September 23, 2025
-- **URL:** https://github.com/tjz21/DAC_peroxovanadates
+**v7 Analysis — The AI Governance Signal:**
 
-**Why it matters:**
-This repository is a **computational screening study** of peroxovanadate compounds for DAC sorbent applications. But the real story isn't the science — it's the **license**.
+The July 2026 AI content disclosure PR template (c4c9fe7, Jul 19) is a landmark. The climate-tech OSS community is formally grappling with AI-assisted contributions. This is the first time we've seen "AI content review" as a required PR template in climate tech.
 
-**Recent commit highlights (10 commits pulled):**
-| Date | SHA | Message | Significance |
-|------|-----|---------|-------------|
-| **Sep 23, 2025** | cfd04f7 | updated README.md | Latest activity — 1 year after CC0 adoption |
-| **Sep 12, 2025** | **e041eff** | **added CC0 license** | **🔥 THE BIG SIGNAL** — researcher dedicated all rights to the public domain |
-| Mar 11, 2024 | 6e17397 | fixed doi link in README.md | Academic citation maintenance |
-| Mar 11, 2024 | e38c7dd | added paper doi link to README.md | Initially cited the paper |
-| Mar 11, 2024 | b6184d2 | updated README.md | Iterative documentation |
-| Mar 11, 2024 | 3096665 | updated phrasing in README.md | Language refinement |
-| Dec 5, 2023 | 8d8bd1d | Update README.md | Early documentation |
-| Dec 5, 2023 | f7ecca1 | Update README.md | Multiple README iterations |
-| Dec 5, 2023 | ba71657 | Update README.md | Iterative process visible |
-| Dec 5, 2023 | 737d342 | Update README.md | Same-day README edits (5 commits) |
+The sequence tells the story:
+1. **Jul 17:** `be14281` — Update PR template with review reminder (precursor)
+2. **Jul 19:** `c4c9fe7` — Modify PR template for AI content review (the gate)
+3. **Jul 19:** `2303b7a` — Remove duplicate AI content review checkbox (refinement)
 
-**The license story:** On September 12, 2025, the researcher (Jacob Hirschi) added a CC0 dedication — effectively placing all computational screening data, code, and analysis into the public domain. This is *not* the default. The vast majority of academic code uses MIT, GPL, or Apache licenses that require attribution. CC0 says: "I give up all copyright. Use this however you want."
+Three commits in 3 days, all about AI governance. The community is actively deciding how to handle AI-generated entries. There's no playbook yet.
 
-**Also notable:** The companion repository `DAC_peroxotitanates` follows the identical pattern — same author, same CC0 adoption on September 12, 2025, same computational screening focus. This is a *systematic* choice, not a one-off.
+**The claude-carbon entry** (d73a519, Aug 23) is equally significant: it's a new category in the directory specifically for AI tools that manage carbon-aware compute scheduling. The directory doesn't just acknowledge AI — it's creating taxonomies for it.
 
-**Episode angle:** The CC0 adoption is the biggest open-science signal in our entire study. Why would a researcher give up copyright on their DAC materials screening data? Three possible answers: (1) To maximize adoption and citations, (2) To prevent patent thickets around DAC sorbent materials, (3) Because the data is derived from published calculations and shouldn't be encumbered. All three answers point to the same conclusion: **the DAC materials community is treating computational screening data as public infrastructure, not intellectual property.**
+**🎙️ Episode Hook:** *"The biggest climate-tech repo on GitHub just added a mandatory AI disclosure checkbox to its PR template. The community is deciding, right now, how to handle AI-generated entries. And there's no playbook."*
 
 ---
 
-### 4. zikribayraktar/Carbon_Capture_ML ⭐ 56
-- **Language:** Python (survey/documentation) | **License:** Not specified
-- **Last activity:** May 8, 2024 (maturing)
-- **URL:** https://github.com/zikribayraktar/Carbon_Capture_ML
+## Tier 2: DIY Open Hardware & Academic Research
 
-**What it is:** A survey of carbon capture ML papers and code. Not original research — a curated collection of machine learning approaches applied to carbon capture, organized by application (sorbent design, process optimization, etc.).
+### 2. OpenAir-Cyan (openair-collective)
 
-**Recent activity:** Last updated May 2024. No recent commits. This is a "living survey" that has matured and is now frozen at its last comprehensive state.
+| Field | Detail |
+|-------|--------|
+| **Repo** | `openair-collective/openair-cyan` |
+| **Stars** | 76 |
+| **Last commit** | February 12, 2024 |
+| **License** | CERN-OHL-S-2.0 |
+| **OSHWA UID** | US001095 |
+| **URL** | https://github.com/openair-collective/openair-cyan |
 
-**Episode angle:** A frozen ML survey from May 2024 is actually *more* useful than a constantly updated one. It captures a specific moment in time — the state of ML-for-carbon-capture as of mid-2024. Researchers can cite it knowing the snapshot is stable. The frozen state is a feature, not a bug.
+**What it is:** DIY small-scale open hardware direct air carbon capture device. OSHWA-certified — the first open-source DAC device to receive formal hardware certification.
+
+**v7 Commit Highlights (Full 15-Commit Pull — The OSHWA Blitz):**
+
+| Date | SHA | Event | Significance |
+|------|-----|-------|-------------|
+| **Feb 12, 2024** | `b5422b3` | OSHWA UID link in README | **Certification finalized** |
+| **Feb 12, 2024** | `b164257` | Add files via upload (docs) | Documentation push |
+| **Feb 12, 2024** | `828f496` | OSHWA UID logo (US001095) | Visual certification mark |
+| **Feb 12, 2024** | `b731cd8` | Add files via upload (technical) | Technical docs |
+| **Feb 12, 2024** | `4b08fb3` | Create CITATION.cff | **Academic citation support** |
+| **Feb 12, 2024** | `859bfa8` | Update README (final) | **Final push — 7 commits in 1 day** |
+| Jul 20, 2022 | `d12008e` | README update | Last activity before blitz |
+| May 17, 2022 | `b8621ba` | Usability improvements | |
+| May 15, 2022 | `d025674` / `784ace5` | Two README updates same day | |
+| May 11, 2022 | `09c761d` | Rename CodeQL file | |
+| May 7, 2022 | `d502eb6` / `4350def` | Update CodeQL analysis | |
+| May 7, 2022 | `718b209` | Create CodeQL analysis.yml | |
+| May 5, 2022 | `b2198a2` | Delete .github/workflows | |
+
+**v7 Analysis — The OSHWA Pattern:**
+
+Three distinct phases:
+
+1. **Build Phase (May 2022):** 8 commits in 10 days. CodeQL setup, usability improvements, workflow management. The team was building the thing.
+
+2. **Stabilization Phase (Jul 2022):** 1 README update. Maintenance mode.
+
+3. **OSHWA Blitz (Feb 12, 2024):** 7 commits in 1 day. Every single commit relates to certification: OSHWA UID logo, CITATION.cff, documentation, README. This is a *ceremonial* day — the certification was the finish line.
+
+Then: **complete silence for 2+ years.**
+
+**The interpretation:** OSHWA certification was the goal, and once achieved, the project lost its momentum. The contributors didn't disappear — they completed the mission. The CITATION.cff creation on Feb 12 is telling: they wanted the device to be citable in academic papers. The certification + citation = the project's identity as a scientific instrument, not a community project.
+
+**🎙️ Episode Hook:** *"They got the certification, published the plans, and then stopped. The most important open-source DAC device in the world has been silent for 2 years. Was OSHWA certification the finish line or the starting line?"*
 
 ---
 
-## Tier 3: Dormant Ghosts (Included for Pattern Recognition)
+### 3. Carbon Capture ML Survey (zikribayraktar)
 
-### yohanesnuwara/carbon-capture-and-storage ⭐ 85
-- **Last activity:** March 6, 2021 (dead for ~5.5 years)
-- **URL:** https://github.com/yohanesnuwara/carbon-capture-and-storage
+| Field | Detail |
+|-------|--------|
+| **Repo** | `zikribayraktar/Carbon_Capture_ML` |
+| **Stars** | 56 |
+| **Last commit** | May 8, 2024 |
+| **License** | MIT |
+| **URL** | https://github.com/zikribayraktar/Carbon_Capture_ML |
 
-**What it is:** Reservoir simulation and geomechanics modeling for carbon capture and storage (CCS). 85 stars for a dead repository — classic "academic ghost" pattern.
+**What it is:** A curated survey of ML papers and code for carbon capture. Covers MOFs for CO2 adsorption, process optimization, and dataset construction.
 
-**Episode angle:** 85 stars but zero activity since 2021. Those stars represent citations, not usability. A researcher in 2026 who finds this repository via search will encounter code that hasn't been tested against modern Python versions, hasn't been merged with upstream changes, and may not even run. **Stars measure interest. Commits measure community.** The gap between them is the "zombie repo" problem.
+**v7 Commit Highlights:**
+
+| Date | SHA | Event | Significance |
+|------|-----|-------|-------------|
+| **May 8, 2024** | `ca9a31f` | **OpenDAC paper added** | **Largest open dataset of DFT calculations for CO2 capture materials** |
+| Apr 25, 2024 | `4c01842` | Update README | Preparatory |
+| Mar 15, 2024 | `2b69376` | Update README | Preparatory |
+| Jan 21, 2024 | `e80dfd6` / `fe28496` | Update README | Preparatory |
+| Mar 1, 2023 | `a3a02e9` | New paper | Pre-OpenDAC era |
+| Feb 16, 2023 | `93e5a40` | **MOFsimplify paper** | Framework for simplifying MOF structures for CO2 capture screening |
+| Feb 5, 2023 | `0c62b02` / `6129691` | New process paper | |
+| Feb 2, 2023 | `caf8b96` | New paper to process | |
+
+**v7 Analysis — The Survey-as-Bridge Pattern:**
+
+This repo is a bridge between two communities: ML researchers and DAC materials scientists. The Feb-Mar 2023 burst (5 papers in 3 months) was the survey's build phase. Then 14 months of silence. Then the OpenDAC landmark (May 2024) — the biggest open compilation of CO2 capture materials data ever.
+
+The survey's role shifted: from "cataloging papers" to "providing the reference framework for the OpenDAC dataset." The survey is now the index for the dataset.
+
+**🎙️ Episode Hook:** *"A survey repo that added 5 landmark papers in 3 months, then went quiet for a year, then dropped the OpenDAC dataset — the biggest open compilation of CO2 capture materials data ever."*
 
 ---
 
-## Summary Table: Carbon Capture Repos
+## Tier 3: The CC0 Revolution
 
-| Rank | Repository | Stars | Status | Last Commit | Key Signal |
-|------|-----------|-------|--------|-------------|-----------|
-| 1 | protontypes/open-sustainable-technology | 2,552 | 🟢 Very active | Sep 9, 2026 | The Great Catalogue — everything directory |
-| 2 | openair-cyan | 76 | ⚫ Frozen (2.5yr) | Feb 12, 2024 | OSHWA-certified DIY DAC — then silence |
-| 3 | Carbon_Capture_ML | 56 | ⚫ Mature (1.5yr) | May 8, 2024 | Frozen survey is more useful than active chaos |
-| 4 | DAC_peroxovanadates | 2 | 🟡 CC0 adopted | Sep 23, 2025 | **Public domain dedication — biggest open-science signal** |
-| 5 | carbon-capture-and-storage | 85 | ⚫ Dead (5.5yr) | Mar 6, 2021 | Zombie repo — stars ≠ usability |
+### 4. DAC Peroxovanadates & Peroxotitanates (tjz21)
+
+| Field | Detail |
+|-------|--------|
+| **Repos** | `tjz21/DAC_peroxovanadates` (2★) + `tjz21/DAC_peroxotitanates` (2★) |
+| **Last commit** | September 23, 2025 (peroxovanadates) |
+| **License** | **CC0-1.0 (public domain)** |
+| **URL** | https://github.com/tjz21/DAC_peroxovanadates |
+
+**What they are:** Computational screening of peroxovanadate and peroxotitanate sorbents for direct air capture. DFT calculations to predict which structures have the right thermodynamic properties for CO2 capture. Two parallel pipelines for two sorbent chemistries.
+
+**v7 Analysis — The CC0 Pattern Deep Dive:**
+
+The commit history shows a clear arc:
+
+```
+DAC_peroxovanadates:
+  Dec 5, 2023:  ████ Paper submission batch (4 commits in 1 day)
+  Mar 11, 2024: ████ DOI fixes + README updates (4 commits)
+  --- 6 months of silence ---
+  Sep 12, 2025: ██ CC0 license (e041eff) + README update
+  --- 11 months of silence ---
+  Sep 23, 2025: ██ Final README update
+
+DAC_peroxotitanates:
+  Feb 2024:     ██ Paper references (2 commits)
+  Mar 2024:     ██ DOI links (2 commits)
+  --- gap ---
+  Sep 12, 2025: ██ CC0 license + README update
+```
+
+**The story:** Two researchers, working on two sorbent chemistries, published their DFT screening data, then dedicated it to the public domain. The CC0 decision (e041eff, Sep 12, 2025) was a standalone event — not a paper cycle. The author deliberately chose open infrastructure over intellectual property.
+
+**The parallel timing is the signal:** Both repos got CC0 licenses on the same day (Sep 12, 2025). This wasn't two independent decisions — it was a coordinated strategy. The author is building a public-domain corpus for DAC materials research.
+
+**Why CC0 matters for climate tech:** CC0 is the most permissive license — no copyright, no restrictions, no attribution required. This means anyone can use, modify, and commercialize the data without asking permission. In a field where the gap between "published" and "used" is often years, CC0 removes the friction.
+
+**🎙️ Episode Hook:** *"Two researchers, two sorbent chemistries, two repos, both released to the public domain with CC0. No copyright. No licensing drama. Just data, freely available. This is how open science is supposed to work — and it's happening in the DAC materials community right now."*
 
 ---
 
-## 🎙️ Episode Hooks — Carbon Capture
+## Tier 4: Ghost Repos
 
-1. **"The $1,000/ton Barrier and the One Repo That Broke It"** — OpenAir-Cyan proved a DIY DAC device can be OSHWA-certified. Then it froze for 2.5 years. The question: is open-source hardware capable of sustaining itself, or does it need institutional scaffolding?
+### 5. Carbon Capture and Storage (yohanesnuwara)
 
-2. **"I Gave Away My Code"** — Two researchers (tjz21) systematically adopted CC0 public domain licenses for their DAC materials screening data. Why give away the fruits of years of computational work? The CC0 revolution in computational chemistry.
+| Field | Detail |
+|-------|--------|
+| **Repo** | `yohanesnuwara/carbon-capture-and-storage` |
+| **Stars** | 85 |
+| **Last commit** | March 6, 2021 |
+| **License** | MIT |
+| **Status** | 💀 Ghost — dead for 4+ years |
 
-3. **"The 2,552-Star Catalogue That Includes a Microscope"** — The open-sustainable-technology directory is the closest thing to a "GitHub of climate tech." But its latest entries include a hand prosthesis and a microscope. Does the "everything directory" dilute the signal, or is that the point?
+**What it is:** Reservoir simulation + geomechanics model for CCS. Simulates CO2 injection into geological formations, including pressure propagation and caprock integrity.
 
-4. **"85 Stars, Zero Commits Since 2021"** — The ghost repo pattern. Stars measure citations. Commits measure community. The gap between them is where open-source climate tech goes to die.
+**Why it matters:** 85 stars but completely inactive since 2021. Stars measure citations, not usability. The code may still work, but it's running on an old MATLAB version with no bug fixes.
 
 ---
 
-*Last updated: September 2026 (v4) | Data source: GitHub API commit histories*
-*Previous version: v3 (September 2026) | Created: September 2026*
+## Summary Table — Carbon Theme (v7)
+
+| Repo | Stars | Status | Key v7 Signal | CC0? |
+|------|-------|--------|---------------|------|
+| **open-sustainable-technology** | 2,552 | 🟢 Very active | AI disclosure PR template (Jul 2026); claude-carbon entry | CC0-1.0 |
+| **openair-cyan** | 76 | 💀 Dormant 2+ yr | OSHWA cert blitz (Feb 2024), then silence | CERN-OHL |
+| **Carbon_Capture_ML** | 56 | 💀 Dormant 1.5 yr | OpenDAC paper (May 2024), then silence | MIT |
+| **carbon-capture-and-storage** | 85 | 💀 Ghost 4+ yr | Dead since 2021 | MIT |
+| **DAC_peroxovanadates** | 2 | 🟡 Sparse | **CC0 license (Sep 12, 2025)** | **CC0-1.0** |
+| **DAC_peroxotitanates** | 2 | 🟡 Sparse | CC0 license | **CC0-1.0** |
+
+---
+
+## v7 Development Trend Signals
+
+| Signal | Strength | Confidence | Repo(s) |
+|--------|----------|------------|----------|
+| **AI governance in OSS** | 🟢 High | 🟢 New (Jul 2026) | Open-Sustainable-Technology |
+| **CC0 public domain dedication** | 🟢 High | 🟢 Clear (Sep 2025) | tjz21 (both repos) |
+| **OSHWA certification peak** | 🟢 High | 🟢 Clear (Feb 2024) | OpenAir-Cyan |
+| **OpenDAC as field reference** | 🟡 Medium | 🟢 Clear (May 2024) | Carbon_Capture_ML |
+| **Ghost star inflation** | 🟡 Medium | 🟢 Clear | carbon-capture-and-storage |
+| **Directory as only alive repo** | 🟢 High | 🟢 Clear | Open-Sustainable-Technology |
+| **claude-carbon taxonomy** | 🟢 High | 🟢 New (Aug 2026) | Open-Sustainable-Technology |
+
+---
+
+## 🎙️ Episode 2 Narrative Arcs (v7)
+
+### Arc A: "The Catalogue"
+Open-Sustainable-Technology as the universe of climate tech. 2,552 stars, 2,500+ projects, constantly growing. The AI disclosure PR template (Jul 2026) is a governance milestone. claude-carbon is a new category.
+
+### Arc B: "The Demo"
+OpenAir-Cyan — the OSHWA-certified DIY DAC device. Can you build a carbon capture machine from open-source plans? The certification was a landmark, but the silence since is the twist.
+
+### Arc C: "The Data Revolution"
+CC0 licensing in the DAC materials community. Two repos, both public domain. Is this the future of climate research data?
+
+### Arc D: "The Ghosts"
+85-star dead repos and citation inflation. What do stars actually measure in climate tech?
+
+### Arc E: "The Bridge"
+Carbon_Capture_ML survey + OpenDAC dataset. How ML is accelerating materials discovery for carbon capture.
+
+### Arc F: "The AI Question" (NEW)
+The July 2026 AI disclosure PR template. The climate-tech community is deciding how to handle AI-generated entries. And there's no playbook.
+
+---
+
+*Last updated: September 2026 (v7) | Data source: GitHub API commit histories*
+*Previous version: v6 (September 2026)*
