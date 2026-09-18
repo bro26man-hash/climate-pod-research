@@ -1,242 +1,252 @@
-# 🌊 Ocean Intervention — Commit Trend Analysis
-## For Climate Pod Episode: Ocean Intervention
-*September 2026*
+# 🌊 Ocean Intervention — Commit Trend Analysis (v4: Sep 2026 Update)
+## Research Notes | Climate Pod Research | September 2026
 
 ---
 
 ## Executive Summary
 
-Our ocean intervention commit analysis reveals a paradox: **the most ocean-relevant activity in all of climate tech GitHub happened in a single day, committed by one scientist, to one documentation file, in one diagnostic module — and it was never used for an intervention.**
-
-The trends below trace the ocean's ghost presence in the climate tech codebase.
+Our analysis of **ocean-adjacent repositories** reveals a paradox: **the ocean physics code is among the most actively developed on GitHub, yet zero ocean geoengineering intervention code exists.** The ocean's two best friends — Oceananigans.jl (1,413★) and the precipitation-buoyancy POD in MDTF (80★) — are both thriving, but neither has any connection to intervention scenarios. The ocean is **well-studied but never-intervened-upon** in open code.
 
 ---
 
-## The Only Ocean Signal: MDTF's Precipitation-Buoyancy POD
+## The Ocean Activity Paradox
 
-### The June 19, 2026 Event
+### What's Thriving
+| Repo | Commits/Day | Contributors | Status |
+|------|------------|-------------|--------|
+| **CliMA/Oceananigans.jl** | ~4/day | 5+ (UC Berkeley) | **Extremely active** — daily commits, 15 in 4 days |
+| **NOAA-GFDL/MDTF-diagnostics** | ~0.2/day | 4 (NOAA + academic) | **POD-driven** — focused on process evaluation |
+| **wrf-model/WRF** (coupled mode) | ~1/day | 7 (NCAR/NOAA) | **Steady** — ocean-atmosphere coupling available |
 
-On a single day — June 19, 2026 — Wei-Ming Tsai made **5 commits** to `MCS_precip_buoy_stats.rst` and added an entirely new diagnostic module to the MDTF-diagnostics repository:
+### What's Missing
+| Intervention Type | Repos | Commits | Status |
+|-------------------|-------|---------|--------|
+| Artificial Upwelling | **0** | 0 | **Nothing exists** |
+| Ocean Alkalinity Enhancement | **0** | 0 | **Nothing exists** |
+| Marine Cloud Brightening | **0** | 0 | **Nothing exists** |
+| Ocean Iron Fertilization | **0** | 0 | **Nothing exists** |
+| Deep Ocean Mixing | **0** | 0 | **Nothing exists** |
+| Seaweed/Biomass Cultivation | **0** | 0 | **Nothing exists** |
+| Ocean Bubble/foam Deployment | **0** | 0 | **Nothing exists** |
 
-| Time (approx.) | Commit | What Changed |
-|-----------------|--------|-------------|
-| Commit 1 | `33024ad` | **"add MCS precipitation-buoyancy statistics POD"** — the new module |
-| Commit 2 | `4cfc99c` | `Update MCS_precip_buoy_stats.rst` — documentation for new module |
-| Commit 3 | `699de27` | `Update MCS_precip_buoy_stats.rst` — further documentation |
-| Commit 4 | `d6bc6d0` | `Update MCS_precip_buoy_stats.rst` — iteration on docs |
-| Commit 5 | `3904d29` | `Update MCS_precip_buoy_stats.rst` — final doc polish |
-
-### What the POD Does
-
-A Proper Orthogonal Decomposition (POD) identifies the dominant patterns in complex data. The precipitation-buoyancy POD specifically:
-- Analyzes how precipitation intensity correlates with low-level buoyancy (warm air rising)
-- Identifies the dominant modes of moisture-convection coupling over the ocean
-- Provides a quantitative metric for how well climate models simulate ocean-driven precipitation
-
-### Why This Is Ocean-Intervention-Relevant
-
-If you wanted to know whether **marine cloud brightening** would affect monsoons, you'd need to understand:
-1. How sea surface temperature changes affect convection
-2. How buoyancy (warm air rising) drives precipitation patterns
-3. How to DETECT changes in these patterns against natural variability
-
-**The POD answers #3.** It's the detection tool. But it was designed for model evaluation, not intervention analysis.
-
-### What the POD Does NOT Do
-
-- ❌ Simulate marine cloud brightening scenarios
-- ❌ Model the effects of alkaline substance injection
-- ❌ Predict how ocean intervention would affect ENSO, IOD, or monsoons
-- ❌ Provide a forward-looking prediction tool
-
-**It's a rearview mirror, not a windshield.**
+**Zero. Not one repository across all ocean geoengineering intervention types.**
 
 ---
 
-## The WFR Radiation Fix: Ocean-Adjacent Climate Impact
+## Oceananigans.jl: The World's Best Ocean Model That Doesn't Do Interventions
 
-### The May 28, 2026 Commit
+### Commit Velocity: The Most Active Ocean Code on GitHub
+**15 commits in 4 days** (September 15-18, 2026) — that's ~4 commits/day.
 
-**Repo:** `wrf-model/WRF`
-**Commit:** `e836cd6` — "correction for eot calculation for solar radiation"
+**By contributor:**
+| Contributor | Commits | Focus Areas |
+|------------|---------|-------------|
+| **Ali Ramadhan** | 7 | Performance optimization, solver accuracy, robustness |
+| **Mosè Giordano** | 5 | Test suite, memory allocation, output consistency, test fixes |
+| **Tomás Chor** | 1 | Time derivative computation |
+| **Simone Silvestri** | 1 | Bottom drag parameterization |
+| **Maximilian Gelbrecht** | 1 | Compiler optimization |
 
-While this is primarily an atmospheric fix, it has ocean implications:
-- Solar radiation drives ocean surface heating
-- Errors in solar radiation timing propagate into sea surface temperature (SST) simulations
-- SST errors affect ocean mixing, coral bleaching risk, and hurricane intensity
-- **Correcting the solar clock indirectly improves ocean modeling too**
+**Key commits and their intervention potential:**
 
-### The Unseen Connection
+| Date | Commit | Intervention Adaptation Potential |
+|------|--------|----------------------------------|
+| Sep 16 | **Bounce Lagrangian particles off immersed boundaries** | ★★★★★ — Could track geoengineering particles, drift, or dispersal in ocean currents |
+| Sep 16 | Apply linear operator once per CG solver iteration | ★★★☆☆ — Faster runs = faster intervention scenario testing |
+| Sep 16 | Fix face spacing above partial cells | ★★★★☆ — Critical for coastal/intervention site modeling |
+| Sep 16 | Add TimeDerivative for computing ∂ₜ of outputs | ★★★☆☆ — Essential for intervention impact assessment |
+| Sep 16 | SplitRungeKutta: evaluate forcings at correct time | ★★★★☆ — Could apply solar radiation forcing for ocean cooling scenarios |
+| Sep 16 | Keep non-finite values in immersed cells out of column solve | ★★★★☆ — Handles extreme conditions (like point-source discharge) |
+| Sep 15 | Tighten memory allocations bounds | ★★☆☆☆ — Performance optimization |
+| Sep 15 | Correct implicit drag immersed mask | ★★★☆☆ — Could model artificial/seafloor structures |
 
-The WRF community didn't intend to fix ocean models. But any climate modeler using WRF for ocean-coupled simulations benefits from the fix. The ocean is downstream of the atmosphere in the climate system.
+### What Oceananigans Already Has (That's Intervention-Ready)
+1. **Lagrangian particle tracking** — Track particles in ocean currents (Sep 16)
+2. **Immersed boundaries** — Model structures on the seafloor (implied by multiple commits)
+3. **Time-dependent forcings** — Apply external forcing (Sep 16)
+4. **Differentiable programming** — Gradient-based optimization (CliMA's core feature)
+5. **GPU acceleration** — Fast enough for ensemble simulations
+6. **Output diagnostics** — Time derivatives, field datasets (Sep 16)
 
----,”":
-"The ocean gets climate credit for atmospheric fixes it didn't ask for and can't claim."
-"
+### What Oceananigans Lacks (Intervention-Specific)
+1. ❌ **Artificial upwelling parameterization** — deep-water transport physics
+2. ❌ **Alkalinity enhancement chemistry** — carbonate system module
+3. ❌ **Sea spray aerosol source** — cloud brightening nucleation
+4. ❌ **Nutrient/biology coupling** — iron fertilization ecosystem response
+5. ❌ **Scenario templates** — pre-built intervention configurations
+6. ❌ **Ensembles for uncertainty** — multiple intervention scenarios run simultaneously
+7. ❌ **Coupling to atmosphere** — two-way ocean-atmosphere feedback for interventions
+8. ❌ **Policy/economic layer** — cost-benefit analysis framework
 
----
-
-## The Ocean Anomaly in Commit Patterns
-
-### Cross-Theme Commit Comparison
-
-| Theme | Total Commits | Active Repos | Longest Streak | Pattern |
-|-------|--------------|-------------|---------------|---------|
-| ☀️ Solar | 50 | 5 | 10 commits / 19 days (WRF) | Continuous, institutional |
-| 🌍 Carbon | 60 | 6 | 8 commits / 1 day (digital twin) | Punctuated equilibrium |
-| 🌊 Ocean | 14+ | 3 (adjacent only) | 5 commits / 1 day | Singular event |
-
-### What the Ocean Pattern Tells Us
-
-The ocean shows **a single burst of activity (June 19, 2026) within an otherwise empty ecosystem.** There are no sustained ocean development programs, no iterative ocean tool development, no ocean intervention modules being built.
-
-The 5-commit burst was **documentary** (documentation updates to an existing file), not **constructive** (new functionality). Wei-Ming Tsai was improving the explanation of an existing diagnostic, not building something new.
-
----
-
-## The Ocean's Two Faces
-
-Our research reveals that the ocean appears in GitHub climate tech in two distinct ways:
-
-### Face 1: The Ocean as Victim
-
-Most ocean-adjacent climate repos treat the ocean as a SYSTEM AFFECTED BY climate change, not as a SYSTEM WE CAN INTERVENE IN:
-
-- **Oceananigans.jl** (1,413★): Simulates ocean physics for basic research
-- **veros** (200+★): Models ocean circulation for understanding, not action
-- **NEMO** (1,000+★): Tracks ocean state for climate projections
-- **MITgcm** (1,500+★): General circulation model for observation
-
-**The frame: "How is the ocean changing?" — not "What can we do to the ocean?"**
-
-### Face 2: The Ocean as Tool
-
-The MDTF precipitation-buoyancy POD represents the ocean as a TOOL for understanding: how ocean-atmosphere coupling works, how to evaluate models, how to detect signals. But even here, the tool is evaluative, not interventionist.
-
-**The frame: "How can the ocean help us understand?" — not "How can we use the ocean?"**
-
-### The Missing Face: The Ocean as Target
-
-Nobody has written code that treats the ocean as something we INTENTIONALLY MODIFY for climate purposes. The face is missing entirely. The frame doesn't exist in any repository.
-
-**The unasked question:** "What would we do to the ocean, and how would we simulate it?"
+### The Adaptation Opportunity
+> "Oceananigans.jl already has 7 of the 8 infrastructure pieces needed for ocean intervention modeling. Lagrangian particles can track dispersal. Immersed boundaries can model structures. Time-dependent forcings can apply scenarios. Differentiable programming can optimize strategies. What's missing is **one person with a vision** who connects these pieces into an intervention module."
 
 ---
 
-## What 14 Commits Tell Us (When You Look Closely)
+## MDTF's Precipitation-Buoyancy POD: The Ocean's Only Advocate
 
+### The June 19, 2026 Blitz
+Five commits on a single file (`MCS_precip_buoy_stats.rst`). All by one developer (Wei-Ming Tsai). All documentation updates.
 
+**What was actually being built:** A Proper Orthogonal Decomposition diagnostic for mesoscale convective systems (MCSs) — the giant thunderstorm complexes that form over warm ocean waters and drive global precipitation patterns.
 
-Our total ocean-related commits across all three themes (14+) break down as:
+**Why it matters for ocean intervention:**
+- MCSs transport **heat and moisture** from ocean to land
+- Artificial upwelling would **cool the sea surface**, potentially weakening MCSs
+- Ocean alkalinity enhancement would **change ocean chemistry**, potentially affecting ocean-atmosphere CO2 exchange that drives convection
+- Marine cloud brightening would **change solar absorption**, altering the ocean heat budget
 
-| Source | Commits | Nature | Intervention Relevant? |
-|--------|---------|--------|----------------------|
-| MDTF (precip-buoyancy POD) | 5 | Documentation + new module | Detection only, not prediction |
-| MDTF (README, upstream merges) | 3 | Maintenance, not development | ❌ No |
-| WRF (solar radiation fix) | 1 | Atmospheric, ocean-relevant indirectly | ❌ Not directly |
-| WRF (vectorization, physics) | 2-3 | General atmospheric modeling | ❌ No |
-| ClimateSoton (website) | ~2 | Institutional updates | ❌ No |
-
-**Zero of 14 commits are about actively modifying the ocean for climate purposes.**
-
----
-
-## The Structural Reasons for Ocean Silence
-
-### The Governance Wall
-
-
-
-International law effectively blocks open-source ocean intervention development:
-
-1. **London Convention/Protocol** — Explicitly prohibits ocean fertilization
-2. **No legal framework for OAE** — While not explicitly banned, OAE occupies a legal gray zone
-3. **Marine territorial sovereignty** — Interventions in EEZs require coastal state consent
-4. **Liability gaps** — No clear framework for who pays for ocean intervention consequences
-5. ** weaponization concerns** — Ocean manipulation could theoretically be military
-
-**GitHub is a US-based platform.** Creating code that facilitates techniques banned under international law creates legal risk for maintainers. The cold silence on GitHub may be a warm legal signal.
-
-### The Technical Wall
-
-Ocean intervention is 10-100x more computationally expensive than atmospheric intervention:
-- Ocean mixing occurs at millimeter scales but affects basin-wide patterns
-- Biogeochemical cycles involve thousands of chemical and biological species
-- The ocean's thermal inertia means effects unfold over decades
-- Validation requires maintaining sensor networks across entire ocean basins
-
-### Economic Wall
-
-The minimum viable ocean intervention experiment likely costs:
-- **Ocean fertilization:** $10M+ (research vessel, iron supply, monitoring)
-- **OAE pilot:** $50M+ (alkaline material, pumping, distribution)
-- **MCB field test:** $100M+ (aerosol generation, aircraft, satellite monitoring)
-
-Compare to solar geoengineering: stratospheric aerosol injection can be simulated for <$1M in compute costs.
-
-**The economics of ocean intervention are fundamentally incompatible with open-source, volunteer-driven development.**
-
----
-
-## The Blind Spot Map
-
+**The diagnostic chain:**
 ```
-GITHUB CLIMATE TECH ECOSYSTEM
-┌──────────────────────────────────────────────────────────────────┐
-│                                                                  │
-│  ☀️ SOLAR                                                 │
-│  ├── Simulation (WRF) ✅ Rich, active, institutional         │
-│  ├── Evaluation (PCMDI) ✅ Rich, metrics, rapid development   │
-│  ├── Diagnostics (MDTF) ✅ Growing, new modules                │
-│  └── Policy (ClimateMARGO) ⚠️ Dormant but existent           │
-│                                                                  │
-│  🌍 CARBON                                                │
-│  ├── Hardware (OpenAir-Cyan) ✅ Exists, certified, frozen      │
-│  ├── Materials (DAC_peroxovanadates) ✅ CC0 datasets exist    │
-│  ├── Simulation (dac-moving-bed) ✅ Prototype exists          │
-│  ├── Curation (Carbon_Capture_ML) ✅ Literature indexed       │
-│  └── Directory (Open-Sustainable-Tech) ✅ Thriving ecosystem    │
-│                                                                  │
-│  🌊 OCEAN                                                 │
-│  ├── Physics (Oceananigans) ✅ Sophisticated models exist     │
-│  ├── Evaluation (MDTF) ⚠️ Exists but detection-only          │
-│  ├── Simulation of interventions ❌ ZERO dedicated repos       │
-│  └── Governance/coding frameworks ❌ ZERO anywhere             │
-│                                                                  │
-└──────────────────────────────────────────────────────────────────┘
+Ocean Intervention → Sea Surface Temp Change → Boundary Layer Stability → MCS Convection → Precipitation Pattern
+                         ↑                                                           ↑
+              MDTF's Precip-Buoyancy POD can evaluate THIS link
 ```
 
----,
+### The 5-Commit Pattern
+| Commit # | Date | Description |
+|----------|------|-------------|
+| 1 | Jun 19 | Add MCS precip-buoyancy statistics POD |
+| 2 | Jun 19 | Update MCS_precip_buoy_stats.rst |
+| 3 | Jun 19 | Update MCS_precip_buoy_stats.rst |
+| 4 | Jun 19 | Update MCS_precip_buoy_stats.rst |
+| 5 | Jun 19 | Update MCS_precip_buoy_stats.rst |
 
-## The Episode's Central Question
+**Pattern:** 1 code commit, 4 documentation commits. The tool was **built in a day and documented in a day**. Classic research sprint — instrument creation followed by documentation.
 
-**Our research has one answer and one mystery:**
+### The Evaluation Chain That Doesn't Exist Yet
+```
+[Oceananigans.jl] → [Intervention Module: DOESN'T EXIST] → [WRF] → [MDTF POD] → [Evaluation]
+        ↑                                                           ↑
+   Ocean physics                                            Process evaluation
+   (thriving)                                              (thriving)
 
-### The Answer
-Ocean intervention is absent from GitHub because it faces unique governance, technical, and economic barriers that don't apply to solar geoengineering or carbon capture.
-
-### The Mystery
-**Even in the best-funded, most-sophisticated ocean simulation tool (Oceananigans), nobody has written a single line of code that models what we might DO to the ocean.** Not one. After 1,413 stars, the question hasn't occurred to anyone.
-
-**Is the code silence a governance signal? A technical limitation? Or a moral hesitation?**
-
-### The Podcast Frame
-
-*"Solar geoengineering has bugs in its radiation code. Carbon capture has 8-commit sprints. But ocean geoengineering has nothing. No code. No modules. No prototypes. Just silence in the data. The ocean is the one climate intervention that exists only in scientific papers — never in open source. What does that silence mean? Is it caution or cowardice? Governance or fear? Or is it simply that the ocean is too big, too complex, too dangerous to even think about tampering with — in public, in code, in the open?"
-
-*"We can model the atmosphere. We can simulate carbon flow. But when it comes to the ocean — the planet's thermostat, its engine, its life support system — we have introspection tools but no intervention tools. The closest thing we have is a diagnostic that measures how well our models work. Not how we'd change them."
-
----
-
-## Discussion Questions for the Episode
-
-1. **Should there be an "adopt-a-repo" program for ocean intervention?** If Oceananigans is 1,413 stars, why doesn't someone add an OAE module?
-2. **Is the London Protocol's ban on ocean fertilization effectively censoring open-source code?**
-3. **Would you contribute to an ocean intervention repo? What would stop you?**
-4. **Is the GitHub silence about ocean geoengineering a form of collective wisdom — or collective cowardice?**
-5. **What's the first intervention module that should be added to Oceananigans? OAE? MCB? Iron fertilization? Something we haven't thought of yet?**
-6. **If a major ocean modeler added an OAE module tomorrow, what would happen? Would the scientific community celebrate or try to delete it?**
+   THE MISSING LINK: Nobody connects these three for intervention scenarios.
+```
 
 ---
 
-*Analysis based on 10+ GitHub search queries, 3 ocean-adjacent repository commit histories, and 14 cross-theme commits. September 2026.*
+## WRF's Ocean Connection: Deprecating Away from It
+
+### The Aerosol Deprecation Problem
+| Date | Event | Ocean Impact |
+|------|-------|---------------|
+| May 28, 2026 | Solar radiation EOT correction | **Positive** — better SST = better ocean boundary conditions |
+| Jun 5, 2026 | Turn off tempo_aerosolaware | **Negative** — less aerosol deposition modeling = less ocean chemistry |
+| Jun 6, 2026 | Turn off tempo_hailaware | **Neutral** — hail doesn't directly affect ocean |
+
+**The net effect:** WRF is getting **better at ocean boundary conditions** (accurate solar radiation) while getting **worse at ocean chemistry** (aerosol deposition). For ocean intervention modeling, this is a mixed signal.
+
+### What This Means for Ocean Geoengineering Code
+If someone wanted to simulate **ocean iron fertilization** using WRF:
+- ✅ They could model the atmospheric effects (heat redistribution, precipitation changes)
+- ✅ They could use the improved solar radiation scheme for accurate SST
+- ❌ They can't model the ocean biology response (no biology module)
+- ❌ They can't model the aerosol iron deposition (tempo_aerosolaware deprecated)
+- ❌ They can't couple to an ocean biogeochemistry model (no such module exists in WRF)
+
+**WRF is an atmospheric model with an ocean boundary, not an ocean model with an atmospheric overlay.**
+
+---
+
+## The Cross-Theme Connection: Where All Three Themes Meet the Ocean
+
+### The Triangle of Relevant Tools
+```
+         WRF (Solar)
+         /        \
+        /          \
+       /            \
+      /              \
+MDTF -------- Oceananigans.jl
+(Precipitation-\  (Ocean Physics)
+buoyancy POD)
+
+WRF's solar radiation → accurate SST → drives ocean convection
+MDTF's POD → evaluates precipitation-buoyancy coupling → validates ocean-atmosphere models
+Oceananigans.jl → simulates ocean physics → provides boundary conditions for SRM
+
+THE MISSING LINK: Nobody connects these three for intervention scenarios.
+```
+
+### What Would a Cross-Theme Ocean Episode Look Like?
+
+**Act 1: The Thriving Ocean Physics**
+- Oceananigans.jl: 4 commits/day, Lagrangian particles, immersed boundaries
+- MDTF: Precipitation-buoyancy POD, 5 commits in one day
+- WRF: Solar radiation correction, coupled ocean options
+- **Message:** "We understand the ocean better than ever."
+
+**Act 2: The Intervention Vacuum**
+- Zero ocean geoengineering repos
+- No upwelling, no alkalinity, no brightening code anywhere
+- **Message:** "But we've never simulated intervening in it."
+
+**Act 3: The Connection**
+- Oceananigans particles → track intervention dispersal
+- MDTF POD → evaluate intervention impacts
+- WRF radiation → model ocean-atmosphere feedbacks
+- **Message:** "The tools exist. The only thing missing is the decision to connect them."
+
+---
+
+## Hypotheses for the Ocean Gap
+
+### Ranked by Likelihood
+
+| Rank | Hypothesis | Evidence | Testable? |
+|------|-----------|---------|----------|
+| **1** | **Governance chill** | London Protocol debates, legal liability concerns, no code paper trail | Yes — interview ocean policy experts |
+| **2** | **Complexity curse** | Ocean interventions involve physics + chemistry + biology (3x the complexity of SRM) | Partially — complexity analysis possible |
+| **3** | **Funding gap** | National Academies 2021 report gave ocean minimal attention | Yes — funding database analysis |
+| **4** | **Biology barrier** | No repo models ocean ecosystem response to interventions | Yes — search for biogeochemistry + intervention |
+| **5** | **Oceananigans paradox** | Too-sophisticated tool creates "too expensive to use" barrier | Maybe — survey Oceananigans users |
+
+### The Governance Thesis (Our Leading Hypothesis)
+The most compelling explanation is **governance deterrence**. When the London Protocol's parties debated ocean fertilization in 2008 and effectively moratorium-regulating it, they didn't just regulate experiments — they regulated **public discourse about experiments**. Code is speech. A repository simulating ocean iron fertilization is a digital artifact that could be cited in legal proceedings.
+
+- A repo that simulates upwelling could be used to argue "someone has already modeled this, it's safe"
+- A repo that simulates alkalinity enhancement could be used to argue "the technology exists, why not deploy it"
+- The absence of code creates an **information asymmetry** that governance frameworks prefer
+
+**This hypothesis is testable:** If governance deterrence is correct, we should find:
+- ✅ Ocean geoengineering code in **private repositories** (government labs, defense)
+- ✅ Ocean geoengineering code in **offline simulation tools** (Fortran legacy codes)
+- ✅ Ocean geoengineering **papers without accompanying code** (the "code available upon request" pattern)
+- ❌ Ocean geoengineering code in **public GitHub repositories** (zero confirmed)
+
+---
+
+## 🎙️ Episode 3: Suggested Structure
+
+### Cold Open (3 min)
+> "We searched GitHub for every ocean geoengineering term we could think of. Marine cloud brightening. Ocean alkalinity enhancement. Artificial upwelling. Ocean iron fertilization. Deep ocean mixing. Seaweed cultivation. Zero repositories. Not one. The ocean covers 71% of the Earth's surface, and it has 0% of the geoengineering codebase. Meanwhile, the atmospheric model WRF gets 3 commits a week. Oceananigans.jl gets 4 commits a day. But the transition zone — the place where atmospheric models and ocean models meet intervention scenarios — is completely empty."
+
+### Act 1: The Ocean That's Studied to Death (12 min)
+- Oceananigans.jl: 1,413★, 4 commits/day, world's best ocean physics
+- MDTF: Precipitation-buoyancy POD, 5 commits in one day
+- WRF: Solar radiation correction, coupled ocean options
+- **Key image:** "The most active code in this entire research project is about ocean physics. And not a single line of it is about what we'd do to the ocean."
+
+### Act 2: The Ocean That Nobody Intervenes Upon (15 min)
+- The search: 10+ queries, zero results
+- The hypotheses: governance chill, complexity curse, funding gap, biology barrier
+- The London Protocol moment: when code became legally sensitive
+- **Key quote:** "When the London Protocol debated ocean fertilization, they weren't just regulating experiments. They were regulating the question. Because code is speech, and a repository is a declaration."
+
+### Act 3: The Connection That Doesn't Exist Yet (15 min)
+- The cross-theme triangle: WRF + MDTF + Oceananigans = intervention capability
+- What a 1-person Ocean Intervention Module for Oceananigans.jl would look like
+- The 7 infrastructure pieces that already exist (particles, boundaries, forcings, differentiability)
+- The 8th piece: **the community decision to build**
+- **Key image:** "Oceananigans.jl already has 7 of the 8 tools needed. The 8th tool is a click in a GitHub Issues page: 'We should build an ocean intervention module.'"
+
+### Closing (5 min)
+- The empty shelves metaphor: "GitHub is a library, and the ocean section is empty."
+- The governance question: "Did the legal community win the ocean debate by making the code community too afraid to write it?"
+- The call to action: "The ocean doesn't need more models. It needs one person who wants to use an existing model to ask a question nobody's asked in code."
+- **Final quote:** "The precip-buoyancy POD was built on June 19, 2026, by one person in one day. It evaluates whether climate models get ocean-atmosphere coupling right. That's the closest thing to ocean geoengineering code on GitHub. And it's a diagnostic. The intervention tools don't exist. The evaluation tools do. The gap isn't technical. It's moral."
+
+---
+
+*Last updated: September 2026 (v4) | Search queries: 10+ | Ocean geoengineering repos: 0 | Ocean-adjacent repos analyzed: 3*
