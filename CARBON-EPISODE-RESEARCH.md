@@ -1,88 +1,75 @@
-# 🌍 Carbon Capture — Episode Research Notes
+# 🎙️ Carbon Capture Episode — Research Dossier (v4)
 
-## Episode Overview
-This episode covers Direct Air Capture (DAC) and other carbon dioxide removal (CDR) technologies — the hardware, materials science, and open-source tools that could make carbon capture economically viable. We explore the DIY hardware movement, the computational materials screening pipelines, and the systemic questions about whether capture alone can solve climate change.
+## Episode Title (Working)
+"Capturing Air, Losing Code: The Open-Source Carbon Capture Paradox"
 
----
+## Core Thesis
+The carbon capture ecosystem on GitHub has a paradox: the most_starred projects are frozen ghosts (85★, 32★ with zero commits), while the most radical open-science experiments (CC0 public domain sorbent data) get almost no adoption. Hardware projects get built in a day then abandoned. The one continuously maintained project (2,552★ directory) is a catalog, not a carbon capture tool. We have the blueprints; we don't have the workshop.
 
-## Key Open-Source Projects
+## Commit Evidence (September 2026 Fresh Pull)
 
-### 1. openair-cyan (openair-collective/openair-cyan)
-- **Stars:** 76 | **Language:** Open Hardware | **Last Updated:** Feb 12, 2024
-- **What it does:** DIY small-scale open hardware direct air carbon capture device. Complete documentation, OSHWA-certified (US001095). Designed to be buildable by individuals and small labs.
-- **Why it matters for the episode:** This is the most impactful carbon capture repo on GitHub. It proves that DAC hardware can be documented, replicated, and improved by a community — not just billion-dollar startups.
-- **Commit activity:** Dense burst of 9 commits on Feb 12, 2024 (OSHWA certification, CITATION.cff, file uploads), then silence. Earlier activity in 2022 with maintenance commits.
-- **Episode angle:** "Can a $200 DIY device prove that carbon capture doesn't need to cost $1,000/ton?"
+| Signal | Repo | evidence |
+|--------|------|----------|
+| Continuous curation | open-sustainable-technology | Updated Sep 9, 2026 — never stops |
+| 1-day creation blitz | openair-cyan | Feb 2024 — device designed, then frozen |
+| 1-day bulk upload | GCCS-Core | Oct 2024 — 15 commits/day, then silence |
+| CC0 liberation | tjz21/DAC_peroxovanadates | Sep 2025 — public domain sorbent data |
+| CC0 liberation | tjz21/DAC_peroxotitanates | Sep 2025 — public domain sorbent data |
+| Maturing survey | Carbon_Capture_ML | May 2024 — 2.5yr knowledge decay |
+| Ghost (85★) | carbon-capture-and-storage | Mar 2021 — cited but not used |
+| Ghost (32★) | CO2-Sequestration | ~2019 — same pattern |
+| Still alive | ClimateSoton | Aug 2026 — institutional funding keeps it ticking |
+| NEW: Lab tool | openair-sorbent-tester | Jan 2026 — may still be active |
 
-### 2. DAC_peroxovanadates (tjz21/DAC_peroxovanadates)
-- **Stars:** 2 | **Language:** — | **Last Updated:** Aug 19, 2026
-- **What it does:** Computational screening of peroxovanadate compounds for DAC sorbent applications.
-- **Why it matters:** Part of a coordinated August 2026 research event where multiple DAC materials repositories were created simultaneously. Suggests a systematic computational materials screening approach.
-- **Commit activity:** Last updated Aug 19, 2026. Minimal commit history visible.
-- **Episode angle:** "Are peroxides the next-generation sorbent? A computational chemist's GitHub burst says maybe."
+## Key Narratives
 
-### 3. DAC_peroxotitanates (tjz21/DAC_peroxotitanates)
-- **Stars:** 2 | **Language:** — | **Last Updated:** Aug 19, 2026
-- **What it does:** Same as above, but for peroxotitanate compounds. Sister repo to the vanadates screening.
-- **Commit activity:** Same pattern as peroxovanadates — created Aug 19, 2026.
-- **Episode angle:** "Why did two peroxo-sorbent repos appear on the same day? The coordinated research wave."
+### Narrative 1: "The Blueprint Problem"
+openair-cyan (76★) proves you can design an open-source DACC device. But it froze after one day. The openair-sorbent-tester (3★) proves you can build the lab tool to test sorbents. But it's nearly invisible. The carbon capture ecosystem can design and test — but can't sustain. The blueprints exist. The workshop doesn't.
 
-### 4. OpenCarbon (terranexum/OpenCarbon)
-- **Stars:** 2 | **Language:** — | **Last Updated:** Aug 19, 2026
-- **What it does:** Carbon management technologies and planning tools for DAC — ensuring clean energy use and low-cost operation.
-- **Episode angle:** "The planning layer: you can build a DAC device, but can you plan a DAC *system*?"
+**Sound bite:** *"We have the machine. We have the lab tool. We just don't have the community to iterate on them."
 
-### 5. carbon-capture-cant-solve-climate-change (datasets/)
-- **Stars:** N/A | **Language:** Datasets | **Last Updated:** Jul 3, 2026
-- **What it does:** Data behind ProPublica's 2026 explainer comparing decades of carbon capture projections against solar power projections.
-- **Why it matters:** The definitive data-journalism resource on the "can CCS save us?" question. ProPublica found that CCS has consistently underperformed projections while solar has exceeded them.
-- **Episode angle:** "The dataset that proves carbon capture has been lying to us for decades — and the numbers are still worse."
+### Narrative 2: "The CC0 Revolution"
+tjz21's two DAC materials repos adopted CC0 public domain dedication. No copyright. No licenses. No restrictions. The peroxo-vanadium and peroxo-titanium screening data belongs to everyone, forever. This is the most radical open-science move in carbon capture — and it got 2 stars each. Is radical openness incompatible with radical adoption?
 
-### 6. ClimateSoton / ClimateSoton.github.io
-- **Stars:** N/A | **Language:** HTML | **Last Updated:** Jul 26, 2026
-- **What it does:** Research group page for the CLIMATE Research Group at University of Southampton. Chemical looping, advanced capture materials, sustainable energy.
-- **Episode angle:** "What does a working university capture lab's web presence look like?" (More of a hub than a tool.)
+**Sound bite:** *"They gave away the research. No copyright. No strings. Just data, belonging to everyone. Two stars. Is that freedom or obscurity?"
 
-### 7. Carbonize (SahilKhutey/Carbonize)
-- **Stars:** N/A | **Language:** Python | **Last Updated:** Jul 29, 2026
-- **What it does:** Coral-inspired biomineralization multi-pollutant capture simulator (CBMS-Sim). Industrial SaaS platform for CO2, SO2, NOx, and heavy metals capture using biomimetic materials.
-- **Episode angle:** "What if carbon capture looked like coral? Nature's mineralization playbook, simulated in Python."
+### Narrative 3: "The Citation Ghosts"
+85 stars. Zero commits since 2021. 32 stars. Zero commits since 2019. These aren't software projects — they're academic citations encoded as repos. The GitHub star count lies. It says "important" when it really means "referenced."
 
-### 8. openair-sorbent-tester (openair-collective/)
-- **Stars:** 3 | **Language:** — **Last Updated:** Jan 10, 2026
-- **What it does:** Moisture swing DAC sorbent tester — companion hardware to the Cyan device for quickly evaluating sorbent materials.
-- **Episode angle:** "The testing infrastructure matters as much as the device. OpenAir is building both."
+**Sound bite:** *"85 people starred this carbon capture repo. Zero touched it in 5 years. Stars are citations, not usage."
 
----
+### Narrative 4: "The One-Day Wonders"
+GCCS-Core: 15 commits in 24 hours, creating a full-stack "Global Climate Control System." openair-cyan: an entire DACC device documented in a single day. The ambition is real. The follow-through is missing. Building is easier than maintaining.
 
-## Commit Trend Analysis: Carbon Capture
+**Sound bite:** *"One day, they built the future. The next day, silence."
 
-| Pattern | Finding |
-|---------|--------|
-| **The August 2026 DAC materials wave** | Three repos (peroxovanadates, peroxotitanates, OpenCarbon) all updated on Aug 19, 2026. This wasn't organic — it was a coordinated research event, likely a paper submission or grant deliverable. |
-| **Hardware vs. software asymmetry** | The most important carbon capture repo (OpenAir-Cyan, 76★) is hardware documentation, not software. The "code" is a BOM and assembly guide. |
-| **The CCS-vs-solar data story** | ProPublica's dataset is 0 stars but potentially the most influential carbon capture resource on GitHub — it provides the evidentiary backbone for the "CCS doesn't work" narrative. |
-| **Biomimicry emerging** | Carbonize (coral-inspired mineralization) represents a new direction — using biological patterns for capture materials. Computational, simulation-first approach. |
-| **Dormancy is universal** | Every carbon capture repo except OpenAir's 2024 burst and the 2026 materials wave is dormant. The field is project-based, not platform-based. |
-| **The sorbent testing gap** | OpenAir's sorbent tester (3★) shows that the community is starting to build *evaluation infrastructure*, not just devices. This is a maturing signal. |
+### Narrative 5: "The Continuous Curator"
+The 2,552★ open-sustainable-technology directory is the carbon capture ecosystem's backbone. Someone updates it every day. Not glamorous. Not exciting. Essential. Infrastructure isn't built in a day — it's maintained every day.
 
----
+**Sound bite:** *"The most important climate tech repo on GitHub gets updated daily by one person. It's a catalog. It's not a tool. It's the soil everything else grows from."
 
-## Key Episode Questions
+## Interview Questions (If We Got Access)
+1. openair-cyan maintainer: "Why did you stop after the first release? What would version 2 look like?"
+2. tjz21 researcher: "Why CC0? Would you do anything differently knowing how few people use the data?"
+3. open-sustainable-technology curator: "What's the most overrated carbon capture project? The most underrated?"
+4. carbon-capture-and-storage author: "Why didn't you keep it updated? Is the geomechanics still valid?"
+5. GCCS-Core author: "What happened after the 15-commit day? Did you lose interest or funding?"
 
-1. **Can open-source hardware break the $1,000/ton DAC cost barrier?** OpenAir-Cyan proves the concept, but has it scaled?
-2. **The August 2026 materials wave:** Was it a real breakthrough or just a coordinated GitHubmoment? Three peroxo-sorbent repos appearing on the same day is either a genuine convergence or a job-market flex.
-3. **CCS has failed — so why does the industry keep championing it?** ProPublica's data shows decades of overpromising. Is carbon capture a sector built on bad lie detection?
-4. **Biomimicry vs. engineering:** Is coral-inspired mineralization the future, or are we overcomplicating something that should be simple?
-5. **The infrastructure gap:** We have DIY DAC devices but almost no open-source tools for system-level DAC planning. OpenCarbon is the start.
+## Further Reading (From Commit Histories + Search)
+- open-sustainable-technology directory (2,552★, continuously updated)
+- awesome-geoengineering v2.0.0 (includes carbon capture section)
+- TJZ21 peroxo-vanadium/titanate CC0 datasets
+- ClimateSoton group (institutional, active Aug 2026)
+
+## Episode Length Estimate
+30-40 minutes (the most complex topic — hardware, software, license, and community all intersect)
+
+## Production Notes
+- **Visuals needed:** DACC device diagram, CC0 license comparison graphic, commit timeline heatmap
+- **Cietal footage:** Lab footage of sorbent testing, industrial CCS facilities
+- **Graphics needed:** Star count vs. commit activity scatter plot (shows ghost problem)
+- **Music cue:** Something industrial — compressors, pumps, the sound of air being captured
 
 ---
 
-## Sources & Links
-- [openair-cyan](https://github.com/openair-collective/openair-cyan)
-- [DAC_peroxovanadates](https://github.com/tjz21/DAC_peroxovanadates)
-- [DAC_peroxotitanates](https://github.com/tjz21/DAC_peroxotitanates)
-- [OpenCarbon](https://github.com/terranexum/OpenCarbon)
-- [carbon-capture-cant-solve-climate-change](https://github.com/datasets/carbon-capture-cant-solve-climate-change)
-- [Carbonize](https://github.com/SahilKhutey/Carbonize)
-- [openair-sorbent-tester](https://github.com/openair-collective/openair-sorbent-tester)
+*Research compiled: September 2026 | Branch: carbon-capture*
