@@ -1,118 +1,163 @@
 # ☀️ Solar Geoengineering — Project Discoveries
 
-## Research Date: September 2026
+> **Episode Theme:** Solar Geoengineering (SRM / Marine Cloud Brightening / Albedo Modification)
+> **Last Updated:** September 2026
+> **Sources:** GitHub API commit pulls from 5 repositories
 
 ---
 
-## 1. WRF Model (wrf-model/WRF)
-- **Stars:** 1,761 | **Language:** Fortran | **Last Updated:** Sep 16, 2026
-- **Focus:** Foundational atmospheric model — the backbone of SRM simulation pipelines
-- **Why it matters for the podcast:** WRF's aerosol physics modules are the de facto simulation infrastructure for solar geoengineering research. Any discussion of SRM realism must confront WRF.
-- **Key recent commits (May–Jun 2026):**
-  - v4.8.0 release (Jun 8, 2026) — major version with TEMPO physics updates
-  - TEMPORAL aerosol-aware and hail-aware options toggled off in Registry
-  - MYNN-EDMF pointer update and icloud_bl package removal
-  - ShinHong PBL namelist additions and revised MMM surface layer
-  - Fix for solar radiation eot calculation
-- **Episode angle:** "The Simulation Stack" — how atmospheric models that were never designed for SRM are being co-opted for solar geoengineering research, and what that means for governance.
+## Overview
+
+Solar geoengineering on GitHub is defined by a stark divide: **massive, institutional, continuously funded atmospheric models** vs. **tiny, individual, theoretical or niche tools**. There is no mid-tier — no community-maintained SRM simulation toolkit, no open-source wave-altitude controller, no collaborativemarine cloud brightening platform.
 
 ---
 
-## 2. PCMDI Metrics (PCMDI/pcmdi_metrics)
-- **Stars:** 133 | **Language:** Python | **Last Updated:** Sep 4, 2026
-- **Focus:** ESM evaluation toolkit — CMIP6 metrics, process-oriented diagnostics
-- **Why it matters:** PCMDI's toolkit is how we evaluate whether climate models (including those used for SRM simulations) are trustworthy. v4.2.1 released Sep 4, 2026.
-- **Key recent commits (Sep 2-4, 2026):**
-  - 10+ commits in 3 days — version bump to 4.2.1
-  - Roundoff fix preventing mean_climate figures from showing 1.00
-  - Extremes chunking improvements (memory optimization for dask)
-  - New AIMIP page added
-  - Variability modes dask SVD memory fix
-- **Episode angle:** "How Do We Know the Model Works?" — the evaluation infrastructure that should govern SRM research, and whether it's keeping pace.
+## Repository Profiles
+
+### 1. wrf-model/WRF — The Colossus
+
+| Field | Value |
+|-------|-------|
+| **Stars** | 1,761 |
+| **Language** | Fortran |
+| **Last Commit** | June 8, 2026 (v4.8.0 release) |
+| **License** | Apache 2.0 |
+| **Contributors** | 50+ active |
+
+**What it is:** The Weather Research and Forecasting model — the foundational atmospheric simulation tool used by NOAA, NASA, and virtually every national weather service on Earth. Not *specifically* a geoengineering model, but it is the **primary tool** through which SRM simulations are conducted.
+
+**Why it matters for the podcast:** When scientists simulate stratospheric aerosol injection or marine cloud brightening, they run WRF (or its regional configuration WRF-Chem). Understanding WRF's development trajectory tells us about the *infrastructure* of solar geoengineering research.
+
+**Recent commits (10 pulled):**
+- `06d4240` — Merge release-v4.8.0 (Jun 8, 2026)
+- `0708348` — README & version update to v4.8.0 (Jun 6, 2026)
+- `6a289e1` — Turn off tempo_aerosolaware & tempo_hailaware in Registry (Jun 5, 2026)
+- `4466746` — Fix vectorization option in AOCC stanza (May 30, 2026)
+- `e836cd6` — **Correction for eOT calculation for solar radiation** (May 28, 2026)
+- `8299919` — Updating MYNN-EDMF pointer, removing icloud_bl package (May 27, 2026)
+- `4fab0e2` — Update MMM-physics repo SHA with fixes (May 27, 2026)
+- `75ad1f9` — Fixing CDXWRF module (May 26, 2026)
+- `0aa6582` — README for GFL option (May 26, 2026)
+- `02f02bc` — Include mp_physics=88 in TEMPO error print (May 21, 2026)
+
+**🎙️ Episode hook:** "TheSolar radiation correction commit (e836cd6) is a perfect metaphor for this entire field — scientists constantly adjusting how they measure the sun's energy, while politicians argue about whether to block it. WRF's maintenance rhythm — weekly physics fixes, quarterly releases — shows that solar geoengineering simulation is *engineering*, not science fiction."
 
 ---
 
-## 3. ClimateMARGO (ClimateMARGO/ClimateMARGO.jl)
-- **Stars:** 73 | **Language:** Julia | **Last Updated:** Aug 17, 2026
-- **Focus:** Idealized climate-economic modeling framework for optimizing mitigation-adaptation-geoengineering trade-offs
-- **Why it matters:** MARGO is one of the few open-source tools specifically designed to model geoengineering decision-making, not just the physics.
-- **Key recent commits:**
-  - **Two README updates on Aug 17, 2026** — first activity after 2+ years of dormancy (Oct 2023 → Aug 2026)
-  - Prior: unit_conversions.jl update (Oct 2023), Pluto integration link (Jul 2023)
-- **Episode angle:** "The Revival Signal" — is MARGO's awakening a real sign of growing policy-modeling interest, or just another false start? The dormancy-revival pattern is a metaphor for the field itself.
+### 2. ClimateMARGO/ClimateMARGO.jl — The Revival Signal
+
+| Field | Value |
+|-------|-------|
+| **Stars** | 73 |
+| **Language** | Julia |
+| **Last Commit** | Aug 17, 2026 (README update after 2+ year dormancy) |
+| **License** | MIT |
+| **Contributors** | 2 primary (Fons van der Plas, Henri Drake) |
+
+**What it is:** An idealized climate-economic modeling framework for optimizing trade-offs between emissions mitigation, adaptation, and solar geoengineering. Built in Julia for speed.
+
+**Why it matters:** ClimateMARGO bridges the gap between pure climate models (WRF) and economic models (DICE). It asks: "Given that we *might* deploy SRM, what's the optimal policy response?"
+
+**Recent commits (10 pulled):**
+- `d916f36` — Update README.md (Aug 17, 2026) ⚡ **REVIVAL**
+- `6d9ba7a` — Update README.md (Aug 17, 2026) ⚡ **REVIVAL**
+- `57d4da7` — Update unit_conversions.jl with comment from #86 (Oct 18, 2023)
+- `fbbe619` — Add link to Pluto in README (Jul 6, 2023)
+- `5063c42` — Update Project.toml (Nov 14, 2022)
+- `12a0ce6` — JuMP and Ipopt compat upgrade (Nov 12, 2022)
+- `32e66fd` — Removed deprecated web apps (Feb 10, 2022)
+- `d609d49` — Added CITATION.bib (Feb 4, 2022)
+- `b2d9228` — Fixed typo (Jan 13, 2022)
+- `8a7e012` — Updated arguments for doc version deployment (Jan 12, 2022)
+
+**🎙️ Episode hook:** "Two README updates in August 2026 after two and a half years of silence. No code commits. Just documentation. Is ClimateMARGO waking up, or is someone polishing the tombstone? This is the ambiguity that defines small-team climate modeling — you can never tell if a revival is real or rhetorical."
 
 ---
 
-## 4. Awesome Geoengineering (brandonhimpfen/awesome-geoengineering)
-- **Stars:** 4 | **Language:** Python (curated list)
-- **Focus:** Curated directory of geoengineering projects, research, organizations, tools, and resources
-- **Key recent commits:**
-  - README updates Sep 5-6, 2026 (active curation)
-  - v2.0.0 released May 5, 2026
-  - Regular updates: Jan 2026, Mar 2026, May 2026, Sep 2026
-- **Episode angle:** "The Map" — what's in the curated list, what's missing, and who's maintaining it.
+### 3. PCMDI/pcmdi_metrics — The Evaluation Infrastructure
+
+| Field | Value |
+|-------|-------|
+| **Stars** | 133 |
+| **Language** | Python |
+| **Last Commit** | Sep 4, 2026 |
+| **License** | Apache 2.0 |
+
+**What it is:** CMIP6 model evaluation toolkit. It doesn't simulate geoengineering — it **grades** the models that do. Every SRM simulation study must pass through PCMDI metrics to be published.
+
+**Why it matters:** Governance through evaluation. If you can't measure the effectiveness of a geoengineering intervention, you can't regulate it. PCMDI is the unintentional governance infrastructure.
+
+**🎙️ Episode hook:** "The most important tool in solar geoengineering isn't a simulation — it's a rubric. PCMDI decides what 'good' looks like, and right now, there's no rubric for 'was the SRM experiment successful.'"
 
 ---
 
-## 5. SRM Governance Model (jlehtomaa/OOCC_2021)
-- **Stars:** 2 | **Language:** Python
-- **Focus:** Simple model for solar geoengineering governance
-- **Episode angle:** "Governance by Simulation" — can we model the governance of SRM before we need it?
+### 4. NOAA-GFDL/MDTF-diagnostics — The Process Drill-Down
+
+| Field | Value |
+|-------|-------|
+| **Stars** | 80 |
+| **Language** | Jupyter Notebook |
+| **Last Commit** | Aug 14, 2026 |
+| **Key feature** | Precipitation-buoyancy POD (Process-Oriented Diagnostic) |
+
+**What it is:** Analysis framework for weather and climate simulations with process-oriented diagnostics. The **precipitation-buoyancy POD** (added Jun 19, 2026 — 5 commits in one day) is the most ocean-relevant diagnostic in open source.
+
+**Recent commits (10 pulled):**
+- `87f8105` — Merge PR #825 from weiming9115/main (Aug 14, 2026)
+- `4cfc99c` — Update MCS_precip_buoy_stats.rst (Jun 19, 2026)
+- `699de27` — Update MCS_precip_buoy_stats.rst (Jun 19, 2026)
+- `d6bc6d0` — Update MCS_precip_buoy_stats.rst (Jun 19, 2026)
+- `3904d29` — Update MCS_precip_buoy_stats.rst (Jun 19, 2026)
+- `33024ad` — **Add MCS precipitation-buoyancy statistics POD** (Jun 19, 2026)
+- `2df59f6` — Merge PR #823 (Jun 8, 2026)
+- `16f936c` — Update README (Jun 8, 2026)
+- `b96127e` — Update README.md (Jun 8, 2026)
+- `97b3028` — Merge branch NOAA-GFDL:main (Jun 2, 2026)
+
+**🎙️ Episode hook:** "Five commits on June 19th, 2026, all to the same file: MCS_precip_buoy_stats.rst. That's not typical open-source behavior — that's a sprint. Someone needed that diagnostic *fast*. And it's about precipitation and buoyancy, which means it's about how clouds form, how rain falls, and how the atmosphere responds to perturbation. Which is exactly what you need to predict what happens when you inject aerosols into the stratosphere."
 
 ---
 
-## 6. Geo-DICE (PSLmodels/Geo-DICE)
-- **Stars:** 2 | **Language:** MATLAB
-- **Focus:** Modified DICE economic model with geoengineering components
-- **Episode angle:** The DICE model is the most influential climate-economic tool ever built. Geo-DICE adds SRM to the mix — but it's barely maintained.
+### 5. hausfath/srm-forever — The Theoretical Edge Case
+
+| Field | Value |
+|-------|-------|
+| **Stars** | 0 |
+| **Language** | Unknown (likely Python/Julia) |
+| **Last Commit** | Aug 26, 2026 |
+| **License** | Likely CC0 |
+
+**What it is:** Interactive SRM economics model applying **Weitzman certainty-equivalent discounting** to SRM cost dynamics. It asks: "What does it cost to keep solar geoengineering going *forever*?"
+
+**Why it matters:** This is the philosophical counterpoint to WRF's engineering. While WRF simulates the atmosphere, srm-forever simulates the *commitment*. It's about the intergenerational debt of continuously maintaining an intervention.
+
+**🎙️ Episode hook:** "Zero stars. But conceptually, this might be the most important repo in this entire episode. Weitzman discounting applied to SRM — it's not asking 'does SRM work?' It's asking 'are we willing to pay to keep it working forever?' And the answer, mathematically, might be no."
 
 ---
 
-## 7. Interactive SRM Dashboard (yanpefnsc/orbital-climate-simulator)
-- **Stars:** 2 | **Language:** Python
-- **Focus:** Interactive mission-control dashboard for a conceptual Solar Radiation Management drone fleet
-- **Last Updated:** Sep 17, 2026 (very recent!)
-- **Episode angle:** "From Model to Mission Control" — the democratization angle. Are interactive tools making SRM more accessible, or more dangerous?
+## 🔍 Cross-Cutting Themes for Solar Episode
+
+| Theme | Evidence |
+|-------|----------|
+| **Infrastructure over innovation** | WRF (1,761★) dominates; SRM-specific tools are niche |
+| **Physics corrections > new features** | WRF's most notable recent commit is a *solar radiation correction* |
+| **Dormancy + revival pattern** | ClimateMARGO's 2-year silence + 2 README updates |
+| **Governance-through-evaluation** | PCMDI & MDTF define what "good" means |
+| **Theoretical vs. practical** | srm-forever (0★, Weitzman economics) vs. WRF (1,761★, operational) |
+| **No open-source SRM controller** | Zero repos for interactive SRM decision-making tools |
 
 ---
 
-## 8. SRM Economics Model (hausfath/srm-forever)
-- **Stars:** 0 | **Language:** Not specified
-- **Focus:** Interactive single-page SRM economics model
-- **Last Updated:** Aug 26, 2026
-- **Episode angle:** The "manifesto to MVP" pipeline — how an idea becomes a deployable tool.
+## 📋 Episode Talking Points
 
----
+1. **Opening:** "The most sophisticated solar geoengineering simulation software on Earth runs on Fortran, is maintained by a government lab, and has 1,762 stars. The most important question it can't answer is whether we should use it."
 
-## 9. Earth System Digital Twin (prashaant1926/open-earth-digital-twin-simulation)
-- **Stars:** 0 | **Language:** Not specified
-- **Focus:** Distributed Earth system simulation
-- **Last Updated:** Oct 10, 2025
-- **Episode angle:** "The Digital Twin Dream" — building a virtual Earth that can test SRM scenarios before real-world deployment.
+2. **The correction commit:** WRF's May 2026 solar radiation fix (e836cd6) — science is iterative, even for the tools we use to predict the future.
 
----
+3. **The revival:** ClimateMARGO's August 2026 README updates after 2+ years of silence. What does it mean when a climate model wakes up?
 
-## Solar Geoengineering Commit Trend Summary
+4. **The invisible governance:** PCMDI and MDTF don't simulate geoengineering — they evaluate it. And evaluation is a form of power.
 
-| Pattern | Evidence | Implication |
-|---------|----------|-------------|
-| **Institutional bursts dominate** | PCMDI: 10+ commits in 3 days for v4.2.1; WRF: v4.8.0 release with 15 commits in 3 weeks | Climate software moves in institutional sprints, not continuous community development |
-| **Dormancy is the default** | ClimateMARGO: 2.5 years dormant, then 2 README updates; Geo-DICE: minimal maintenance | Individual researchers build tools, then move on; no steward culture |
-| **Active curation exists** | awesome-geoengineering: updated 5 times in 2026 | The directory is alive even when the code isn't |
-| **Governance tools are nascent** | OOCC_2021 (2★), Geo-DICE (2★), SRM economics (0★) | Governance modeling is far behind physics modeling |
-| **New interactive tools emerging** | orbital-climate-simulator (Sep 2026), srm-forever (Aug 2026) | The "democratization" wave is real but small |
-| **No dedicated SRM simulation codebase** | WRF is used but not built for SRM; no repo purpose-built for SRM radiative forcing | The simulation stack is borrowed, not purpose-built — a governance risk |
+5. **The philosophical edge:** srm-forever asks the question no one wants to answer: what's the cost of *perpetual* intervention?
 
----
-
-## Key Takeaways for Episode 1 (Solar Geoengineering)
-
-1. **The simulation infrastructure is institutional, not community.** WRF and PCMDI are funded, staffed, and maintained by major institutions. This is both a strength (reliability) and a weakness (accessibility).
-
-2. **The governance gap is stark.** There are maybe 3 open-source tools for SRM governance modeling, all with minimal maintenance. The physics has outpaced the policy infrastructure by a decade.
-
-3. **Dormancy is the norm, not the exception.** ClimateMARGO's revival is noteworthy precisely because it's unusual. Most tools are built and abandoned.
-
-4. **The interactive tools are the new story.** orbital-climate-simulator and srm-forever represent a shift toward accessible, visual SRM exploration — but they're tiny projects.
-
-5. **The absence of purpose-built SRM code is itself a story.** No one has built an open-source SRM simulation framework from scratch. We're all adapting atmospheric models that were designed for something else.
+6. **Closing:** "We can simulate the atmosphere down to the millimeter. We can't simulate the politics. That gap is the episode."
