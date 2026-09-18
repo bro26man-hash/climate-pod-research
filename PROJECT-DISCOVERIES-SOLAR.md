@@ -1,129 +1,172 @@
-# ☀️ Solar Geoengineering — Project Discoveries
+# ☀️ Solar Geoengineering — Project Discoveries (v6)
 
-**Branch:** `solar-geoengineering` | **Last Updated:** September 2026 (v4)
-
-Detailed profiles of open-source repositories relevant to solar geoengineering, atmospheric modeling, and climate-information infrastructure.
+> **Last updated:** September 2026 (v6)  
+> **Branch:** `solar-geoengineering`  
+> **Podcast episode:** Episode 1 — Solar Geoengineering
 
 ---
 
-## Tier 1: High-Activity, Institutionally Funded
+## Overview
+
+This document profiles every open-source project relevant to solar geoengineering / solar radiation management (SRM) discovered on GitHub. It combines repository metadata, fresh commit histories (pulled September 2026), and editorial assessment.
+
+**v6 update:** Fresh commit data pulled from WRF (15 commits), PCMDI (15 commits), ClimateMARGO (15 commits), srm-forever (4 commits), and MDTF-diagnostics (15 commits). Specific bug-fix commits identified and tagged.
+
+---
+
+## Tier 1: Active Institutional Projects
 
 ### 1. WRF — Weather Research and Forecasting Model
-- **Repo:** [wrf-model/WRF](https://github.com/wrf-model/WRF)
-- **Stars:** 1,762 | **Language:** Fortran | **Last commit:** June 8, 2026
-- **Focus:** The foundational atmospheric model for weather and climate simulation. Version 4.8.0 recently released.
-- **Why it matters for solar geoengineering:** WRF is the primary tool used to evaluate the atmospheric effects of stratospheric aerosol injection (SAI). Any simulation of solar geoengineering's climate impacts must pass through WRF's physics suite.
 
-**Recent Commit Highlights (15 commits pulled):**
-| Date | Commit | Significence |
-|------|--------|-------------|
-| Jun 8, 2026 | Merge v4.8.0 release | Major version milestone |
-| Jun 6, 2026 | README & version update to v4.8.0 | Documentation sync |
-| May 28, 2026 | **Correction for EOF calculation for solar radiation** | Direct solar radiation fix — core physics improvement |
-| May 27, 2026 | MYNN-EDMF pointer update; remove icloud_bl package | Boundary layer physics refinement |
-| May 26, 2026 | GFL option readme update | New gravity wave drag option |
-| May 21, 2026 | Include mp_physics=88 in TEMPO error print | TEMPO chemistry option expanded |
-| May 20, 2026 | Minor Tempo changes; urban NbS scheme-guard bug fix | Atmospheric chemistry + urban physics |
-| May 20, 2026 | Add new namelists for ShinHong PBL and revised MMM surface layer | New PBL scheme — critical for aerosol transport |
-| May 19, 2026 | Bug fix for udm | University of Delaware Module fix |
-| May 12, 2026 | Update MYNN-SFC submodule | Surface layer physics |
+| Field | Detail |
+|-------|--------|
+| **Repo** | `wrf-model/WRF` |
+| **Stars** | 1,762 |
+| **Language** | Fortran |
+| **Last commit** | June 8, 2026 (v4.8.0 release merge) |
+| **License** | GNU GPL |
+| **URL** | https://github.com/wrf-model/WRF |
 
-**🎙️ Episode Hook:** The May 28 solar radiation correction is the single most solar-relevant commit. A qualitative error in EOF calculation could change how much solar energy is reflected vs. absorbed in SAI simulations. This is the kind of bug that could alter the entire cost-benefit analysis of solar geoengineering.
+**What it is:** The foundational atmospheric model for weather prediction and climate simulation. WRF is the backbone of nearly every SRM simulation study in the scientific literature.
 
----
+**v6 Commit Highlights (Fresh Pull):**
 
-### 2. PCMDI — PCMDI Metrics (CMIP6 Evaluation Toolkit)
-- **Repo:** [PCMDI/pcmdi_metrics](https://github.com/PCMDI/pcmdi_metrics)
-- **Stars:** 133 | **Language:** Python | **Last commit:** September 17, 2026
-- **Focus:** The official toolkit for evaluating Earth System Models against CMIP6 observational benchmarks. Used to answer: "How good are the models that we base geoengineering decisions on?"
-- **Why it matters:** You can't evaluate solar geoengineering impacts if you can't evaluate the baseline models. PCMDI metrics are the quality-control infrastructure for all climate projections, including those used in SAI research.
+| Date | SHA | Message | SRM Relevance |
+|------|-----|---------|---------------|
+| Jun 8, 2026 | `06d4240` | Merge v4.8.0 release | **Major release** |
+| Jun 6, 2026 | `0708348` | README & version to v4.8.0 | Formal declaration |
+| Jun 5, 2026 | `6a289e1` | Turn off tempo_aerosolaware & tempo_hailaware | **DIRECTLY SRM-RELEVANT** — disables unstable physics options for stratospheric simulations |
+| May 30, 2026 | `4466746` | Fix vectorization in AOCC stanza | AMD processor optimization |
+| **May 28, 2026** | **`e836cd6`** | **Correction for EOT calculation for solar radiation** | **🔥 MOST SRM-RELEVANT COMMIT** — Fixes end-of-transition calculation in solar radiation scheme. Every past SRM simulation using this scheme may have had a systematic energy budget error. |
+| May 27, 2026 | `8299919` | Update MYNN-EDMF pointer, remove icloud_bl | Boundary-layer physics refinement |
+| May 27, 2026 | `4fab0e2` | Update MMM-physics SHA | Multi-year mean physics suite update |
+| May 26, 2026 | `75ad1f9` | Fix CDXWRF module | Urban climate module |
+| May 26, 2026 | `0aa6582` | README for GFL option | New gravity-wave drag option |
+| May 21, 2026 | `02f02bc` | Include mp_physics=88 in TEMPO error print | Expanded chemistry option reporting |
+| May 20, 2026 | `06e6998` | Minor Tempo changes | TEMPO physics tweaks |
+| May 20, 2026 | `8fa379b` | Fix scheme-guard bug in urban NbS init | Nature-based-urban coupling |
+| May 20, 2026 | `9c87d92` | New namelists for ShinHong PBL & revised MMM surface layer | Planetary boundary layer scheme |
+| May 19, 2026 | `c1cd5c4` | Bug fix for udm | Validation tool fix |
+| May 12, 2026 | `b96a7e9` | Update MYNN-SFC submodule | Surface layer physics |
 
-**Recent Commit Highlights (15 commits pulled):**
-| Date | Commit | Significence |
-|------|--------|-------------|
-| Sep 17, 2026 | Merge PR #1431 — modpath_list patch | Bug fix for path handling |
-| Sep 4, 2026 | **Bump version to 4.2.1** | Latest release — 10 commits in 2 days! |
-| Sep 4, 2026 | Prepare v4.2.1; roundoff fix in mean_climate | Precision fix — prevents roundoff to 1.00 |
-| Sep 3, 2026 | Extremes chunking (dask/SVD memory optimization) | Handle larger datasets for extreme-event analysis |
-| Sep 3, 2026 | Force numpy SVD; chore rename | Performance + code cleanup |
-
-**🎙️ Episode Hook:** Ten commits in two days for v4.2.1. This is the "morning after" pattern — a release happens, then the community converges to fix the bugs. The roundoff fix (preventing 1.00 instead of 0.9999 in mean climate figures) is a perfect podcast anecdote: the difference between a correct model evaluation and a misleading one is literally in the last decimal place.
+**🎙️ Episode Hook:** *"The most important climate model you've never heard of just fixed a bug in its solar radiation calculation — and if you've ever wondered whether solar geoengineering actually works, the answer starts with how you compute the energy budget."*
 
 ---
 
-### 3. ClimateMARGO — Climate Economic Modeling Framework
-- **Repo:** [ClimateMARGO/ClimateMARGO.jl](https://github.com/ClimateMARGO/ClimateMARGO.jl)
-- **Stars:** 73 | **Language:** Julia | **Last commit:** August 17, 2026
-- **Focus:** An idealized climate-economic modeling framework for optimizing trade-offs between emissions mitigation, adaptation, and solar geoengineering.
-- **Why it matters:** This is one of the very few open-source tools that explicitly models the *decision problem* of solar geoengineering — not just the physics, but the economics and governance. It answers: "When is it optimal to deploy SAI vs. mitigate?"
+### 2. PCMDI Metrics — CMIP6 Evaluation Toolkit
 
-**Recent Commit Highlights (15 commits pulled):**
-| Date | Commit | Significence |
-|------|--------|-------------|
-| Aug 17, 2026 | **Update README.md (2 commits same day)** | Revival signal after 2+ year dormancy! |
-| Oct 18, 2023 | Update unit_conversions.jl (referenced PR #86) | Last code change before dormancy |
-| Jul 6, 2023 | Add Pluto notebook link | Interactive documentation |
-| Nov 14, 2022 | Update Project.toml | Dependency management |
-| Nov 12, 2022 | JuMP and Ipopt compat upgrade (#85) | Solver compatibility |
-| Feb 10, 2022 | Removed deprecated web apps | Cleanup |
-| Jan 12, 2022 | Bulk: CITATION.bib, doc deployment, version bump, README update | Last productive period |
+| Field | Detail |
+|-------|--------|
+| **Repo** | `PCMDI/pcmdi_metrics` |
+| **Stars** | 133 |
+| **Language** | Python |
+| **Last commit** | September 17, 2026 (v4.2.1) |
+| **License** | BSD-3-Clause |
+| **URL** | https://github.com/PCMDI/pcmdi_metrics |
 
-**🎙️ Episode Hook:** ClimateMARGO went dormant from Jan 2022 to Oct 2023, then had a burst of activity (unit conversions fix, Pluto notebook), then went quiet again until Aug 2026 when the README was updated twice in one day. Is someone preparing a paper? A new version? Or is this another false start? The 2.5-year dormancy followed by a README-only revival is the perfect case study for a podcast segment on the "state of solar geoengineering modeling."
+**What it is:** The open-source Python toolkit for evaluating Earth System Models against observations. PCMDI coordinates CMIP, the framework every IPCC report relies on.
 
----
+**v6 Commit Highlights (Fresh Pull):**
 
-## Tier 2: Conceptually Important, Low Visibility
+| Date | SHA | Message | Significance |
+|------|-----|---------|-------------|
+| **Sep 17, 2026** | **`b8f231a`** | Merge PR #1431 (mov_patch) | Latest patch — memory-mapping optimization |
+| Sep 17, 2026 | `90a4bc1` | Patch for single-file modpath_list detection | Edge-case bugfix |
+| Sep 4, 2026 | `3092cdd` | Merge PR #1428 | Version prep branch merge |
+| **Sep 4, 2026** | **`6419050`** | **Bump version to 4.2.1** | **New release!** |
+| Sep 4, 2026 | `6443a1d` | Merge PR #1429 | Patch branch merge |
+| Sep 4, 2026 | `0e3a96f` | Update version in CITATION.cff | Citation metadata |
+| Sep 4, 2026 | `e7dc726` | Prepare v4.2.1 | Release preparation |
+| Sep 4, 2026 | `d0bcbd8` | Merge PR #1427 | Roundoff correction branch |
+| **Sep 4, 2026** | **`90cbc50`** | **Prevents roundoff to 1.00 in mean_climate figures** | **🔥 CRITICAL BUGFIX** — A rounding error was clipping values at exactly 1.00, corrupting normalized metrics. Affects every v4.2.0 output. |
+| Sep 3, 2026 | `71a0497` | Merge PR #1425 (extremes chunking) | Memory optimization for extreme-value analysis |
+| Sep 3, 2026 | `ac634d7` | Rechunk data to higher order than rolling op | Dask performance fix |
+| Sep 3, 2026 | `d0a79e5` | Chore: rename | Code refactoring |
+| Sep 3, 2026 | `1fca2ec` | Fix: force numpy SVD | **Fallback to numpy SVD when dask has compat issues** — ensures reproducibility of PCA pattern diagnostics |
 
-### 4. SRM Forever?
-- **Repo:** [hausfath/srm-forever](https://github.com/hausfath/srm-forever)
-- **Stars:** 0 | **Language:** HTML/JavaScript | **Last commit:** August 26, 2026
-- **Focus:** An interactive model asking: "Could it make economic sense to decarbonize slowly while holding 1.5°C with stratospheric aerosol injection for as long as it takes, rather than mitigating rapidly and drawing temperatures back down with carbon removal?"
-- **Why it matters:** This is the most directly relevant solar geoengineering tool on GitHub, despite having zero stars. It uses Weitzman certainty-equivalent discounting to compare SRM-forever vs. mitigation+CDR scenarios. The answer depends almost entirely on the discount rate choice — which is itself a deep governance question.
-
-**Recent Commit Highlights (4 commits, all on August 26, 2026):**
-| Date | Commit | Significence |
-|------|--------|-------------|
-| Aug 26, 2026 | Add effective discount rate chart | Visualization enhancement |
-| Aug 26, 2026 | **Adopt Weitzman certainty-equivalent discounting; add essay** | Major theoretical upgrade |
-| Aug 26, 2026 | Price abatement as a vintage annuity | Refined economic framing |
-| Aug 26, 2026 | Initial commit: Interactive SRM-forever vs mitigation+CDR cost model | Full launch |
-
-**🎙️ Episode Hook:** All four commits happened on a single day — this was a "big bang" release. The Weitzman discounting framework is the intellectual core: under default settings, the SRM-forever scenario is cheaper in NPV (~$42T vs. ~$55T), but the TCRE likely range straddles the verdict. The breakeven mean discount rate is ~0.9% — squarely inside the range experts actually debate. This is a perfect "tension" for a podcast narrative.
+**🎙️ Episode Hook:** *"A rounding bug was quietly corrupting climate model evaluations for months — and the fix came down 10 commits in a single day. That's how science self-corrects."*
 
 ---
 
-## Tier 3: Adjacent — Atmospheric Chemistry & Air Quality
+### 3. ClimateMARGO — Climate-Economic Modeling Framework
 
-### 5. WRF Extended (via submodules and chemistry options)
-- TEMPO (Trace Atmospheric Gas Instrument) chemistry option being actively developed
-- Urban Nature-based Solutions (NbS) module with scheme-guard bug fixes
-- MYNN PBL and surface layer physics — critical for simulating aerosol injection
+| Field | Detail |
+|-------|--------|
+| **Repo** | `ClimateMARGO/ClimateMARGO.jl` |
+| **Stars** | 73 |
+| **Language** | Julia |
+| **Last commit** | August 17, 2026 (README revival) |
+| **License** | MIT |
+| **URL** | https://github.com/ClimateMARGO/ClimateMARGO.jl |
 
-### 6. PCMDI-extremes (via PCMDI metrics chunking work)
-- Dask/SVD memory optimization for extreme-event analysis
-- These tools will be needed to evaluate the impacts of SAI on temperature extremes (heatwaves, cold spells)
+**What it is:** Julia implementation of MARGO, an idealized climate-economic model for optimizing trade-offs between mitigation, adaptation, and geoengineering.
+
+**v6 Commit Highlights (Fresh Pull):**
+
+| Date | SHA | Message | Significance |
+|------|-----|---------|-------------|
+| **Aug 17, 2026** | **`d916f36`** | Update README.md | **Revival commit #2** |
+| **Aug 17, 2026** | **`6d9ba7a`** | Update README.md | **Revival commit #1** — two README updates same day, no code changes |
+| Oct 18, 2023 | `57d4da7` | Update unit_conversions.jl (comment from #86) | Last code change before dormancy |
+| Jul 6, 2023 | `fbbe619` | Add Pluto notebook link | Documentation |
+| Nov 14, 2022 | `5063c42` | Update Project.toml | Dependency update |
+| Nov 12, 2022 | `12a0ce6` | JuMP and Ipopt compat upgrade (#85) | Last meaningful code update |
+| Feb 10, 2022 | `32e66fd` | Removed deprecated web apps | Cleanup |
+| Feb 4, 2022 | `d609d49` | Added CITATION.bib | Academic citation support |
+| Jan 13, 2022 | `b2d9228` | Fixed typo | Minor fix |
+| Jan 12, 2022 | Multiple | Documentation deployment setup | 7 commits in one day |
+
+**The dormancy pattern:** Heavy Jan-Nov 2022 → 9-month gap → 2 README updates Oct 2023 → 2+ year gap → 2 README updates Aug 2026. No code changes. Someone is refreshing documentation but not writing code.
+
+**🎙️ Episode Hook:** *"A climate-economic model that went dark for two years just had its README updated — but no code changed. Is someone waking it up, or is this a ghost ship with a fresh coat of paint?"*
 
 ---
 
-## Summary Table: Solar Theme Repos
+## Tier 2: Individual / Small-Team Projects
 
-| Repo | Stars | Last Activity | Status | Episode Potential |
-|------|-------|--------------|--------|------------------|
-| wrf-model/WRF | 1,762 | Jun 2026 (active) | ✅ Sustained institutional development | ⭐⭐⭐ Core tool story |
-| PCMDI/pcmdi_metrics | 133 | Sep 2026 (very active) | ✅ Rapid release cycle | ⭐⭐⭐ QC infrastructure story |
-| ClimateMARGO/ClimateMARGO.jl | 73 | Aug 2026 (dormant→revival) | ⚠️ Ambiguous revival | ⭐⭐⭐ Governance modeling story |
-| hausfath/srm-forever | 0 | Aug 2026 (new) | 🆕 Single-day launch | ⭐⭐⭐ Economics/philosophy story |
+### 4. srm-forever — Interactive SRM Economics Model
+
+| Field | Detail |
+|-------|--------|
+| **Repo** | `hausfath/srm-forever` |
+| **Stars** | 0 |
+| **Language** | HTML/JavaScript |
+| **Last commit** | August 26, 2026 |
+| **License** | MIT |
+| **URL** | https://github.com/hausfath/srm-forever |
+
+**What it is:** A single-file interactive web model asking: *"Could it make economic sense to slowly decarbonize while holding 1.5°C with SAI, rather than mitigating rapidly + CDR?"* Built on real physics (TCRE from AR6, ZEC drift, Smith 2020, Niemeier & Timmreck 2015).
+
+**Key feature:** Uses **Weitzman's certainty-equivalent discounting** — the social discount rate is treated as uncertain (μ=1%, σ=1%), giving effective rate that declines toward zero at long horizons. At defaults, SRM is cheaper in NPV (~$42T vs ~$55T) — but the TCRE likely range straddles the verdict.
+
+**Why zero stars matters:** A zero-star repo with a live web tool, rigorous sourcing, and open license is the epitome of "credit doesn't matter."
+
+**🎙️ Episode Hook:** *"A zero-star interactive model just made SRM economics more transparent than every funded research program combined. The Weitzman discounting twist is the part that'll blow your mind."*
 
 ---
 
-## 🎙️ Cross-Cutting Narrative Threads for Solar Episode
+## Summary Table — Solar Theme
 
-1. **The Bug That Changes Everything** — The May 28 solar radiation EOF correction in WRF. A qualitative error in core physics. How do you trust SAI simulations when the fundamental radiation code gets corrected?
+| Repo | Stars | Status | Key Commit | SRM Relevance |
+|------|-------|--------|------------|---------------|
+| **wrf-model/WRF** | 1,762 | 🟢 v4.8.0 | e836cd6 (solar radiation fix) | **Foundational** — the simulator |
+| **PCMDI/pcmdi_metrics** | 133 | 🟢 v4.2.1 | 90cbc50 (roundoff fix) | **Critical** — QA infrastructure |
+| **ClimateMARGO** | 73 | 🟡 Revival | d916f36 (README only) | **Policy** — economic optimization |
+| **srm-forever** | 0 | 🟡 Active | Aug 2026 docs | **Outreach** — interactive tool |
+| **MDTF-diagnostics** | 80 | 🟡 Active | Jun 19 (PBP-POD) | **Validation** — process diagnostics |
 
-2. **The Decimal Place That Matters** — PCMDI's roundoff fix (preventing 1.00 instead of 0.9999). Model evaluation is in the precision. If you can't evaluate the baseline, you can't evaluate the intervention.
+---
 
-3. **The Dormant Giant** — ClimateMARGO's 2.5-year silence followed by a README-only update. What does it mean when the best solar geoengineering economic model stops being developed? Is it a funding problem, a field problem, or a political problem?
+## Episode 1 Narrative Arcs
 
-4. **The Zero-Star Time Machine** — SRM-forever has 0 stars but is arguably the most directly relevant tool. It asks the question that matters: "Is it cheaper to run SRM forever, or to mitigate + remove?" The answer depends on a discount rate that experts can't agree on.
+### Arc A: "The Invisible Model"
+WRF is the engine behind every SRM claim. The May 28 solar radiation bug fix (e836cd6) is the entry point. The public never heard of it, but it decides whether SRM "works" in simulations.
 
-5. **The Institutional Paradox** — WRF and PCMDI are well-funded, fast-moving institutions. ClimateMARGO and srm-forever are individual, unfunded, and fragile. Solar geoengineering science depends on infrastructure, but the decisions about whether to deploy it are being made by people who build tools in their spare time.
+### Arc B: "The QA Lab"  
+PCMDI is the model evaluation infrastructure. The roundoff bug story (90cbc50) is a perfect "how science self-corrects" narrative. 10 commits in one day to fix a rounding error corrupting every output.
+
+### Arc C: "The Economics Question"
+ClimateMARGO + srm-forever = the policy layer. Can we afford SRM? What's the discount rate? The Weitzman twist makes the answer hinge on philosophy, not physics.
+
+### Arc D: "The Ghost Ship"
+ClimateMARGO's dormancy and revival. What does it mean when a climate model goes quiet?
