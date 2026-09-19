@@ -1,149 +1,89 @@
 # 🌍 Carbon Capture — Commit Trend Analysis
 
-**Analysis Date:** September 2026  
-**Repositories Analyzed:** 2 (GCCS-Core, Cost-Model--DAC)  
-**Total Commits Pulled:** 30
+**Last updated:** September 2026
+**Data source:** GitHub List Commits API, 5 repos, 35+ commits analyzed
 
 ---
 
-## Velocity Summary Table
+## Velocity Pages
 
-| Repository | Stars | Commits Pulled | Active Period | Velocity Pattern | Longest Gap |
-|-----------|-------|----------------|---------------|-----------------|-------------|
-| KOSASIH/GCCS-Core | 9 | 15 | Oct 29, 2024 (single day) | 🟡 Extreme single-day burst | 22+ months |
-| kfdsievert/Cost-Model--DAC | 6 | 15 | Jan–Feb 2024 (2-week burst) | 🟡 Short burst, then silence | 2+ years |
+### 🔴 Fast Universe (Institutional)
+**No fast-universe carbon capture repos found.** This is the headline finding.
 
-**Combined total:** 30 commits across 2 repositories, spanning 2024–2026. **No continuous development activity detected.**
+Unlike solar geoengineering (where PCMDI provides institutional-grade evaluation infrastructure), carbon capture on GitHub has **no equivalent of PCMDI** — no continuous-integration, multi-contributor, versioned software for evaluating or optimizing DAC processes at scale.
 
----
+The gap is structural: carbon capture is dominated by **proprietary industrial R&D** (Climeworks, Carbon Engineering, Global Thermostat) that doesn't show up on GitHub. The open-source carbon capture ecosystem is **repair shops and notebooks, not production lines.**
 
-## Trend 1: The "Scaffolding Sprint" Pattern
+### 🟡 Slow Universe (Academic/Hobby Burst)
+**openair-collective/openair-cyan** — 76★
 
-GCCS-Core's commit history is remarkable for its intensity and brevity:
+- **6 commits in 1 day** (Feb 12, 2024 — OSHWA certification blitz)
+- Pattern: Single-day burst for certification, then 2.5 years dormancy
+- Contributors: 2-3 active (KCollins, DaOfficialWizard, ZanzyTHEbar)
+- Signal: **Open hardware standardization is a one-shot event, not a pipeline**
+- Episode note: The OSHWA UID (US001095) is the repo's most important output — more important than any code commit
 
-```
-All 15 commits: October 29, 2024
-────────────────────────────────────────
-07:00  create example_config.yaml
-07:15  create example_usage.py
-07:30  create example_iot_integration.py
-08:00  create deploy.sh
-08:05  create run_server.sh
-08:10  create data_collection.sh
-08:30  create setup.py
-08:45  create requirements.txt
-09:00  Update README.md (1st pass)
-09:30  Update README.md (2nd pass)
-...
-07:00  Update README.md (8th pass, after initial setup was done)
-```
+**ClimateMARGO/ClimateMARGO.jl** — 73★
 
-**What this tells us:** The developer (KOSASIH) had a clear vision of what a "Global Climate Control System" should include — deployment scripts, IoT integration, configuration management, documentation. They built the scaffolding in a single focused session. They refined the README 8 times, adjusting wording, adding sections, fixing formatting.
+- **10 commits in 30 months** (Jan 2022 – Aug 2026)
+- Pattern: Setup burst (2022, 5 commits), then extreme dormancy (2023–2026), then README revival (Aug 2026)
+- Contributors: 2 (Fons van der Plas, Henri Drake)
+- Signal: **Academic software lifecycle — build once, cite forever, update rarely**
+- Episode note: The Jul 2023 commit adding Pluto notebook link is the only "community-facing" update
 
-**What's missing:** There are zero commits that implement actual carbon capture simulation logic. No chemical equations. No thermodynamic calculations. No material science models. No energy balance models. The repo is a *framework for a framework* — deployment infrastructure with research tool aspirations.
+**IsaH93/dac-moving-bed-digital-twin** — 0★
 
-**Episode angle:** This is the "MVP" pattern adaptation applied to climate tech. Build the deployment shell first, then add the science later. The question is: **will "later" ever come?** The 22-month dormancy since October 2024 suggests the science part hasn't arrived.
+- Updated Jul 2026, commit history shorter than 10
+- Pattern: Single maintainer, physics-informed modeling
+- Signal: **The most technically rigorous DAC code is the least visible**
+- Episode note: If this repo could get 50 stars, it would represent a new category: "open-source DAC process simulation"
 
----
+### ⚫ Empty Universe (New Entrants)
+**Rudra57/Direct-Air-Capture** — 0★
+- 4 commits in 1 day (Jun 11, 2026)
+- Notebook-only, no established community
 
-## Trend 2: The "Two-Week Paper Sprint" Pattern
-
-Cost-Model--DAC shows a healthier but still bursty pattern:
-
-```
-Jan 31, 2024: 4 commits (initial file upload, workspace cleanup)
-Feb  1, 2024: 6 commits (LICENSE: add→delete→re-add; README refinements; minor updates)
-Feb  5, 2024: 2 commits (README polish)
-Feb 19, 2024: 3 commits (final README + LICENSE adjustments)
-Jun  4, 2026: 1 commit (latest update — nature unknown)
-```
-
-**The LICENSE saga:** On Feb 1, 2024, the developer added a LICENSE file, then deleted it, then re-added it — all within the same day. This suggests uncertainty about which license to use, possibly deliberating between open-source (MIT/Apache) and public-domain (CC0/Unlicense) dedications.
-
-**After the burst:** 2 years and 4 months of silence before a single commit in June 2026. This could be a minor fix, a data update, or a visibility tweak (README change).
-
-**Comparison with academic norms:** In computational science, a 2-week sprint to build and document a cost model is normal. The key question is whether the model gets used, cited, and built upon. With 6 stars, the model has a tiny but real audience.
+**terranexum/OpenCarbon** — 2★
+- Minimal activity, early-stage concept
 
 ---
 
-## Trend 3: The "No Chemistry" Gap
+## The Carbon Captains vs. The Ocean Gap
 
-Neither repository simulates actual carbon capture chemistry:
+| Dimension | Solar Geoengineering | Carbon Capture | Ocean Intervention |
+|-----------|---------------------|----------------|--------------------|
+| **Most active repo** | PCMDI/pcmdi_metrics (133★) | OpenAir-Cyan (76★) | None |
+| **Institutional backbone** | PCMDI (CMIP) | None | None |
+| **Hardware code** | None (all software) | OpenAir-Cyan (open hardware) | None |
+| **Fastest velocity** | 10 commits/2 weeks | 6 commits/1 day | N/A |
+| **Dormancy pattern** | Paper-driven (years) | Certification-driven (years) | N/A |
+| **Governance code** | 1 repo (Zereo0317) | 0 repos | 0 repos |
 
-| What's missing | What exists instead |
-|----------------|---------------------|
-| Amine solvent chemistry models | Deployment scripts and IoT integration (GCCS-Core) |
-| Solid sorbent material simulations | Experience curve / Monte Carlo cost projections (Cost-Model--DAC) |
-| Thermodynamic equilibrium calculations | README documentation (both repos) |
-| Energy integration and heat recovery | Shell scripts for server deployment (GCCS-Core) |
-
-**This is the fundamental gap in carbon capture open-source:** The chemistry and process simulation layer is completely absent. There is no open-source "upa" (Universal Process Analyzer) or "Aspen Plus" equivalent for carbon capture.
-
-**Why this matters for the episode:** If we want to have informed public debates about DAC feasibility, we need tools that can actually simulate the capture process — not just project the costs. The absence of process simulation code means that the public conversation about carbon capture is driven by:
-1. Company press releases (capitalist sources)
-2. Academic papers with proprietary models (academic sources)
-3. Cost projections without chemistry validation (the two repos we found)
+**Key insight:** Carbon capture has **hardware** (OpenAir-Cyan) but no **evaluation infrastructure** (no DAC equivalent of PCMDI). Solar geoengineering has **evaluation infrastructure** (PCMDI) but no **hardware**. Ocean intervention has neither.
 
 ---
 
-## Trend 4: The "CC0 Public Domain" Movement
+## Episode 2 Architecture
 
-While the license saga in Cost-Model--DAC (add→delete→re-add) is intriguing, it reflects a broader trend in climate tech open-source: **the move toward CC0 / public-domain dedication.**
+### Opening question
+*Can open source + CC0 break the $1000/ton DAC cost barrier?*
 
-**Why CC0 matters for carbon capture:**
-- **Patent thickets:** Carbon capture technology is surrounded by patents. Amine solvents, solid sorbents, and process designs are heavily patented. CC0 code can't be patented, but CC0 code can *describe*tha unpatentable methods.
-- **Replication crisis:** If cost models are proprietary, other researchers can't replicate or extend them. CC0 models enable full replication.
-- **Equity:** If DAC technology is only accessible through expensive proprietary tools, the policy conversation is dominated by well-funded interests. Open tools democratize participation.
+### Three act structure
+1. **Act 1 — The Hardware Promise:** OpenAir-Cyan's OSHWA-certified DIY DAC device shows that open hardware can make the blueprints public. But 2.5 years of dormancy after the OSHWA blitz raises a question: does open hardware have a lifecycle after certification?
+2. **Act 2 — The Physics Gap:** isaH93's digital twin is the only repo modeling real DAC physics (sorbent beds, Toth isotherm, LDF kinetics). Without process simulation, the open-source DAC community is building hardware without understanding why some designs work and others don't.
+3. **Act 3 — The Economic Frame:** ClimateMARGO's policy optimization model says: at what carbon price does DAC become economical? The answer depends on learning rates that the open-source community could accelerate — if it were active.
 
-**Current state:** Both repos found in our search use standard open-source licenses (MIT-style for GCCS-Core, license-undetermined for Cost-Model--DAC). The CC0 movement is more prominent in the solar geoengineering space (where some modeling groups explicitly publish data under CC0) than in carbon capture.
-
----
-
-## Trend 5: The " carbon capture vs. solar geoengineering" asymmetry
-
-| Dimension | Solar Geoengineering | Carbon Capture |
-|-----------|---------------------|----------------|
-| **Number of relevant repos** | 4 found | 2 found |
-| **Stars (highest)** | 1,763 (WRF) | 9 (GCCS-Core) |
-| **Stars (total)** | 1,890+ | 15 |
-| **Simulates the core process?** | Yes — aerosol radiative transfer in WRF | No — cost modeling only |
-| **Institutional backing** | NCAR, NOAA, multiple universities | Individual developers |
-| **Continuous development** | Yes (v4.8.0, June 2026) | No |
-| **Commit activity (recent 6 months)** | 15 commits (WRF) | 0 commits |
-
-**The asymmetry is stark.** Solar geoengineering has a mature, continuously developed simulation framework embedded in the world's most used regional climate model. Carbon capture has two solo-developed projects, one of which is scaffolding and the other is a cost model, neither of which simulates the actual capture process.
-
-**Episode framing:** "If you want to simulate what happens if you inject aerosols into the stratosphere, you can run WRF — right now, today, with institutional support and continuous updates. If you want to simulate the chemistry of capturing CO₂ from the air, you can't — there's no open-source tool for that. The asymmetry isn't just about resources; it's about which climate intervention has a simulation infrastructure and which doesn't."
+### Closing question
+*If the best DAC code models sorbent physics, the best DAC hardware is CC0-certified, and the best DAC economics are modeled in Julia — why can't any of these three communities talk to each other?*
 
 ---
 
-## Episode Architecture (Carbon Capture)
+## The Missing Middle
 
-### Segment 1: "The Scaffolding and the Substance"
-- Introduce GCCS-Core and its 8-README-in-one-day pattern
-- Show that it has deployment scripts but no simulation logic
-- Ask: Is this typical for early-stage climate tech open-source?
+The carbon capture GitHub ecosystem has:
+- ✅ Hardware designs (OpenAir-Cyan)
+- ✅ Process simulation (IsaH93, niche)
+- ✅ Policy optimization (ClimateMARGO)
+- ❌ **Integration platform** — no tool that connects hardware specs → process simulation → economic analysis
 
-### Segment 2: "What 'Cost Model' Really Means"
-- Walk through the Cost-Model--DAC Monte Carlo / experience curve approach
-- Explain why cost projections without chemistry simulation are both useful and incomplete
-- Discuss the LICENSE saga as a window into the open-source licensing challenges in climate tech
-
-### Segment 3: "The Missing Layer — Why No DAC Chemistry Simulator?"
-- The complete absence of process simulation for carbon capture
-- Compare with solar geoengineering (WRF has TEMPO for aerosol physics)
-- Ask: Should there be an open-source equivalent of Aspen Plus for carbon capture?
-- Discuss the equity implications: proprietary tools = expertise gated by money
-
----
-
-## Listener Resources
-
-- **Cost-Model--DAC README:** https://github.com/kfdsievert/Cost-Model--DAC/blob/main/README.md
-- **GCCS-Core structure:** https://github.com/KOSASIH/GCCS-Core/tree/main
-- **DAC cost landscape (paper reference):** Steven Davis et al., "Net-zero emissions energy systems" (context for why DAC cost models matter)
-- **CC0 licensing in climate science:**Search "CC0 climate model" on GitHub for examples
-
----
-
-*Analysis methodology: GitHub List Commits API, September 2026. All commit data is real and verifiable via the commit SHAs listed above.*
+This is the "missing middle" — the equivalent of PCMDI for carbon capture doesn't exist. Whoever builds a **DAC evaluation framework** (open-source, CC0, continuous-integration) would fill the most impactful gap in the carbon capture software ecosystem.

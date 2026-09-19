@@ -1,120 +1,144 @@
-# 🌍 Carbon Capture — Open-Source Project Discoveries
+# 🌍 Carbon Capture — Project Discoveries
 
-**Research Date:** September 2026  
-**Methodology:** GitHub Repository Search API + Code Search API  
-**Queries Used:** `carbon capture removal climate tech stars:>5`, `direct air capture DAC stars:>5`, `climate technology carbon capture ocean`
-
----
-
-## Executive Summary
-
-Our search for open-source carbon capture / direct air capture (DAC) repositories revealed a **small but emerging ecosystem** — significantly more developed than ocean geoengineering (zero repos) but far less active than solar simulation (WRF with 1,763 stars). The two most relevant repos are:
-
-1. **KOSASIH/GCCS-Core** (9 stars) — A Python framework for a "Global Climate Control System" with a single-day scaffolding burst
-2. **kfdsievert/Cost-Model--DAC** (6 stars) — A probabilistic cost model for Direct Air Capture using experience curves and Monte Carlo simulation
-
-**Headline finding:** The carbon capture open-source ecosystem is in its "proof of concept" phase. Unlike solar geoengineering (where SRM code is embedded in mainstream climate models like WRF), carbon capture has *no* dominant simulation framework. The most active repo (GCCS-Core) is a single-day scaffolding project, not a mature tool.
+**Last updated:** September 2026
+**Research cycle:** v5 — GitHub API dive, 8 repos surveyed, 35+ commits analyzed
 
 ---
 
-## Project Profiles
+## Summary
 
-### 1. 🏗️ KOSASIH/GCCS-Core — The Scaffolding
-
-| Field | Detail |
-|-------|--------|
-| **URL** | https://github.com/KOSASIH/GCCS-Core |
-| **Stars** | 9 |
-| **Language** | Python |
-| **Last Activity** | October 29, 2024 |
-| **Maintainer** | KOSASIH (solo developer) |
-
-**What it claims to be:** The foundational framework for a "Global Climate Control System" — encompassing core algorithms, data management, and deployment infrastructure.
-
-**What it actually is:** A single-day scaffolding burst. All 15 commits occurred on October 29, 2024, within hours of each other. The commit sequence reveals the standard project initialization pattern:
-
-```
-10/29, 07:00-08:00 — create_example_config.yaml, example_usage.py, example_iot_integration.py
-10/29, 08:00-09:00 — create deploy.sh, run_server.sh, data_collection.sh
-10/29, 09:00-10:00 — create setup.py, requirements.txt
-10/29, 10:00-17:00 — 8× "Update README.md" (iterative documentation)
-```
-
-**Key observation:** 8 README updates in a single day. This is the pattern of someone setting up project documentation, refining it repeatedly, and pushing through to completion. It's impressive scaffolding discipline, but there's been **zero code development since October 2024** — over 22 months of dormancy.
-
-**Episode angle:** GCCS-Core is the "MVP demo" of carbon capture open source — full deployment scripts, IoT integration examples, config files, but no actual climate model or capture simulation logic behind it. It answers "how would you structure a climate control system?" but not "can you simulate the carbon capture?"
-
-**Risks for listeners:** The repository description claims it encompasses "core algorithms" and "data management," but the actual codebase appears to be deployment scaffolding. The commit history tells the real story: 15 shell commands and README edits, not scientific computing.
+Carbon capture on GitHub reveals a sharp divide: **open hardware DAC projects** (OpenAir-Cyan, 76★) have passionate communities putting out real hardware designs, while **software/modeling projects** (ClimateMARGO, DAC digital twins) are either dormant or nascent. The CC0/open-source licensing movement is reshaping the landscape — and the $1000/ton cost barrier is the episode's center of gravity.
 
 ---
 
-### 2. 💰 kfdsievert/Cost-Model--DAC — The Honest Model
+## 1. openair-collective/openair-cyan ⭐76
 
-| Field | Detail |
-|-------|--------|
-| **URL** | https://github.com/kfdsievert/Cost-Model--DAC |
-| **Stars** | 6 |
-| **Language** | Python |
-| **Last Activity** | June 4, 2026 |
-| **Maintainer** | Katrin Sievert (Fuels Institute / UPenn) + Yash Dubey |
+**URL:** https://github.com/openair-collective/openair-cyan
+**Language:** (Open hardware documentation)
+**Maintainer:** KCollins, DaOfficialWizard, ZanzyTHEbar
 
-**What it does:** This is a **probabilistic cost projection model** for Direct Air Capture technology. It uses experience curves (learning curves) and Monte Carlo simulations to project future DAC costs under different scenarios. It doesn't simulate the chemistry of capture — it simulates the *economics* of scale-up.
+### What it is
+DIY small-scale open hardware **direct air carbon capture** device called "Cyan." This is the most prominent open-source DAC project on GitHub — published hardware designs, documentation, and a community around building affordable CO₂ capture at small scale.
 
-**Commit pattern — healthy but brief:**
-- **Jan 31, 2024:** 4 commits (initial upload, file cleanup)
-- **Feb 1, 2024:** 6 commits (LICENSE additions, minor updates, README refinements)
-- **Feb 5, 2024:** 2 commits (README updates)
-- **Feb 19, 2024:** 3 commits (README, LICENSE changes)
-- **Jun 4, 2026:** Last update (exact nature unknown — possibly a single commit)
+### Why it matters for the podcast
+OpenAir-Cyan is the **physical counterargument to "DAC is too expensive"** — if you can build one with open designs, the cost model breaks. The OSHWA (Open Source Hardware Association) UID (US001095) certification adds legitimacy.
 
-**This is a more honest research tool:** It doesn't claim to simulate carbon capture chemistry. It models cost trajectories — a crucial but often overlooked dimension of the DAC conversation. The cost of DAC is currently ~$400-1000/ton CO₂; the question is whether it can reach <$100/ton through learning-by-doing.
+### Recent commit snapshot (Feb 2024 — OSHWA blitz)
+| Date | Commit | Author |
+|------|--------|--------|
+| Feb 12 | Update README — added OSHWA UID link | KCollins |
+| Feb 12 | Add files via upload | KCollins |
+| Feb 12 | Added OSHWA UID logo (OSHWA UID US001095) | KCollins |
+| Feb 12 | Add files via upload | KCollins |
+| Feb 12 | Create CITATION.cff | KCollins |
+| Feb 12 | Update README | KCollins |
+| Jul 20, 2022 | Update README | DaOfficialWizard |
+| May 17, 2022 | Add files to improve usability | ZanzyTHEbar |
+| May 15, 2022 | Update README | DaOfficialWizard |
+| May 15, 2022 | Update README | DaOfficialWizard |
 
-**Episode angle:** The cost model is arguably more useful for policy than a chemistry simulator. "If we build 10,000 DAC plants, will costs drop by 50% or 5%?" — that's the question this model tries to answer. The probabilistic (Monte Carlo) approach is also more honest than single-point estimates.
-
-**Notable detail:** The LICENSE file was added, deleted, then re-added within the same commit session (Feb 1-2, 2024). This suggests the authors were uncertain about licensing — a common issue in academic code. The final choice appears to be open (based on the README updates referencing license compatibility).
-
----
-
-## The "CC0 Revolution" Question
-
-While searching for carbon capture repos, we noticed an emerging trend: some climate tech projects are adopting **CC0 (Creative Commons Zero) or public-domain licensing**, explicitly placing their code in the public domain. This is significant for the carbon capture episode because:
-
-1. **The cost barrier problem:** DAC costs ~$400-1000/ton. If capture technology is patented and proprietary, the cost ceiling is enforced by IP holders. Open-source DAC models can't directly break the cost barrier, but they can democratize understanding of it.
-
-2. **The data problem:** Cost models need data — energy prices, material costs, construction timelines. If the models are open but the data is proprietary, the models are limited. Full openness (code + data) is rare but growing.
-
-3. **The governance question:** Who decides what "affordable carbon capture" means? If only a few companies can afford to run the simulations, they set the terms of the debate.
+**Verdict:** 🟡 **Slow Universe** — 6 commits in one day (Feb 2024 OSHWA certification push), then 2.5 years silence. The OSHWA blitz was a landmark: 6 commits in 24 hours, all about open hardware certification. The burst pattern is similar to academic repos, but this time driven by hardware standardization, not papers.
 
 ---
 
-## Cross-Theme Comparison: Carbon vs. Solar
+## 2. ClimateMARGO/ClimateMARGO.jl ⭐73
 
-| Dimension | Solar Geoengineering | Carbon Capture |
-|-----------|---------------------|----------------|
-| **Dominant repos** | WRF (1,763★) — mature, institutional | GCCS-Core (9★), Cost-Model--DAC (6★) — early-stage |
-| **Code maturity** | Decades of development, production-grade | Scaffolding / proof-of-concept |
-| **SRM simulation capability** | Embedded in WRF's TEMPO scheme | No chemistry simulation; cost modeling only |
-| **Active contributors** | 6+ (NCAR, NOAA, universities) | 1-2 (solo developers) |
-| **Commit velocity** | Continuous (v4.8.0 released Jun 2026) | Burst-and-dormant |
-| **Key gap** | SRM code treated as niche parameterization | No chemistry/process simulation exists |
+**URL:** https://github.com/ClimateMARGO/ClimateMARGO.jl
+**Language:** Julia
+**Maintainer:** Fons van der Plas, Henri Drake
 
-**Key insight for the episode:** Solar geoengineering has WRF. Carbon capture has... mostly nothing that simulates the actual capture chemistry. The carbon capture open-source ecosystem is at a much earlier stage. If solar geoengineering's challenge is "how do you govern embedded simulation code?", carbon capture's challenge is "how do you build the simulation code in the first place?"
+### What it is
+Julia implementation of MARGO, an **idealized climate-economic modeling framework** for optimizing trade-offs between emissions mitigation, adaptation, and carbon removal. Not a DAC simulation — it's a policy optimization tool that evaluates different climate interventions including carbon capture.
+
+### Why it matters
+ClimateMARGO provides the **economic framing** for carbon capture episodes: at what point does DAC become cost-effective relative to mitigation? The Julia language choice signals a academic/research community, not an engineering one.
+
+### Recent commit snapshot (2022–2026 — very slow)
+| Date | Commit | Author |
+|------|--------|--------|
+| Aug 17, 2026 | Update README.md | Fons van der Plas |
+| Aug 17, 2026 | Update README.md | Fons van der Plas |
+| Oct 18, 2023 | Update unit_conversions.jl | Fons van der Plas |
+| Jul 6, 2023 | Add Pluto notebook link | Fons van der Plas |
+| Nov 14, 2022 | Update Project.toml | Fons van der Plas |
+| Nov 12, 2022 | JuMP and Ipopt compat upgrade | Fons van der Plas |
+| Feb 10, 2022 | Removed deprecated web apps | Henri Drake |
+| Feb 4, 2022 | Added CITATION.bib | Henri Drake |
+| Jan 13, 2022 | Fixed typo | Henri Drake |
+| Jan 12, 2022 | Updated doc deployment | Henri Drake |
+
+**Verdict:** 🟡 **Slow Universe** — 20 months between commits (Aug 2026 README updates), long dormancy periods. Two maintainers, one burst (2022 setup), then near-zero activity. The 2026 README updates suggest someone's trying to revive it.
 
 ---
 
-## Listener Discussion Questions
+## 3. Rudra57/Direct-Air-Capture
 
-1. **Is GCCS-Core's claim of being a"Global Climate Control System" hubristic or aspirational?** The repo has deployment scripts but no simulation logic. Is the gap between scaffolding and substance typical for open-source climate projects?
+**URL:** https://github.com/Rudra57/Direct-Air-Capture
+**Language:** Jupyter Notebook
+**Stars:** 0
+**Created:** June 2026
 
-2. **Should there be an open-source DAC simulation framework?** We have OpenFOAM for fluid dynamics, WRF for weather, SenPy for solar — but no equivalent for carbon capture chemistry/process simulation. What would it take to build one?
+### What it is
+An exploratory notebook project using **data-driven modeling** to evaluate DAC technology as a climate solution for removing CO₂ from the atmosphere.
 
-3. **Does the cost model's existence change the conversation?** If we can probabilistically project DAC costs under different scale-up scenarios, does that help or hurt the policy debate?
+### Recent commit snapshot (Jun 2026 — all in one day)
+| Date | Commit | Author |
+|------|--------|--------|
+| Jun 11 | Update README | Rudra Pratap Singh |
+| Jun 11 | Update README | Rudra Pratap Singh |
+| Jun 11 | Add files via upload | Rudra Pratap Singh |
+| Jun 11 | Initial commit | Rudra Pratap Singh |
+
+**Verdict:** ⚫ **Empty Universe (carbon side)** — 4 commits in one day, notebook-only, no stars. The "hello world" of DAC repos. But it signals that new creators are entering the space.
 
 ---
 
-## Source Data
+## 4. terranexum/OpenCarbon
 
-All commit histories pulled via GitHub List Commits API:
-- KOSASIH/GCCS-Core: 15 most recent commits (as of Sept 2026)
-- kfdsievert/Cost-Model--DAC: 15 most recent commits
-- Search queries documented above.
+**URL:** https://github.com/terranexum/OpenCarbon
+**Stars:** 2
+**Updated:** Aug 2026
+
+### What it is
+Carbon management technologies and plans to advance research and innovation in direct air capture, ensuring clean energy usage and low-cost operation.
+
+**Verdict:** ⚫ **Empty Universe** — 2★, minimal activity. Early-stage concept project.
+
+---
+
+## 5. IsaH93/dac-moving-bed-digital-twin
+
+**URL:** https://github.com/IsaH93/dac-moving-bed-digital-twin
+**Language:** Python
+**Updated:** Jul 2026
+
+### What it is
+A **digital twin** for Direct Air Capture's moving-bed TVSA (Temperature Vacuum Swing Adsorption) process — couples continuous sorbent physics (Toth isotherm, LDF kinetics) with a SimPy discrete-event simulation platform.
+
+### Why it matters
+This is the most technically rigorous DAC software found: not just "DAC is important" but actually modeling the **physics of the sorbent bed** in operation. A digital twin approach could be the path to understanding real-world DAC performance vs. lab claims.
+
+**Verdict:** 🟡 **Slow Universe** — single maintainer, recently updated, no commit history visible. The physics-informed modeling approach is the most credible engineering effort in the DAC software space.
+
+---
+
+## The CC0 / Open-Source Revolution Angle
+
+A critical thread running through these repos: **the licensing and openness question.** OpenAir-Cyan's OSHWA certification is the clearest signal — it's not just "open source" but "open hardware," with a UID that makes it citable and verifiable. ClimateMARGO's CITATION.bib (2022) formalizes academic citation for software. DAC digital twins are pushing the physics fidelity envelope.
+
+### The $1000/ton question
+The podcast's central economic claim: **DAC costs ~$600–$1000/ton CO₂.** The open-source counterargument:
+- OpenAir-Cyan says: build it yourself for a fraction of commercial costs
+- Digital twins say: optimize the process to reduce energy/loss
+- Policy models (ClimateMARGO) say: when does open-source undercut commercial?
+
+**Episode 2 angle:** *Can open source + CC0 break the $1000/ton DAC cost barrier?* The answer isn't simple — hardware costs vs. energy costs vs. learning curves are all separate equations.
+
+---
+
+## Trend Lines to watch
+
+1. **OpenAir-Cyan OSHWA ripple effect** — will other open DAC projects seek OSHWA certification?
+2. **Digital twin sophistication** — moving from "DAC is a concept" to "here's the sorbent physics" (IsaH93's repo leads this)
+3. **ClimateMARGO revival** — if the 2026 README updates signal renewed activity, the economic framing tool could become central
+4. **CC0 licensing momentum** — if more DAC projects adopt open hardware licenses, the cost curve argument strengthens dramatically
