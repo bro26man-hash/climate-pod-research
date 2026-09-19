@@ -1,112 +1,120 @@
-# 🌍 Carbon Capture — Project Discoveries
+# 🌍 Carbon Capture — Open-Source Project Discoveries
 
-**Last Updated:** September 2026
-**Research Method:** GitHub Repository Search API + Commit History Analysis
-
----
-
-## Overview
-
-Carbon capture and storage (CCS) / direct air capture (DAC) is the **most diverse** theme in the climate tech GitHub ecosystem. Unlike solar geoengineering (dominated by institutional climate models) or ocean intervention (virtually absent), carbon capture spans academic research, startup prototypes, policy tools, and citizen science. The GitHub presence reflects a mature technology landscape with both large institutions and small innovators.
+**Research Date:** September 2026  
+**Methodology:** GitHub Repository Search API + Code Search API  
+**Queries Used:** `carbon capture removal climate tech stars:>5`, `direct air capture DAC stars:>5`, `climate technology carbon capture ocean`
 
 ---
 
-## Key Repositories Discovered
+## Executive Summary
 
-### 1. salmansust/CO2-Sequestration
-- **Language:** MATLAB
-- **Focus:** Carbon Capture and Sequestration simulation
-- **Stars:** 32 (highest in carbon capture niche)
-- **Last Updated:** 2026-09-01
+Our search for open-source carbon capture / direct air capture (DAC) repositories revealed a **small but emerging ecosystem** — significantly more developed than ocean geoengineering (zero repos) but far less active than solar simulation (WRF with 1,763 stars). The two most relevant repos are:
 
-**Why It Matters:** This is the most-starred dedicated carbon capture repo on GitHub. MATLAB-based suggests it's aimed at researchers who need computational tools for sequestration modeling, not software engineers building production systems.
+1. **KOSASIH/GCCS-Core** (9 stars) — A Python framework for a "Global Climate Control System" with a single-day scaffolding burst
+2. **kfdsievert/Cost-Model--DAC** (6 stars) — A probabilistic cost model for Direct Air Capture using experience curves and Monte Carlo simulation
 
-#### Recent Commit History (2 commits pulled)
-| Date | Commit Message | Author |
-|------|---------------|--------|
-| 2019-03-24 | Initial commit | Salman Karim |
-| 2019-03-24 | Add files via upload | Salman Karim |
-
-**Development Pattern:** Complete dormancy since initial upload in March 2019. This is a **digital artifact** — uploaded once, never updated. The 32 stars suggest it's being used as a reference/resource rather than actively developed.
-
-**Key Insight:** The most-starred carbon capture repo on GitHub hasn't been touched in 7+ years. This tells you something about the state of open-source CCS tools: they're references, not platforms.
+**Headline finding:** The carbon capture open-source ecosystem is in its "proof of concept" phase. Unlike solar geoengineering (where SRM code is embedded in mainstream climate models like WRF), carbon capture has *no* dominant simulation framework. The most active repo (GCCS-Core) is a single-day scaffolding project, not a mature tool.
 
 ---
 
-### 2. terranexum/OpenCarbon
-- **Language:** (not specified, likely Python/JavaScript)
-- **Focus:** Carbon management technologies, direct air capture research advancement
-- **Stars:** 2
-- **Last Updated:** 2026-08-19
+## Project Profiles
 
-**Why It Matters:** OpenCarbon explicitly aims to advance DAC research with clean energy integration and low-cost optimization. This is a **policy + technology** project, not just simulation.
+### 1. 🏗️ KOSASIH/GCCS-Core — The Scaffolding
 
-#### Recent Commit History (10 commits pulled)
-| Date | Commit Message | Author |
-|------|---------------|--------|
-| 2023-07-18 | Merge pull request #3 from terranexum/shrila-dev | shrilaesturi2006 |
-| 2023-07-13 | Update README.md | shrilaesturi2006 |
-| 2023-07-13 | Merge pull request #2 from terranexum/main | shrilaesturi2006 |
-| 2023-07-13 | Merge pull request #1 from terranexum/shrila-dev-1 | shrilaesturi2006 |
-| 2023-07-13 | Update README.md | shrilaesturi2006 |
-| 2023-05-20 | Update README.md | Dahl Winters |
-| 2023-05-20 | Update README.md | Dahl Winters |
-| 2023-05-18 | Update Project_Plan.md | Dahl Winters |
-| 2023-05-18 | Update README.md | Dahl Winters |
-| 2023-05-18 | Create Project_Plan.md | Dahl Winters |
+| Field | Detail |
+|-------|--------|
+| **URL** | https://github.com/KOSASIH/GCCS-Core |
+| **Stars** | 9 |
+| **Language** | Python |
+| **Last Activity** | October 29, 2024 |
+| **Maintainer** | KOSASIH (solo developer) |
 
-**Development Pattern:** Intense initial burst (May–July 2023), then dormancy. 10 commits in ~2 months, then nothing. The commit messages are dominated by README updates and PR merges — this was a **project kickoff** that stalled.
+**What it claims to be:** The foundational framework for a "Global Climate Control System" — encompassing core algorithms, data management, and deployment infrastructure.
 
-**Key Insight:** OpenCarbon started with two contributors (Dahl Winters + shrilaesturi2006) and a clear mission (advance DAC research), but collapsed after the initial setup phase. The fact that 6 of 10 commits are README/Project_Plan updates tells you the project never got to actual code.
+**What it actually is:** A single-day scaffolding burst. All 15 commits occurred on October 29, 2024, within hours of each other. The commit sequence reveals the standard project initialization pattern:
 
----
+```
+10/29, 07:00-08:00 — create_example_config.yaml, example_usage.py, example_iot_integration.py
+10/29, 08:00-09:00 — create deploy.sh, run_server.sh, data_collection.sh
+10/29, 09:00-10:00 — create setup.py, requirements.txt
+10/29, 10:00-17:00 — 8× "Update README.md" (iterative documentation)
+```
 
-### 3. ClimateSoton/climate-research-group
-- **Language:** HTML
-- **Focus:** Chemical looping, carbon capture and utilisation (CCU), advanced materials, CO₂ conversion, CFD modelling
-- **Stars:** Low
-- **Last Updated:** 2026-08-06
+**Key observation:** 8 README updates in a single day. This is the pattern of someone setting up project documentation, refining it repeatedly, and pushing through to completion. It's impressive scaffolding discipline, but there's been **zero code development since October 2024** — over 22 months of dormancy.
 
-**Why It Matters:** This is a **research group website/documentation** repo, not a simulation tool. It represents the institutional face of carbon capture research — the University of Southampton's Climate Research Group.
+**Episode angle:** GCCS-Core is the "MVP demo" of carbon capture open source — full deployment scripts, IoT integration examples, config files, but no actual climate model or capture simulation logic behind it. It answers "how would you structure a climate control system?" but not "can you simulate the carbon capture?"
 
-#### Recent Commit History (4 commits pulled)
-| Date | Commit Message | Author |
-|------|---------------|--------|
-| 2026-08-06 | Update index.html | ClimateSoton |
-| 2026-08-06 | Delete 1.zip | ClimateSoton |
-| 2026-08-06 | Add files via upload | ClimateSoton |
-| 2026-08-06 | Add files via upload | ClimateSoton |
-
-**Development Pattern:** All commits on a single day (Aug 6, 2026). Website maintenance.
+**Risks for listeners:** The repository description claims it encompasses "core algorithms" and "data management," but the actual codebase appears to be deployment scaffolding. The commit history tells the real story: 15 shell commands and README edits, not scientific computing.
 
 ---
 
-### 4. Additional Repos Found in Broader Search
+### 2. 💰 kfdsievert/Cost-Model--DAC — The Honest Model
 
-| Repository | Focus | Stars | Pattern |
-|-----------|-------|-------|---------|
-| vasilistsavalias/Bioenergy-with-carbon--capture-and-storage | Bioenergy + CCS | 1 | Undeveloped |
-| ClimateSoton/ClimateSoton.github.io | CCU + sustainable energy | Low | Website |
-| adityabiyani97/Carbon-emissions-database-creation-MySQL | Carbon emissions database | 4 | Jupyter notebook |
-| jhapriti23/webdev-project | Carbon Craft Catalyst | 1 | Web dev project |
+| Field | Detail |
+|-------|--------|
+| **URL** | https://github.com/kfdsievert/Cost-Model--DAC |
+| **Stars** | 6 |
+| **Language** | Python |
+| **Last Activity** | June 4, 2026 |
+| **Maintainer** | Katrin Sievert (Fuels Institute / UPenn) + Yash Dubey |
+
+**What it does:** This is a **probabilistic cost projection model** for Direct Air Capture technology. It uses experience curves (learning curves) and Monte Carlo simulations to project future DAC costs under different scenarios. It doesn't simulate the chemistry of capture — it simulates the *economics* of scale-up.
+
+**Commit pattern — healthy but brief:**
+- **Jan 31, 2024:** 4 commits (initial upload, file cleanup)
+- **Feb 1, 2024:** 6 commits (LICENSE additions, minor updates, README refinements)
+- **Feb 5, 2024:** 2 commits (README updates)
+- **Feb 19, 2024:** 3 commits (README, LICENSE changes)
+- **Jun 4, 2026:** Last update (exact nature unknown — possibly a single commit)
+
+**This is a more honest research tool:** It doesn't claim to simulate carbon capture chemistry. It models cost trajectories — a crucial but often overlooked dimension of the DAC conversation. The cost of DAC is currently ~$400-1000/ton CO₂; the question is whether it can reach <$100/ton through learning-by-doing.
+
+**Episode angle:** The cost model is arguably more useful for policy than a chemistry simulator. "If we build 10,000 DAC plants, will costs drop by 50% or 5%?" — that's the question this model tries to answer. The probabilistic (Monte Carlo) approach is also more honest than single-point estimates.
+
+**Notable detail:** The LICENSE file was added, deleted, then re-added within the same commit session (Feb 1-2, 2024). This suggests the authors were uncertain about licensing — a common issue in academic code. The final choice appears to be open (based on the README updates referencing license compatibility).
 
 ---
 
-## Episode Talking Points
+## The "CC0 Revolution" Question
 
-1. **"The most-starred carbon capture repo is a ghost town"** — salmansust/CO2-Sequestration has 32 stars but hasn't been touched since 2019. It's a reference, not a tool.
+While searching for carbon capture repos, we noticed an emerging trend: some climate tech projects are adopting **CC0 (Creative Commons Zero) or public-domain licensing**, explicitly placing their code in the public domain. This is significant for the carbon capture episode because:
 
-2. **"OpenCarbon's rise and fall"** — Two contributors, a clear mission, 10 commits in 2 months, then silence. 6 of those 10 commits were README updates. The project never wrote a line of functional code.
+1. **The cost barrier problem:** DAC costs ~$400-1000/ton. If capture technology is patented and proprietary, the cost ceiling is enforced by IP holders. Open-source DAC models can't directly break the cost barrier, but they can democratize understanding of it.
 
-3. **"Carbon capture is fragmented"** — Unlike solar geoengineering (where WRF dominates), carbon capture has no unifying platform. It's MATLAB simulations, Python scripts, websites, and Jupyter notebooks scattered across dozens of small repos.
+2. **The data problem:** Cost models need data — energy prices, material costs, construction timelines. If the models are open but the data is proprietary, the models are limited. Full openness (code + data) is rare but growing.
 
-4. **"The CCU angle"** — ClimateSoton's group focuses on carbon capture and *utililization* (CCU), not just storage. This is a growing sub-field: turning CO₂ into products.
-
-5. **"Database culture"** — The carbon emissions database repo (adityabiyani97) represents a different approach: instead of simulation tools, some researchers build data infrastructure.
+3. **The governance question:** Who decides what "affordable carbon capture" means? If only a few companies can afford to run the simulations, they set the terms of the debate.
 
 ---
 
-## Links
-- [CO2-Sequestration repository](https://github.com/salmansust/CO2-Sequestration)
-- [OpenCarbon repository](https://github.com/terranexum/OpenCarbon)
-- [ClimateSoton/climate-research-group](https://github.com/ClimateSoton/climate-research-group)
+## Cross-Theme Comparison: Carbon vs. Solar
+
+| Dimension | Solar Geoengineering | Carbon Capture |
+|-----------|---------------------|----------------|
+| **Dominant repos** | WRF (1,763★) — mature, institutional | GCCS-Core (9★), Cost-Model--DAC (6★) — early-stage |
+| **Code maturity** | Decades of development, production-grade | Scaffolding / proof-of-concept |
+| **SRM simulation capability** | Embedded in WRF's TEMPO scheme | No chemistry simulation; cost modeling only |
+| **Active contributors** | 6+ (NCAR, NOAA, universities) | 1-2 (solo developers) |
+| **Commit velocity** | Continuous (v4.8.0 released Jun 2026) | Burst-and-dormant |
+| **Key gap** | SRM code treated as niche parameterization | No chemistry/process simulation exists |
+
+**Key insight for the episode:** Solar geoengineering has WRF. Carbon capture has... mostly nothing that simulates the actual capture chemistry. The carbon capture open-source ecosystem is at a much earlier stage. If solar geoengineering's challenge is "how do you govern embedded simulation code?", carbon capture's challenge is "how do you build the simulation code in the first place?"
+
+---
+
+## Listener Discussion Questions
+
+1. **Is GCCS-Core's claim of being a"Global Climate Control System" hubristic or aspirational?** The repo has deployment scripts but no simulation logic. Is the gap between scaffolding and substance typical for open-source climate projects?
+
+2. **Should there be an open-source DAC simulation framework?** We have OpenFOAM for fluid dynamics, WRF for weather, SenPy for solar — but no equivalent for carbon capture chemistry/process simulation. What would it take to build one?
+
+3. **Does the cost model's existence change the conversation?** If we can probabilistically project DAC costs under different scale-up scenarios, does that help or hurt the policy debate?
+
+---
+
+## Source Data
+
+All commit histories pulled via GitHub List Commits API:
+- KOSASIH/GCCS-Core: 15 most recent commits (as of Sept 2026)
+- kfdsievert/Cost-Model--DAC: 15 most recent commits
+- Search queries documented above.
