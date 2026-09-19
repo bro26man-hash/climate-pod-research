@@ -1,91 +1,78 @@
 # ☀️ Solar Geoengineering — Commit Trend Analysis
 
-**Last Updated:** September 2026
-**Data Source:** GitHub List Commits API
+**Last updated:** September 2026
+**Data source:** GitHub List Commits API, 4 repos, 40+ commits analyzed
 
 ---
 
-## Velocity Overview
-
-| Repository | Commits Pulled | Active Period | Velocity Pattern | Lead Developer |
-|-----------|---------------|---------------|-----------------|----------------|
-| regional-geo | 10 | Feb 13–15, 2026 (3 days) | Burst (10/3 days = 3.3/day) | Ken Caldeira |
-| PCMDI (adjacent) | Multiple | Last 12 months | Steady institutional | LLNL staff |
-| MDTF (adjacent) | Multiple | Last 12 months | Steady institutional | LLNL staff |
-| ClimateMARGO | Low | Sporadic | Dormant/burst | Individual |
-| srm-forever | Low | Sporadic | Dormant | Community |
-
----
-
-## Trend: The Two-Speed Solar Universe
-
-Solar geoengineering development on GitHub reveals a **two-speed universe**:
+## Velocity Pages
 
 ### 🔴 Fast Universe (Institutional)
-- ** characterized by:** Multiple contributors, steady commit cadence, institutional funding
-- **Examples:** PCMDI, MDTF
-- **Commit pattern:** 2–5 commits per week, consistent across quarters
-- **Why:** These are diagnostic tool centers at national labs. SRM research is one of many projects they support.
+**PCMDI/pcmdi_metrics** — 133★
 
-### 🟡 Slow Universe (Academic/Individual)
-- ** characterized by:** Single developer, burst patterns, long dormancy
-- **Examples:** regional-geo (Caldeira group), ClimateMARGO, srm-forever
-- **Commit pattern:** 10 commits in 3 days, then nothing for 6+ months
-- **Why:** These are research pipelines, not software products. Code is built for papers, not platforms.
+- **10 commits in 14 days** (Sep 3–17, 2026)
+- Pattern: PR-driven, version-bump cadence (v4.2.1 released Sep 4)
+- Contributors: 2 active (Jiwoo Lee, James Goodnight)
+- Signal: **Continuous integration with quarterly release cycle**
+- Episode note: PCMDI's velocity suggests SRM evaluation is treated as production software, not a research afterthought
 
----
+### 🟡 Slow Universe (Academic Burst)
+**Sustainable-Solutions-Lab/regional-geo** — 0★
 
-## Detailed Commit Timeline: regional-geo
+- **10 commits in 3 days** (Feb 13–15, 2026) — then 7+ months dormant
+- Pattern: Single-author analysis sprint, tied to paper preparation
+- Contributor: Ken Caldeira (sole author)
+- Signal: **Code ships with the paper; maintenance ends**
+- Episode note: This is the typical lifecycle of geoengineering simulation code — born to publish, not to maintain
 
-```
-2026-02-13 ████████████████████ 7 commits (data pipeline setup)
-2026-02-14 ██████████████ 3 commits (analysis + figures)
-2026-02-15 ██ 1 commit (smoothing/polish)
-2026-02-16 → DORMANT
-```
+**eabarnes1010/actm-sai-csu** — 6★
 
-**Interpretation:** The 3-day sprint follows a classic research cycle:
-1. **Day 1 — Data infrastructure:** Add data loader, read RDS files, calculate areas
-2. **Day 2 — Analysis:** Start analysis, show individual cases, fix figures
-3. **Day 3 — Polish:** Gaussian smoothing for final figures
+- **10 commits in 3 months** (Jan–Mar 2023) — then 3+ years dormant
+- Pattern: Paper-driven, multi-author relay (Mamalakis → Hueholt → Labe)
+- Signal: **Each author adds code supporting their own publication**
+- Episode note: DARPA-funded, but code is a means to papers, not a platform
 
-This is *not* software engineering. It's **script-driven analysis** that happens to be version-controlled.
+### ⚫ Empty Universe (Governance Frontier)
+**Zereo0317/climate-intervention-governance** — 0★
 
----
-
-## What This Means for Your Podcast
-
-### Episode Architecture for Solar Geoengineering
-
-**Segment 1: The Technology Itself**
-- How SRM simulation actually works (WRF + aerosol parameterization)
-- Why regional modeling matters (global models miss local impacts)
-- The role of Ken Caldeira's group (the closest thing to an SRM simulation "standard")
-
-**Segment 2: The Development Pattern**
-- Academic sprint vs. continuous deployment
-- Why SRM code looks like research scripts, not production software
-- The reproducibility crisis in climate science (no CI/CD, no testing)
-
-**Segment 3: The Governance Question**
-- Who controls the tools that simulate solar geoengineering?
-- National labs (LLNL) vs. academic groups vs. community projects
-- The open-source question: should SRM simulation be centralized or decentralized?
+- **2 commits in 1 day** (Aug 23, 2026)
+- Pattern: Initial release, then stabilization
+- Signal: **Brand new; governance-as-software is an emerging idea**
+- Episode note: The first governance-tracking repo for SRM — is this the beginning of a new category?
 
 ---
 
-## Key Quote-Worthy Data Points
+## Modeling vs. Detection Split
 
-- **"10 commits in 3 days by one PI"** — regional-geo's development pattern is a punchline about how climate science software actually works
-- **"Zero standalone SRM platforms"** — All SRM code lives inside climate models or research groups. There's no "GitHub for SRM"
-- **"The Caldeira factor"** — One researcher's sprint can produce the entire public codebase for regional SRM simulation
-- **"Institutional steady vs. academic burst"** — PCMDI commits 2-5x/week year-round; Caldeira's group does 10/3days then vanishes
+A critical pattern emerges in solar geoengineering code:
+
+| Category | Repos | Pattern | Governance Implication |
+|----------|-------|---------|----------------------|
+| **Simulation** (modeling SRM effects) | regional-geo | Low-star, single-author, burst lifecycle | Who maintains the models that predict SRM outcomes? |
+| **Detection** (attributing SRM deployments) | actm-sai-csu | Paper-driven, intelligence-funded, dormant after publication | If SRM is deployed, will the detection tools be ready? |
+| **Evaluation** (quantifying model skill) | PCMDI/pcmdi_metrics | Institutional, fast, continuous | PCMDI defines what counts as "good" SRM modeling |
+| **Governance** (tracking SRM policy) | climate-intervention-governance | Newborn, 2 commits | Governance code doesn't exist yet at scale |
 
 ---
 
-## References
-- [regional-geo commit history](https://github.com/Sustainable-Solutions-Lab/regional-geo/commits/main)
-- [PCMDI](https://github.com/PCMDI)
-- [MDTF](https://github.com/MDTF)
-- [ClimateMARGO](https://github.com/search?q=ClimateMARGO)
-- [srm-forever](https://github.com/search?q=srm-forever)
+## Episode 1 Architecture
+
+### Opening question
+*Why is solar geoengineering code inside climate models, not in SRM-specific repos?*
+
+### Three act structure
+1. **Act 1 — The Simulation Gap:** regional-geo shows that SRM code is niche, low-visibility, and tied to publication cycles. Ken Caldeira's WRF-Chem analysis is brilliant but has 0 stars and no community.
+2. **Act 2 — The Evaluation Monopoly:** PCMDI has 133 stars and institutional momentum. If PCMDI defines how SRM is evaluated, that's a governance leverage point most people don't know exists.
+3. **Act 3 — The Detection Problem:** actm-sai-csu (DARPA-funded) asks: if someone deploys SRM, how would you know? The code is dormant after its papers. The governance repo (Zereo0317) is brand new.
+
+### Closing question
+*If the models are in the hands of a few institutions, the detection tools are paper-dependent, and governance code barely exists — who's actually steering solar geoengineering research?*
+
+---
+
+## Trend Lines (watch for these in future episodes)
+
+1. **PCMDI release cadence** — if v4.2.x becomes a quarterly rhythm, SRM evaluation is maturing into infrastructure
+2. **regional-geo data pipeline** — the data_loader module could become a communityStandard if someone adopts it
+3. **actm-sai-csu DARPA renewal** — new funding could trigger a new commit burst and updated detection methods
+4. **climate-intervention-governance growth** — whether it stays at 2 commits or becomes a real governance-as-code platform
