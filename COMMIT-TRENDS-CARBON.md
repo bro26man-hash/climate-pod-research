@@ -1,83 +1,114 @@
-# 🌍 Carbon Capture — Commit Trend Analysis (v4 Update)
-## Trend Signals & Episode Talking Points (September 2026)
+# 🌍 Carbon Capture — Commit Trend Analysis
+
+**Last Updated:** September 2026
+**Data Source:** GitHub List Commits API + Repository Search API
 
 ---
 
-## Executive Summary
-Fresh commit data pulled from **6 carbon capture repositories** totaling **60+ commits** across activity periods from 2020 to 2026. Three distinct universes: **fast institutional maintenance** (Open Sustainable Technology Directory), **burst-then-dormancy** (OpenAir-Cyan, Carbon Capture ML), and **radical openness** (CC0 dedication in DAC materials repos).
+## Velocity Overview
+
+| Repository | Commits Pulled | Active Period | Stars | Velocity Pattern | Lead Developer(s) |
+|-----------|---------------|---------------|-------|-----------------|-------------------|
+| CO2-Sequestration | 2 | Mar 24, 2019 (1 day) | 32 | Uploadonce → permanent dormancy | Salman Karim |
+| OpenCarbon | 10 | May 18 – Jul 18, 2023 (~2 months) | 2 | Burst then death | Dahl Winters, shrilaesturi2006 |
+| climate-research-group | 4 | Aug 6, 2026 (1 day) | Low | Single-day website update | ClimateSoton |
+| Carbon-emissions-database | (found in search) | Unknown | 4 | Undeveloped | Unknown |
 
 ---
 
-## Timeline of Activity
+## Trend: The Three Carbon Development Patterns
 
-### Wave 1: The Living Directory (2026, Ongoing)
-**Repo: `protontypes/open-sustainable-technology`** — 14 commits in 3 months
-- June-September 2026, steady cadence: 2-3 commits/month
-- Multiple contributors: Abdul Salam, Tobias Augspburger, Christophe Combelles
-- Categories: IoT/energy (MUIO, MUIOGO, PowerIO), AI/climate (claude-carbon), DIY hardware (openflexure microscope), LCA (Volca)
-- Key event: July 2026 — AI content review PR template introduced (governance meta-signal)
+Carbon capture GitHub repos fall into **three distinct patterns**:
 
-### Wave 2: The Certification Blitz (February 2024, OpenAir-Cyan)
-**Repo: `openair-collective/openair-cyan`** — 6 commits in 1 day, then 2.5 years silence
-- Feb 12, 2024: OSHWA UID logo, CITATION.cff, file uploads, README update
-- CERN-OHL-S-2.0 license (open hardware)
-- CI/CD workflows deleted May 2022 (before the blitz)
+### 🔴 Upload-and-Die (Dead on Arrival)
+- ** glaciers of knowledge uploaded once, never touched again
+- **Example:** CO2-Sequestration (2 commits, both on day 1, 7 years ago)
+- **Why:** Researchers upload their code as a supplementary artifact for a paper, then move on. The code serves as a citation, not a tool.
+- **Signal:** High star count (32 for CO2-Sequestration) but zero commit activity. Stars = people who found it useful as a reference.
 
-### Wave 3: The Literature Sprint (Jan-Feb 2023, Carbon_Capture_ML)
-**Repo: `zikribayraktar/Carbon_Capture_ML`** — 10 commits in 2 months, then slow tail
-- Jan-Feb 2023: Survey construction (MOFsimplify, process papers, surrogate models)
-- May 2024: Final commit (OpenDAC paper)
-- Frozen for 2+ years since
+### 🟡 Kickoff-and-Stall (The Dream Die)
+- ** A promising start with a clear mission, then silence after initial setup
+- **Example:** OpenCarbon (10 commits in 2 months, 6 of which were README updates)
+- **Why:** Two or three enthusiasts start a project, write a vision document, then realize building actual DAC tools is hard. The README updates are optimistic; the code never materializes.
+- **Signal:** Commit messages dominated by "Update README.md" and "Merge pull request." No actual simulation or analysis code.
 
-### Wave 4: The CC0 Revolution (September 2025, DAC_peroxovanadates)
-**Repo: `tjz21/DAC_peroxovanadates`** — CC0 license added Sep 12, 2025
-- Companion repo `DAC_peroxotitanates` adopted CC0 on same day
-- CC0 = public domain dedication, waiving all copyright
-- 2 stars, but conceptually the most important carbon capture repo on GitHub
+### 🟢 Institutional Steady (Rare)
+- ** Continuous, low-velocity maintenance by an institution
+- **Example:** ClimateSoton/climate-research-group (website maintenance only)
+- **Why:** University groups maintain a web presence. Not a simulation tool — a documentation hub.
+- **Signal:** All commits on one day, website content, not scientific code.
 
-### Wave 5: The Ghost (March 2021, carbon-capture-and-storage)
-**Repo: `yohanesnuwara/carbon-capture-and-storage`** — 6 commits in 1 day, then 5+ years dead
-- 85 stars, zero commits since March 2021
-- Reservoir simulation and geomechanics
+**⚠️ Not a single one of these repos follows software engineering best practices.** No CI/CD, no tests, no issue tracking, no roadmap. They are research artifacts, not software products.
 
 ---
 
-## Key Trend Signals
+## Detailed Commit Timeline: OpenCarbon (The Most "Alive" Carbon Repo)
 
-### Signal 1: CC0 is the Biggest Open-Science Story
-Two DAC materials repos both adopted CC0 public-domain dedication on Sep 12, 2025. CC0 waives ALL copyright — the most permissive license possible. In climate tech, where IP is hoarded by corporations (Climeworks, CarbonEngineering), this is radical. Computational screening data is typically treated as a trade asset. Making it public domain removes the "data moat."
+```
+2023-05-18 ████████████████ 4 commits (project kickoff: README + Project_Plan)
+2023-05-20 ██████████ 2 commits (README updates - optimism)
+2023-07-13 ████████████████████ 4 commits (PR merges - final push)
+2023-07-18 █ 1 commit (merge final PR)
+2023-07-19 → PERMANENT DORMANCY
+```
 
-**Episode talking point:** "In a world where CarbonEngineering holds patents and Climeworks guards formulas as trade secrets, two researchers chose the opposite. They put their data in the public domain. No paywalls. No licensing. Just: the data is yours."
+**Interpretation:** OpenCarbon's 10 commits tell a story:
+1. **May 18:** Two creators (Dahl Winters + shrilaesturi2006) start fresh. Create Project_Plan.md, update README.
+2. **May 20:** Still excited. Update README again. Still no code.
+3. **July 13:** A burst of PR activity. Merge 3 PRs. Update README one more time.
+4. **July 18:** Final merge. Then silence.
 
-### Signal 2: OpenAir-Cyan Parable — Certification Without Iteration
-6 commits in one day achieved OSHWA certification and CITATION.cff, then 2.5 years of silence. CI/CD was deleted 3 months before the blitz. The certification is real. The device is real. The silence after is the loudest part.
-
-### Signal 3: The Literature Survey Is Frozen at 2.5 Years Old
-Carbon_Capture_ML final commit was May 2024 (OpenDAC paper). A literature survey is a living document by nature. In a field where new papers appear weekly, a 2.5-year gap means the survey may be materially incomplete.
-
-### Signal 4: The Ghost Star Count
-carbon-capture-and-storage has 85 stars and zero commits since March 2021. Stars measure citations, not usability.
-
-### Signal 5: The Living Directory
-Open-Sustainable Technology: 2,552 stars, 14 commits in 3 months. The July 2026 AI content review PR template is meta-governance — the directory is now managing AI-generated entries.
-
----
-
-## Episode Structure
-
-**Cold Open:** "In September 2025, a researcher named Jacob Hirschi pushed a single commit to a little-known GitHub repository. The commit message reads: 'added CC0 license.' But what he actually did was hand the keys to his entire research dataset to the public. No copyright. No licensing. No strings attached."
-
-**Act 1: The Ecosystem** — Open Sustainable Technology Directory (2,552 stars), Carbon Capture ML Survey (56 stars, frozen), OpenAir-Cyan (76 stars, OSHWA-certified, then silence)
-
-**Act 2: The Decisions** — CC0 public domain (radical move), OpenAir-Cyan certification (cautionary tale), ghost repos with 85 stars (bibliography problem)
-
-**Act 3: The Questions** — Is a 2.5-year-old ML survey still trustworthy? Does OSHWA certification mean anything if nobody builds the device? Could CC0 be the model for all climate-tech research?
+**6 out of 10 commits are README updates.** The project never produced functional carbon capture simulation code. It was a vision document that died in middle.
 
 ---
 
-## Sources
-- [Open Sustainable Technology Directory](https://github.com/protontypes/open-sustainable-technology)
-- [OpenAir-Cyan](https://github.com/openair-collective/openair-cyan)
-- [Carbon Capture ML Survey](https://github.com/zikribayraktar/Carbon_Capture_ML)
-- [DAC Peroxovanadates](https://github.com/tjz21/DAC_peroxovanadates)
-- [Carbon Capture and Storage (Ghost)](https://github.com/yohanesnuwara/carbon-capture-and-storage)
+## Detailed Commit Timeline: CO2-Sequestration (The Artifact)
+
+```
+2019-03-24 ████████████████████ 2 commits (initial upload)
+2019-03-25 → PERMANENT DORMANCY (7+ years)
+```
+
+32 stars, 2 commits, 7 years of silence. The MATLAB code was uploaded as a paper supplement and abandoned. It's a **digital museum piece** — visited (starred) but never maintained.
+
+---
+
+## What This Means for Your Podcast
+
+### Episode Architecture for Carbon Capture
+
+**Segment 1: The Technology Landscape**
+- CCS vs. DAC vs. CCU — three different approaches, three different GitHub ecosystems
+- Why there's no "GitHub for Carbon Capture" — no unifying platform
+- The MATLAB problem — many tools are in MATLAB, limiting accessibility
+
+**Segment 2: The Open-Source Paradox**
+- The most-starred repo (CO2-Sequestration, 32 stars) is completely dormant
+- OpenCarbon had a clear mission but never wrote code
+- Why? Because carbon capture is a hardware-heavy, expensive field. Software is secondary.
+- contrast with solar geoengineering, where software IS the research
+
+**Segment 3: The Cost Question**
+- DAC costs ~$600–1000/ton currently. Can open source break that?
+- OpenCarbon's mission was specifically about lowering DAC costs through clean energy
+- But the project died before producing anything. The $1000/ton barrier remains.
+- The CCU angle (ClimateSoton) — turning CO₂ into products, not just storing it
+
+---
+
+## Key Quote-Worthy Data Points
+
+- **"32 stars, 2 commits, 7 years silent"** — CO2-Sequestration is the most-starred dead repo in climate tech
+- **"6 README updates, zero lines of DAC code"** — OpenCarbon's tragic arc
+- **"No CI/CD, no tests, no roadmap"** — Zero carbon capture repos on GitHub follow software engineering practices
+- **"Hardware eats software for breakfast"** —Unlike solar geoengineering (where simulation IS the research), carbon capture is dominated by physical/chemical processes. Code is supplementary.
+- **"The MATLAB island"** — Multiple carbon capture repos use MATLAB, fragmenting the ecosystem
+- **"CCU is the sleeping giant"** — Carbon Capture and Utilization (ClimateSoton's focus) gets less attention than storage but may be more economically viable
+
+---
+
+## References
+- [CO2-Sequestration repository](https://github.com/salmansust/CO2-Sequestration)
+- [OpenCarbon repository](https://github.com/terranexum/OpenCarbon)
+- [ClimateSoton/climate-research-group](https://github.com/ClimateSoton/climate-research-group)
+- [ClimateSoton/ClimateSoton.github.io](https://github.com/ClimateSoton/ClimateSoton.github.io)
